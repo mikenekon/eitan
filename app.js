@@ -253,15 +253,24 @@ function practiceDuration(text,rate=0.85){
   const words=Math.max(1,text.trim().split(/\s+/).length);
   return Math.round(words*350/rate);
 }
-function makeGate(onPass){
+function makeGate(onPass, skip=false){
   const bar=h('b'),meter=h('div',{class:'meter'},bar),msg=h('div',{class:'gmsg'});
   const el=h('div',{class:'gate'},msg,meter);
   let timer=null,finished=false,started=0,need=0;
+  function finish(){
+    clearInterval(timer);timer=null;finished=true;
+    bar.style.width='100%';meter.classList.add('ok');msg.textContent='つぎへ進めるよ';onPass();
+  }
   function reset(){
     clearInterval(timer);timer=null;finished=false;started=0;need=0;
+    if(skip){
+      bar.style.width='100%';meter.classList.add('ok');msg.textContent='つぎへ進めるよ';
+      return;
+    }
     bar.style.width='0%';meter.classList.remove('ok');msg.textContent='音声を聞いてね';
   }
   function wait(duration){
+    if(skip){finish();return;}
     if(finished) return;
     need=Math.max(duration,Number(S.settings.practiceWaitSec||1.5)*1000);
     started=performance.now();msg.textContent='声に出して練習してね';
@@ -269,14 +278,13 @@ function makeGate(onPass){
       const progress=Math.min(1,(performance.now()-started)/need);
       bar.style.width=Math.round(progress*100)+'%';
       if(progress>=1){
-        clearInterval(timer);timer=null;finished=true;meter.classList.add('ok');
-        msg.textContent='つぎへ進めるよ';onPass();
+        finish();
       }
     },40);
   }
   function complete(){
-    clearInterval(timer);timer=null;finished=true;
-    bar.style.width='100%';meter.classList.add('ok');msg.textContent='つぎへ進めるよ';onPass();
+    if(skip){finish();return;}
+    finish();
   }
   reset();
   return {el,wait,reset,complete,destroy(){finished=true;clearInterval(timer);timer=null;}};
@@ -315,11 +323,15 @@ function learnCard(word,n,total,r,rounds,canGoBack,wasDone,cardIndex){
     const gate=makeGate(()=>{
       if(session!==activeSession||activeSession.quit) return;
       activeSession.learnDone[cardIndex]=true;next.disabled=false;
-    });
+    },true);
+    gate.el.style.display='none';
     const play=async()=>{
       const id=++playId;session.learnDone[cardIndex]=false;next.disabled=true;gate.reset();TTS.stop();
       await TTS.speak(d.word);
-      if(id===playId&&!finished&&session===activeSession&&!activeSession.quit) gate.wait(practiceDuration(d.word));
+      if(id===playId&&!finished&&session===activeSession&&!activeSession.quit){
+        activeSession.learnDone[cardIndex]=true;next.disabled=false;
+        gate.complete();
+      }
     };
     mount(chrome('learn',n,total,
       h('div',{class:'note'},r+'周目 / '+rounds+'周　今日の単語 '+n+'/'+total),
@@ -346,11 +358,12 @@ function flashCard(stepKey,word,pos,total,mode,state,canGoBack){
       h('button',{class:'btn sub','aria-pressed':'false',onclick:()=>choose('maybe')},'△ あやしい'),
       h('button',{class:'btn sub','aria-pressed':'false',onclick:()=>choose('ng')},'× わからない'));
     const sheet=h('button',{class:'sheet'},'タップして答えを見る');
-    const gate=makeGate(()=>{state.gateDone=true;rate.style.visibility='visible';previous.disabled=!canGoBack;});
+    const skipGate=stepKey==='check2';
+    const gate=makeGate(()=>{state.gateDone=true;rate.style.visibility='visible';previous.disabled=!canGoBack;},skipGate);
     gate.el.style.display='none';
     let playId=0;
     const play=async()=>{
-      const id=++playId;gate.reset();gate.el.style.display='';rate.style.visibility='hidden';TTS.stop();
+      const id=++playId;gate.reset();gate.el.style.display=skipGate?'none':'';rate.style.visibility='hidden';TTS.stop();
       await TTS.speak(d.word);
       let duration=practiceDuration(d.word);
       if(mode==='sentence'){
@@ -372,7 +385,7 @@ function flashCard(stepKey,word,pos,total,mode,state,canGoBack){
       h('div',{class:'sheet-wrap'},h('div',{class:'back'},back),sheet),
       gate.el,h('div',{class:'grow'}),rate,h('div',{class:'row2'},previous,next)));
     if(state.revealed){
-      sheet.classList.add('off');gate.el.style.display='';
+      sheet.classList.add('off');gate.el.style.display=skipGate?'none':'';
       if(state.gateDone) gate.complete(); else play();
     }
     if(state.result){
@@ -546,14 +559,18 @@ function orderCard(word,n,total,state,canGoBack){
       if(!state.attempted){state.attempted=true;state.firstCorrect=good;state.firstResponseMs=elapsedStepTime('useOrder',responseStart);addAcc(good);}
       if(good){state.solved=true;state.feedback='';fb.className='fb ok';fb.textContent='せいかい!';next.disabled=false;TTS.speak(d.ex1,0.8);}
       else{
-        state.revealedCount=Math.min((state.revealedCount||0)+1,tokens.length);
+        let correctPrefix=0;
+        while(correctPrefix<tokens.length && state.picked[correctPrefix] && state.picked[correctPrefix].t===tokens[correctPrefix]){
+          correctPrefix++;
+        }
+        state.revealedCount=Math.max(state.revealedCount||0,correctPrefix);
         state.picked=correctOrder.slice(0,state.revealedCount);
         if(state.revealedCount===tokens.length){
           state.solved=true;state.assisted=true;state.feedback='assisted';
           fb.className='fb ok';fb.textContent='正しい順番をすべて表示しました';next.disabled=false;
         }else{
           state.feedback='reveal';fb.className='fb bad';
-          fb.textContent='まちがい。正しい単語を1語追加したよ。つづきを並べよう';render();
+          fb.textContent='まちがい。先頭から正しいところまで出したよ。つづきを並べよう';render();
         }
       }
     }
@@ -585,10 +602,32 @@ function spellCard(word,n,total){
     const input=h('input',{class:'spell',type:'text',autocapitalize:'none',autocomplete:'off',autocorrect:'off',spellcheck:'false',enterkeyhint:'done','aria-label':'つづり'});
     const fb=h('div',{class:'fb'});
     const btn=h('button',{class:'btn',onclick:submit},'答え合わせ');
+    const knownBtn=h('button',{class:'btn sub',onclick:markKnown},'知っている');
     input.addEventListener('keydown',e=>{if(e.key==='Enter')submit();});
+    function finalize(correct,kind='ok'){
+      solved=true;firstCorrect=correct;fb.className=kind==='ok'?'fb ok':'fb bad';fb.textContent=correct?
+        'せいかい!':'正しいつづりは「'+d.word+'」。次へ進めます';
+      input.disabled=true;btn.textContent='つぎへ';knownBtn.disabled=true;TTS.speak(d.word);
+    }
+    function markKnown(){
+      if(solved) return;
+      attempted=true;firstCorrect=true;
+      const responseTimes=session.stageResponseMs.spell||(session.stageResponseMs.spell={});
+      if(!Object.prototype.hasOwnProperty.call(responseTimes,word)) responseTimes[word]=elapsedStepTime('spell',responseStart);
+      addAcc(true);
+      finalize(true,'ok');
+    }
     function submit(){
       if(solved){TTS.stop();resolve(firstCorrect?'ok':'ng');return;}
-      const v=input.value.trim().toLowerCase(); if(!v) return;
+      const v=input.value.trim().toLowerCase();
+      if(!v){
+        attempted=true;firstCorrect=false;
+        const responseTimes=session.stageResponseMs.spell||(session.stageResponseMs.spell={});
+        if(!Object.prototype.hasOwnProperty.call(responseTimes,word)) responseTimes[word]=elapsedStepTime('spell',responseStart);
+        addAcc(false);
+        finalize(false,'bad');
+        return;
+      }
       const good=v===d.word.toLowerCase();
       if(!attempted){
         attempted=true;firstCorrect=good;
@@ -596,14 +635,14 @@ function spellCard(word,n,total){
         if(!Object.prototype.hasOwnProperty.call(responseTimes,word)) responseTimes[word]=elapsedStepTime('spell',responseStart);
         addAcc(good);
       }
-      if(good){solved=true;fb.className='fb ok';fb.textContent='せいかい!';input.disabled=true;btn.textContent='つぎへ';TTS.speak(d.word);}
+      if(good){finalize(true,'ok');}
       else{fb.className='fb bad';fb.textContent='ざんねん。正しいつづりは「'+d.word+'」。もう一度書いてみよう';input.value='';input.focus();}
     }
     mount(chrome('spell',n,total,
       h('div',{class:'note'},'つづりを書こう'),
       h('div',{class:'card'},h('div',{class:'jp'},d.meaning)),
       h('div',{class:'row'},h('button',{class:'btn sub small',onclick:()=>TTS.speak(d.word)},'🔊 発音を聞く')),
-      input,fb,h('div',{class:'grow'}),btn));
+      input,fb,h('div',{class:'row'},knownBtn),h('div',{class:'grow'}),btn));
     setTimeout(()=>input.focus(),60);
   });
 }
