@@ -89,6 +89,59 @@ function load(){
   LOAD_WARN=true;return defaultState();
 }
 let S=load();
+const PENDING_KEY=KEY+'.pending';
+function cleanPending(raw){
+  if(!raw||typeof raw!=='object'||Array.isArray(raw)) return null;
+  const cleanWords=a=>Array.isArray(a)?Array.from(new Set(a.filter(w=>typeof w==='string'&&Object.prototype.hasOwnProperty.call(BYWORD,w)))).slice(0,WORDS.length):[];
+  const newWords=cleanWords(raw.newWords),reviewWords=cleanWords(raw.reviewWords);
+  const steps=[...(reviewWords.length?['review']:[]),...(newWords.length?['learn','check1','useRead','useCloze','useOrder','check2','spell']:[])];
+  if(!steps.length) return null;
+  const currentStepIndex=Math.min(Math.floor(num(raw.currentStepIndex)),steps.length);
+  const stageResults={};
+  for(const key of STEP_ORDER){
+    const values=raw.stageResults&&raw.stageResults[key];
+    if(!values||typeof values!=='object'||Array.isArray(values)) continue;
+    stageResults[key]=Object.fromEntries(Object.entries(values).filter(([word,value])=>
+      BYWORD[word]&&(typeof value==='boolean'||['ok','maybe','ng','skip'].includes(value))));
+  }
+  const stageResponseMs={};
+  for(const key of STEP_ORDER){
+    const values=raw.stageResponseMs&&raw.stageResponseMs[key];
+    if(values&&typeof values==='object'&&!Array.isArray(values)){
+      stageResponseMs[key]=Object.fromEntries(Object.entries(values).filter(([word,value])=>
+        BYWORD[word]&&Number.isFinite(Number(value))&&Number(value)>=0).map(([word,value])=>[word,num(value)]));
+    }
+  }
+  const ms={};for(const key of STEP_ORDER) ms[key]=num(raw.timeMs&&raw.timeMs[key]);
+  return {newWords,reviewWords,repeat:raw.repeat===true,steps,currentStepIndex,
+    phase:raw.phase==='summary'?'summary':'running',
+    stageStartCorrect:num(raw.stageStartCorrect),stageStartTotal:num(raw.stageStartTotal),
+    correct:num(raw.correct),total:num(raw.total),stageResults,stageResponseMs,timeMs:ms};
+}
+function loadPending(){
+  try{
+    const raw=localStorage.getItem(PENDING_KEY);
+    if(!raw)return null;
+    const pending=cleanPending(JSON.parse(raw));
+    if(!pending)LOAD_WARN=true;
+    return pending;
+  }catch(e){LOAD_WARN=true;return null;}
+}
+let pendingSession=loadPending();
+function savePending(){
+  if(!session)return;
+  Time.tick();
+  const data={newWords:session.newWords,reviewWords:session.reviewWords,repeat:session.repeat,
+    currentStepIndex:session.currentStepIndex,phase:session.phase,stageStartCorrect:session.stageStartCorrect,
+    stageStartTotal:session.stageStartTotal,correct:session.correct,total:session.total,
+    stageResults:session.stageResults,stageResponseMs:session.stageResponseMs,timeMs:Time.ms};
+  try{localStorage.setItem(PENDING_KEY,JSON.stringify(data));pendingSession=cleanPending(data);}
+  catch(e){toast('学習の進み具合を保存できませんでした');}
+}
+function clearPending(){
+  try{localStorage.removeItem(PENDING_KEY);}catch(e){toast('中断した学習を削除できませんでした');}
+  pendingSession=null;
+}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){toast('保存できませんでした');}}
 
 function streak(){
@@ -107,56 +160,10 @@ function mount(node){$('#app').replaceChildren(node);window.scrollTo(0,0);}
 function toast(msg){const t=h('div',{class:'toast'},msg);document.body.append(t);setTimeout(()=>t.remove(),2200);}
 function showIdle(){$('#layer').replaceChildren(h('div',{class:'idle',onclick:hideIdle},'ちょっと休けい中。タップでつづけるよ'));}
 function hideIdle(){$('#layer').replaceChildren();}
-function captureScreen(){
-  const screen=$('#app').firstElementChild;
-  if(!screen) return null;
-  const copy=screen.cloneNode(true);
-  screen.querySelectorAll('input,textarea').forEach((el,i)=>{
-    const target=copy.querySelectorAll('input,textarea')[i];
-    if(target) target.value=el.value;
-  });
-  return copy;
-}
-function openPreviousStage(stepKey){
-  const idx=session.steps.indexOf(stepKey),prevKey=session.steps[idx-1];
-  const views=session.stageViews[prevKey]||[];
-  if(!views.length){toast('前のステップに見直せるカードがありません');return;}
-  const current=$('#app').firstElementChild;
-  let index=views.length-1;
-  function show(){
-    const snapshot=views[index].screen.cloneNode(true);
-    snapshot.classList.remove('screen');
-    snapshot.classList.add('sec');
-    snapshot.querySelector('.top')?.remove();
-    snapshot.querySelector('.strip')?.remove();
-    snapshot.querySelectorAll('button').forEach(button=>{
-      if(button.classList.contains('tile')&&button.closest('.answer')) button.replaceWith(document.createTextNode(button.textContent));
-      else button.remove();
-    });
-    snapshot.querySelectorAll('input,textarea').forEach(input=>{input.disabled=true;});
-    snapshot.querySelectorAll('.grow,.gate,.rate,.choices,.tiles').forEach(el=>el.remove());
-    snapshot.querySelectorAll('.row,.row2').forEach(el=>{if(!el.children.length)el.remove();});
-    const answer=views[index].answer;
-    const answerText=answer?{ok:'◯ 言えた',maybe:'△ あやしい',ng:'× わからない'}[answer]:'';
-    const previous=h('button',{class:'btn sub',disabled:index===0,onclick:()=>{index--;show();}},'‹ 前のカード');
-    const next=h('button',{class:'btn sub',disabled:index===views.length-1,onclick:()=>{index++;show();}},'次のカード ›');
-    mount(h('div',{class:'screen'},
-      h('div',{class:'top'},
-        h('button',{class:'x','aria-label':'現在の段階に戻る',onclick:()=>mount(current)},'‹'),
-        h('div',{class:'ttl'},STEP_NAMES[prevKey]+'の見直し'),
-        h('div',{class:'pos'},(index+1)+' / '+views.length)),
-      h('div',{class:'hint'},'見直し表示です。回答は変更されません。'),
-      snapshot,answerText?h('div',{class:'meta'},'回答: '+answerText):null,
-      h('div',{class:'row2'},previous,next),
-      h('button',{class:'btn',onclick:()=>mount(current)},'現在の段階に戻る')));
-  }
-  show();
-}
-
 /* ================= 学習時間(画面が見えていて、操作がある間だけ数える) ================= */
 const Time={
   step:null,ms:{},last:0,lastActive:0,paused:false,timer:null,
-  start(){this.ms={};for(const k of STEP_ORDER)this.ms[k]=0;this.last=this.lastActive=performance.now();this.paused=false;
+  start(initial={}){this.ms={};for(const k of STEP_ORDER)this.ms[k]=num(initial[k]);this.last=this.lastActive=performance.now();this.paused=false;
     clearInterval(this.timer);this.timer=setInterval(()=>this.tick(),500);},
   setStep(k){this.tick();this.step=k;},
   touch(src){this.lastActive=performance.now();this.paused=false;if(src!=='p')hideIdle();},
@@ -211,29 +218,20 @@ function waitUI(fn){
   return new Promise((resolve,reject)=>{
     session.reject=reject;
     fn(value=>{
-      if(value!=='prev'&&value!=='next'){
-        const screen=captureScreen();
-        if(screen){
-          const answer=['ok','maybe','ng'].includes(value)?value:null;
-          (session.stageViews[session.currentStep]||(session.stageViews[session.currentStep]=[])).push({screen,answer});
-        }
-      }
+      savePending();
       resolve(value);
     });
   });
 }
 function askQuit(){
-  if(confirm('今日の学習をやめますか?\nここまでの進み具合は保存されません。ホームで10語/15語を選び直せます。')){
-    TTS.stop(); if(session){session.quit=true; if(session.reject) session.reject(new Error('abort'));}
-  }
+  showTodayStudyList();
 }
 function chrome(stepKey,pos,total,...body){
   const steps=session.steps,idx=steps.indexOf(stepKey);
   session.currentStep=stepKey;
   return h('div',{class:'screen'},
     h('div',{class:'top'},
-      h('button',{class:'x','aria-label':'やめる',onclick:askQuit},'×'),
-      idx>0?h('button',{class:'x','aria-label':'前の段階を見直す',title:'前の段階を見直す',onclick:()=>openPreviousStage(stepKey)},'‹'):null,
+      h('button',{class:'x','aria-label':'今日の学習一覧へ',onclick:askQuit},'×'),
       h('div',{class:'ttl'},stepLabel(stepKey)),
       h('div',{class:'pos'},total?pos+' / '+total:'')),
     h('div',{class:'strip'},steps.map((k,i)=>h('i',{class:i<idx?'done':i===idx?'now':''}))),
@@ -730,44 +728,56 @@ async function repeatWeakStage(stepKey,words){
   }
 }
 async function runStageWithSummary(stepKey,run){
-  const result=await run();
-  if(!Object.prototype.hasOwnProperty.call(session.stageResults,stepKey)){
-    session.stageResults[stepKey]=result||{};
-    if(stepKey==='review') session.reviewFirst=session.stageResults[stepKey];
+  const idx=session.steps.indexOf(stepKey);
+  session.currentStepIndex=idx;session.currentStep=stepKey;
+  if(session.phase!=='summary'||!Object.prototype.hasOwnProperty.call(session.stageResults,stepKey)){
+    session.phase='running';session.stageStartCorrect=session.correct;session.stageStartTotal=session.total;
+    if(!Object.prototype.hasOwnProperty.call(session.stageResults,stepKey)) delete session.stageResponseMs[stepKey];
+    savePending();
+    const result=await run();
+    if(!Object.prototype.hasOwnProperty.call(session.stageResults,stepKey)){
+      session.stageResults[stepKey]=result||{};
+      if(stepKey==='review') session.reviewFirst=session.stageResults[stepKey];
+    }
+    session.phase='summary';savePending();
   }
   while(true){
     const firstResult=session.stageResults[stepKey],weak=weakStageWords(firstResult);
     const action=await showStageSummary(stepKey,firstResult,weak);
-    if(action==='next') return;
+    if(action==='next'){
+      session.currentStepIndex=idx+1;session.phase='running';savePending();
+      return;
+    }
     const activeSession=session,correct=session.correct,total=session.total;
     try{
+      session.phase='running';savePending();
       if(action==='repeat'){resetStage(stepKey);await run();}
       else if(action==='weak') await repeatWeakStage(stepKey,weak);
-    }finally{if(session===activeSession){session.correct=correct;session.total=total;}}
+    }finally{if(session===activeSession){session.correct=correct;session.total=total;session.phase='summary';savePending();}}
   }
 }
-async function start(newW,due,repeat=false){
+async function start(newW,due,repeat=false,restored=null){
   TTS.unlock();
-  session={newWords:newW,reviewWords:due,steps:[],correct:0,total:0,reject:null,quit:false,reviewFirst:{},
-    repeat,learnCards:null,learnIndex:0,learnDone:{},useTasks:null,useIndex:{},stageViews:{},stageResults:{},stageResponseMs:{}};
+  const steps=[...(due.length?['review']:[]),...(newW.length?['learn','check1','useRead','useCloze','useOrder','check2','spell']:[])];
+  session={newWords:newW,reviewWords:due,steps,correct:restored&&restored.phase==='running'?restored.stageStartCorrect:num(restored&&restored.correct),
+    total:restored&&restored.phase==='running'?restored.stageStartTotal:num(restored&&restored.total),reject:null,quit:false,
+    repeat:restored?restored.repeat:repeat,learnCards:null,learnIndex:0,learnDone:{},useTasks:null,useIndex:{},
+    stageResults:restored?restored.stageResults:{},stageResponseMs:restored?restored.stageResponseMs:{},
+    reviewFirst:restored&&restored.stageResults.review||{},currentStepIndex:restored?restored.currentStepIndex:0,
+    phase:restored?restored.phase:'running',stageStartCorrect:restored?restored.stageStartCorrect:0,
+    stageStartTotal:restored?restored.stageStartTotal:0,pausedScreen:null};
   session.steps=[...(due.length?['review']:[]),...(newW.length?['learn','check1','useRead','useCloze','useOrder','check2','spell']:[])];
-  Time.start();
+  Time.start(restored?restored.timeMs:{});
+  const runners={review:stepReview,learn:stepLearn,check1:stepCheck1,useRead:stepUseRead,
+    useCloze:stepUseCloze,useOrder:stepUseOrder,check2:stepCheck2,spell:stepSpell};
   try{
-    if(due.length) await runStageWithSummary('review',stepReview);
-    if(newW.length){
-      await runStageWithSummary('learn',stepLearn);
-      await runStageWithSummary('check1',stepCheck1);
-      await runStageWithSummary('useRead',stepUseRead);
-      await runStageWithSummary('useCloze',stepUseCloze);
-      await runStageWithSummary('useOrder',stepUseOrder);
-      await runStageWithSummary('check2',stepCheck2);
-      await runStageWithSummary('spell',stepSpell);
-    }
+    savePending();
+    for(let i=session.currentStepIndex;i<session.steps.length;i++) await runStageWithSummary(session.steps[i],runners[session.steps[i]]);
     finishSession();
   }catch(e){
     const quit=e&&e.message==='abort';
     if(!quit) console.error(e);
-    endSession(); if(!quit) toast('エラーが起きました'); showHome();
+    savePending();endSession(); if(!quit) toast('エラーが起きました'); showHome();
   }
 }
 function sessionMetrics(){
@@ -793,6 +803,7 @@ function finishSession(){
     stepMs:Object.assign({},Time.ms),totalMs:Time.total(),correct:session.correct,total:session.total,
     ...sessionMetrics(),mode:session.repeat?'repeat':'normal',newWords:session.newWords.slice(),reviewWords:session.reviewWords.slice()};
   S.sessions.push(rec);S.sessions=S.sessions.slice(-2000);save();
+  clearPending();
   endSession();showDone(rec);
 }
 
@@ -856,6 +867,7 @@ function showDone(rec){
     h('button',{class:'btn',onclick:()=>openSms(msg)},'メッセージで送る'),
     S.settings.parentPhone?null:h('div',{class:'hint'},'送り先は「設定」で登録できます'),
     h('div',{class:'row2'},h('button',{class:'btn sub',onclick:()=>share(msg)},'共有'),h('button',{class:'btn sub',onclick:()=>copy(msg)},'コピー')),
+    h('button',{class:'btn sub',onclick:showTodayStudyList},'今日の学習一覧へ'),
     h('button',{class:'link',onclick:showHome},'ホームへもどる')));
 }
 
@@ -865,15 +877,89 @@ function replayWords(rec,today){
   const newWords=rec.newWords.length?rec.newWords:WORDS.filter(w=>S.words[w.word]&&S.words[w.word].learnedOn===today).map(w=>w.word);
   return {newWords,reviewWords:rec.reviewWords};
 }
+function studySteps(newWords,reviewWords){
+  return [...(reviewWords.length?['review']:[]),...(newWords.length?['learn','check1','useRead','useCloze','useOrder','check2','spell']:[])];
+}
+function resumeStudy(){
+  TTS.unlock();
+  if(session&&session.pausedScreen){
+    const screen=session.pausedScreen;session.pausedScreen=null;
+    Time.touch('k');Time.setStep(session.currentStep||null);mount(screen);return;
+  }
+  if(pendingSession) start(pendingSession.newWords,pendingSession.reviewWords,pendingSession.repeat,pendingSession);
+}
+function showStageReview(stepKey,newWords,reviewWords){
+  const words=stepKey==='review'?reviewWords:newWords;
+  const cards=words.map(word=>{
+    const d=BYWORD[word];if(!d)return null;
+    const content=[h('div',{class:'en'},word),h('div',{class:'jp'},d.meaning)];
+    if(['useRead','useCloze','useOrder','check2'].includes(stepKey)){
+      const sentence=stepKey==='useCloze'?d.ex2:d.ex1;
+      const translation=stepKey==='useCloze'?d.tr2:d.tr1;
+      content.push(h('div',{class:'sent'},hl(sentence,word)),h('div',{class:'tr'},translation));
+    }
+    return h('div',{class:'item'},content);
+  }).filter(Boolean);
+  mount(h('div',{class:'screen','data-view':'stage-review'},
+    topBack(stepLabel(stepKey)+'の見直し',showTodayStudyList),
+    h('div',{class:'hint'},'見直し表示です。回答や学習記録は変更されません。'),
+    cards.length?h('div',null,cards):h('div',{class:'note'},'見直せる単語がありません')));
+}
+function showTodayStudyList(){
+  if(session){
+    TTS.stop();Time.setStep(null);
+    const current=$('#app').firstElementChild;
+    if(current&&current.dataset.view!=='study-list'&&current.dataset.view!=='stage-review') session.pausedScreen=current;
+    savePending();
+  }
+  const today=ymd(),record=S.sessions.filter(item=>item.date===today).pop();
+  let newWords,reviewWords,steps,currentIndex=0,phase='done',hasPending=false;
+  if(session){
+    ({newWords,reviewWords,steps,currentStepIndex:currentIndex,phase}=session);hasPending=true;
+  }else if(pendingSession){
+    ({newWords,reviewWords,steps,currentStepIndex:currentIndex,phase}=pendingSession);hasPending=true;
+  }else if(record){
+    ({newWords,reviewWords}=replayWords(record,today));steps=studySteps(newWords,reviewWords);
+  }else{
+    newWords=pickNew(S.settings.perDay);reviewWords=dueWords();steps=studySteps(newWords,reviewWords);
+  }
+  const rows=steps.map((key,index)=>{
+    const status=hasPending?(index<currentIndex?'学習ずみ':index===currentIndex?(phase==='summary'?'この章のまとめ':'学習中'):'これから'):record?'学習ずみ':'予定';
+    return h('div',{class:'item'},
+      h('b',null,stepLabel(key)),h('small',null,status),
+      h('button',{class:'btn sub small',
+        onclick:hasPending&&index===currentIndex?resumeStudy:()=>showStageReview(key,newWords,reviewWords)},
+        hasPending&&index===currentIndex?'この章にもどる':'この章を見直す'));
+  });
+  const actions=[];
+  if(hasPending) actions.push(h('button',{class:'btn',onclick:resumeStudy},'つづきを学習'));
+  else if(!record&&(newWords.length||reviewWords.length)){
+    actions.push(h('button',{class:'btn',onclick:()=>start(newWords,reviewWords)},'今日の学習をはじめる'));
+  }
+  mount(h('div',{class:'screen','data-view':'study-list'},
+    h('div',{class:'top'},h('button',{class:'x','aria-label':'もどる',onclick:showHome},'‹'),h('div',{class:'ttl'},'今日の学習一覧')),
+    hasPending?h('div',{class:'hint'},'学習を中断しても進み具合は保存されます。章を選ぶと内容を見直せます。ページを閉じた場合は、中断中の章から再開します。'):
+      h('div',{class:'hint'},record?'今日学習した章を見直せます。':'今日の学習予定です。'),
+    rows.length?h('div',null,rows):h('div',{class:'note'},'今日の学習はありません。'),
+    h('div',{class:'grow'}),actions));
+}
 function showHome(){
   const today=ymd(),rec=S.sessions.filter(s=>s.date===today).pop(),per=S.settings.perDay;
   const newW=pickNew(per),due=dueWords(),st=streak(),d=new Date();
   const seg=[10,15].map(n=>h('button',{class:'seg'+(per===n?' on':''),'aria-pressed':String(per===n),onclick:()=>{S.settings.perDay=n;save();showHome();}},n+'語'));
   let main;
-  if(rec){
+  if(session||pendingSession){
+    const active=session||pendingSession;
+    main=[h('div',{class:'card'},h('div',{class:'big'},'学習を中断しています'),
+      h('div',{class:'meta soft'},active.steps[active.currentStepIndex]?stepLabel(active.steps[active.currentStepIndex]):'今日の結果'),
+      h('div',{class:'meta soft'},'ここまでの進み具合を保存しました')),
+      h('button',{class:'btn',onclick:resumeStudy},'つづきを学習'),
+      h('button',{class:'btn sub',onclick:showTodayStudyList},'今日の学習一覧を見る')];
+  }else if(rec){
     const replay=replayWords(rec,today);
     main=[h('div',{class:'card'},h('div',{class:'big'},'今日は完了ずみ!'),h('div',{class:'meta soft'},'学習時間 '+fmtDurJp(rec.totalMs))),
       h('button',{class:'btn',onclick:()=>showDone(rec)},'完了画面を見る'),
+      h('button',{class:'btn sub',onclick:showTodayStudyList},'今日の学習一覧を見る'),
       replay.newWords.length||replay.reviewWords.length?h('button',{class:'btn sub',onclick:()=>start(replay.newWords,replay.reviewWords,true)},
         replay.newWords.length?'今日の学習をもう一度':'今日の復習をもう一度'):h('div',{class:'note'},'見直せる単語がありません')];
   }
@@ -881,7 +967,8 @@ function showHome(){
   else main=[h('div',{class:'card'},h('div',{class:'lbl'},'1日に覚える新しい単語'),h('div',{class:'seg-row'},seg),
                 h('div',{class:'meta'},'今日:新しい単語 '+newW.length+'語'+(due.length?' + 復習 '+due.length+'語':'')),
                 h('div',{class:'meta soft'},'目安 約'+Math.max(1,Math.round(newW.length*1.4+due.length*0.4))+'分')),
-             h('button',{class:'btn',onclick:()=>start(newW,due)},'はじめる')];
+             h('button',{class:'btn',onclick:()=>start(newW,due)},'はじめる'),
+             h('button',{class:'btn sub',onclick:showTodayStudyList},'今日の学習一覧を見る')];
   mount(h('div',{class:'screen'},
     h('div',null,h('div',{class:'app-title'},h('span',{class:'mark'},'えいたん')),
       h('div',{class:'meta soft'},(d.getMonth()+1)+'/'+d.getDate()+'('+WD[d.getDay()]+')'+(st>0?'　連続 '+st+'日':''))),
@@ -1113,7 +1200,7 @@ function importFrom(text){
   const r=validateBackup(o); if(!r.ok) return toast(r.error);
   const n=r.state.sessions.length,m=Object.keys(r.state.words).length;
   if(!confirm('学習 '+n+'回分、単語 '+m+'語の記録を読み込みます。\n今のデータは上書きされます。よろしいですか?')) return;
-  S=r.state;save();toast('読み込みました');showHome();
+  S=r.state;save();clearPending();toast('読み込みました');showHome();
 }
 function showSettings(){
   const tel=h('input',{class:'tel',type:'tel',inputmode:'tel',placeholder:'例: 09012345678',value:S.settings.parentPhone,'aria-label':'送り先の電話番号'});
