@@ -1,0 +1,14 @@
+{
+  "words": [
+    {"id":"borrow","word":"borrow","meaning":"借りる","ex1":"Can I borrow your pen?","tr1":"あなたのペンを借りてもいいですか。","ex2":"I often borrow books from the library.","tr2":"私はよく図書館で本を借ります。"},
+    {"id":"lend","word":"lend","meaning":"貸す","ex1":"Can you lend me your bike?","tr1":"自転車を貸してくれますか。","ex2":"Please lend me your eraser.","tr2":"消しゴムを貸してください。"},
+    {"id":"library","word":"library","meaning":"図書館","ex1":"I go to the library on Sundays.","tr1":"私は日曜日に図書館へ行きます。","ex2":"There are many books in the library.","tr2":"図書館にはたくさんの本があります。"},
+    {"id":"practice","word":"practice","meaning":"練習する","ex1":"I practice the piano every day.","tr1":"私は毎日ピアノを練習します。","ex2":"We practice soccer after school.","tr2":"私たちは放課後にサッカーを練習します。"},
+    {"id":"important","word":"important","meaning":"大切な","ex1":"Your family is important.","tr1":"あなたの家族は大切です。","ex2":"This is an important day for me.","tr2":"これは私にとって大切な日です。"},
+    {"id":"different","word":"different","meaning":"違う","ex1":"My bag is different from yours.","tr1":"私のかばんはあなたのとは違います。","ex2":"We have different ideas.","tr2":"私たちは違う考えを持っています。"},
+    {"id":"favorite","word":"favorite","meaning":"お気に入りの","ex1":"Blue is my favorite color.","tr1":"青は私のお気に入りの色です。","ex2":"What is your favorite subject?","tr2":"あなたのお気に入りの教科は何ですか。"},
+    {"id":"beautiful","word":"beautiful","meaning":"美しい","ex1":"The flowers are beautiful.","tr1":"その花は美しいです。","ex2":"What a beautiful day!","tr2":"なんて美しい日でしょう!"},
+    {"id":"delicious","word":"delicious","meaning":"おいしい","ex1":"This cake is delicious.","tr1":"このケーキはおいしいです。","ex2":"The curry was delicious.","tr2":"そのカレーはおいしかったです。"},
+    {"id":"weather","word":"weather","meaning":"天気","ex1":"How is the weather today?","tr1":"今日の天気はどうですか。","ex2":"The weather is nice today.","tr2":"今日は天気がいいです。"}
+  ]
+}

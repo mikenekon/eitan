@@ -1,0 +1,14 @@
+{
+  "words": [
+    {"id":"window","word":"window","meaning":"窓","ex1":"Please open the window.","tr1":"窓を開けてください。","ex2":"A cat is sitting by the window.","tr2":"ネコが窓のそばにすわっています。"},
+    {"id":"morning","word":"morning","meaning":"朝","ex1":"I get up at six in the morning.","tr1":"私は朝6時に起きます。","ex2":"I drink milk every morning.","tr2":"私は毎朝牛乳を飲みます。"},
+    {"id":"homework","word":"homework","meaning":"宿題","ex1":"I do my homework after dinner.","tr1":"私は夕食のあとに宿題をします。","ex2":"Did you finish your homework?","tr2":"あなたは宿題を終えましたか。"},
+    {"id":"teacher","word":"teacher","meaning":"先生","ex1":"My English teacher is kind.","tr1":"私の英語の先生は親切です。","ex2":"The teacher is in the classroom.","tr2":"先生は教室にいます。"},
+    {"id":"friend","word":"friend","meaning":"友達","ex1":"He is my best friend.","tr1":"彼は私の親友です。","ex2":"I play games with my friend.","tr2":"私は友達とゲームをします。"},
+    {"id":"often","word":"often","meaning":"よく、しばしば","ex1":"I often read comic books.","tr1":"私はよく漫画を読みます。","ex2":"She often walks to school.","tr2":"彼女はよく歩いて学校に行きます。"},
+    {"id":"always","word":"always","meaning":"いつも","ex1":"He is always kind to me.","tr1":"彼はいつも私に親切です。","ex2":"I always brush my teeth before bed.","tr2":"私はいつも寝る前に歯をみがきます。"},
+    {"id":"sometimes","word":"sometimes","meaning":"ときどき","ex1":"I sometimes watch TV after dinner.","tr1":"私はときどき夕食のあとにテレビを見ます。","ex2":"We sometimes eat lunch outside.","tr2":"私たちはときどき外で昼食を食べます。"},
+    {"id":"swim","word":"swim","meaning":"泳ぐ","ex1":"I can swim fast.","tr1":"私は速く泳げます。","ex2":"Let's swim in the sea.","tr2":"海で泳ごう。"},
+    {"id":"wash","word":"wash","meaning":"洗う","ex1":"Please wash your hands.","tr1":"手を洗ってください。","ex2":"I wash the dishes after dinner.","tr2":"私は夕食のあとにお皿を洗います。"}
+  ]
+}

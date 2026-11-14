@@ -42,7 +42,8 @@ function fmtDurJp(ms){const s=Math.round(ms/1000),m=Math.floor(s/60);return m>0?
 const isIOS=()=>/iP(hone|ad|od)/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
 
 const WORDS=window.EITAN_WORDS;
-const BYWORD=Object.fromEntries(WORDS.map(w=>[w.word,w]));
+const WORD_BOOKS=window.EITAN_BOOKS;
+const BYWORD=Object.fromEntries(WORDS.map(w=>[w.id,w]));
 
 /* ================= 保存データ ================= */
 function defaultState(){return {app:'eitan',v:APP_V,settings:{perDay:10,parentPhone:'',practiceWaitSec:1.5},words:{},sessions:[]};}
@@ -69,7 +70,7 @@ function validateBackup(o){
   st.settings.practiceWaitSec=[1,1.5,2].includes(Number(se.practiceWaitSec))?Number(se.practiceWaitSec):1.5;
   if(o.words!==undefined&&(o.words===null||typeof o.words!=='object'||Array.isArray(o.words))) return {ok:false,error:'単語の記録がこわれています'};
   for(const [k,w] of Object.entries(o.words||{})){
-    if(!/^[A-Za-z][A-Za-z' -]{0,39}$/.test(k)||!w||typeof w!=='object') continue;
+    if(!/^(?:[A-Za-z][A-Za-z' -]{0,39}|[A-Za-z][A-Za-z0-9-]{0,79})$/.test(k)||!w||typeof w!=='object') continue;
     const box=Math.floor(Number(w.box)), due=String(w.due||'');
     if(!(box>=1&&box<=5)||!DATE_RE.test(due)) continue;
     st.words[k]={box,due,learnedOn:DATE_RE.test(String(w.learnedOn))?w.learnedOn:due};
@@ -225,7 +226,7 @@ function streak(){
   const days=new Set(S.sessions.map(s=>s.date)); let d=ymd(); if(!days.has(d)) d=addDays(d,-1);
   let n=0; while(days.has(d)){n++; d=addDays(d,-1);} return n;
 }
-function pickNew(n){return WORDS.filter(w=>!S.words[w.word]).slice(0,n).map(w=>w.word);}
+function pickNew(n){return WORDS.filter(w=>!S.words[w.id]).slice(0,n).map(w=>w.id);}
 function dueWords(){
   const t=ymd();
   return Object.entries(S.words).filter(([k,v])=>v.due<=t&&BYWORD[k]).sort((a,b)=>a[1].due<b[1].due?-1:a[1].due>b[1].due?1:0)
@@ -234,6 +235,8 @@ function dueWords(){
 
 /* ================= 表示の道具 ================= */
 let activeTab='home';
+let cardModeRun=null;
+const cardDisplayOptions={hideEnglish:false,hideJapanese:false,showExamples:true};
 function mount(node){$('#app').replaceChildren(node);renderBottomNav();window.scrollTo(0,0);}
 function renderBottomNav(){
   let nav=$('#bottom-nav');
@@ -241,7 +244,7 @@ function renderBottomNav(){
     nav=h('nav',{id:'bottom-nav','aria-label':'メインメニュー'});
     document.body.append(nav);
   }
-  const tabs=[['home','🏠','ホーム'],['study','📚','学習'],['history','📈','きろく'],['settings','⚙️','設定']];
+  const tabs=[['home','🏠','ホーム'],['study','📚','学習'],['cards','🗂️','単語帳'],['history','📈','きろく'],['settings','⚙️','設定']];
   nav.replaceChildren(...tabs.map(([key,icon,label])=>h('button',{
     class:'nav-tab'+(activeTab===key?' active':''),type:'button',
     'aria-label':label,'aria-current':activeTab===key?'page':null,
@@ -266,6 +269,7 @@ function navigateTab(tab){
   if(tab==='study'){showTodayStudyList();return;}
   pauseActiveSessionForNavigation();
   if(tab==='home') showHome();
+  else if(tab==='cards') showCardBooks();
   else if(tab==='history') showHistory();
   else showSettings();
 }
@@ -670,7 +674,7 @@ function readCard(word,k,n,total,state,canGoBack){
 }
 function distractors(word,pool){
   const others=shuffle(pool.filter(w=>w!==word));
-  const extra=shuffle(WORDS.map(x=>x.word).filter(w=>w!==word&&!others.includes(w)));
+  const extra=shuffle(WORDS.map(x=>x.id).filter(w=>w!==word&&!others.includes(w)));
   return others.concat(extra).slice(0,3);
 }
 function clozeCard(word,pool,n,total,state,canGoBack){
@@ -1121,7 +1125,7 @@ function showDone(rec){
 /* ================= ホーム・きろく・設定 ================= */
 function topBack(title,onBack=showHome){return h('div',{class:'top'},h('button',{class:'x','aria-label':'もどる',onclick:onBack},'‹'),h('div',{class:'ttl'},title));}
 function replayWords(rec,today){
-  const newWords=rec.newWords.length?rec.newWords:WORDS.filter(w=>S.words[w.word]&&S.words[w.word].learnedOn===today).map(w=>w.word);
+  const newWords=rec.newWords.length?rec.newWords:WORDS.filter(w=>S.words[w.id]&&S.words[w.id].learnedOn===today).map(w=>w.id);
   return {newWords,reviewWords:rec.reviewWords};
 }
 function studySteps(newWords,reviewWords){
@@ -1135,21 +1139,112 @@ function resumeStudy(){
   }
   if(pendingSession) start(pendingSession.newWords,pendingSession.reviewWords,pendingSession.repeat,pendingSession);
 }
-function wordCard(word){
+function wordCard(word,options={}){
   const d=BYWORD[word];
   if(!d)return null;
-  return h('div',{class:'card word-card'},
-    h('div',{class:'en'},word),h('div',{class:'jp'},d.meaning),
-    h('div',{class:'note'},'例文'),
-    h('div',{class:'sent'},hl(d.ex1,word)),h('div',{class:'tr'},d.tr1),
-    h('div',{class:'sent'},hl(d.ex2,word)),h('div',{class:'tr'},d.tr2));
+  const content=[];
+  if(!options.hideEnglish)content.push(h('div',{class:'en'},d.word));
+  if(!options.hideJapanese)content.push(h('div',{class:'jp'},d.meaning));
+  if(options.audio){
+    content.push(h('div',{class:'row'},
+      h('button',{class:'btn sub small',onclick:()=>TTS.speak(d.word)},'🔊 単語')));
+  }
+  if(options.showExamples!==false){
+    for(let i=1;i<=2;i++){
+      content.push(h('div',{class:'word-card-example'},
+        !options.hideEnglish?h('div',{class:'sent'},hl(d['ex'+i],d.word)):null,
+        !options.hideJapanese?h('div',{class:'tr'},d['tr'+i]):null,
+        options.audio?h('div',{class:'row'},
+          h('button',{class:'btn sub small',onclick:()=>TTS.speak(d['ex'+i],0.8)},'🔊 例文'+i)):null));
+    }
+  }
+  return h('div',{class:'card word-card'},content);
 }
 function showTodayWordCards(words){
   setActiveTab('study');
-  const cards=words.map(wordCard).filter(Boolean);
+  const cards=words.map(word=>wordCard(word)).filter(Boolean);
   mount(h('div',{class:'screen','data-view':'word-cards'},
     topBack('今日のカード一覧',showTodayStudyList),
     cards.length?h('div',null,cards):h('div',{class:'note'},'カードがありません')));
+}
+function cardOptionControls(onChange){
+  const checkbox=(key,label)=>h('label',{class:'chk'},h('input',{type:'checkbox',checked:cardDisplayOptions[key],
+    onchange:event=>{cardDisplayOptions[key]=event.target.checked;onChange();}}),label);
+  return h('div',{class:'card-options'},
+    checkbox('hideEnglish','英語を隠す'),checkbox('hideJapanese','日本語を隠す'),
+    checkbox('showExamples','例文を表示'));
+}
+function showCardBooks(){
+  setActiveTab('cards');cardModeRun=null;
+  const rows=WORD_BOOKS.map(book=>h('div',{class:'item'},
+    h('b',null,book.title),h('small',null,book.words.length+'語'),
+    h('button',{class:'btn sub small',onclick:()=>showCardBook(book.id)},'この単語帳を選ぶ')));
+  mount(h('div',{class:'screen'},topBack('単語カード',showHome),
+    h('div',{class:'hint'},'単語帳を選んでカードをめくろう'),
+    rows.length?h('div',null,rows):h('div',{class:'note'},'単語帳がありません')));
+}
+function showCardBook(bookId){
+  setActiveTab('cards');
+  const book=WORD_BOOKS.find(item=>item.id===bookId);
+  if(!book){showCardBooks();return;}
+  const ids=book.words.map(item=>item.id),chunks=[];
+  for(let start=0;start<ids.length;start+=20){
+    const chunk=ids.slice(start,start+20),first=start+1,last=start+chunk.length;
+    chunks.push(h('div',{class:'item'},
+      h('b',null,first+'〜'+last+'語'),
+      h('div',{class:'row2'},
+        h('button',{class:'btn sub small',onclick:()=>startWordCardRun(book.id,chunk,book.title)},'めくる'),
+        h('button',{class:'btn sub small',onclick:()=>showWordCardList(book.id,chunk,book.title+' '+first+'〜'+last+'語')},'全部表示'))));
+  }
+  mount(h('div',{class:'screen'},topBack(book.title,showCardBooks),
+    h('div',{class:'meta'},ids.length+'語'),
+    h('div',{class:'row2'},
+      h('button',{class:'btn sub',onclick:()=>startWordCardRun(book.id,ids,book.title)},'通しでめくる'),
+      h('button',{class:'btn sub',onclick:()=>startWordCardRun(book.id,ids,book.title,true)},'シャッフル')),
+    h('button',{class:'btn sub',onclick:()=>showWordCardList(book.id,ids,book.title)},'単語帳を全部表示'),
+    h('div',{class:'sec'},h('h2',null,'20語ずつ'),
+      chunks.length?h('div',null,chunks):h('div',{class:'note'},'単語がありません'))));
+}
+function startWordCardRun(bookId,sourceWords,title,shuffled=false){
+  if(!sourceWords.length){toast('単語がありません');return;}
+  const words=sourceWords.slice();
+  cardModeRun={bookId,sourceWords:words,words:shuffled?shuffle(words):words.slice(),title,index:0,shuffled};
+  showWordCard();
+}
+function showWordCard(){
+  if(!cardModeRun)return;
+  setActiveTab('cards');
+  const run=cardModeRun,word=run.words[run.index],options={...cardDisplayOptions,audio:true};
+  const toggleShuffle=()=>{
+    const current=run.words[run.index];
+    run.shuffled=!run.shuffled;
+    run.words=run.shuffled?shuffle(run.sourceWords):run.sourceWords.slice();
+    run.index=Math.max(0,run.words.indexOf(current));
+    showWordCard();
+  };
+  mount(h('div',{class:'screen'},
+    h('div',{class:'top'},h('button',{class:'x','aria-label':'単語帳へ戻る',onclick:()=>showCardBook(run.bookId)},'‹'),
+      h('div',{class:'ttl'},run.title),h('div',{class:'pos'},(run.index+1)+' / '+run.words.length)),
+    cardOptionControls(showWordCard),wordCard(word,options),
+    h('div',{class:'row2'},
+      h('button',{class:'btn sub',onclick:toggleShuffle},run.shuffled?'順番に戻す':'シャッフル'),
+      h('button',{class:'btn sub',onclick:()=>showWordCardList(run.bookId,run.sourceWords,run.title)},'全部表示')),
+    h('div',{class:'grow'}),
+    h('div',{class:'row2'},
+      h('button',{class:'btn sub',disabled:run.index===0,onclick:()=>{run.index--;showWordCard();}},'‹ 前へ'),
+      h('button',{class:'btn',disabled:run.index===run.words.length-1,onclick:()=>{run.index++;showWordCard();}},'次へ'))));
+}
+function showWordCardList(bookId,words,title){
+  setActiveTab('cards');cardModeRun=null;
+  const book=WORD_BOOKS.find(item=>item.id===bookId);
+  if(!book){showCardBooks();return;}
+  mount(h('div',{class:'screen'},topBack(title,()=>showCardBook(bookId)),
+    h('div',{class:'meta'},words.length+'語'),
+    h('div',{class:'row2'},
+      h('button',{class:'btn sub',onclick:()=>startWordCardRun(bookId,words,title)},'順番にめくる'),
+      h('button',{class:'btn sub',onclick:()=>startWordCardRun(bookId,words,title,true)},'シャッフル')),
+    cardOptionControls(()=>showWordCardList(bookId,words,title)),
+    h('div',null,words.map(word=>wordCard(word,{...cardDisplayOptions,audio:true})))));
 }
 function showTodayStudyList(){
   setActiveTab('study');
@@ -1271,7 +1366,7 @@ function wordHistoryEntries(range){
       }
     }
   }
-  const order=new Map(WORDS.map((item,index)=>[item.word,index]));
+  const order=new Map(WORDS.map((item,index)=>[item.id,index]));
   return Array.from(entries.values()).sort((a,b)=>{
     if(range==='all'){
       const aDate=S.words[a.word]&&S.words[a.word].learnedOn||'',bDate=S.words[b.word]&&S.words[b.word].learnedOn||'';
@@ -1292,7 +1387,7 @@ function showWordHistory(range='today'){
     if(!labels.length) labels.push('学習済み');
     const learned=S.words[entry.word]&&S.words[entry.word].learnedOn;
     const dates=Array.from(entry.dates).sort(),date=range==='all'?(learned||dates[0]):dates[dates.length-1];
-    return h('div',{class:'item'},h('b',null,entry.word),h('small',null,BYWORD[entry.word].meaning),
+    return h('div',{class:'item'},h('b',null,BYWORD[entry.word].word),h('small',null,BYWORD[entry.word].meaning),
       h('small',null,labels.join('・')+(date?' / '+(range==='all'?'覚えた日 ':'学習日 ')+date:'')));
   });
   const detail=range==='week'?'月曜から今日まで ('+start+'〜'+today+')':range==='today'?today:'学習済みの単語';
@@ -1332,7 +1427,7 @@ function showLightReviewCard(){
     h('div',{class:'strip'},run.cards.map((item,index)=>h('i',{class:item.rating?'done':index===run.index?'now':''}))),
     h('div',{class:'note'},'日本語を見て英語を思い出してから、答えを見てね'),
     h('div',{class:'card'},h('div',{class:'jp'},d.meaning)),
-    card.revealed?h('div',{class:'card'},h('div',{class:'en'},h('span',{class:'mark'},word))):null,
+    card.revealed?h('div',{class:'card'},h('div',{class:'en'},h('span',{class:'mark'},d.word))):null,
     card.revealed?h('div',{class:'rate'},choices):h('button',{class:'btn',onclick:()=>{card.revealed=true;showLightReviewCard();}},'答えを見る'),
     h('div',{class:'grow'}),h('div',{class:'row2'},previous,next)));
 }
@@ -1361,7 +1456,7 @@ function newWordsForDate(date){
   for(const [word,state] of Object.entries(S.words)){
     if(state.learnedOn===date) words.add(word);
   }
-  return WORDS.map(item=>item.word).filter(word=>words.has(word));
+  return WORDS.map(item=>item.id).filter(word=>words.has(word));
 }
 function testableDates(){
   const dates=new Set(S.sessions.map(record=>record.date));

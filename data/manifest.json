@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "books": [
+    {
+      "id": "basic-1",
+      "title": "基本単語 1",
+      "file": "data/basic-1.json"
+    },
+    {
+      "id": "basic-2",
+      "title": "基本単語 2",
+      "file": "data/basic-2.json"
+    }
+  ]
+}
