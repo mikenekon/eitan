@@ -1179,8 +1179,7 @@ function showHome(){
   mount(h('div',{class:'screen'},
     h('div',null,h('div',{class:'app-title'},h('span',{class:'mark'},'えいたん')),
       h('div',{class:'meta soft'},(d.getMonth()+1)+'/'+d.getDate()+'('+WD[d.getDay()]+')'+(st>0?'　連続 '+st+'日':''))),
-    main,h('div',{class:'grow'}),
-    h('div',{class:'row2'},h('button',{class:'btn sub',onclick:showHistory},'きろく'),h('button',{class:'btn sub',onclick:showSettings},'設定'))));
+    main,h('div',{class:'grow'})));
 }
 function showHistory(){
   setActiveTab('history');
