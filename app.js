@@ -358,7 +358,7 @@ function flashCard(stepKey,word,pos,total,mode,state,canGoBack){
       h('button',{class:'btn sub','aria-pressed':'false',onclick:()=>choose('maybe')},'△ あやしい'),
       h('button',{class:'btn sub','aria-pressed':'false',onclick:()=>choose('ng')},'× わからない'));
     const sheet=h('button',{class:'sheet'},'タップして答えを見る');
-    const skipGate=stepKey==='check2';
+    const skipGate=stepKey==='check1' || stepKey==='check2';
     const gate=makeGate(()=>{state.gateDone=true;rate.style.visibility='visible';previous.disabled=!canGoBack;},skipGate);
     gate.el.style.display='none';
     let playId=0;
@@ -549,9 +549,16 @@ function orderCard(word,n,total,state,canGoBack){
     const next=h('button',{class:'btn',disabled:!state.solved,onclick:()=>{TTS.stop();resolve(wasSolved?'next':'done');}},'つぎへ');
     const clear=h('button',{class:'btn sub small',onclick:()=>{if(state.solved)return;state.picked=correctOrder.slice(0,state.revealedCount||0);state.feedback=state.revealedCount?'reveal':'';render();}},'やり直す');
     function render(){
-      ans.replaceChildren(...state.picked.map((o,i)=>h('button',{class:'tile'+(i<(state.revealedCount||0)?' fixed':''),disabled:i<(state.revealedCount||0),
-        onclick:()=>{if(state.solved||i<(state.revealedCount||0))return;state.picked.splice(state.picked.indexOf(o),1);render();}},o.t)));
-      pool.replaceChildren(...order.filter(o=>!state.picked.includes(o)).map(o=>h('button',{class:'tile',onclick:()=>{if(state.solved)return;state.picked.push(o);render();check();}},o.t)));
+      const pickedSet=new Set(state.picked.map(o=>o.i));
+      ans.replaceChildren(...Array.from({length: order.length}, (_, i)=>{
+        const selected=state.picked[i];
+        if(selected){
+          return h('button',{class:'tile'+(i<(state.revealedCount||0)?' fixed':''),disabled:state.solved||i<(state.revealedCount||0),
+            onclick:()=>{if(state.solved||i<(state.revealedCount||0))return;state.picked.splice(i,1);render();}},selected.t);
+        }
+        return h('div',{class:'tile empty'},'');
+      }));
+      pool.replaceChildren(...order.filter(o=>!pickedSet.has(o.i)).map(o=>h('button',{class:'tile',disabled:state.solved,onclick:()=>{if(state.solved)return;state.picked.push(o);render();check();}},o.t)));
     }
     function check(){
       if(state.picked.length!==order.length) return;

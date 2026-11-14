@@ -77,6 +77,8 @@ button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px soli
 .tiles{display:flex;flex-wrap:wrap;gap:8px}
 .tile{min-height:46px;padding:6px 14px;border:2px solid var(--ink);border-radius:10px;background:#fff;color:var(--ink);
   font-family:var(--en);font-weight:700;font-size:20px;cursor:pointer}
+.tile:disabled{background:#E7EDF1;color:#7A889A;border-color:#B8C4CF;cursor:default}
+.tile.empty{background:rgba(255,255,255,.35);border-style:dashed;border-color:var(--line);color:transparent;cursor:default;min-width:70px}
 .tile.fixed{border-color:var(--ok);background:var(--okbg);color:var(--ok);cursor:default}
 input.spell{width:100%;font-family:var(--en);font-size:30px;font-weight:700;padding:12px;text-align:center;
   border:2px solid var(--ink);border-radius:12px;background:#fff;color:var(--ink)}
