@@ -609,20 +609,12 @@ function spellCard(word,n,total){
     const input=h('input',{class:'spell',type:'text',autocapitalize:'none',autocomplete:'off',autocorrect:'off',spellcheck:'false',enterkeyhint:'done','aria-label':'つづり'});
     const fb=h('div',{class:'fb'});
     const btn=h('button',{class:'btn',onclick:submit},'答え合わせ');
-    const knownBtn=h('button',{class:'btn sub',onclick:markKnown},'知っている');
+    const skipBtn=h('button',{class:'btn sub',onclick:()=>{TTS.stop();resolve('skip');}},'スキップ');
     input.addEventListener('keydown',e=>{if(e.key==='Enter')submit();});
     function finalize(correct,kind='ok'){
       solved=true;firstCorrect=correct;fb.className=kind==='ok'?'fb ok':'fb bad';fb.textContent=correct?
         'せいかい!':'正しいつづりは「'+d.word+'」。次へ進めます';
-      input.disabled=true;btn.textContent='つぎへ';knownBtn.disabled=true;TTS.speak(d.word);
-    }
-    function markKnown(){
-      if(solved) return;
-      attempted=true;firstCorrect=true;
-      const responseTimes=session.stageResponseMs.spell||(session.stageResponseMs.spell={});
-      if(!Object.prototype.hasOwnProperty.call(responseTimes,word)) responseTimes[word]=elapsedStepTime('spell',responseStart);
-      addAcc(true);
-      finalize(true,'ok');
+      input.disabled=true;btn.textContent='つぎへ';skipBtn.disabled=true;TTS.speak(d.word);
     }
     function submit(){
       if(solved){TTS.stop();resolve(firstCorrect?'ok':'ng');return;}
@@ -649,7 +641,7 @@ function spellCard(word,n,total){
       h('div',{class:'note'},'つづりを書こう'),
       h('div',{class:'card'},h('div',{class:'jp'},d.meaning)),
       h('div',{class:'row'},h('button',{class:'btn sub small',onclick:()=>TTS.speak(d.word)},'🔊 発音を聞く')),
-      input,fb,h('div',{class:'row'},knownBtn),h('div',{class:'grow'}),btn));
+      input,fb,h('div',{class:'row'},skipBtn),h('div',{class:'grow'}),btn));
     setTimeout(()=>input.focus(),60);
   });
 }
