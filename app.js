@@ -2,6 +2,7 @@
 /* ================= 基本 ================= */
 const APP_V=1, KEY='eitan.v1', IDLE_MS=60000;
 const PENDING_V=3;
+const LEARN_ROUNDS=3;
 const STEP_ORDER=['review','todayWords','learn','check1','useRead','useCloze','useOrder','check2','spell'];
 const STEP_NAMES={review:'復習',todayWords:'今日の単語一覧',learn:'覚える',check1:'確認①',useRead:'例文を読もう',useCloze:'単語を選ぼう',useOrder:'英文をつくろう',check2:'確認②',spell:'スペル'};
 const STEP_NUMBERS={todayWords:'1',learn:'2',check1:'3',useRead:'4.1',useCloze:'4.2',useOrder:'4.3',check2:'5',spell:'6'};
@@ -47,14 +48,16 @@ const BYWORD=Object.fromEntries(WORDS.map(w=>[w.word,w]));
 function defaultState(){return {app:'eitan',v:APP_V,settings:{perDay:10,parentPhone:'',practiceWaitSec:1.5},words:{},sessions:[]};}
 function cleanSession(s){
   const sm={}; for(const k of STEP_ORDER) sm[k]=num(s.stepMs&&s.stepMs[k]);
+  const metricVersion=s.metricVersion===2?2:s.metricVersion===1?1:0;
   const cleanWords=a=>Array.isArray(a)?Array.from(new Set(a.filter(w=>typeof w==='string'&&Object.prototype.hasOwnProperty.call(BYWORD,w)))).slice(0,WORDS.length):[];
   return {id:String(s.id||'').slice(0,40),date:s.date,finishedAt:num(s.finishedAt),newN:num(s.newN),reviewN:num(s.reviewN),
     stepMs:sm,totalMs:num(s.totalMs),correct:num(s.correct),total:num(s.total),
     legacyUseMs:num(s.legacyUseMs||s.stepMs&&s.stepMs.use),mode:s.mode==='repeat'?'repeat':'normal',
     newWords:cleanWords(s.newWords),reviewWords:cleanWords(s.reviewWords),
-    metricVersion:s.metricVersion===1?1:0,avgAnswerMs:num(s.avgAnswerMs),
-    responseTimeScore:s.metricVersion===1&&s.responseTimeScore!=null?Math.min(100,num(s.responseTimeScore)):null,
-    effortScore:s.metricVersion===1&&s.effortScore!=null?Math.min(100,num(s.effortScore)):null};
+    skippedRounds:Math.floor(num(s.skippedRounds)),skippedWords:Math.floor(num(s.skippedWords)),
+    metricVersion,avgAnswerMs:num(s.avgAnswerMs),
+    responseTimeScore:metricVersion>=1&&s.responseTimeScore!=null?Math.min(100,num(s.responseTimeScore)):null,
+    effortScore:metricVersion>=1&&s.effortScore!=null?Math.min(100,num(s.effortScore)):null};
 }
 function validateBackup(o){
   if(!o||typeof o!=='object'||Array.isArray(o)) return {ok:false,error:'データの形式が正しくありません'};
@@ -185,7 +188,8 @@ function cleanPending(raw){
     correct,total,stageResults,stageResponseMs,timeMs:ms,
     learnCards,learnIndex:Math.min(Math.floor(num(raw.learnIndex)),(learnCards||[]).length),
     cardRun,useTasks:useTasksRaw?useTasks:null,useIndex,
-    spellWords,spellIndex:Math.min(Math.floor(num(raw.spellIndex)),spellWords.length),spellResults,spellFirst};
+    spellWords,spellIndex:Math.min(Math.floor(num(raw.spellIndex)),spellWords.length),spellResults,spellFirst,
+    skippedRounds:Math.floor(num(raw.skippedRounds)),skippedWords:Math.floor(num(raw.skippedWords))};
 }
 function loadPending(){
   try{
@@ -206,7 +210,8 @@ function savePending(){
     stageResults:session.stageResults,stageResponseMs:session.stageResponseMs,timeMs:Time.ms,
     learnCards:session.learnCards,learnIndex:session.learnIndex,cardRun:session.cardRun,
     useTasks:session.useTasks,useIndex:session.useIndex,
-    spellWords:session.spellWords,spellIndex:session.spellIndex,spellResults:session.spellResults,spellFirst:session.spellFirst};
+    spellWords:session.spellWords,spellIndex:session.spellIndex,spellResults:session.spellResults,spellFirst:session.spellFirst,
+    skippedRounds:session.skippedRounds,skippedWords:session.skippedWords};
   try{localStorage.setItem(PENDING_KEY,JSON.stringify(data));pendingSession=cleanPending(data);}
   catch(e){toast('学習の進み具合を保存できませんでした');}
 }
@@ -405,7 +410,7 @@ function stepTodayWords(){
       return h('div',{class:'item'},h('b',null,d.word),h('small',null,d.meaning));
     });
     mount(chrome('todayWords','', '',
-      h('div',{class:'hint'},'今日学習する単語を先に見ておこう。知っている単語は、覚える画面で周をスキップできます。'),
+      h('div',{class:'hint'},'今日学習する単語を先に見ておこう。知っている単語は、周の区切りで次の周をスキップできます。'),
       h('div',null,list),h('div',{class:'grow'}),
       h('button',{class:'btn',onclick:()=>resolve('next')},'覚えるへ進む')));
   });
@@ -414,7 +419,7 @@ function stepTodayWords(){
 /* ② 覚える:単語+意味を、音を聞いて声に出す ×3周 */
 async function stepLearn(){
   Time.setStep('learn');
-  const rounds=3;
+  const rounds=LEARN_ROUNDS;
   if(!Array.isArray(session.learnCards)||session.learnCards.length!==session.newWords.length*rounds||
     session.learnCards.some(card=>!session.newWords.includes(card.word))){
     session.learnCards=[];
@@ -431,30 +436,30 @@ async function stepLearn(){
     const card=cards[index];
     const action=await learnCard(card.word,card.position,card.roundTotal,card.round,rounds,index>0);
     if(action==='prev'){index=Math.max(0,index-1);session.learnIndex=index;savePending();continue;}
-    if(action==='skipRound'){
-      while(index<total&&cards[index].round===card.round) index++;
-      session.learnIndex=index;
-      savePending();
-      if(card.round<rounds) await learnRoundEnd(card.round,true,rounds);
-      continue;
-    }
     index++;
     session.learnIndex=index;
     savePending();
     if(card.round<rounds&&(!cards[index]||cards[index].round!==card.round)){
-      await learnRoundEnd(card.round,false,rounds);
+      if(await learnRoundEnd(card.round,rounds)){
+        const skippedRound=card.round+1;
+        while(index<total&&cards[index].round===skippedRound) index++;
+        session.learnIndex=index;
+        session.skippedRounds++;
+        savePending();
+      }
     }
   }
   session.learnIndex=total;savePending();
 }
-function learnRoundEnd(round,skipped,rounds){
+function learnRoundEnd(round,rounds){
   return waitUI(resolve=>{
-    const next=h('button',{class:'btn',onclick:()=>resolve()},'次の周へ進む');
+    const next=h('button',{class:'btn',onclick:()=>resolve(false)},'次の周へ進む');
+    const skip=h('button',{class:'btn sub',onclick:()=>resolve(true)},'次の周をスキップする');
     mount(chrome('learn','', '',
       h('div',{class:'card'},
-        h('div',{class:'big'},round+'周目'+(skipped?'をスキップしました':'完了!')),
+        h('div',{class:'big'},round+'周目完了!'),
         h('div',{class:'meta'},'次は'+(round+1)+'周目です')),
-      h('div',{class:'grow'}),next));
+      h('div',{class:'grow'}),h('div',{class:'row2'},skip,next)));
   });
 }
 function learnCard(word,n,total,r,rounds,canGoBack){
@@ -464,7 +469,6 @@ function learnCard(word,n,total,r,rounds,canGoBack){
     const finish=action=>{if(finished)return;finished=true;TTS.stop();resolve(action);};
     const previous=h('button',{class:'btn sub',disabled:!canGoBack,onclick:()=>finish('prev')},'‹ 前へ');
     const next=h('button',{class:'btn',onclick:()=>finish('next')},'つぎへ');
-    const skip=h('button',{class:'btn sub small',onclick:()=>finish('skipRound')},'この周をスキップ');
     const play=async()=>{
       const id=++playId;TTS.stop();
       await TTS.speak(d.word);
@@ -475,8 +479,7 @@ function learnCard(word,n,total,r,rounds,canGoBack){
       h('div',{class:'card'},h('div',{class:'en'},h('span',{class:'mark'},d.word)),h('div',{class:'jp'},d.meaning)),
       h('div',{class:'row'},h('button',{class:'btn sub small',onclick:play},'🔊 もういちど聞く')),
       h('div',{class:'hint'},'音を聞いて、英語と日本語の意味を声に出して言おう'),
-      h('div',{class:'grow'}),h('div',{class:'row2'},previous,next),
-      h('div',{class:'row'},skip)));
+      h('div',{class:'grow'}),h('div',{class:'row2'},previous,next)));
     play();
   });
 }
@@ -484,24 +487,32 @@ function learnCard(word,n,total,r,rounds,canGoBack){
 /* フラッシュカード(赤シート):日本語を見て英語を思い出す → 赤シートをタップして答え合わせ → ◯△× */
 function flashCard(stepKey,word,pos,total,mode,state,canGoBack){
   const d=BYWORD[word];
+  const isCheck2=stepKey==='check2';
   const responseStart=activeStepTime(stepKey);
   return waitUI(resolve=>{
     let finished=false;
     const fin=r=>{if(finished)return;finished=true;gate.destroy();TTS.stop();resolve(r);};
     const previous=h('button',{class:'btn sub',disabled:!canGoBack,onclick:()=>fin('prev')},'‹ 前へ');
     const next=h('button',{class:'btn',style:'display:none',onclick:()=>fin(state.result||'next')},'つぎへ');
-    const choose=r=>{state.result=r;fin(r);};
-    const rate=h('div',{class:'rate',style:'visibility:hidden'},
-      h('button',{class:'btn good','aria-pressed':'false',onclick:()=>choose('ok')},'◯ 言えた'),
-      h('button',{class:'btn sub','aria-pressed':'false',onclick:()=>choose('maybe')},'△ あやしい'),
-      h('button',{class:'btn sub','aria-pressed':'false',onclick:()=>choose('ng')},'× わからない'));
-    const sheet=h('button',{class:'sheet'},'タップして答えを見る');
+    const choose=r=>{if(isCheck2&&!state.gateDone)return;state.result=r;fin(r);};
+    const rate=h('div',{class:'rate',style:isCheck2?'':'visibility:hidden'},
+      h('button',{class:'btn good',disabled:isCheck2&&!state.gateDone,'aria-pressed':'false',onclick:()=>choose('ok')},'◯ 言えた'),
+      h('button',{class:'btn sub',disabled:isCheck2&&!state.gateDone,'aria-pressed':'false',onclick:()=>choose('maybe')},'△ あやしい'),
+      h('button',{class:'btn sub',disabled:isCheck2&&!state.gateDone,'aria-pressed':'false',onclick:()=>choose('ng')},'× わからない'));
+    const sheet=isCheck2?h('div',{class:'sheet blank','aria-hidden':'true'}):
+      h('button',{class:'sheet'},'タップして答えを見る');
     const skipGate=stepKey==='check1' || stepKey==='check2';
-    const gate=makeGate(()=>{state.gateDone=true;rate.style.visibility='visible';previous.disabled=!canGoBack;savePending();},skipGate);
+    const gate=makeGate(()=>{
+      state.gateDone=true;rate.style.visibility='visible';previous.disabled=!canGoBack;
+      if(isCheck2) [...rate.children].forEach(button=>button.disabled=false);
+      savePending();
+    },skipGate);
     gate.el.style.display='none';
     let playId=0;
     const play=async()=>{
-      const id=++playId;gate.reset();gate.el.style.display=skipGate?'none':'';rate.style.visibility='hidden';TTS.stop();
+      const id=++playId;gate.reset();gate.el.style.display=skipGate?'none':'';
+      if(!isCheck2)rate.style.visibility='hidden';
+      TTS.stop();
       await TTS.speak(d.word);
       let duration=practiceDuration(d.word);
       if(mode==='sentence'){
@@ -509,11 +520,15 @@ function flashCard(stepKey,word,pos,total,mode,state,canGoBack){
       }
       if(id===playId&&!finished) gate.wait(duration);
     };
-    sheet.addEventListener('click',()=>{
+    function revealAnswer(){
       if(state.revealed) return;
       if(state.responseMs===undefined) state.responseMs=elapsedStepTime(stepKey,responseStart);
-      state.revealed=true;previous.disabled=true;sheet.classList.add('off');savePending();play();
-    });
+      state.revealed=true;previous.disabled=true;sheet.classList.add('off');
+      if(revealButton)revealButton.style.display='none';
+      savePending();play();
+    }
+    if(!isCheck2)sheet.addEventListener('click',revealAnswer);
+    const revealButton=isCheck2?h('button',{class:'btn sub small',onclick:revealAnswer},'タップして答えを見る'):null;
     const front=mode==='sentence'?[h('div',{class:'jp'},d.meaning),h('div',{class:'jp2'},d.tr1)]:[h('div',{class:'jp'},d.meaning)];
     const back=mode==='sentence'?[h('div',{class:'en'},h('span',{class:'mark'},d.word)),h('div',{class:'sent'},hl(d.ex1,d.word))]
                                 :[h('div',{class:'en'},h('span',{class:'mark'},d.word))];
@@ -521,9 +536,11 @@ function flashCard(stepKey,word,pos,total,mode,state,canGoBack){
       h('div',{class:'note'},mode==='sentence'?'英語の単語と例文を声に出して思い出そう':'英語を声に出して思い出そう'),
       h('div',{class:'card'},front),
       h('div',{class:'sheet-wrap'},h('div',{class:'back'},back),sheet),
-      gate.el,h('div',{class:'grow'}),rate,h('div',{class:'row2'},previous,next)));
+      gate.el,isCheck2?h('div',{class:'row'},revealButton):h('div',{class:'grow'}),
+      rate,h('div',{class:'row2'},previous,next)));
     if(state.revealed){
       sheet.classList.add('off');gate.el.style.display=skipGate?'none':'';
+      if(revealButton)revealButton.style.display='none';
       if(state.gateDone) gate.complete(); else play();
     }
     if(state.result){
@@ -713,8 +730,18 @@ function orderCard(word,n,total,state,canGoBack){
     const ans=h('div',{class:'answer'}),pool=h('div',{class:'tiles'}),fb=h('div',{class:'fb'});
     const previous=h('button',{class:'btn sub',disabled:!canGoBack,onclick:()=>finish('prev')},'‹ 前へ');
     const next=h('button',{class:'btn',disabled:!state.solved,onclick:()=>finish(wasSolved?'next':'done')},'つぎへ');
-    const clear=h('button',{class:'btn sub small',onclick:()=>{if(state.solved)return;state.picked=correctOrder.slice(0,state.revealedCount||0);state.feedback=state.revealedCount?'reveal':'';savePending();render();}},'やり直す');
+    const undo=h('button',{class:'btn sub small',disabled:true,onclick:()=>{
+      if(state.solved||state.picked.length<=(state.revealedCount||0))return;
+      state.picked.pop();savePending();render();
+    }},'ひとつだけもどす');
+    const clear=h('button',{class:'btn sub small',onclick:()=>{
+      if(state.solved)return;
+      state.picked=correctOrder.slice(0,state.revealedCount||0);state.feedback=state.revealedCount?'reveal':'';
+      savePending();render();
+    }},'全部やりなおす');
     function render(){
+      undo.disabled=state.solved||state.picked.length<=(state.revealedCount||0);
+      clear.disabled=state.solved;
       const pickedSet=new Set(state.picked.map(o=>o.i));
       ans.replaceChildren(...Array.from({length: order.length}, (_, i)=>{
         const selected=state.picked[i];
@@ -732,6 +759,7 @@ function orderCard(word,n,total,state,canGoBack){
       if(!state.attempted){state.attempted=true;state.firstCorrect=good;state.firstResponseMs=elapsedStepTime('useOrder',responseStart);addAcc(good);}
       if(good){
         state.solved=true;state.feedback='';fb.className='fb ok';fb.textContent='せいかい!';next.disabled=true;
+        render();
         TTS.speak(d.ex1,0.8).then(()=>{
           if(finished)return;
           if(Time.step==='useOrder') finish(wasSolved?'next':'done');
@@ -747,7 +775,7 @@ function orderCard(word,n,total,state,canGoBack){
         state.picked=correctOrder.slice(0,state.revealedCount);
         if(state.revealedCount===tokens.length){
           state.solved=true;state.assisted=true;state.feedback='assisted';
-          fb.className='fb ok';fb.textContent='正しい順番をすべて表示しました';next.disabled=false;
+          fb.className='fb ok';fb.textContent='正しい順番をすべて表示しました';next.disabled=false;render();
         }else{
           state.feedback='reveal';fb.className='fb bad';
           fb.textContent='まちがい。先頭から正しいところまで出したよ。つづきを並べよう';render();
@@ -763,7 +791,7 @@ function orderCard(word,n,total,state,canGoBack){
     mount(chrome('useOrder',n,total,
       h('div',{class:'note'},'日本語に合う英文をつくろう'),
       h('div',{class:'card'},h('div',{class:'jp',style:'font-size:22px'},d.tr1)),
-      ans,pool,fb,h('div',{class:'row'},clear),h('div',{class:'grow'}),h('div',{class:'row2'},previous,next)));
+      ans,pool,fb,h('div',{class:'row2'},undo,clear),h('div',{class:'grow'}),h('div',{class:'row2'},previous,next)));
   });
 }
 
@@ -793,12 +821,17 @@ function spellCard(word,n,total,persist=true){
     const input=h('input',{class:'spell',type:'text',autocapitalize:'none',autocomplete:'off',autocorrect:'off',spellcheck:'false',enterkeyhint:'done','aria-label':'つづり'});
     const fb=h('div',{class:'fb'});
     const btn=h('button',{class:'btn',onclick:submit},'答え合わせ');
-    const skipBtn=h('button',{class:'btn sub',onclick:()=>{record('skip');TTS.stop();resolve('skip');}},'スキップ');
+    const skipBtn=h('button',{class:'btn sub',onclick:()=>{
+      if(persist)session.skippedWords++;
+      record('skip');TTS.stop();resolve('skip');
+    }},'スキップ');
     input.addEventListener('keydown',e=>{if(e.key==='Enter')submit();});
     function finalize(correct,kind='ok'){
       solved=true;fb.className=kind==='ok'?'fb ok':'fb bad';fb.textContent=correct?
         'せいかい!':'正しいつづりは「'+d.word+'」。次へ進めます';
-      input.disabled=true;btn.textContent='つぎへ';skipBtn.disabled=true;record(attempted&&firstCorrect?'ok':'ng');TTS.speak(d.word);
+      input.disabled=true;btn.textContent='つぎへ';skipBtn.disabled=true;record(attempted&&firstCorrect?'ok':'ng');
+      const speech=TTS.speak(d.word);
+      if(correct)speech.then(()=>resolve(firstCorrect?'ok':'ng'));
     }
     function submit(){
       if(solved){TTS.stop();resolve(firstCorrect?'ok':'ng');return;}
@@ -832,7 +865,7 @@ function spellCard(word,n,total,persist=true){
       h('div',{class:'note'},'つづりを書こう'),
       h('div',{class:'card'},h('div',{class:'jp'},d.meaning)),
       h('div',{class:'row'},h('button',{class:'btn sub small',onclick:()=>TTS.speak(d.word)},'🔊 発音を聞く')),
-      input,fb,h('div',{class:'row'},skipBtn),h('div',{class:'grow'}),btn));
+      input,fb,h('div',{class:'grow'}),h('div',{class:'row2'},skipBtn,btn)));
     setTimeout(()=>input.focus(),60);
   });
 }
@@ -967,7 +1000,8 @@ async function start(newW,due,repeat=false,restored=null){
     phase:restored?restored.phase:'running',stageStartCorrect:restored?restored.stageStartCorrect:0,
     stageStartTotal:restored?restored.stageStartTotal:0,spellWords:restored&&restored.spellWords,
     spellIndex:restored?restored.spellIndex:0,spellResults:restored&&restored.spellResults,
-    spellFirst:restored&&restored.spellFirst,pausedScreen:null};
+    spellFirst:restored&&restored.spellFirst,skippedRounds:restored?restored.skippedRounds:0,
+    skippedWords:restored?restored.skippedWords:0,pausedScreen:null};
   Time.start(restored?restored.timeMs:{});
   const runners={review:stepReview,todayWords:stepTodayWords,learn:stepLearn,check1:stepCheck1,useRead:stepUseRead,
     useCloze:stepUseCloze,useOrder:stepUseOrder,check2:stepCheck2,spell:stepSpell};
@@ -987,8 +1021,13 @@ function sessionMetrics(){
   const avgAnswerMs=responseTimes.length?Math.round(responseTimes.reduce((sum,value)=>sum+value,0)/responseTimes.length):0;
   const accuracyScore=session.total?Math.round(session.correct/session.total*100):null;
   const responseTimeScore=responseTimes.length?Math.round(Math.max(0,Math.min(100,(avgAnswerMs-2000)/3000*100))):null;
-  return {metricVersion:1,avgAnswerMs,responseTimeScore,
-    effortScore:accuracyScore===null||responseTimeScore===null?null:Math.round((accuracyScore+responseTimeScore)/2)};
+  const baseEffort=accuracyScore===null||responseTimeScore===null?null:(accuracyScore+responseTimeScore)/2;
+  const learnCompletion=(LEARN_ROUNDS-Math.min(LEARN_ROUNDS,session.skippedRounds))/LEARN_ROUNDS;
+  const spellCompletion=session.newWords.length
+    ?(session.newWords.length-Math.min(session.newWords.length,session.skippedWords))/session.newWords.length:1;
+  const completionRate=session.newWords.length?(learnCompletion+spellCompletion)/2:1;
+  return {metricVersion:2,avgAnswerMs,responseTimeScore,
+    effortScore:baseEffort===null?null:Math.round(baseEffort*completionRate)};
 }
 function finishSession(){
   const now=Date.now(),today=ymd();
@@ -1002,7 +1041,8 @@ function finishSession(){
   }
   const rec={id:String(now),date:today,finishedAt:now,newN:session.newWords.length,reviewN:session.reviewWords.length,
     stepMs:Object.assign({},Time.ms),totalMs:Time.total(),correct:session.correct,total:session.total,
-    ...sessionMetrics(),mode:session.repeat?'repeat':'normal',newWords:session.newWords.slice(),reviewWords:session.reviewWords.slice()};
+    ...sessionMetrics(),mode:session.repeat?'repeat':'normal',newWords:session.newWords.slice(),reviewWords:session.reviewWords.slice(),
+    skippedRounds:session.skippedRounds,skippedWords:session.skippedWords};
   S.sessions.push(rec);S.sessions=S.sessions.slice(-2000);save();
   clearPending();
   endSession();showDone(rec);
@@ -1015,11 +1055,13 @@ function buildMessage(rec){
   L.push((d.getMonth()+1)+'/'+d.getDate()+'('+WD[d.getDay()]+') '+pad(d.getHours())+':'+pad(d.getMinutes()));
   L.push((rec.mode==='repeat'?'再学習':'新しい単語')+rec.newN+'語'+(rec.reviewN?' + 復習'+rec.reviewN+'語':''));
   L.push('学習時間 '+fmtDurJp(rec.totalMs));
-  if(rec.total) L.push((rec.metricVersion===1?'初回正答率 ':'正答率 ')+Math.round(rec.correct/rec.total*100)+'%('+rec.correct+'/'+rec.total+')');
-  if(rec.metricVersion===1&&rec.responseTimeScore!==null){
+  L.push('スキップした周 '+rec.skippedRounds+'周 / 単語 '+rec.skippedWords+'語');
+  if(rec.total) L.push((rec.metricVersion>=1?'初回正答率 ':'正答率 ')+Math.round(rec.correct/rec.total*100)+'%('+rec.correct+'/'+rec.total+')');
+  if(rec.metricVersion>=1&&rec.responseTimeScore!==null){
     L.push('初回の平均回答時間 '+fmtDurJp(rec.avgAnswerMs));
     L.push('回答時間スコア '+rec.responseTimeScore+'/100');
-    if(rec.effortScore!==null) L.push('取り組み度の目安 '+rec.effortScore+'/100（初回正答率と回答時間スコアの平均）');
+    if(rec.effortScore!==null) L.push('取り組み度の目安 '+rec.effortScore+'/100'+
+      (rec.metricVersion>=2?'（スキップ分を反映）':'（初回正答率と回答時間スコアの平均）'));
   }
   const parts=STEP_ORDER.filter(k=>rec.stepMs[k]>0).map(k=>STEP_NAMES[k]+' '+fmtDur(rec.stepMs[k]));
   if(rec.legacyUseMs) parts.push('使ってみよう(旧記録) '+fmtDur(rec.legacyUseMs));
@@ -1051,8 +1093,9 @@ function showDone(rec){
   const msg=buildMessage(rec);
   const rows=[['学習時間',fmtDurJp(rec.totalMs)],[rec.mode==='repeat'?'再学習':'新しい単語',rec.newN+'語']];
   if(rec.reviewN) rows.push(['復習',rec.reviewN+'語']);
-  if(rec.total) rows.push([rec.metricVersion===1?'初回正答率':'正答率',Math.round(rec.correct/rec.total*100)+'%('+rec.correct+'/'+rec.total+')']);
-  if(rec.metricVersion===1&&rec.responseTimeScore!==null){
+  rows.push(['スキップした数','周'+rec.skippedRounds+' / 単語'+rec.skippedWords+'語']);
+  if(rec.total) rows.push([rec.metricVersion>=1?'初回正答率':'正答率',Math.round(rec.correct/rec.total*100)+'%('+rec.correct+'/'+rec.total+')']);
+  if(rec.metricVersion>=1&&rec.responseTimeScore!==null){
     rows.push(['初回の平均回答時間',fmtDurJp(rec.avgAnswerMs)]);
     rows.push(['回答時間スコア',rec.responseTimeScore+'/100']);
     if(rec.effortScore!==null) rows.push(['取り組み度の目安',rec.effortScore+'/100']);
@@ -1063,7 +1106,9 @@ function showDone(rec){
   mount(h('div',{class:'screen'},
     h('div',null,h('div',{class:'big'},h('span',{class:'mark'},'今日の学習 完了!')),clock,h('div',{class:'hint'},'この画面をおうちの人に見せよう')),
     h('div',{class:'card'},rows.map(([a,b])=>h('div',{class:'srow'},h('span',null,a),h('b',null,b)))),
-    rec.metricVersion===1&&rec.responseTimeScore!==null?h('div',{class:'hint'},'取り組み度は初回正答率と回答時間から算出した目安です。時間スコアは平均2秒以下で0点、5秒以上で100点（間は比例）ですが、真剣さを断定するものではありません。'):null,
+    rec.metricVersion>=1&&rec.responseTimeScore!==null?h('div',{class:'hint'},rec.metricVersion>=2?
+      '取り組み度は初回正答率と回答時間から算出し、スキップした学習分を反映した目安です。時間スコアは平均2秒以下で0点、5秒以上で100点（間は比例）ですが、真剣さを断定するものではありません。':
+      '取り組み度は初回正答率と回答時間から算出した目安です。時間スコアは平均2秒以下で0点、5秒以上で100点（間は比例）ですが、真剣さを断定するものではありません。'):null,
     h('div',{class:'card slim'},h('div',{class:'lbl'},'ステップごとの時間'),h('div',{class:'steps'},steps)),
     h('div',{class:'grow'}),
     h('button',{class:'btn',onclick:()=>openSms(msg)},'メッセージで送る'),
@@ -1090,23 +1135,21 @@ function resumeStudy(){
   }
   if(pendingSession) start(pendingSession.newWords,pendingSession.reviewWords,pendingSession.repeat,pendingSession);
 }
-function showStageReview(stepKey,newWords,reviewWords){
+function wordCard(word){
+  const d=BYWORD[word];
+  if(!d)return null;
+  return h('div',{class:'card word-card'},
+    h('div',{class:'en'},word),h('div',{class:'jp'},d.meaning),
+    h('div',{class:'note'},'例文'),
+    h('div',{class:'sent'},hl(d.ex1,word)),h('div',{class:'tr'},d.tr1),
+    h('div',{class:'sent'},hl(d.ex2,word)),h('div',{class:'tr'},d.tr2));
+}
+function showTodayWordCards(words){
   setActiveTab('study');
-  const words=stepKey==='review'?reviewWords:newWords;
-  const cards=words.map(word=>{
-    const d=BYWORD[word];if(!d)return null;
-    const content=[h('div',{class:'en'},word),h('div',{class:'jp'},d.meaning)];
-    if(['useRead','useCloze','useOrder','check2'].includes(stepKey)){
-      const sentence=stepKey==='useCloze'?d.ex2:d.ex1;
-      const translation=stepKey==='useCloze'?d.tr2:d.tr1;
-      content.push(h('div',{class:'sent'},hl(sentence,word)),h('div',{class:'tr'},translation));
-    }
-    return h('div',{class:'item'},content);
-  }).filter(Boolean);
-  mount(h('div',{class:'screen','data-view':'stage-review'},
-    topBack(stepLabel(stepKey)+'の見直し',showTodayStudyList),
-    h('div',{class:'hint'},'見直し表示です。回答や学習記録は変更されません。'),
-    cards.length?h('div',null,cards):h('div',{class:'note'},'見直せる単語がありません')));
+  const cards=words.map(wordCard).filter(Boolean);
+  mount(h('div',{class:'screen','data-view':'word-cards'},
+    topBack('今日のカード一覧',showTodayStudyList),
+    cards.length?h('div',null,cards):h('div',{class:'note'},'カードがありません')));
 }
 function showTodayStudyList(){
   setActiveTab('study');
@@ -1128,22 +1171,23 @@ function showTodayStudyList(){
     newWords=pickNew(S.settings.perDay);reviewWords=dueWords();steps=studySteps(newWords,reviewWords);
   }
   const rows=steps.map((key,index)=>{
-    const status=hasPending?(index<currentIndex?'学習ずみ':index===currentIndex?(phase==='summary'?'この章のまとめ':'学習中'):'これから'):record?'学習ずみ':'予定';
-    return h('div',{class:'item'},
-      h('b',null,stepLabel(key)),h('small',null,status),
-      h('button',{class:'btn sub small',
-        onclick:hasPending&&index===currentIndex?resumeStudy:()=>showStageReview(key,newWords,reviewWords)},
-        hasPending&&index===currentIndex?'この章にもどる':'この章を見直す'));
+    const studied=hasPending
+      ?index<currentIndex||(index===currentIndex&&phase==='summary')
+      :!!record;
+    return h('div',{class:'item study-chapter'},
+      h('b',null,stepLabel(key)),h('span',{class:'chapter-status'},studied?'学習済み':'未学習'));
   });
+  const todayWords=Array.from(new Set([...reviewWords,...newWords]));
   const actions=[];
+  if(todayWords.length){
+    actions.push(h('button',{class:'btn sub',onclick:()=>showTodayWordCards(todayWords)},'今日のカード一覧を見る'));
+  }
   if(hasPending) actions.push(h('button',{class:'btn',onclick:resumeStudy},'つづきを学習'));
   else if(!record&&(newWords.length||reviewWords.length)){
     actions.push(h('button',{class:'btn',onclick:()=>start(newWords,reviewWords)},'今日の学習をはじめる'));
   }
   mount(h('div',{class:'screen','data-view':'study-list'},
     h('div',{class:'top'},h('button',{class:'x','aria-label':'もどる',onclick:showHome},'‹'),h('div',{class:'ttl'},'今日の学習一覧')),
-    hasPending?h('div',{class:'hint'},'学習を中断しても進み具合は保存されます。章を選ぶと内容を見直せます。ページを閉じた場合は、中断中の章から再開します。'):
-      h('div',{class:'hint'},record?'今日学習した章を見直せます。':'今日の学習予定です。'),
     rows.length?h('div',null,rows):h('div',{class:'note'},'今日の学習はありません。'),
     h('div',{class:'grow'}),actions));
 }
@@ -1189,8 +1233,9 @@ function showHistory(){
     return h('div',{class:'item'},
       h('b',null,m+'/'+dd+'('+wd+')'+(t?' '+pad(t.getHours())+':'+pad(t.getMinutes()):'')),
       h('small',null,(s.mode==='repeat'?'再学習':'新')+s.newN+'語'+(s.reviewN?' + 復習'+s.reviewN+'語':'')+' / '+fmtDurJp(s.totalMs)+
-        (s.total?' / '+(s.metricVersion===1?'初回正答率':'正答率')+Math.round(s.correct/s.total*100)+'%':'')+
-        (s.metricVersion===1&&s.effortScore!==null?' / 取り組み度 '+s.effortScore+'/100':'')));
+        (s.skippedRounds||s.skippedWords?' / スキップ 周'+s.skippedRounds+'・単語'+s.skippedWords+'語':'')+
+        (s.total?' / '+(s.metricVersion>=1?'初回正答率':'正答率')+Math.round(s.correct/s.total*100)+'%':'')+
+        (s.metricVersion>=1&&s.effortScore!==null?' / 取り組み度 '+s.effortScore+'/100':'')));
   });
   mount(h('div',{class:'screen'},topBack('きろく'),h('div',{class:'meta'},'連続 '+streak()+'日'),
     h('button',{class:'btn sub',onclick:()=>showWordHistory('today')},'学習した単語を見る'),

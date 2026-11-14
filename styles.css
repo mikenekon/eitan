@@ -79,6 +79,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px soli
 .back{padding:16px;min-height:120px;display:flex;flex-direction:column;justify-content:center;gap:8px}
 .sheet{position:absolute;inset:0;width:100%;border:0;background:var(--sheet);color:#fff;font-weight:800;font-size:18px;
   transition:opacity .25s,transform .25s;cursor:pointer}
+.sheet.blank{background:#fff;color:transparent;cursor:default}
 .sheet.off{opacity:0;transform:translateX(35%);pointer-events:none}
 .rate{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
 .rate .btn{font-size:16px;padding:8px 4px;min-height:58px}
@@ -110,6 +111,10 @@ input.tel{width:100%;font-size:18px;padding:10px;border:2px solid var(--ink);bor
 .clock{font-size:34px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:.02em;margin-top:6px}
 .item{background:#fff;border:2px solid var(--ink);border-radius:12px;padding:10px 12px;margin-bottom:8px}
 .item small{color:var(--soft);display:block}
+.study-chapter{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.chapter-status{flex:none;color:var(--soft);font-size:14px;font-weight:700}
+.word-card{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
+.word-card .en{font-size:38px}
 .sec{display:flex;flex-direction:column;gap:8px}
 .sec h2{margin:6px 0 0;font-size:18px}
 label.chk{display:flex;gap:10px;align-items:flex-start;font-weight:700}
