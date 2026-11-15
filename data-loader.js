@@ -1,6 +1,12 @@
 'use strict';
 
 const app=document.querySelector('#app');
+// 依存関係の順に読み込む(後ろのファイルは前のファイルの定義を使う)
+const APP_SCRIPTS=[
+  'core','storage','pending','platform','shell','units',
+  'study-flow','study-steps','done','cards','history','settings','main'
+].map(name=>'js/'+name+'.js');
+
 function showLoadError(error){
   console.error(error);
   const message=document.createElement('div');
@@ -13,6 +19,16 @@ async function loadJson(url){
   const response=await fetch(url);
   if(!response.ok)throw new Error(url+' の読み込みに失敗しました ('+response.status+')');
   return response.json();
+}
+// async=false の動的scriptは、挿入順に実行される
+function loadScripts(urls){
+  for(const url of urls){
+    const script=document.createElement('script');
+    script.src=url;
+    script.async=false;
+    script.onerror=()=>showLoadError(new Error(url+' の読み込みに失敗しました'));
+    document.body.append(script);
+  }
 }
 async function startApp(){
   app.textContent='単語データを読み込んでいます…';
@@ -35,9 +51,7 @@ async function startApp(){
   }
   window.EITAN_BOOKS=books;
   window.EITAN_WORDS=words;
-  const script=document.createElement('script');
-  script.src='app.js';
-  script.onerror=()=>showLoadError(new Error('app.js の読み込みに失敗しました'));
-  document.body.append(script);
+  loadScripts(APP_SCRIPTS);
 }
+
 startApp().catch(showLoadError);
