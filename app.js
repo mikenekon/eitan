@@ -30,7 +30,7 @@ function h(tag,attrs,...kids){
 }
 function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 const esc=s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
-const wordRe=w=>new RegExp('\\b'+esc(w)+'\\b','i');
+const wordRe=w=>new RegExp('\\b'+esc(w)+(/[A-Za-z0-9]$/.test(w)?'\\b':'(?=$|[^A-Za-z0-9])'),'i');
 function hl(sentence,word){
   const m=sentence.match(wordRe(word)); if(!m) return [sentence];
   return [sentence.slice(0,m.index),h('span',{class:'mark'},m[0]),sentence.slice(m.index+m[0].length)];
@@ -673,24 +673,37 @@ function readCard(word,k,n,total,state,canGoBack){
   });
 }
 function distractors(word,pool){
-  const others=shuffle(pool.filter(w=>w!==word));
-  const extra=shuffle(WORDS.map(x=>x.id).filter(w=>w!==word&&!others.includes(w)));
-  return others.concat(extra).slice(0,3);
+  const target=BYWORD[word].word.trim().toLowerCase(),seen=new Set([target]),result=[];
+  const others=shuffle(pool.filter(id=>id!==word));
+  const extra=shuffle(WORDS.map(item=>item.id).filter(id=>id!==word&&!others.includes(id)));
+  for(const id of others.concat(extra)){
+    const text=BYWORD[id].word.trim().toLowerCase();
+    if(seen.has(text))continue;
+    seen.add(text);result.push(id);
+    if(result.length===3)break;
+  }
+  return result;
 }
 function clozeCard(word,pool,n,total,state,canGoBack){
   const d=BYWORD[word];
-  if(!state.options) state.options=shuffle([word,...distractors(word,pool)]);
+  const optionsValid=Array.isArray(state.options)&&state.options.length===4&&state.options.includes(word)&&
+    state.options.every(id=>BYWORD[id])&&
+    new Set(state.options.map(id=>BYWORD[id]&&BYWORD[id].word.trim().toLowerCase())).size===4;
+  if(!optionsValid){
+    state.options=shuffle([word,...distractors(word,pool)]);
+    state.wrong=state.wrong.filter(id=>state.options.includes(id));
+  }
   const wasSolved=state.solved;
   const responseStart=activeStepTime('useCloze');
   return waitUI(resolve=>{
     let finished=false;
     const finish=action=>{if(finished)return;finished=true;TTS.stop();resolve(action);};
-    const fb=h('div',{class:'fb'}),sentEl=h('div',{class:'sent'},d.ex2.replace(wordRe(word),'_____'));
+    const fb=h('div',{class:'fb'}),sentEl=h('div',{class:'sent'},d.ex2.replace(wordRe(d.word),'_____'));
     const previous=h('button',{class:'btn sub',disabled:!canGoBack,onclick:()=>finish('prev')},'‹ 前へ');
     const next=h('button',{class:'btn',disabled:!state.solved,onclick:()=>finish(wasSolved?'next':'done')},'つぎへ');
     const grid=h('div',{class:'choices'});
     state.options.forEach(o=>{
-      const b=h('button',{class:'btn sub',disabled:state.solved||state.wrong.includes(o)},o);
+      const b=h('button',{class:'btn sub',disabled:state.solved||state.wrong.includes(o)},BYWORD[o].word);
       if(state.solved&&o===word) b.classList.add('good');
       if(state.wrong.includes(o)) b.classList.add('bad');
       b.addEventListener('click',()=>{
