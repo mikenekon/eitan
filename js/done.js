@@ -125,4 +125,3 @@ function showDone(rec,fromHistory=false){
     !fromHistory?h('button',{class:'btn sub',onclick:showUnitStatus},'ユニットの学習状況を見る'):null,
     !fromHistory?h('button',{class:'link',onclick:showHome},'ホームへもどる'):null));
 }
-

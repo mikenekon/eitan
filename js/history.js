@@ -1,99 +1,108 @@
 'use strict';
-//@file きろく・学習単語・軽い復習・日付テスト
-function showHistory(){
-  setActiveTab('history');
-  const rows=S.sessions.slice().reverse().slice(0,60).map(s=>{
-    const [y,m,dd]=s.date.split('-').map(Number),wd=WD[new Date(y,m-1,dd).getDay()];
-    const t=s.finishedAt?new Date(s.finishedAt):null;
-    const wordCount=s.mode==='repeat'?s.repeatWords.length:s.newN;
-    const title=m+'/'+dd+'('+wd+')'+(t?' '+pad(t.getHours())+':'+pad(t.getMinutes()):'');
-    return h('button',{class:'item history-record',type:'button','aria-label':title+'の学習記録の詳細を表示',
-      onclick:()=>showDone(s,true)},
-      h('b',null,title),
-      h('small',null,(s.mode==='repeat'?'再学習':'新')+wordCount+'語'+(s.unitId&&BYUNIT[s.unitId]?' / '+BYUNIT[s.unitId].bookTitle+' '+BYUNIT[s.unitId].number+'ユニット':'')+
-        (s.mode!=='repeat'&&s.repeatWords.length?' + 再学習'+s.repeatWords.length+'語':'')+
-        (s.reviewN?' + 復習'+s.reviewN+'語':'')+' / '+fmtDurJp(s.totalMs)+
-        (s.skippedRounds||s.skippedWords?' / スキップ 周'+s.skippedRounds+'・単語'+s.skippedWords+'語':'')+
-        (s.total?' / '+(s.metricVersion>=1?'初回正答率':'正答率')+Math.round(s.correct/s.total*100)+'%':'')+
-        (s.metricVersion>=1&&s.effortScore!==null?' / 取り組み度 '+s.effortScore+'/100':'')));
-  });
-  mount(h('div',{class:'screen'},topBack('きろく'),h('div',{class:'meta'},'連続 '+streak()+'日'),
-    h('button',{class:'btn sub',onclick:()=>showWordHistory('today')},'学習した単語を見る'),
-    h('button',{class:'btn sub',onclick:showTestDates},'日付を選んで確認テスト'),
-    rows.length?h('div',{class:'hint'},'記録を選ぶと、完了画面を再表示できます。'):null,
-    rows.length?h('div',null,rows):h('div',{class:'note'},'まだ記録がありません')));
+//@file きろく(カレンダー)・軽い復習・日付テスト
+/* きろく画面: 月カレンダーで日を選ぶと、その日のログ・単語・軽い復習が下に出る */
+const historyView={date:null,month:null};
+function historyStudyDates(){
+  const dates=new Set(S.sessions.map(record=>record.date));
+  for(const state of Object.values(S.words)) if(DATE_RE.test(String(state.learnedOn||''))) dates.add(state.learnedOn);
+  return dates;
 }
-function weekStart(date){
-  const [y,m,d]=date.split('-').map(Number),start=new Date(y,m-1,d);
-  start.setDate(start.getDate()-((start.getDay()+6)%7));
-  return ymd(start);
+function shiftMonth(month,delta){
+  const [y,m]=month.split('-').map(Number),d=new Date(y,m-1+delta,1);
+  return d.getFullYear()+'-'+pad(d.getMonth()+1);
 }
-function wordHistoryEntries(range){
-  const today=ymd(),start=range==='today'?today:range==='week'?weekStart(today):'';
-  const inRange=date=>range==='all'||(date>=start&&date<=today),entries=new Map();
-  function add(word,type,date){
+function monthLabel(month){const [y,m]=month.split('-');return y+'年'+Number(m)+'月';}
+function wordEntriesForDate(date){
+  const entries=new Map();
+  function add(word,type){
     if(!BYWORD[word]) return;
-    if(!entries.has(word)) entries.set(word,{word,types:new Set(),dates:new Set()});
-    const entry=entries.get(word);
-    entry.types.add(type);
-    if(DATE_RE.test(String(date||''))) entry.dates.add(date);
+    if(!entries.has(word)) entries.set(word,{word,types:new Set()});
+    entries.get(word).types.add(type);
   }
-  for(const [word,state] of Object.entries(S.words)){
-    if(range==='all'||inRange(state.learnedOn)) add(word,'known',state.learnedOn);
-  }
+  for(const [word,state] of Object.entries(S.words)) if(state.learnedOn===date) add(word,'known');
   for(const record of S.sessions){
-    if(!inRange(record.date)) continue;
-    record.newWords.forEach(word=>add(word,'new',record.date));
-    record.repeatWords.forEach(word=>add(word,'repeat',record.date));
-    record.reviewWords.forEach(word=>add(word,'review',record.date));
+    if(record.date!==date) continue;
+    record.newWords.forEach(word=>add(word,'new'));
+    record.repeatWords.forEach(word=>add(word,'repeat'));
+    record.reviewWords.forEach(word=>add(word,'review'));
     if(!record.newWords.length&&record.mode!=='repeat'){
-      for(const [word,state] of Object.entries(S.words)){
-        if(state.learnedOn===record.date) add(word,'new',record.date);
-      }
+      for(const [word,state] of Object.entries(S.words)) if(state.learnedOn===date) add(word,'new');
     }
   }
   const order=new Map(WORDS.map((item,index)=>[item.id,index]));
-  return Array.from(entries.values()).sort((a,b)=>{
-    if(range==='all'){
-      const aDate=S.words[a.word]&&S.words[a.word].learnedOn||'',bDate=S.words[b.word]&&S.words[b.word].learnedOn||'';
-      return bDate.localeCompare(aDate)||a.word.localeCompare(b.word,'en');
-    }
-    return order.get(a.word)-order.get(b.word);
-  });
+  return Array.from(entries.values()).sort((a,b)=>order.get(a.word)-order.get(b.word));
 }
-function showWordHistory(range='today'){
+function historyRecordCard(s){
+  const [,m,dd]=s.date.split('-').map(Number),t=s.finishedAt?new Date(s.finishedAt):null;
+  const wordCount=s.mode==='repeat'?s.repeatWords.length:s.newN;
+  const title=m+'/'+dd+(t?' '+pad(t.getHours())+':'+pad(t.getMinutes()):'');
+  return h('button',{class:'item history-record',type:'button','aria-label':title+'の学習記録の詳細を表示',
+    onclick:()=>showDone(s,true)},
+    h('b',null,title),
+    h('small',null,(s.mode==='repeat'?'再学習':'新')+wordCount+'語'+(s.unitId&&BYUNIT[s.unitId]?' / '+BYUNIT[s.unitId].bookTitle+' '+BYUNIT[s.unitId].number+'ユニット':'')+
+      (s.mode!=='repeat'&&s.repeatWords.length?' + 再学習'+s.repeatWords.length+'語':'')+
+      (s.reviewN?' + 復習'+s.reviewN+'語':'')+' / '+fmtDurJp(s.totalMs)+
+      (s.skippedRounds||s.skippedWords?' / スキップ 周'+s.skippedRounds+'・単語'+s.skippedWords+'語':'')+
+      (s.total?' / '+(s.metricVersion>=1?'初回正答率':'正答率')+Math.round(s.correct/s.total*100)+'%':'')+
+      (s.metricVersion>=1&&s.effortScore!==null?' / 取り組み度 '+s.effortScore+'/100':'')));
+}
+function historyCalendar(studied,today){
+  const month=historyView.month,[y,m]=month.split('-').map(Number);
+  const lead=new Date(y,m-1,1).getDay(),days=new Date(y,m,0).getDate(),cells=[];
+  for(let i=0;i<lead;i++) cells.push(h('div',{class:'cal-blank','aria-hidden':'true'}));
+  for(let day=1;day<=days;day++){
+    const date=y+'-'+pad(m)+'-'+pad(day),isStudied=studied.has(date),selected=historyView.date===date;
+    cells.push(h('button',{type:'button',
+      class:'cal-day'+(isStudied?' studied':'')+(selected?' selected':'')+(date===today?' today':''),
+      'aria-label':studyDateLabel(date)+(isStudied?' 学習あり':' 学習なし'),'aria-pressed':String(selected),
+      onclick:()=>{historyView.date=date;showHistory();}},
+      h('span',{class:'cal-num'},day),h('span',{class:'cal-mark','aria-hidden':'true'},isStudied?'●':'')));
+  }
+  return h('div',{class:'calendar'},
+    h('div',{class:'cal-head'},
+      h('button',{class:'btn sub small','aria-label':'前の月',onclick:()=>{historyView.month=shiftMonth(month,-1);showHistory();}},'‹'),
+      h('b',{class:'cal-title'},monthLabel(month)),
+      h('button',{class:'btn sub small','aria-label':'次の月',onclick:()=>{historyView.month=shiftMonth(month,1);showHistory();}},'›')),
+    h('div',{class:'cal-grid'},WD.map((label,i)=>h('div',{class:'cal-wd'+(i===0?' sun':i===6?' sat':'')},label)),cells));
+}
+function showHistory(date){
   setActiveTab('history');
-  const names={today:'今日',week:'今週',all:'これまで'},today=ymd(),start=weekStart(today),words=wordHistoryEntries(range);
-  const tabs=Object.entries(names).map(([key,label])=>h('button',{class:'seg'+(range===key?' on':''),'aria-pressed':String(range===key),onclick:()=>showWordHistory(key)},label));
-  const rows=words.map(entry=>{
+  const today=ymd();
+  if(typeof date==='string'&&DATE_RE.test(date)){historyView.date=date;historyView.month=date.slice(0,7);}
+  if(!historyView.date){historyView.date=today;historyView.month=today.slice(0,7);}
+  const selected=historyView.date,studied=historyStudyDates();
+  const records=S.sessions.filter(record=>record.date===selected).sort((a,b)=>b.finishedAt-a.finishedAt);
+  const words=wordEntriesForDate(selected);
+  const wordRows=words.map(entry=>{
     const labels=[];
     if(entry.types.has('new')) labels.push('新出');
     if(entry.types.has('review')) labels.push('復習');
     if(entry.types.has('repeat')) labels.push('再学習');
     if(!labels.length) labels.push('学習済み');
-    const learned=S.words[entry.word]&&S.words[entry.word].learnedOn;
-    const dates=Array.from(entry.dates).sort(),date=range==='all'?(learned||dates[0]):dates[dates.length-1];
     return h('div',{class:'item'},h('b',null,BYWORD[entry.word].word),h('small',null,BYWORD[entry.word].meaning),
-      h('small',null,labels.join('・')+(date?' / '+(range==='all'?'覚えた日 ':'学習日 ')+date:'')));
+      h('small',null,labels.join('・')));
   });
-  const detail=range==='week'?'月曜から今日まで ('+start+'〜'+today+')':range==='today'?today:'学習済みの単語';
-  mount(h('div',{class:'screen'},topBack('学習単語',showHistory),
-    h('div',{class:'word-tabs'},tabs),h('div',{class:'meta'},detail),
-    h('div',{class:'meta soft'},words.length+'語'),
-    ['today','week'].includes(range)&&words.length?h('button',{class:'btn sub',onclick:()=>startLightReview(range,words.map(entry=>entry.word)),
-      'aria-label':range==='today'?'今日の単語を軽く復習':'今週の単語を軽く復習'},range==='today'?'今日の軽い復習':'今週の軽い復習'):null,
-    rows.length?h('div',null,rows):h('div',{class:'note'},'この期間の学習単語はありません')));
+  const reviewLabel=selected===today?'今日の軽い復習':studyDateLabel(selected)+'の軽い復習';
+  mount(h('div',{class:'screen','data-view':'history'},topBack('きろく'),h('div',{class:'meta'},'連続 '+streak()+'日'),
+    historyCalendar(studied,today),
+    h('div',{class:'sec'},h('h2',null,studyDateLabel(selected)+'の学習'),
+      records.length?h('div',{class:'hint'},'記録を選ぶと、完了画面を再表示できます。'):null,
+      records.length?h('div',null,records.map(historyRecordCard)):h('div',{class:'note'},'この日の学習記録はありません')),
+    words.length?h('div',{class:'sec'},h('h2',null,'学習した単語 '+words.length+'語'),
+      h('div',null,wordRows),
+      h('button',{class:'btn sub',onclick:()=>startLightReview(selected,words.map(entry=>entry.word)),'aria-label':reviewLabel},reviewLabel)):null,
+    h('button',{class:'btn sub',onclick:showTestDates},'日付を選んで確認テスト')));
 }
 let lightReview=null,activeDateTestExit=null,dateTestExitTarget=null;
-function startLightReview(range,words){
-  lightReview={range,cards:shuffle(words).map(word=>({word,revealed:false,rating:null})),index:0};
+function startLightReview(date,words){
+  lightReview={date,cards:shuffle(words).map(word=>({word,revealed:false,rating:null})),index:0};
   showLightReviewCard();
 }
 function showLightReviewCard(){
   if(!lightReview)return;
   setActiveTab('history');
   const run=lightReview,card=run.cards[run.index],word=card.word,d=BYWORD[word],total=run.cards.length;
-  const title=run.range==='today'?'今日の復習':'今週の復習';
+  const title=run.date===ymd()?'今日の復習':studyDateLabel(run.date)+'の復習';
   const choices=['ok','maybe','ng'].map((value,index)=>{
     const labels=['◯ 言えた','△ あやしい','× わからない'];
     return h('button',{class:'btn '+(value==='ok'?'good':'sub'),'aria-pressed':String(card.rating===value),onclick:()=>{
@@ -101,7 +110,7 @@ function showLightReviewCard(){
     }},labels[index]);
   });
   const quit=h('button',{class:'x','aria-label':'復習を終了',onclick:()=>{
-    if(confirm('復習を終了しますか?\n回答は保存されません。')){lightReview=null;showWordHistory(run.range);}
+    if(confirm('復習を終了しますか?\n回答は保存されません。')){lightReview=null;showHistory(run.date);}
   }},'×');
   const previous=run.index>0?h('button',{class:'btn sub',onclick:()=>{run.index--;showLightReviewCard();}},'‹ 前へ'):null;
   const next=h('button',{class:'btn',disabled:!card.rating,onclick:()=>{
@@ -131,8 +140,8 @@ function showLightReviewResult(){
       h('div',{class:'srow'},h('span',null,'× わからない'),h('b',null,counts.ng+'語'))),
     h('div',{class:'hint'},'この復習で学習間隔や単語の記録は変わりません。'),
     h('div',{class:'grow'}),
-    h('button',{class:'btn',onclick:()=>startLightReview(run.range,run.cards.map(card=>card.word))},'もう一度復習'),
-    h('button',{class:'btn sub',onclick:()=>{lightReview=null;showWordHistory(run.range);}},'単語一覧へ戻る')));
+    h('button',{class:'btn',onclick:()=>startLightReview(run.date,run.cards.map(card=>card.word))},'もう一度復習'),
+    h('button',{class:'btn sub',onclick:()=>{lightReview=null;showHistory(run.date);}},'きろくへ戻る')));
 }
 function newWordsForDate(date){
   const words=new Set();

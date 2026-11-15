@@ -102,7 +102,6 @@ input.tel{width:100%;font-size:18px;padding:10px;border:2px solid var(--ink);bor
 
 .app-title{font-size:46px;font-weight:800;line-height:1.1}
 .seg-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
-.word-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
 .seg{border:2px solid var(--ink);background:#fff;color:var(--ink);border-radius:12px;min-height:48px;font-size:18px;font-weight:700;cursor:pointer}
 .seg.on{background:var(--mark)}
 .srow{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed var(--line)}
@@ -152,6 +151,21 @@ input.tel{width:100%;font-size:18px;padding:10px;border:2px solid var(--ink);bor
 .sec h2{margin:6px 0 0;font-size:18px}
 label.chk{display:flex;gap:10px;align-items:flex-start;font-weight:700}
 label.chk input{width:24px;height:24px;margin-top:3px}
+
+.calendar{background:#fff;border:2px solid var(--ink);border-radius:var(--r);padding:10px}
+.cal-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px}
+.cal-title{font-size:18px}
+.cal-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}
+.cal-wd{text-align:center;font-size:12px;font-weight:700;color:var(--soft)}
+.cal-wd.sun{color:var(--bad)}
+.cal-wd.sat{color:#2F6BFF}
+.cal-day{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:46px;padding:2px 0;
+  border:2px solid transparent;border-radius:10px;background:#fff;color:var(--ink);font:700 15px/1.1 var(--jp);cursor:pointer}
+.cal-mark{height:10px;font-size:9px;line-height:10px;color:var(--ok)}
+.cal-day.studied{background:var(--okbg);border-color:var(--ok)}
+.cal-day.today .cal-num{text-decoration:underline;text-underline-offset:3px}
+.cal-day.selected{background:var(--mark);border-color:var(--ink)}
+.cal-day.selected .cal-mark{color:var(--ink)}
 
 .toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom) + 84px);transform:translateX(-50%);
   background:var(--ink);color:#fff;padding:10px 16px;border-radius:999px;z-index:20;font-size:15px;font-weight:700}
