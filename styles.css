@@ -133,6 +133,12 @@ input.tel{width:100%;font-size:18px;padding:10px;border:2px solid var(--ink);bor
 .unit-item.paused{background:#EAF0FF;border-color:#5872B3}
 .unit-item.active{box-shadow:0 0 0 2px var(--ink)}
 .unit-item:disabled{opacity:.55;cursor:default}
+.card-unit-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.card-unit{display:grid;align-content:start;gap:6px;padding:8px;border:2px solid var(--line);border-radius:12px;background:#fff}
+.card-unit-head{display:flex;justify-content:space-between;align-items:center;gap:4px}
+.card-unit .unit-status{font-size:10px;text-align:right}
+.card-unit.unit-learned{background:var(--okbg);border-color:var(--ok)}
+.card-unit.unit-partial{background:#FFF8D6;border-color:#D5A400}
 .word-card{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
 .word-card .en{font-size:38px}
 .word-card-heading,.word-card-sentence{display:flex;align-items:center;gap:8px}
