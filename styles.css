@@ -113,6 +113,17 @@ input.tel{width:100%;font-size:18px;padding:10px;border:2px solid var(--ink);bor
 .item small{color:var(--soft);display:block}
 .study-chapter{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .chapter-status{flex:none;color:var(--soft);font-size:14px;font-weight:700}
+.unit-book{border:2px solid var(--line);border-radius:var(--r);background:#fff;padding:10px 12px}
+.unit-book summary{font-weight:800;cursor:pointer}
+.unit-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-top:10px}
+.unit-item{display:grid;place-content:center;gap:2px;min-width:0;min-height:64px;padding:4px 2px;
+  border:2px solid var(--line);border-radius:10px;color:var(--ink);font:700 12px/1.2 var(--jp);cursor:pointer}
+.unit-status,.unit-count{font-size:10px;font-weight:700}
+.unit-learned{background:var(--okbg);border-color:var(--ok)}
+.unit-partial{background:#FFF8D6;border-color:#D5A400}
+.unit-new{background:#fff}
+.unit-item.active{box-shadow:0 0 0 2px var(--ink)}
+.unit-item:disabled{opacity:.55;cursor:default}
 .word-card{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
 .word-card .en{font-size:38px}
 .word-card-heading,.word-card-sentence{display:flex;align-items:center;gap:8px}

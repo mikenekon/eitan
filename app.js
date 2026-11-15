@@ -44,17 +44,30 @@ const isIOS=()=>/iP(hone|ad|od)/.test(navigator.userAgent)||(navigator.platform=
 const WORDS=window.EITAN_WORDS;
 const WORD_BOOKS=window.EITAN_BOOKS;
 const BYWORD=Object.fromEntries(WORDS.map(w=>[w.id,w]));
+const WORD_UNITS=WORD_BOOKS.flatMap(book=>{
+  const units=[];
+  for(let offset=0;offset<book.words.length;offset+=5){
+    const number=units.length+1;
+    units.push({id:book.id+'-unit-'+number,bookId:book.id,bookTitle:book.title,number,
+      words:book.words.slice(offset,offset+5).map(word=>word.id)});
+  }
+  return units;
+});
+const BYUNIT=Object.fromEntries(WORD_UNITS.map(unit=>[unit.id,unit]));
 
 /* ================= 保存データ ================= */
-function defaultState(){return {app:'eitan',v:APP_V,settings:{perDay:10,parentPhone:'',practiceWaitSec:1.5},words:{},sessions:[]};}
+function defaultState(){return {app:'eitan',v:APP_V,settings:{parentPhone:'',practiceWaitSec:1.5},words:{},sessions:[]};}
 function cleanSession(s){
   const sm={}; for(const k of STEP_ORDER) sm[k]=num(s.stepMs&&s.stepMs[k]);
   const metricVersion=s.metricVersion===2?2:s.metricVersion===1?1:0;
   const cleanWords=a=>Array.isArray(a)?Array.from(new Set(a.filter(w=>typeof w==='string'&&Object.prototype.hasOwnProperty.call(BYWORD,w)))).slice(0,WORDS.length):[];
+  const mode=s.mode==='repeat'?'repeat':'normal',storedWords=cleanWords(s.newWords);
+  const newWords=mode==='repeat'?[]:storedWords;
+  const repeatWords=Array.isArray(s.repeatWords)?cleanWords(s.repeatWords):mode==='repeat'?storedWords:[];
   return {id:String(s.id||'').slice(0,40),date:s.date,finishedAt:num(s.finishedAt),newN:num(s.newN),reviewN:num(s.reviewN),
     stepMs:sm,totalMs:num(s.totalMs),correct:num(s.correct),total:num(s.total),
-    legacyUseMs:num(s.legacyUseMs||s.stepMs&&s.stepMs.use),mode:s.mode==='repeat'?'repeat':'normal',
-    newWords:cleanWords(s.newWords),reviewWords:cleanWords(s.reviewWords),
+    legacyUseMs:num(s.legacyUseMs||s.stepMs&&s.stepMs.use),mode,
+    newWords,repeatWords,reviewWords:cleanWords(s.reviewWords),unitId:BYUNIT[s.unitId]?s.unitId:null,
     skippedRounds:Math.floor(num(s.skippedRounds)),skippedWords:Math.floor(num(s.skippedWords)),
     metricVersion,avgAnswerMs:num(s.avgAnswerMs),
     responseTimeScore:metricVersion>=1&&s.responseTimeScore!=null?Math.min(100,num(s.responseTimeScore)):null,
@@ -65,7 +78,6 @@ function validateBackup(o){
   if(o.app!=='eitan') return {ok:false,error:'えいたんのバックアップではありません'};
   if(o.v!==APP_V) return {ok:false,error:'このバックアップは読み込めません(バージョンがちがいます)'};
   const st=defaultState(), se=(o.settings&&typeof o.settings==='object')?o.settings:{};
-  st.settings.perDay=se.perDay===15?15:10;
   st.settings.parentPhone=typeof se.parentPhone==='string'?se.parentPhone.replace(/[^0-9+]/g,'').slice(0,20):'';
   st.settings.practiceWaitSec=[1,1.5,2].includes(Number(se.practiceWaitSec))?Number(se.practiceWaitSec):1.5;
   if(o.words!==undefined&&(o.words===null||typeof o.words!=='object'||Array.isArray(o.words))) return {ok:false,error:'単語の記録がこわれています'};
@@ -183,7 +195,7 @@ function cleanPending(raw){
     correct=num(raw.stageStartCorrect);total=num(raw.stageStartTotal);
     delete stageResponseMs[steps[currentStepIndex]];
   }
-  return {newWords,reviewWords,repeat:raw.repeat===true,steps,currentStepIndex,
+  return {newWords,reviewWords,unitId:BYUNIT[raw.unitId]?raw.unitId:null,repeat:raw.repeat===true,steps,currentStepIndex,
     phase,
     stageStartCorrect:num(raw.stageStartCorrect),stageStartTotal:num(raw.stageStartTotal),
     correct,total,stageResults,stageResponseMs,timeMs:ms,
@@ -205,7 +217,7 @@ let pendingSession=loadPending();
 function savePending(){
   if(!session)return;
   Time.tick();
-  const data={pendingVersion:PENDING_V,newWords:session.newWords,reviewWords:session.reviewWords,repeat:session.repeat,
+  const data={pendingVersion:PENDING_V,newWords:session.newWords,reviewWords:session.reviewWords,unitId:session.unitId,repeat:session.repeat,
     currentStepIndex:session.currentStepIndex,phase:session.phase,stageStartCorrect:session.stageStartCorrect,
     stageStartTotal:session.stageStartTotal,correct:session.correct,total:session.total,
     stageResults:session.stageResults,stageResponseMs:session.stageResponseMs,timeMs:Time.ms,
@@ -226,11 +238,19 @@ function streak(){
   const days=new Set(S.sessions.map(s=>s.date)); let d=ymd(); if(!days.has(d)) d=addDays(d,-1);
   let n=0; while(days.has(d)){n++; d=addDays(d,-1);} return n;
 }
-function pickNew(n){return WORDS.filter(w=>!S.words[w.id]).slice(0,n).map(w=>w.id);}
-function dueWords(){
-  const t=ymd();
-  return Object.entries(S.words).filter(([k,v])=>v.due<=t&&BYWORD[k]).sort((a,b)=>a[1].due<b[1].due?-1:a[1].due>b[1].due?1:0)
-    .map(([k])=>k).slice(0,10);
+function unitProgress(unit){
+  const learned=unit.words.filter(word=>S.words[word]).length;
+  return {learned,total:unit.words.length,status:learned===unit.words.length?'learned':learned?'partial':'new'};
+}
+function nextUnit(){return WORD_UNITS.find(unit=>unitProgress(unit).status!=='learned');}
+function startUnit(unit){
+  if(session||pendingSession){toast('中断した学習を先につづけてください');return;}
+  start(unit.words,[],unit.words.every(word=>!!S.words[word]),null,unit.id);
+}
+function startNextUnit(){
+  const unit=nextUnit();
+  if(unit)startUnit(unit);
+  else showUnitStatus();
 }
 
 /* ================= 表示の道具 ================= */
@@ -266,7 +286,7 @@ function navigateTab(tab){
     if(!confirm('確認テストを中止しますか?\nここまでの結果は表示されません。'))return;
     dateTestExitTarget=tab;activeDateTestExit();return;
   }
-  if(tab==='study'){showTodayStudyList();return;}
+  if(tab==='study'){showUnitStatus();return;}
   pauseActiveSessionForNavigation();
   if(tab==='home') showHome();
   else if(tab==='cards') showCardBooks();
@@ -341,7 +361,7 @@ function waitUI(fn){
   });
 }
 function askQuit(){
-  showTodayStudyList();
+  showUnitStatus();
 }
 function chrome(stepKey,pos,total,...body){
   const steps=session.steps,idx=steps.indexOf(stepKey);
@@ -349,7 +369,7 @@ function chrome(stepKey,pos,total,...body){
   session.currentStep=stepKey;
   return h('div',{class:'screen','data-session-screen':'true'},
     h('div',{class:'top'},
-      h('button',{class:'x','aria-label':'今日の学習一覧へ',onclick:askQuit},'×'),
+      h('button',{class:'x','aria-label':'ユニットの学習状況へ',onclick:askQuit},'×'),
       h('div',{class:'ttl'},stepLabel(stepKey)),
       h('div',{class:'pos'},total?pos+' / '+total:'')),
     h('div',{class:'strip'},steps.map((k,i)=>h('i',{class:i<idx?'done':i===idx?'now':''}))),
@@ -1005,12 +1025,13 @@ async function runStageWithSummary(stepKey,run){
     }finally{if(session===activeSession){session.correct=correct;session.total=total;session.phase='summary';savePending();}}
   }
 }
-async function start(newW,due,repeat=false,restored=null){
+async function start(newW,due,repeat=false,restored=null,unitId=null){
   TTS.unlock();
   const steps=[...(due.length?['review']:[]),...(newW.length?['todayWords','learn','check1','useRead','useCloze','useOrder','check2','spell']:[])];
   session={newWords:newW,reviewWords:due,steps,correct:num(restored&&restored.correct),
     total:num(restored&&restored.total),reject:null,quit:false,
-    repeat:restored?restored.repeat:repeat,learnCards:restored&&restored.learnCards,learnIndex:restored?restored.learnIndex:0,
+    repeat:restored?restored.repeat:repeat,unitId:restored?restored.unitId:unitId,
+    learnCards:restored&&restored.learnCards,learnIndex:restored?restored.learnIndex:0,
     cardRun:restored&&restored.cardRun,useTasks:restored&&restored.useTasks,useIndex:restored?restored.useIndex:{},
     stageResults:restored?restored.stageResults:{},stageResponseMs:restored?restored.stageResponseMs:{},
     reviewFirst:restored&&restored.stageResults.review||{},currentStepIndex:restored?restored.currentStepIndex:0,
@@ -1048,17 +1069,20 @@ function sessionMetrics(){
 }
 function finishSession(){
   const now=Date.now(),today=ymd();
+  const newlyLearned=session.repeat?[]:session.newWords.filter(word=>!S.words[word]);
+  const repeatedWords=session.newWords.filter(word=>!newlyLearned.includes(word));
   if(!session.repeat){
-    for(const w of session.newWords) S.words[w]={box:1,due:addDays(today,1),learnedOn:today};
+    for(const w of newlyLearned) S.words[w]={box:1,due:addDays(today,1),learnedOn:today};
     for(const w of session.reviewWords){
       const st=S.words[w]; if(!st) continue;
       if(session.reviewFirst[w]==='ok'){st.box=Math.min(st.box+1,5);st.due=addDays(today,INTERVALS[st.box]);}
       else{st.box=1;st.due=addDays(today,1);}
     }
   }
-  const rec={id:String(now),date:today,finishedAt:now,newN:session.newWords.length,reviewN:session.reviewWords.length,
+  const rec={id:String(now),date:today,finishedAt:now,newN:newlyLearned.length,reviewN:session.reviewWords.length,unitId:session.unitId,
     stepMs:Object.assign({},Time.ms),totalMs:Time.total(),correct:session.correct,total:session.total,
-    ...sessionMetrics(),mode:session.repeat?'repeat':'normal',newWords:session.newWords.slice(),reviewWords:session.reviewWords.slice(),
+    ...sessionMetrics(),mode:newlyLearned.length?'normal':'repeat',newWords:newlyLearned,repeatWords:repeatedWords,
+    reviewWords:session.reviewWords.slice(),
     skippedRounds:session.skippedRounds,skippedWords:session.skippedWords};
   S.sessions.push(rec);S.sessions=S.sessions.slice(-2000);save();
   clearPending();
@@ -1068,9 +1092,12 @@ function finishSession(){
 /* ================= 完了画面・メッセージ ================= */
 function buildMessage(rec){
   const d=new Date(rec.finishedAt||Date.now()),L=[];
-  L.push('【英単語 完了】');
+  L.push('【ユニット学習 完了】');
   L.push((d.getMonth()+1)+'/'+d.getDate()+'('+WD[d.getDay()]+') '+pad(d.getHours())+':'+pad(d.getMinutes()));
-  L.push((rec.mode==='repeat'?'再学習':'新しい単語')+rec.newN+'語'+(rec.reviewN?' + 復習'+rec.reviewN+'語':''));
+  if(BYUNIT[rec.unitId]) L.push(BYUNIT[rec.unitId].bookTitle+' '+BYUNIT[rec.unitId].number+'ユニット');
+  L.push((rec.mode==='repeat'?'再学習': '新しく学習')+(rec.mode==='repeat'?rec.repeatWords.length:rec.newN)+'語'+
+    (rec.mode!=='repeat'&&rec.repeatWords.length?' + 再学習'+rec.repeatWords.length+'語':'')+
+    (rec.reviewN?' + 復習'+rec.reviewN+'語':''));
   L.push('学習時間 '+fmtDurJp(rec.totalMs));
   L.push('スキップした周 '+rec.skippedRounds+'周 / 単語 '+rec.skippedWords+'語');
   if(rec.total) L.push((rec.metricVersion>=1?'初回正答率 ':'正答率 ')+Math.round(rec.correct/rec.total*100)+'%('+rec.correct+'/'+rec.total+')');
@@ -1108,7 +1135,12 @@ function showDone(rec){
   const upd=()=>{const d=new Date();clock.textContent=(d.getMonth()+1)+'/'+d.getDate()+'('+WD[d.getDay()]+') '+pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds());};
   upd();const iv=setInterval(()=>{if(!clock.isConnected){clearInterval(iv);return;}upd();},1000);
   const msg=buildMessage(rec);
-  const rows=[['学習時間',fmtDurJp(rec.totalMs)],[rec.mode==='repeat'?'再学習':'新しい単語',rec.newN+'語']];
+  const rows=[['学習時間',fmtDurJp(rec.totalMs)]];
+  if(BYUNIT[rec.unitId]) rows.push(['ユニット',BYUNIT[rec.unitId].bookTitle+' '+BYUNIT[rec.unitId].number]);
+  rows.push([rec.mode==='repeat'?'再学習した単語':'新しく学習した単語',
+    (rec.mode==='repeat'?rec.repeatWords.length:rec.newN)+'語']);
+  if(rec.mode!=='repeat'&&rec.repeatWords.length) rows.push(['再学習した単語',rec.repeatWords.length+'語']);
+  rows.push(['今回取り組んだ単語',rec.newWords.length+rec.repeatWords.length+rec.reviewWords.length+'語']);
   if(rec.reviewN) rows.push(['復習',rec.reviewN+'語']);
   rows.push(['スキップした数','周'+rec.skippedRounds+' / 単語'+rec.skippedWords+'語']);
   if(rec.total) rows.push([rec.metricVersion>=1?'初回正答率':'正答率',Math.round(rec.correct/rec.total*100)+'%('+rec.correct+'/'+rec.total+')']);
@@ -1118,10 +1150,11 @@ function showDone(rec){
     if(rec.effortScore!==null) rows.push(['取り組み度の目安',rec.effortScore+'/100']);
   }
   const st=streak(); if(st>0) rows.push(['連続',st+'日目']);
+  const upcoming=nextUnit();
   const steps=STEP_ORDER.filter(k=>rec.stepMs[k]>0).map(k=>h('div',{class:'srow'},h('span',null,STEP_NAMES[k]),h('span',null,fmtDur(rec.stepMs[k]))));
   if(rec.legacyUseMs) steps.push(h('div',{class:'srow'},h('span',null,'使ってみよう(旧記録)'),h('span',null,fmtDur(rec.legacyUseMs))));
   mount(h('div',{class:'screen'},
-    h('div',null,h('div',{class:'big'},h('span',{class:'mark'},'今日の学習 完了!')),clock,h('div',{class:'hint'},'この画面をおうちの人に見せよう')),
+    h('div',null,h('div',{class:'big'},h('span',{class:'mark'},'ユニット学習 完了!')),clock,h('div',{class:'hint'},'この画面をおうちの人に見せよう')),
     h('div',{class:'card'},rows.map(([a,b])=>h('div',{class:'srow'},h('span',null,a),h('b',null,b)))),
     rec.metricVersion>=1&&rec.responseTimeScore!==null?h('div',{class:'hint'},rec.metricVersion>=2?
       '取り組み度は初回正答率と回答時間から算出し、スキップした学習分を反映した目安です。時間スコアは平均2秒以下で0点、5秒以上で100点（間は比例）ですが、真剣さを断定するものではありません。':
@@ -1131,19 +1164,13 @@ function showDone(rec){
     h('button',{class:'btn',onclick:()=>openSms(msg)},'メッセージで送る'),
     S.settings.parentPhone?null:h('div',{class:'hint'},'送り先は「設定」で登録できます'),
     h('div',{class:'row2'},h('button',{class:'btn sub',onclick:()=>share(msg)},'共有'),h('button',{class:'btn sub',onclick:()=>copy(msg)},'コピー')),
-    h('button',{class:'btn sub',onclick:showTodayStudyList},'今日の学習一覧へ'),
+    upcoming?h('button',{class:'btn',onclick:()=>startUnit(upcoming)},'次のユニットを学習'):null,
+    h('button',{class:'btn sub',onclick:showUnitStatus},'ユニットの学習状況を見る'),
     h('button',{class:'link',onclick:showHome},'ホームへもどる')));
 }
 
 /* ================= ホーム・きろく・設定 ================= */
 function topBack(title,onBack=showHome){return h('div',{class:'top'},h('button',{class:'x','aria-label':'もどる',onclick:onBack},'‹'),h('div',{class:'ttl'},title));}
-function replayWords(rec,today){
-  const newWords=rec.newWords.length?rec.newWords:WORDS.filter(w=>S.words[w.id]&&S.words[w.id].learnedOn===today).map(w=>w.id);
-  return {newWords,reviewWords:rec.reviewWords};
-}
-function studySteps(newWords,reviewWords){
-  return [...(reviewWords.length?['review']:[]),...(newWords.length?['todayWords','learn','check1','useRead','useCloze','useOrder','check2','spell']:[])];
-}
 function audioButton(text,label,rate){
   return h('button',{class:'audio-button','aria-label':label,title:label,onclick:()=>TTS.speak(text,rate)},
     h('svg',{class:'speaker-icon',viewBox:'0 0 24 24','aria-hidden':'true',focusable:'false'},
@@ -1175,13 +1202,6 @@ function wordCard(word,options={}){
     }
   }
   return h('div',{class:'card word-card'},content);
-}
-function showTodayWordCards(words){
-  setActiveTab('study');
-  const cards=words.map(word=>wordCard(word)).filter(Boolean);
-  mount(h('div',{class:'screen','data-view':'word-cards'},
-    topBack('今日のカード一覧',showTodayStudyList),
-    cards.length?h('div',null,cards):h('div',{class:'note'},'カードがありません')));
 }
 function cardOptionControls(onChange){
   const checkbox=(key,label)=>h('label',{class:'chk'},h('input',{type:'checkbox',checked:cardDisplayOptions[key],
@@ -1262,7 +1282,7 @@ function showWordCardList(bookId,words,title){
     cardOptionControls(()=>showWordCardList(bookId,words,title)),
     h('div',null,words.map(word=>wordCard(word,{...cardDisplayOptions,audio:true})))));
 }
-function showTodayStudyList(){
+function showUnitStatus(){
   setActiveTab('study');
   if(session){
     TTS.stop();Time.setStep(null);
@@ -1270,67 +1290,57 @@ function showTodayStudyList(){
     if(current&&current.dataset.sessionScreen==='true') session.pausedScreen=current;
     savePending();
   }
-  const today=ymd(),record=S.sessions.filter(item=>item.date===today).pop();
-  let newWords,reviewWords,steps,currentIndex=0,phase='done',hasPending=false;
-  if(session){
-    ({newWords,reviewWords,steps,currentStepIndex:currentIndex,phase}=session);hasPending=true;
-  }else if(pendingSession){
-    ({newWords,reviewWords,steps,currentStepIndex:currentIndex,phase}=pendingSession);hasPending=true;
-  }else if(record){
-    ({newWords,reviewWords}=replayWords(record,today));steps=studySteps(newWords,reviewWords);
-  }else{
-    newWords=pickNew(S.settings.perDay);reviewWords=dueWords();steps=studySteps(newWords,reviewWords);
-  }
-  const rows=steps.map((key,index)=>{
-    const studied=hasPending
-      ?index<currentIndex||(index===currentIndex&&phase==='summary')
-      :!!record;
-    return h('div',{class:'item study-chapter'},
-      h('b',null,stepLabel(key)),h('span',{class:'chapter-status'},studied?'学習済み':'未学習'));
+  const active=session||pendingSession,next=nextUnit();
+  const books=WORD_BOOKS.map((book,index)=>{
+    const units=WORD_UNITS.filter(unit=>unit.bookId===book.id);
+    const learnedN=units.filter(unit=>unitProgress(unit).status==='learned').length;
+    return h('details',{class:'unit-book',open:next?next.bookId===book.id:index===0},
+      h('summary',null,book.title+'　'+learnedN+' / '+units.length+'ユニット学習済み'),
+      h('div',{class:'unit-list'},units.map(unit=>{
+        const progress=unitProgress(unit),isActive=active&&active.unitId===unit.id;
+        const status=isActive?(progress.status==='learned'?'再学習中':'学習中'):
+          progress.status==='learned'?'学習済み':progress.status==='partial'?'学習途中':'未学習';
+        return h('button',{class:'unit-item unit-'+progress.status+(isActive?' active':''),type:'button',
+          'aria-label':unit.bookTitle+'、ユニット '+unit.number+'、'+status+'、'+progress.learned+' / '+progress.total+'語',
+          disabled:!!active,onclick:()=>startUnit(unit)},
+          h('b',null,unit.number),h('span',{class:'unit-status'},status),
+          h('span',{class:'unit-count'},progress.learned+'/'+progress.total+'語'));
+      })));
   });
-  const todayWords=Array.from(new Set([...reviewWords,...newWords]));
   const actions=[];
-  if(todayWords.length){
-    actions.push(h('button',{class:'btn sub',onclick:()=>showTodayWordCards(todayWords)},'今日のカード一覧を見る'));
-  }
-  if(hasPending) actions.push(h('button',{class:'btn',onclick:resumeStudy},'つづきを学習'));
-  else if(!record&&(newWords.length||reviewWords.length)){
-    actions.push(h('button',{class:'btn',onclick:()=>start(newWords,reviewWords)},'今日の学習をはじめる'));
-  }
+  if(active) actions.push(h('button',{class:'btn',onclick:resumeStudy},'つづきから学習'));
+  else if(next) actions.push(h('button',{class:'btn',onclick:startNextUnit},'次のユニットを学習'));
   mount(h('div',{class:'screen','data-view':'study-list'},
-    h('div',{class:'top'},h('button',{class:'x','aria-label':'もどる',onclick:showHome},'‹'),h('div',{class:'ttl'},'今日の学習一覧')),
-    rows.length?h('div',null,rows):h('div',{class:'note'},'今日の学習はありません。'),
-    h('div',{class:'grow'}),actions));
+    h('div',{class:'top'},h('button',{class:'x','aria-label':'もどる',onclick:showHome},'‹'),h('div',{class:'ttl'},'ユニットの学習状況')),
+    h('div',{class:'hint'},'1ユニットは5語です。学習済みのユニットも何度でも学び直せます。'),
+    actions,books,
+    !next&&!active?h('div',{class:'note'},'すべてのユニットを学習済みです。好きなユニットを選んで復習できます。'):null,
+    h('div',{class:'grow'})));
 }
 function showHome(){
   setActiveTab('home');
-  const today=ymd(),rec=S.sessions.filter(s=>s.date===today).pop(),per=S.settings.perDay;
-  const newW=pickNew(per),due=dueWords(),st=streak(),d=new Date();
-  const seg=[10,15].map(n=>h('button',{class:'seg'+(per===n?' on':''),'aria-pressed':String(per===n),onclick:()=>{S.settings.perDay=n;save();showHome();}},n+'語'));
-  let main;
-  if(session||pendingSession){
-    const active=session||pendingSession;
-    main=[h('div',{class:'card'},h('div',{class:'big'},'学習を中断しています'),
-      h('div',{class:'meta soft'},active.steps[active.currentStepIndex]?stepLabel(active.steps[active.currentStepIndex]):'今日の結果'),
-      h('div',{class:'meta soft'},'ここまでの進み具合を保存しました')),
-      h('button',{class:'btn',onclick:resumeStudy},'つづきを学習'),
-      h('button',{class:'btn sub',onclick:showTodayStudyList},'今日の学習一覧を見る')];
-  }else if(rec){
-    const replay=replayWords(rec,today);
-    const todayTestWords=newWordsForDate(today);
-    main=[h('div',{class:'card'},h('div',{class:'big'},'今日は完了ずみ!'),h('div',{class:'meta soft'},'学習時間 '+fmtDurJp(rec.totalMs))),
-      h('button',{class:'btn',onclick:()=>showDone(rec)},'完了画面を見る'),
-      h('button',{class:'btn sub',onclick:showTodayStudyList},'今日の学習一覧を見る'),
-      replay.newWords.length||replay.reviewWords.length?h('button',{class:'btn sub',onclick:()=>start(replay.newWords,replay.reviewWords,true)},
-        replay.newWords.length?'今日の学習をもう一度':'今日の復習をもう一度'):h('div',{class:'note'},'見直せる単語がありません'),
-      todayTestWords.length?h('button',{class:'btn sub',onclick:()=>startDateTest(today,todayTestWords)},'今日の確認テスト'):null];
+  const today=ymd(),active=session||pendingSession,next=nextUnit(),st=streak(),d=new Date(),main=[];
+  if(active){
+    const unit=BYUNIT[active.unitId];
+    main.push(h('div',{class:'card'},h('div',{class:'big'},'学習を中断しています'),
+      unit?h('div',{class:'meta'},unit.bookTitle+' / ユニット '+unit.number):null,
+      h('div',{class:'meta soft'},active.steps[active.currentStepIndex]?stepLabel(active.steps[active.currentStepIndex]):'学習をつづけられます')));
+    main.push(h('button',{class:'btn',onclick:resumeStudy},'つづきから学習'));
+  }else if(next){
+    const progress=unitProgress(next);
+    main.push(h('div',{class:'card'},
+      h('div',{class:'lbl'},progress.status==='partial'?'学習途中のユニット':'次のユニット'),
+      h('div',{class:'meta'},next.bookTitle+' / ユニット '+next.number),
+      h('div',{class:'meta soft'},progress.learned+' / '+progress.total+'語 学習済み')));
+    main.push(h('button',{class:'btn',onclick:startNextUnit},
+      progress.status==='partial'?'学習途中のユニットをつづける':'次のユニットを学習'));
+  }else{
+    main.push(h('div',{class:'card'},h('div',{class:'big'},'全ユニット学習済み'),
+      h('div',{class:'meta soft'},'好きなユニットを選んで何度でも復習できます。')));
   }
-  else if(!newW.length&&!due.length) main=[h('div',{class:'card'},h('div',{class:'big'},'今日の分はおしまい'),h('div',{class:'meta soft'},'新しい単語がありません。単語リストを増やしてね。'))];
-  else main=[h('div',{class:'card'},h('div',{class:'lbl'},'1日に覚える新しい単語'),h('div',{class:'seg-row'},seg),
-                h('div',{class:'meta'},'今日:新しい単語 '+newW.length+'語'+(due.length?' + 復習 '+due.length+'語':'')),
-                h('div',{class:'meta soft'},'目安 約'+Math.max(1,Math.round(newW.length*1.4+due.length*0.4))+'分')),
-             h('button',{class:'btn',onclick:()=>start(newW,due)},'はじめる'),
-             h('button',{class:'btn sub',onclick:showTodayStudyList},'今日の学習一覧を見る')];
+  main.push(h('button',{class:'btn sub',onclick:showUnitStatus},'ユニットを選んで学習'));
+  const todayTestWords=newWordsForDate(today);
+  if(todayTestWords.length&&!active)main.push(h('button',{class:'btn sub',onclick:()=>startDateTest(today,todayTestWords)},'今日の確認テスト'));
   mount(h('div',{class:'screen'},
     h('div',null,h('div',{class:'app-title'},h('span',{class:'mark'},'えいたん')),
       h('div',{class:'meta soft'},(d.getMonth()+1)+'/'+d.getDate()+'('+WD[d.getDay()]+')'+(st>0?'　連続 '+st+'日':''))),
@@ -1341,9 +1351,12 @@ function showHistory(){
   const rows=S.sessions.slice().reverse().slice(0,60).map(s=>{
     const [y,m,dd]=s.date.split('-').map(Number),wd=WD[new Date(y,m-1,dd).getDay()];
     const t=s.finishedAt?new Date(s.finishedAt):null;
+    const wordCount=s.mode==='repeat'?s.repeatWords.length:s.newN;
     return h('div',{class:'item'},
       h('b',null,m+'/'+dd+'('+wd+')'+(t?' '+pad(t.getHours())+':'+pad(t.getMinutes()):'')),
-      h('small',null,(s.mode==='repeat'?'再学習':'新')+s.newN+'語'+(s.reviewN?' + 復習'+s.reviewN+'語':'')+' / '+fmtDurJp(s.totalMs)+
+      h('small',null,(s.mode==='repeat'?'再学習':'新')+wordCount+'語'+(s.unitId&&BYUNIT[s.unitId]?' / '+BYUNIT[s.unitId].bookTitle+' '+BYUNIT[s.unitId].number+'ユニット':'')+
+        (s.mode!=='repeat'&&s.repeatWords.length?' + 再学習'+s.repeatWords.length+'語':'')+
+        (s.reviewN?' + 復習'+s.reviewN+'語':'')+' / '+fmtDurJp(s.totalMs)+
         (s.skippedRounds||s.skippedWords?' / スキップ 周'+s.skippedRounds+'・単語'+s.skippedWords+'語':'')+
         (s.total?' / '+(s.metricVersion>=1?'初回正答率':'正答率')+Math.round(s.correct/s.total*100)+'%':'')+
         (s.metricVersion>=1&&s.effortScore!==null?' / 取り組み度 '+s.effortScore+'/100':'')));
@@ -1373,8 +1386,8 @@ function wordHistoryEntries(range){
   }
   for(const record of S.sessions){
     if(!inRange(record.date)) continue;
-    const newType=record.mode==='repeat'?'repeat':'new';
-    record.newWords.forEach(word=>add(word,newType,record.date));
+    record.newWords.forEach(word=>add(word,'new',record.date));
+    record.repeatWords.forEach(word=>add(word,'repeat',record.date));
     record.reviewWords.forEach(word=>add(word,'review',record.date));
     if(!record.newWords.length&&record.mode!=='repeat'){
       for(const [word,state] of Object.entries(S.words)){
