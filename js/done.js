@@ -31,16 +31,6 @@ function buildMessage(rec){
   }
   return L.join('\n');
 }
-function openSms(text){
-  const ios=isIOS(),recipients=[S.settings.parentPhone,S.settings.parentPhone2].filter(Boolean);
-  if(ios&&recipients.length>1){
-    const addresses=recipients.map(encodeURIComponent).join(',');
-    location.href='sms://open?addresses='+addresses+'&body='+encodeURIComponent(text);
-    return;
-  }
-  const addresses=recipients.join(ios?',':';');
-  location.href='sms:'+addresses+(ios?'&':'?')+'body='+encodeURIComponent(text);
-}
 async function copy(text){
   try{await navigator.clipboard.writeText(text);toast('コピーしました');}
   catch(e){
@@ -49,9 +39,6 @@ async function copy(text){
     try{document.execCommand('copy');toast('コピーしました');}catch(_){toast('コピーできませんでした');}
     ta.remove();
   }
-}
-async function share(text){
-  if(navigator.share){try{await navigator.share({text});}catch(e){}}else copy(text);
 }
 function completionWordGroups(rec){
   const seen=new Set(),groups=[];
@@ -123,9 +110,7 @@ function showDone(rec,fromHistory=false){
       '取り組み度は初回正答率と回答時間から算出した目安です。時間スコアは平均2秒以下で0点、5秒以上で100点（間は比例）ですが、真剣さを断定するものではありません。'):null,
     h('div',{class:'card slim'},h('div',{class:'lbl'},'ステップごとの時間'),h('div',{class:'steps'},steps)),
     h('div',{class:'grow'}),
-    h('button',{class:'btn',onclick:()=>openSms(msg)},'メッセージで送る'),
-    S.settings.parentPhone||S.settings.parentPhone2?null:h('div',{class:'hint'},'送り先は「設定」で登録できます'),
-    h('div',{class:'row2'},h('button',{class:'btn sub',onclick:()=>share(msg)},'共有'),h('button',{class:'btn sub',onclick:()=>copy(msg)},'コピー')),
+    h('button',{class:'btn',onclick:()=>copy(msg)},'コピー'),
     fromHistory?h('button',{class:'btn sub',onclick:showHistory},'きろくへもどる'):null,
     !fromHistory&&upcoming?h('button',{class:'btn',onclick:()=>startUnit(upcoming)},'次のユニットを学習'):null,
     !fromHistory?h('button',{class:'btn sub',onclick:showUnitStatus},'ユニットの学習状況を見る'):null,

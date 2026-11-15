@@ -40,7 +40,6 @@ function ymd(d=new Date()){return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pa
 function addDays(s,n){const [y,m,d]=s.split('-').map(Number);return ymd(new Date(y,m-1,d+n));}
 function fmtDur(ms){const s=Math.round(ms/1000);return Math.floor(s/60)+':'+pad(s%60);}
 function fmtDurJp(ms){const s=Math.round(ms/1000),m=Math.floor(s/60);return m>0?m+'分'+pad(s%60)+'秒':s+'秒';}
-const isIOS=()=>/iP(hone|ad|od)/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
 
 const WORDS=window.EITAN_WORDS;
 const WORD_BOOKS=window.EITAN_BOOKS;

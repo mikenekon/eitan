@@ -23,19 +23,12 @@ function importFrom(text){
 }
 function showSettings(){
   setActiveTab('settings');
-  const phone1=h('input',{class:'tel',type:'tel',inputmode:'tel',placeholder:'例: 09012345678',value:S.settings.parentPhone,'aria-label':'1人目の送り先の電話番号'});
-  phone1.addEventListener('input',()=>{S.settings.parentPhone=phone1.value.replace(/[^0-9+]/g,'').slice(0,20);save();});
-  const phone2=h('input',{class:'tel',type:'tel',inputmode:'tel',placeholder:'例: 09012345678',value:S.settings.parentPhone2,'aria-label':'2人目の送り先の電話番号'});
-  phone2.addEventListener('input',()=>{S.settings.parentPhone2=phone2.value.replace(/[^0-9+]/g,'').slice(0,20);save();});
   const waitOptions=[1,1.5,2].map(n=>h('button',{class:'seg'+(Number(S.settings.practiceWaitSec)===n?' on':''),'aria-pressed':String(Number(S.settings.practiceWaitSec)===n),
     onclick:()=>{S.settings.practiceWaitSec=n;save();showSettings();}},n+'秒'));
   const ta=h('textarea',{class:'box',placeholder:'バックアップの文字をここに貼り付け','aria-label':'バックアップ'});
   const file=h('input',{type:'file',accept:'.json,application/json,text/plain'});
   file.addEventListener('change',async()=>{const f=file.files&&file.files[0];if(f){try{ta.value=await f.text();}catch(e){toast('ファイルを読めませんでした');}}});
   mount(h('div',{class:'screen'},topBack('設定・バックアップ'),
-    h('div',{class:'sec'},h('h2',null,'メッセージの送り先'),
-      h('label',null,'1人目',phone1),h('label',null,'2人目',phone2),
-      h('div',{class:'hint'},'完了画面の「メッセージで送る」で、登録した番号あてのメッセージ作成画面が開きます。端末によって複数宛先の扱いが異なるため、送信前に確認してください。')),
     h('div',{class:'sec'},h('h2',null,'発音練習の待ち時間'),
       h('div',{class:'seg-row'},waitOptions),
       h('div',{class:'hint'},'音声を聞いたあと、音声の長さを目安に練習時間を確保します。短い単語ではここで選んだ時間以上待ちます。マイクは使いません。')),
