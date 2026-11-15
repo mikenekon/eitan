@@ -10,6 +10,9 @@
       "id": "basic-2",
       "title": "基本単語 2",
       "file": "data/basic-2.json"
-    }
+    },
+    { "id": "g-801-1200", "title": "G 801-1200", "file": "data/g-801-1200.json" },
+    { "id": "g-1201-1700", "title": "G 1201-1700", "file": "data/g-1201-1700.json" },
+    { "id": "g-1701-2000", "title": "G 1701-2000", "file": "data/g-1701-2000.json" }
   ]
 }
