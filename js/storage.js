@@ -1,7 +1,7 @@
 'use strict';
 //@file 保存データ(状態・バックアップ検証・読込/保存・連続日数)
 /* ================= 保存データ ================= */
-function defaultState(){return {app:'eitan',v:APP_V,settings:{parentPhone:'',practiceWaitSec:1.5},words:{},sessions:[]};}
+function defaultState(){return {app:'eitan',v:APP_V,settings:{parentPhone:'',parentPhone2:'',practiceWaitSec:1.5},words:{},sessions:[]};}
 function cleanSession(s){
   const sm={}; for(const k of STEP_ORDER) sm[k]=num(s.stepMs&&s.stepMs[k]);
   const metricVersion=s.metricVersion===2?2:s.metricVersion===1?1:0;
@@ -24,6 +24,7 @@ function validateBackup(o){
   if(o.v!==APP_V) return {ok:false,error:'このバックアップは読み込めません(バージョンがちがいます)'};
   const st=defaultState(), se=(o.settings&&typeof o.settings==='object')?o.settings:{};
   st.settings.parentPhone=typeof se.parentPhone==='string'?se.parentPhone.replace(/[^0-9+]/g,'').slice(0,20):'';
+  st.settings.parentPhone2=typeof se.parentPhone2==='string'?se.parentPhone2.replace(/[^0-9+]/g,'').slice(0,20):'';
   st.settings.practiceWaitSec=[1,1.5,2].includes(Number(se.practiceWaitSec))?Number(se.practiceWaitSec):1.5;
   if(o.words!==undefined&&(o.words===null||typeof o.words!=='object'||Array.isArray(o.words))) return {ok:false,error:'単語の記録がこわれています'};
   for(const [k,w] of Object.entries(o.words||{})){

@@ -32,8 +32,9 @@ function buildMessage(rec){
   return L.join('\n');
 }
 function openSms(text){
-  const p=S.settings.parentPhone;
-  location.href='sms:'+p+(isIOS()?'&':'?')+'body='+encodeURIComponent(text);
+  const ios=isIOS(),recipients=[S.settings.parentPhone,S.settings.parentPhone2].filter(Boolean);
+  const addresses=recipients.join(ios?',':';');
+  location.href='sms:'+addresses+(ios?'&':'?')+'body='+encodeURIComponent(text);
 }
 async function copy(text){
   try{await navigator.clipboard.writeText(text);toast('コピーしました');}
@@ -118,7 +119,7 @@ function showDone(rec,fromHistory=false){
     h('div',{class:'card slim'},h('div',{class:'lbl'},'ステップごとの時間'),h('div',{class:'steps'},steps)),
     h('div',{class:'grow'}),
     h('button',{class:'btn',onclick:()=>openSms(msg)},'メッセージで送る'),
-    S.settings.parentPhone?null:h('div',{class:'hint'},'送り先は「設定」で登録できます'),
+    S.settings.parentPhone||S.settings.parentPhone2?null:h('div',{class:'hint'},'送り先は「設定」で登録できます'),
     h('div',{class:'row2'},h('button',{class:'btn sub',onclick:()=>share(msg)},'共有'),h('button',{class:'btn sub',onclick:()=>copy(msg)},'コピー')),
     fromHistory?h('button',{class:'btn sub',onclick:showHistory},'きろくへもどる'):null,
     !fromHistory&&upcoming?h('button',{class:'btn',onclick:()=>startUnit(upcoming)},'次のユニットを学習'):null,
