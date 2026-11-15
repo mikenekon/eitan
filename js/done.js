@@ -21,6 +21,14 @@ function buildMessage(rec){
   if(rec.legacyUseMs) parts.push('使ってみよう(旧記録) '+fmtDur(rec.legacyUseMs));
   if(parts.length) L.push('内訳 '+parts.join(' / '));
   const st=streak(); if(st>0) L.push('連続'+st+'日目');
+  const groups=completionWordGroups(rec);
+  if(groups.length){
+    L.push('学習した単語');
+    for(const group of groups){
+      L.push('【'+group.label+'】');
+      L.push(group.words.map(word=>BYWORD[word].word+'（'+BYWORD[word].meaning+'）').join('、'));
+    }
+  }
   return L.join('\n');
 }
 function openSms(text){
