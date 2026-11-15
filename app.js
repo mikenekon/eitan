@@ -1131,6 +1131,11 @@ function replayWords(rec,today){
 function studySteps(newWords,reviewWords){
   return [...(reviewWords.length?['review']:[]),...(newWords.length?['todayWords','learn','check1','useRead','useCloze','useOrder','check2','spell']:[])];
 }
+function audioButton(text,label,rate){
+  return h('button',{class:'audio-button','aria-label':label,title:label,onclick:()=>TTS.speak(text,rate)},
+    h('svg',{class:'speaker-icon',viewBox:'0 0 24 24','aria-hidden':'true',focusable:'false'},
+      h('path',{d:'M3 9v6h4l5 4V5L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.5 4.5 0 0 0 16.5 12zm-2.5-9v2.06a7 7 0 0 1 0 13.88V21a9 9 0 0 0 0-18z'})));
+}
 function resumeStudy(){
   TTS.unlock();
   if(session&&session.pausedScreen){
@@ -1143,19 +1148,17 @@ function wordCard(word,options={}){
   const d=BYWORD[word];
   if(!d)return null;
   const content=[];
-  if(!options.hideEnglish)content.push(h('div',{class:'en'},d.word));
+  if(!options.hideEnglish||options.audio)content.push(h('div',{class:'word-card-heading'},
+    !options.hideEnglish?h('div',{class:'en'},d.word):null,
+    options.audio?audioButton(d.word,'単語の発音を聞く'):null));
   if(!options.hideJapanese)content.push(h('div',{class:'jp'},d.meaning));
-  if(options.audio){
-    content.push(h('div',{class:'row'},
-      h('button',{class:'btn sub small',onclick:()=>TTS.speak(d.word)},'🔊 単語')));
-  }
   if(options.showExamples!==false){
     for(let i=1;i<=2;i++){
       content.push(h('div',{class:'word-card-example'},
-        !options.hideEnglish?h('div',{class:'sent'},hl(d['ex'+i],d.word)):null,
-        !options.hideJapanese?h('div',{class:'tr'},d['tr'+i]):null,
-        options.audio?h('div',{class:'row'},
-          h('button',{class:'btn sub small',onclick:()=>TTS.speak(d['ex'+i],0.8)},'🔊 例文'+i)):null));
+        !options.hideEnglish||options.audio?h('div',{class:'word-card-sentence'},
+          !options.hideEnglish?h('div',{class:'sent'},hl(d['ex'+i],d.word)):null,
+          options.audio?audioButton(d['ex'+i],'例文'+i+'の発音を聞く',0.8):null):null,
+        !options.hideJapanese?h('div',{class:'tr'},d['tr'+i]):null));
     }
   }
   return h('div',{class:'card word-card'},content);

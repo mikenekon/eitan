@@ -115,6 +115,11 @@ input.tel{width:100%;font-size:18px;padding:10px;border:2px solid var(--ink);bor
 .chapter-status{flex:none;color:var(--soft);font-size:14px;font-weight:700}
 .word-card{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
 .word-card .en{font-size:38px}
+.word-card-heading,.word-card-sentence{display:flex;align-items:center;gap:8px}
+.word-card-heading .en,.word-card-sentence .sent{flex:1;min-width:0}
+.audio-button{display:grid;place-items:center;flex:none;width:44px;height:44px;padding:0;border:0;border-radius:50%;
+  background:transparent;color:var(--ink);cursor:pointer}
+.speaker-icon{width:24px;height:24px;fill:currentColor}
 .word-card-example{display:flex;flex-direction:column;gap:6px;padding-top:8px;border-top:1px dashed var(--line)}
 .card-options{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .sec{display:flex;flex-direction:column;gap:8px}
