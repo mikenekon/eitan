@@ -74,7 +74,11 @@ function makeGate(onPass, skip=false){
   function wait(duration){
     if(skip){finish();return;}
     if(finished) return;
-    need=Math.max(duration,Number(S.settings.practiceWaitSec||1.5)*1000);
+    const sec=Number(S.settings.practiceWaitSec);
+    const setting=Number.isFinite(sec)&&sec>=0?sec:1.5;
+    if(setting===0){finish();return;}
+    // 1.5秒を標準として、音声の長さに設定の倍率をかける(短い単語は設定秒が下限)
+    need=Math.max(duration*setting/1.5,setting*1000);
     started=performance.now();msg.textContent='声に出して練習してね';
     timer=setInterval(()=>{
       const progress=Math.min(1,(performance.now()-started)/need);

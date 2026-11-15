@@ -23,7 +23,7 @@ function importFrom(text){
 }
 function showSettings(){
   setActiveTab('settings');
-  const waitOptions=[1,1.5,2].map(n=>h('button',{class:'seg'+(Number(S.settings.practiceWaitSec)===n?' on':''),'aria-pressed':String(Number(S.settings.practiceWaitSec)===n),
+  const waitOptions=[0,1,1.5,2].map(n=>h('button',{class:'seg'+(Number(S.settings.practiceWaitSec)===n?' on':''),'aria-pressed':String(Number(S.settings.practiceWaitSec)===n),
     onclick:()=>{S.settings.practiceWaitSec=n;save();showSettings();}},n+'秒'));
   const ta=h('textarea',{class:'box',placeholder:'バックアップの文字をここに貼り付け','aria-label':'バックアップ'});
   const file=h('input',{type:'file',accept:'.json,application/json,text/plain'});
@@ -31,7 +31,7 @@ function showSettings(){
   mount(h('div',{class:'screen'},topBack('設定・バックアップ'),
     h('div',{class:'sec'},h('h2',null,'発音練習の待ち時間'),
       h('div',{class:'seg-row'},waitOptions),
-      h('div',{class:'hint'},'音声を聞いたあと、音声の長さを目安に練習時間を確保します。短い単語ではここで選んだ時間以上待ちます。マイクは使いません。')),
+      h('div',{class:'hint'},'音声を聞いたあとの練習時間です。例文などは音声の長さに合わせ、1.5秒を標準として待ち時間が増減します。短い単語は選んだ秒数が最低の待ち時間です。0秒にすると待たずに進めます。確認①②では待ち時間を使いません。マイクは使いません。')),
     h('div',{class:'sec'},h('h2',null,'バックアップ(書き出し)'),
       h('button',{class:'btn sub',onclick:shareBackup},'ファイルとして保存・送る'),
       h('button',{class:'btn sub',onclick:()=>copy(exportJSON())},'文字としてコピー')),

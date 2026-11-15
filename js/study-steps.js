@@ -367,7 +367,12 @@ function orderCard(word,n,total,state,canGoBack){
         }
         return h('div',{class:'tile empty'},'');
       }));
-      pool.replaceChildren(...order.filter(o=>!pickedSet.has(o.i)).map(o=>h('button',{class:'tile',disabled:state.solved,onclick:()=>{if(state.solved)return;state.picked.push(o);savePending();render();check();}},o.t)));
+      // 選んだ単語は消さずにグレーで残し、並び順が変わらないようにする
+      pool.replaceChildren(...order.map(o=>{
+        const used=pickedSet.has(o.i);
+        return h('button',{class:'tile'+(used?' used':''),disabled:state.solved||used,
+          onclick:()=>{if(state.solved||used)return;state.picked.push(o);savePending();render();check();}},o.t);
+      }));
     }
     function check(){
       if(state.picked.length!==order.length) return;

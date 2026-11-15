@@ -23,7 +23,7 @@ function validateBackup(o){
   if(o.app!=='eitan') return {ok:false,error:'えいたんのバックアップではありません'};
   if(o.v!==APP_V) return {ok:false,error:'このバックアップは読み込めません(バージョンがちがいます)'};
   const st=defaultState(), se=(o.settings&&typeof o.settings==='object')?o.settings:{};
-  st.settings.practiceWaitSec=[1,1.5,2].includes(Number(se.practiceWaitSec))?Number(se.practiceWaitSec):1.5;
+  st.settings.practiceWaitSec=[0,1,1.5,2].includes(Number(se.practiceWaitSec))?Number(se.practiceWaitSec):1.5;
   if(o.words!==undefined&&(o.words===null||typeof o.words!=='object'||Array.isArray(o.words))) return {ok:false,error:'単語の記録がこわれています'};
   for(const [k,w] of Object.entries(o.words||{})){
     if(!/^(?:[A-Za-z][A-Za-z' -]{0,39}|[A-Za-z][A-Za-z0-9-]{0,79})$/.test(k)||!w||typeof w!=='object') continue;
