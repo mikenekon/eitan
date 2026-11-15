@@ -33,6 +33,11 @@ function buildMessage(rec){
 }
 function openSms(text){
   const ios=isIOS(),recipients=[S.settings.parentPhone,S.settings.parentPhone2].filter(Boolean);
+  if(ios&&recipients.length>1){
+    const addresses=recipients.map(encodeURIComponent).join(',');
+    location.href='sms://open?addresses='+addresses+'&body='+encodeURIComponent(text);
+    return;
+  }
   const addresses=recipients.join(ios?',':';');
   location.href='sms:'+addresses+(ios?'&':'?')+'body='+encodeURIComponent(text);
 }
