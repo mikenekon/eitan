@@ -1221,11 +1221,36 @@ async function copy(text){
 async function share(text){
   if(navigator.share){try{await navigator.share({text});}catch(e){}}else copy(text);
 }
-function showDone(rec){
-  setActiveTab('home');
+function completionWordGroups(rec){
+  const seen=new Set(),groups=[];
+  for(const [label,words] of [
+    ['新しく学習した単語',rec.newWords],
+    ['再学習した単語',rec.repeatWords],
+    ['復習した単語',rec.reviewWords]
+  ]){
+    const unique=(words||[]).filter(word=>{
+      if(!BYWORD[word]||seen.has(word))return false;
+      seen.add(word);return true;
+    });
+    if(unique.length)groups.push({label,words:unique});
+  }
+  if(!groups.length&&BYUNIT[rec.unitId])groups.push({label:'学習した単語',words:BYUNIT[rec.unitId].words});
+  return groups;
+}
+function showDone(rec,fromHistory=false){
+  setActiveTab(fromHistory?'history':'home');
   const clock=h('div',{class:'clock'});
-  const upd=()=>{const d=new Date();clock.textContent=(d.getMonth()+1)+'/'+d.getDate()+'('+WD[d.getDay()]+') '+pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds());};
-  upd();const iv=setInterval(()=>{if(!clock.isConnected){clearInterval(iv);return;}upd();},1000);
+  const completedAt=rec.finishedAt?new Date(rec.finishedAt):DATE_RE.test(String(rec.date||''))?
+    new Date(rec.date+'T00:00:00'):null;
+  const upd=()=>{
+    const d=fromHistory&&completedAt?completedAt:new Date();
+    clock.textContent=(d.getMonth()+1)+'/'+d.getDate()+'('+WD[d.getDay()]+') '+pad(d.getHours())+':'+pad(d.getMinutes())+
+      (fromHistory?'':':'+pad(d.getSeconds()));
+  };
+  upd();
+  if(!fromHistory){
+    const iv=setInterval(()=>{if(!clock.isConnected){clearInterval(iv);return;}upd();},1000);
+  }
   const msg=buildMessage(rec);
   const rows=[['学習時間',fmtDurJp(rec.totalMs)]];
   if(BYUNIT[rec.unitId]) rows.push(['ユニット',BYUNIT[rec.unitId].bookTitle+' '+BYUNIT[rec.unitId].number]);
@@ -1245,9 +1270,22 @@ function showDone(rec){
   const upcoming=nextUnit();
   const steps=STEP_ORDER.filter(k=>rec.stepMs[k]>0).map(k=>h('div',{class:'srow'},h('span',null,STEP_NAMES[k]),h('span',null,fmtDur(rec.stepMs[k]))));
   if(rec.legacyUseMs) steps.push(h('div',{class:'srow'},h('span',null,'使ってみよう(旧記録)'),h('span',null,fmtDur(rec.legacyUseMs))));
+  const wordGroups=completionWordGroups(rec);
   mount(h('div',{class:'screen'},
-    h('div',null,h('div',{class:'big'},h('span',{class:'mark'},'ユニット学習 完了!')),clock,h('div',{class:'hint'},'この画面をおうちの人に見せよう')),
+    fromHistory?topBack('学習記録の詳細',showHistory):null,
+    h('div',null,h('div',{class:'big'},h('span',{class:'mark'},'ユニット学習 完了!')),clock,
+      h('div',{class:'hint'},fromHistory?'学習した単語と結果を確認できます。':'この画面をおうちの人に見せよう')),
     h('div',{class:'card'},rows.map(([a,b])=>h('div',{class:'srow'},h('span',null,a),h('b',null,b)))),
+    wordGroups.length?h('div',{class:'card completion-words'},
+      h('div',{class:'lbl'},'今回学習した単語'),
+      wordGroups.map(group=>h('div',{class:'record-word-group'},
+        h('div',{class:'record-word-kind'},group.label),
+        group.words.map(word=>{
+          const item=BYWORD[word];
+          return h('div',{class:'record-word-row'},h('b',{class:'record-word-en'},item.word),
+            h('span',{class:'record-word-meaning'},item.meaning));
+        })))):
+      h('div',{class:'card completion-words'},h('div',{class:'lbl'},'この記録に単語データがありません')),
     rec.metricVersion>=1&&rec.responseTimeScore!==null?h('div',{class:'hint'},rec.metricVersion>=2?
       '取り組み度は初回正答率と回答時間から算出し、スキップした学習分を反映した目安です。時間スコアは平均2秒以下で0点、5秒以上で100点（間は比例）ですが、真剣さを断定するものではありません。':
       '取り組み度は初回正答率と回答時間から算出した目安です。時間スコアは平均2秒以下で0点、5秒以上で100点（間は比例）ですが、真剣さを断定するものではありません。'):null,
@@ -1256,9 +1294,10 @@ function showDone(rec){
     h('button',{class:'btn',onclick:()=>openSms(msg)},'メッセージで送る'),
     S.settings.parentPhone?null:h('div',{class:'hint'},'送り先は「設定」で登録できます'),
     h('div',{class:'row2'},h('button',{class:'btn sub',onclick:()=>share(msg)},'共有'),h('button',{class:'btn sub',onclick:()=>copy(msg)},'コピー')),
-    upcoming?h('button',{class:'btn',onclick:()=>startUnit(upcoming)},'次のユニットを学習'):null,
-    h('button',{class:'btn sub',onclick:showUnitStatus},'ユニットの学習状況を見る'),
-    h('button',{class:'link',onclick:showHome},'ホームへもどる')));
+    fromHistory?h('button',{class:'btn sub',onclick:showHistory},'きろくへもどる'):null,
+    !fromHistory&&upcoming?h('button',{class:'btn',onclick:()=>startUnit(upcoming)},'次のユニットを学習'):null,
+    !fromHistory?h('button',{class:'btn sub',onclick:showUnitStatus},'ユニットの学習状況を見る'):null,
+    !fromHistory?h('button',{class:'link',onclick:showHome},'ホームへもどる'):null));
 }
 
 /* ================= ホーム・きろく・設定 ================= */
@@ -1454,8 +1493,10 @@ function showHistory(){
     const [y,m,dd]=s.date.split('-').map(Number),wd=WD[new Date(y,m-1,dd).getDay()];
     const t=s.finishedAt?new Date(s.finishedAt):null;
     const wordCount=s.mode==='repeat'?s.repeatWords.length:s.newN;
-    return h('div',{class:'item'},
-      h('b',null,m+'/'+dd+'('+wd+')'+(t?' '+pad(t.getHours())+':'+pad(t.getMinutes()):'')),
+    const title=m+'/'+dd+'('+wd+')'+(t?' '+pad(t.getHours())+':'+pad(t.getMinutes()):'');
+    return h('button',{class:'item history-record',type:'button','aria-label':title+'の学習記録の詳細を表示',
+      onclick:()=>showDone(s,true)},
+      h('b',null,title),
       h('small',null,(s.mode==='repeat'?'再学習':'新')+wordCount+'語'+(s.unitId&&BYUNIT[s.unitId]?' / '+BYUNIT[s.unitId].bookTitle+' '+BYUNIT[s.unitId].number+'ユニット':'')+
         (s.mode!=='repeat'&&s.repeatWords.length?' + 再学習'+s.repeatWords.length+'語':'')+
         (s.reviewN?' + 復習'+s.reviewN+'語':'')+' / '+fmtDurJp(s.totalMs)+
@@ -1466,6 +1507,7 @@ function showHistory(){
   mount(h('div',{class:'screen'},topBack('きろく'),h('div',{class:'meta'},'連続 '+streak()+'日'),
     h('button',{class:'btn sub',onclick:()=>showWordHistory('today')},'学習した単語を見る'),
     h('button',{class:'btn sub',onclick:showTestDates},'日付を選んで確認テスト'),
+    rows.length?h('div',{class:'hint'},'記録を選ぶと、完了画面を再表示できます。'):null,
     rows.length?h('div',null,rows):h('div',{class:'note'},'まだ記録がありません')));
 }
 function weekStart(date){

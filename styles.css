@@ -111,6 +111,14 @@ input.tel{width:100%;font-size:18px;padding:10px;border:2px solid var(--ink);bor
 .clock{font-size:34px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:.02em;margin-top:6px}
 .item{background:#fff;border:2px solid var(--ink);border-radius:12px;padding:10px 12px;margin-bottom:8px}
 .item small{color:var(--soft);display:block}
+.history-record{display:block;width:100%;text-align:left;color:var(--ink);font:inherit;cursor:pointer}
+.completion-words{padding:12px 14px;box-shadow:none}
+.record-word-kind{margin:8px 0 2px;color:var(--soft);font-size:13px;font-weight:700}
+.record-word-row{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:5px 0;
+  border-bottom:1px dashed var(--line);font-size:15px;line-height:1.35}
+.record-word-row:last-child{border-bottom:0}
+.record-word-en{flex:0 1 43%;font-family:var(--en);font-weight:800;overflow-wrap:anywhere}
+.record-word-meaning{flex:1;text-align:right;color:var(--soft)}
 .study-chapter{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .chapter-status{flex:none;color:var(--soft);font-size:14px;font-weight:700}
 .unit-book{border:2px solid var(--line);border-radius:var(--r);background:#fff;padding:10px 12px}
