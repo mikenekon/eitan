@@ -204,18 +204,45 @@ function cleanPending(raw){
     spellWords,spellIndex:Math.min(Math.floor(num(raw.spellIndex)),spellWords.length),spellResults,spellFirst,
     skippedRounds:Math.floor(num(raw.skippedRounds)),skippedWords:Math.floor(num(raw.skippedWords))};
 }
+function pendingIdentity(item){return item.unitId||'legacy';}
 function loadPending(){
   try{
     const raw=localStorage.getItem(PENDING_KEY);
-    if(!raw)return null;
-    const pending=cleanPending(JSON.parse(raw));
-    if(!pending)LOAD_WARN=true;
-    return pending;
-  }catch(e){LOAD_WARN=true;return null;}
+    if(!raw)return {active:null,paused:[]};
+    const parsed=JSON.parse(raw),records=Array.isArray(parsed&&parsed.sessions)?parsed.sessions:[parsed],unique=new Map();
+    for(const record of records){
+      const pending=cleanPending(record);
+      if(!pending){LOAD_WARN=true;continue;}
+      const key=pendingIdentity(pending);
+      unique.delete(key);unique.set(key,pending);
+    }
+    const sessions=Array.from(unique.values());
+    return {active:sessions.pop()||null,paused:sessions};
+  }catch(e){LOAD_WARN=true;return {active:null,paused:[]};}
 }
-let pendingSession=loadPending();
+const loadedPending=loadPending();
+let pendingSession=loadedPending.active,pausedSessions=loadedPending.paused;
+function persistPendingSessions(){
+  const unique=new Map();
+  for(const item of [...pausedSessions,...(pendingSession?[pendingSession]:[])]){
+    const key=pendingIdentity(item);
+    unique.delete(key);unique.set(key,item);
+  }
+  const records=Array.from(unique.values());
+  if(records.length)localStorage.setItem(PENDING_KEY,JSON.stringify({pendingStoreVersion:1,sessions:records}));
+  else localStorage.removeItem(PENDING_KEY);
+}
+function storePendingSession(data){
+  const clean=cleanPending(data);
+  if(!clean)return false;
+  const previousPending=pendingSession,previousPaused=pausedSessions,key=pendingIdentity(clean);
+  pausedSessions=pausedSessions.filter(item=>pendingIdentity(item)!==key);
+  pendingSession=clean;
+  try{persistPendingSessions();return true;}
+  catch(e){pendingSession=previousPending;pausedSessions=previousPaused;toast('学習の進み具合を保存できませんでした');return false;}
+}
 function savePending(){
-  if(!session)return;
+  if(!session)return true;
   Time.tick();
   const data={pendingVersion:PENDING_V,newWords:session.newWords,reviewWords:session.reviewWords,unitId:session.unitId,repeat:session.repeat,
     currentStepIndex:session.currentStepIndex,phase:session.phase,stageStartCorrect:session.stageStartCorrect,
@@ -225,12 +252,43 @@ function savePending(){
     useTasks:session.useTasks,useIndex:session.useIndex,
     spellWords:session.spellWords,spellIndex:session.spellIndex,spellResults:session.spellResults,spellFirst:session.spellFirst,
     skippedRounds:session.skippedRounds,skippedWords:session.skippedWords};
-  try{localStorage.setItem(PENDING_KEY,JSON.stringify(data));pendingSession=cleanPending(data);}
-  catch(e){toast('学習の進み具合を保存できませんでした');}
+  return storePendingSession(data);
+}
+function parkPendingSession(){
+  if(!pendingSession)return true;
+  const current=pendingSession,previousPaused=pausedSessions;
+  const key=pendingIdentity(current);
+  pausedSessions=pausedSessions.filter(item=>pendingIdentity(item)!==key);
+  pausedSessions.push(current);pendingSession=null;
+  try{persistPendingSessions();return true;}
+  catch(e){pausedSessions=previousPaused;pendingSession=current;toast('学習の進み具合を保存できませんでした');return false;}
+}
+function takePausedSession(unitId=null){
+  const index=unitId===null?pausedSessions.length-1:pausedSessions.findIndex(item=>item.unitId===unitId);
+  if(index<0)return null;
+  const previousPaused=pausedSessions,previousPending=pendingSession,selected=pausedSessions[index];
+  pausedSessions=pausedSessions.filter((_,i)=>i!==index);pendingSession=selected;
+  try{persistPendingSessions();return selected;}
+  catch(e){pausedSessions=previousPaused;pendingSession=previousPending;toast('学習の進み具合を保存できませんでした');return false;}
+}
+let sessionGeneration=0;
+function pauseCurrentSession(){
+  if(session){
+    const current=session;
+    if(!savePending())return false;
+    sessionGeneration++;
+    if(current.cancelWait)current.cancelWait(new Error('switch'));
+    TTS.stop();Time.stop();session=null;
+  }
+  return parkPendingSession();
+}
+function clearActivePending(){
+  pendingSession=null;
+  try{persistPendingSessions();}catch(e){toast('中断した学習を削除できませんでした');}
 }
 function clearPending(){
   try{localStorage.removeItem(PENDING_KEY);}catch(e){toast('中断した学習を削除できませんでした');}
-  pendingSession=null;
+  pendingSession=null;pausedSessions=[];
 }
 function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){toast('保存できませんでした');}}
 
@@ -244,7 +302,14 @@ function unitProgress(unit){
 }
 function nextUnit(){return WORD_UNITS.find(unit=>unitProgress(unit).status!=='learned');}
 function startUnit(unit){
-  if(session||pendingSession){toast('中断した学習を先につづけてください');return;}
+  if((session||pendingSession)?.unitId===unit.id){resumeStudy();return;}
+  if(!pauseCurrentSession())return;
+  const restored=takePausedSession(unit.id);
+  if(restored===false)return;
+  if(restored){
+    start(restored.newWords,restored.reviewWords,restored.repeat,restored);
+    return;
+  }
   start(unit.words,[],unit.words.every(word=>!!S.words[word]),null,unit.id);
 }
 function startNextUnit(){
@@ -351,13 +416,24 @@ function stepLabel(stepKey){
   return (number?number+(number.includes('.')?' ':'. '):'')+STEP_NAMES[stepKey];
 }
 function waitUI(fn){
-  if(session.quit) return Promise.reject(new Error('abort'));
+  const owner=session;
+  if(owner.quit) return Promise.reject(new Error('abort'));
   return new Promise((resolve,reject)=>{
-    session.reject=reject;
-    fn(value=>{
+    let finished=false;
+    const cancel=error=>{
+      if(finished)return;
+      finished=true;
+      const cleanup=owner.cleanup;owner.cleanup=null;owner.cancelWait=null;owner.reject=null;
+      if(cleanup)cleanup();
+      reject(error||new Error('switch'));
+    };
+    owner.reject=cancel;owner.cancelWait=cancel;
+    fn((value)=>{
+      if(finished||session!==owner)return;
+      finished=true;owner.cleanup=null;owner.cancelWait=null;owner.reject=null;
       savePending();
       resolve(value);
-    });
+    },cleanup=>{owner.cleanup=cleanup;});
   });
 }
 function askQuit(){
@@ -488,9 +564,10 @@ function learnRoundEnd(round,rounds){
 }
 function learnCard(word,n,total,r,rounds,canGoBack){
   const d=BYWORD[word];
-  return waitUI(resolve=>{
+  return waitUI((resolve,onCancel)=>{
     let playId=0,finished=false;
     const finish=action=>{if(finished)return;finished=true;TTS.stop();resolve(action);};
+    onCancel(()=>{playId++;TTS.stop();});
     const previous=h('button',{class:'btn sub',disabled:!canGoBack,onclick:()=>finish('prev')},'‹ 前へ');
     const next=h('button',{class:'btn',onclick:()=>finish('next')},'つぎへ');
     const play=async()=>{
@@ -513,7 +590,7 @@ function flashCard(stepKey,word,pos,total,mode,state,canGoBack){
   const d=BYWORD[word];
   const isCheck2=stepKey==='check2';
   const responseStart=activeStepTime(stepKey);
-  return waitUI(resolve=>{
+  return waitUI((resolve,onCancel)=>{
     let finished=false;
     const fin=r=>{if(finished)return;finished=true;gate.destroy();TTS.stop();resolve(r);};
     const previous=h('button',{class:'btn sub',disabled:!canGoBack,onclick:()=>fin('prev')},'‹ 前へ');
@@ -531,6 +608,7 @@ function flashCard(stepKey,word,pos,total,mode,state,canGoBack){
       if(isCheck2) [...rate.children].forEach(button=>button.disabled=false);
       savePending();
     },skipGate);
+    onCancel(()=>{playId++;gate.destroy();TTS.stop();});
     gate.el.style.display='none';
     let playId=0;
     const play=async()=>{
@@ -671,13 +749,14 @@ async function stepUseOrder(){
 }
 function readCard(word,k,n,total,state,canGoBack){
   const d=BYWORD[word];
-  return waitUI(resolve=>{
+  return waitUI((resolve,onCancel)=>{
     let playId=0,finished=false;
     const finish=action=>{if(finished)return;finished=true;gate.destroy();TTS.stop();resolve(action);};
     const wasDone=state.done;
     const previous=h('button',{class:'btn sub',disabled:!canGoBack,onclick:()=>finish('prev')},'‹ 前へ');
     const next=h('button',{class:'btn',disabled:!wasDone,onclick:()=>finish(wasDone?'next':'done')},'つぎへ');
     const gate=makeGate(()=>{state.done=true;next.disabled=false;savePending();});
+    onCancel(()=>{playId++;gate.destroy();TTS.stop();});
     const play=async()=>{
       const id=++playId;state.done=false;next.disabled=true;gate.reset();savePending();TTS.stop();
       await TTS.speak(d.ex1,0.8);
@@ -934,12 +1013,20 @@ function showStageSummary(stepKey,result,weakWords){
   Time.setStep(null);
   return new Promise((resolve,reject)=>{
     let finished=false;
-    const cancel=error=>{if(finished)return;finished=true;reject(error||new Error('abort'));};
+    const cancel=error=>{
+      if(finished)return;
+      finished=true;
+      if(activeSession.reject===cancel)activeSession.reject=null;
+      if(activeSession.cancelWait===cancel)activeSession.cancelWait=null;
+      reject(error||new Error('abort'));
+    };
     activeSession.reject=cancel;
+    activeSession.cancelWait=cancel;
     const choose=action=>{
       if(finished)return;
       finished=true;
-      if(activeSession.reject===cancel) activeSession.reject=null;
+      if(activeSession.reject===cancel)activeSession.reject=null;
+      if(activeSession.cancelWait===cancel)activeSession.cancelWait=null;
       resolve(action);
     };
     const buttons=[
@@ -1026,6 +1113,7 @@ async function runStageWithSummary(stepKey,run){
   }
 }
 async function start(newW,due,repeat=false,restored=null,unitId=null){
+  const generation=++sessionGeneration;
   TTS.unlock();
   const steps=[...(due.length?['review']:[]),...(newW.length?['todayWords','learn','check1','useRead','useCloze','useOrder','check2','spell']:[])];
   session={newWords:newW,reviewWords:due,steps,correct:num(restored&&restored.correct),
@@ -1045,10 +1133,14 @@ async function start(newW,due,repeat=false,restored=null,unitId=null){
     useCloze:stepUseCloze,useOrder:stepUseOrder,check2:stepCheck2,spell:stepSpell};
   try{
     savePending();
-    for(let i=session.currentStepIndex;i<session.steps.length;i++) await runStageWithSummary(session.steps[i],runners[session.steps[i]]);
-    finishSession();
+    for(let i=session.currentStepIndex;i<session.steps.length;i++){
+      if(generation!==sessionGeneration)return;
+      await runStageWithSummary(session.steps[i],runners[session.steps[i]]);
+    }
+    if(generation===sessionGeneration)finishSession();
   }catch(e){
-    const quit=e&&e.message==='abort';
+    if(generation!==sessionGeneration)return;
+    const quit=e&&(e.message==='abort'||e.message==='switch');
     if(!quit) console.error(e);
     savePending();endSession(); if(!quit) toast('エラーが起きました'); showHome();
   }
@@ -1085,7 +1177,7 @@ function finishSession(){
     reviewWords:session.reviewWords.slice(),
     skippedRounds:session.skippedRounds,skippedWords:session.skippedWords};
   S.sessions.push(rec);S.sessions=S.sessions.slice(-2000);save();
-  clearPending();
+  clearActivePending();
   endSession();showDone(rec);
 }
 
@@ -1178,11 +1270,18 @@ function audioButton(text,label,rate){
 }
 function resumeStudy(){
   TTS.unlock();
-  if(session&&session.pausedScreen){
-    const screen=session.pausedScreen;session.pausedScreen=null;
-    setActiveTab('study');Time.touch('k');Time.setStep(session.currentStep||null);mount(screen);return;
+  if(session){
+    if(session.pausedScreen){
+      const screen=session.pausedScreen;session.pausedScreen=null;
+      setActiveTab('study');Time.touch('k');Time.setStep(session.currentStep||null);mount(screen);
+    }
+    return;
   }
-  if(pendingSession) start(pendingSession.newWords,pendingSession.reviewWords,pendingSession.repeat,pendingSession);
+  if(!pendingSession){
+    const restored=takePausedSession();
+    if(!restored||restored===false)return;
+  }
+  start(pendingSession.newWords,pendingSession.reviewWords,pendingSession.repeat,pendingSession);
 }
 function wordCard(word,options={}){
   const d=BYWORD[word];
@@ -1298,28 +1397,31 @@ function showUnitStatus(){
       h('summary',null,book.title+'　'+learnedN+' / '+units.length+'ユニット学習済み'),
       h('div',{class:'unit-list'},units.map(unit=>{
         const progress=unitProgress(unit),isActive=active&&active.unitId===unit.id;
+        const isPaused=!isActive&&pausedSessions.some(item=>item.unitId===unit.id);
         const status=isActive?(progress.status==='learned'?'再学習中':'学習中'):
+          isPaused?(progress.status==='learned'?'再学習中断':'中断中'):
           progress.status==='learned'?'学習済み':progress.status==='partial'?'学習途中':'未学習';
-        return h('button',{class:'unit-item unit-'+progress.status+(isActive?' active':''),type:'button',
+        return h('button',{class:'unit-item unit-'+progress.status+(isActive?' active':'')+(isPaused?' paused':''),type:'button',
           'aria-label':unit.bookTitle+'、ユニット '+unit.number+'、'+status+'、'+progress.learned+' / '+progress.total+'語',
-          disabled:!!active,onclick:()=>startUnit(unit)},
+          onclick:()=>startUnit(unit)},
           h('b',null,unit.number),h('span',{class:'unit-status'},status),
           h('span',{class:'unit-count'},progress.learned+'/'+progress.total+'語'));
       })));
   });
   const actions=[];
   if(active) actions.push(h('button',{class:'btn',onclick:resumeStudy},'つづきから学習'));
+  else if(pausedSessions.length) actions.push(h('button',{class:'btn',onclick:resumeStudy},'中断した学習をつづける'));
   else if(next) actions.push(h('button',{class:'btn',onclick:startNextUnit},'次のユニットを学習'));
   mount(h('div',{class:'screen','data-view':'study-list'},
     h('div',{class:'top'},h('button',{class:'x','aria-label':'もどる',onclick:showHome},'‹'),h('div',{class:'ttl'},'ユニットの学習状況')),
     h('div',{class:'hint'},'1ユニットは5語です。学習済みのユニットも何度でも学び直せます。'),
     actions,books,
-    !next&&!active?h('div',{class:'note'},'すべてのユニットを学習済みです。好きなユニットを選んで復習できます。'):null,
+    !next&&!active&&!pausedSessions.length?h('div',{class:'note'},'すべてのユニットを学習済みです。好きなユニットを選んで復習できます。'):null,
     h('div',{class:'grow'})));
 }
 function showHome(){
   setActiveTab('home');
-  const today=ymd(),active=session||pendingSession,next=nextUnit(),st=streak(),d=new Date(),main=[];
+  const today=ymd(),active=session||pendingSession||pausedSessions[pausedSessions.length-1],next=nextUnit(),st=streak(),d=new Date(),main=[];
   if(active){
     const unit=BYUNIT[active.unitId];
     main.push(h('div',{class:'card'},h('div',{class:'big'},'学習を中断しています'),

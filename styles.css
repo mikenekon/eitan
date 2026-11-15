@@ -122,6 +122,7 @@ input.tel{width:100%;font-size:18px;padding:10px;border:2px solid var(--ink);bor
 .unit-learned{background:var(--okbg);border-color:var(--ok)}
 .unit-partial{background:#FFF8D6;border-color:#D5A400}
 .unit-new{background:#fff}
+.unit-item.paused{background:#EAF0FF;border-color:#5872B3}
 .unit-item.active{box-shadow:0 0 0 2px var(--ink)}
 .unit-item:disabled{opacity:.55;cursor:default}
 .word-card{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
