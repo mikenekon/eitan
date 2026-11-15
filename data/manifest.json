@@ -2,8 +2,10 @@
   "version": 1,
   "books": [
     { "id": "g-801-1200", "title": "G 801-1200 Easy", "file": "data/g-801-1200_easy.json" },
-    { "id": "g-1201-1700", "title": "G 1201-1700", "file": "data/g-1201-1700.json" },
-    { "id": "g-1701-2000", "title": "G 1701-2000", "file": "data/g-1701-2000.json" },
-    { "id": "g-801-1200-normal", "title": "G 801-1200 Normal", "file": "data/g-801-1200.json" }
+    { "id": "g-1201-1700", "title": "G 1201-1700 Easy", "file": "data/g-1201-1700_easy.json" },
+    { "id": "g-1701-2000", "title": "G 1701-2000 Easy", "file": "data/g-1701-2000_easy.json" },
+    { "id": "g-801-1200-normal", "title": "G 801-1200 Normal", "file": "data/g-801-1200.json" },
+    { "id": "g-1201-1700-normal", "title": "G 1201-1700 Normal", "file": "data/g-1201-1700.json" },
+    { "id": "g-1701-2000-normal", "title": "G 1701-2000 Normal", "file": "data/g-1701-2000.json" }
   ]
 }

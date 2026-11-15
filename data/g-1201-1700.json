@@ -1,7 +1,7 @@
 {
   "words": [
     {
-      "id": "g-1201-notice",
+      "id": "g-1201-notice-normal",
       "word": "notice",
       "meaning": "【名】掲示、通知 【動】~に気づく",
       "ex1": "I saw a notice on the school gate.",
@@ -10,7 +10,7 @@
       "tr2": "エミが昨日髪を切ったことに気づきましたか。"
     },
     {
-      "id": "g-1202-imagine",
+      "id": "g-1202-imagine-normal",
       "word": "imagine",
       "meaning": "(~を)想像する",
       "ex1": "Can you imagine life without phones?",
@@ -19,7 +19,7 @@
       "tr2": "ハワイの浜辺を歩いているところを想像して、その話を聞いてください。"
     },
     {
-      "id": "g-1203-cheer",
+      "id": "g-1203-cheer-normal",
       "word": "cheer",
       "meaning": "元気を出す、~を元気づける",
       "ex1": "We cheer for our team every day.",
@@ -28,7 +28,7 @@
       "tr2": "悲しいとき、ホストマザーは私を元気づけようとしてくれました。"
     },
     {
-      "id": "g-1204-cheerful",
+      "id": "g-1204-cheerful-normal",
       "word": "cheerful",
       "meaning": "快活な、陽気な",
       "ex1": "Ken is a cheerful boy.",
@@ -37,7 +37,7 @@
       "tr2": "新しい先生はいつも陽気なので、みんな先生が好きです。"
     },
     {
-      "id": "g-1205-perfect",
+      "id": "g-1205-perfect-normal",
       "word": "perfect",
       "meaning": "完全な、完璧な",
       "ex1": "This is a perfect day for a picnic.",
@@ -46,7 +46,7 @@
       "tr2": "完璧な人はいないので、私たちは間違いから学ぶべきです。"
     },
     {
-      "id": "g-1206-local",
+      "id": "g-1206-local-normal",
       "word": "local",
       "meaning": "地元の、その土地の",
       "ex1": "I like local food.",
@@ -55,7 +55,7 @@
       "tr2": "私たちのクラスは地元の農場を訪れ、農家の人たちと話しました。"
     },
     {
-      "id": "g-1207-deep",
+      "id": "g-1207-deep-normal",
       "word": "deep",
       "meaning": "深い",
       "ex1": "The lake is very deep.",
@@ -64,7 +64,7 @@
       "tr2": "スピーチを始める前に深呼吸をしてください。"
     },
     {
-      "id": "g-1208-deeply",
+      "id": "g-1208-deeply-normal",
       "word": "deeply",
       "meaning": "深く",
       "ex1": "She breathed deeply and smiled.",
@@ -73,7 +73,7 @@
       "tr2": "私はお別れ会での彼の優しい言葉に深く感動しました。"
     },
     {
-      "id": "g-1209-loud",
+      "id": "g-1209-loud-normal",
       "word": "loud",
       "meaning": "【形】音・声が大きい 【副】大声で",
       "ex1": "The music was too loud.",
@@ -82,7 +82,7 @@
       "tr2": "みんなに聞こえるように、大きな声で話してください。"
     },
     {
-      "id": "g-1210-quietly",
+      "id": "g-1210-quietly-normal",
       "word": "quietly",
       "meaning": "静かに",
       "ex1": "The baby is sleeping quietly.",
@@ -91,7 +91,7 @@
       "tr2": "多くの生徒が勉強していたので、私たちは図書館を静かに歩きました。"
     },
     {
-      "id": "g-1211-however",
+      "id": "g-1211-however-normal",
       "word": "however",
       "meaning": "しかし",
       "ex1": "I like soccer. However, I am not good at it.",
@@ -100,7 +100,7 @@
       "tr2": "テストは難しかったです。しかし、私は全力を尽くして良い点を取りました。"
     },
     {
-      "id": "g-1212-graduate",
+      "id": "g-1212-graduate-normal",
       "word": "graduate",
       "meaning": "卒業する",
       "ex1": "My sister will graduate next March.",
@@ -109,7 +109,7 @@
       "tr2": "中学校を卒業したら、私は吹奏楽部に入りたいです。"
     },
     {
-      "id": "g-1213-graduation",
+      "id": "g-1213-graduation-normal",
       "word": "graduation",
       "meaning": "卒業",
       "ex1": "Our graduation is in March.",
@@ -118,7 +118,7 @@
       "tr2": "卒業後、友達と私はそれぞれ別の高校に行きます。"
     },
     {
-      "id": "g-1214-add",
+      "id": "g-1214-add-normal",
       "word": "add",
       "meaning": "加える、足す",
       "ex1": "Please add some salt to the soup.",
@@ -127,7 +127,7 @@
       "tr2": "3と5を足すと8になります。"
     },
     {
-      "id": "g-1215-shine",
+      "id": "g-1215-shine-normal",
       "word": "shine",
       "meaning": "【名】光、輝き 【動】輝く、光る",
       "ex1": "The stars shine in the night sky.",
@@ -136,7 +136,7 @@
       "tr2": "静かな湖に月の輝きが見えました。"
     },
     {
-      "id": "g-1216-amusement",
+      "id": "g-1216-amusement-normal",
       "word": "amusement",
       "meaning": "楽しみ、娯楽",
       "ex1": "We went to an amusement park.",
@@ -145,7 +145,7 @@
       "tr2": "子どもたちはとても楽しそうに手品ショーを見ました。"
     },
     {
-      "id": "g-1217-gentle",
+      "id": "g-1217-gentle-normal",
       "word": "gentle",
       "meaning": "優しい",
       "ex1": "My grandmother is a gentle person.",
@@ -154,7 +154,7 @@
       "tr2": "そのウサギは怖がっているので、優しく扱ってください。"
     },
     {
-      "id": "g-1218-gentleman",
+      "id": "g-1218-gentleman-normal",
       "word": "gentleman",
       "meaning": "紳士",
       "ex1": "He is a real gentleman.",
@@ -163,7 +163,7 @@
       "tr2": "その年配の紳士は電車で女性に席をゆずりました。"
     },
     {
-      "id": "g-1219-adult",
+      "id": "g-1219-adult-normal",
       "word": "adult",
       "meaning": "【名】成人、大人 【形】成人の、大人の",
       "ex1": "An adult ticket is one thousand yen.",
@@ -172,7 +172,7 @@
       "tr2": "大人になったら、私は世界中を旅したいです。"
     },
     {
-      "id": "g-1220-style",
+      "id": "g-1220-style-normal",
       "word": "style",
       "meaning": "様式、やり方",
       "ex1": "I like her style of speaking.",
@@ -181,7 +181,7 @@
       "tr2": "どの国にもそれぞれの料理のスタイルがあります。"
     },
     {
-      "id": "g-1221-level",
+      "id": "g-1221-level-normal",
       "word": "level",
       "meaning": "水準、レベル",
       "ex1": "My English level is getting higher.",
@@ -190,7 +190,7 @@
       "tr2": "大雨のあと、川の水位は高くなっていました。"
     },
     {
-      "id": "g-1222-medium",
+      "id": "g-1222-medium-normal",
       "word": "medium",
       "meaning": "【名】手段、媒体 【形】中くらいの、Mサイズの",
       "ex1": "I wear a medium size.",
@@ -199,7 +199,7 @@
       "tr2": "新聞は私たちにニュースを伝える媒体です。"
     },
     {
-      "id": "g-1223-cycle",
+      "id": "g-1223-cycle-normal",
       "word": "cycle",
       "meaning": "【名】周期、循環 【動】自転車に乗る",
       "ex1": "I cycle to school every morning.",
@@ -208,7 +208,7 @@
       "tr2": "私たちは理科の授業で水の循環について学びました。"
     },
     {
-      "id": "g-1224-cycling",
+      "id": "g-1224-cycling-normal",
       "word": "cycling",
       "meaning": "サイクリング",
       "ex1": "Cycling is my favorite hobby.",
@@ -217,7 +217,7 @@
       "tr2": "私たちは日曜日に川沿いでサイクリングを楽しみました。"
     },
     {
-      "id": "g-1225-soft",
+      "id": "g-1225-soft-normal",
       "word": "soft",
       "meaning": "柔らかい、おだやかな、静かな",
       "ex1": "This bed is very soft.",
@@ -226,7 +226,7 @@
       "tr2": "子どもたちに物語を読むときの彼女のおだやかな声が私は好きです。"
     },
     {
-      "id": "g-1226-softly",
+      "id": "g-1226-softly-normal",
       "word": "softly",
       "meaning": "柔らかく、おだやかに",
       "ex1": "She spoke softly to the baby.",
@@ -235,7 +235,7 @@
       "tr2": "雪がうちの屋根に静かに降っていました。"
     },
     {
-      "id": "g-1227-bake",
+      "id": "g-1227-bake-normal",
       "word": "bake",
       "meaning": "(パンなど)~を焼く",
       "ex1": "My mother likes to bake bread.",
@@ -244,7 +244,7 @@
       "tr2": "今度の土曜日、お父さんの誕生日のケーキを焼きましょう。"
     },
     {
-      "id": "g-1228-fry",
+      "id": "g-1228-fry-normal",
       "word": "fry",
       "meaning": "~を(油で)揚げる、炒める",
       "ex1": "I will fry some eggs.",
@@ -253,7 +253,7 @@
       "tr2": "まず、フライパンで玉ねぎを炒めて、それから肉を加えてください。"
     },
     {
-      "id": "g-1229-taste",
+      "id": "g-1229-taste-normal",
       "word": "taste",
       "meaning": "【名】味 【動】味がする",
       "ex1": "This soup tastes good, but I like the taste of miso soup better.",
@@ -262,7 +262,7 @@
       "tr2": "私は最初、その薬の味が好きではありませんでした。"
     },
     {
-      "id": "g-1230-plate",
+      "id": "g-1230-plate-normal",
       "word": "plate",
       "meaning": "皿",
       "ex1": "Put the plate on the table.",
@@ -271,7 +271,7 @@
       "tr2": "夕食後、私は弟と一緒にお皿とカップを洗います。"
     },
     {
-      "id": "g-1231-pan",
+      "id": "g-1231-pan-normal",
       "word": "pan",
       "meaning": "平なべ、フライパン",
       "ex1": "Heat the pan first.",
@@ -280,7 +280,7 @@
       "tr2": "日曜日の朝、父は大きなフライパンでパンケーキを作りました。"
     },
     {
-      "id": "g-1232-fridge",
+      "id": "g-1232-fridge-normal",
       "word": "fridge",
       "meaning": "冷蔵庫",
       "ex1": "There is milk in the fridge.",
@@ -289,7 +289,7 @@
       "tr2": "新鮮なままでいるように、果物は冷蔵庫に入れてください。"
     },
     {
-      "id": "g-1233-garbage",
+      "id": "g-1233-garbage-normal",
       "word": "garbage",
       "meaning": "生ごみ",
       "ex1": "I take out the garbage every morning.",
@@ -298,7 +298,7 @@
       "tr2": "生ごみの袋にプラスチックを入れてはいけません。"
     },
     {
-      "id": "g-1234-market",
+      "id": "g-1234-market-normal",
       "word": "market",
       "meaning": "市場",
       "ex1": "We bought fish at the market.",
@@ -307,7 +307,7 @@
       "tr2": "日曜日には駅の近くで大きな市場が開かれます。"
     },
     {
-      "id": "g-1235-steak",
+      "id": "g-1235-steak-normal",
       "word": "steak",
       "meaning": "ステーキ",
       "ex1": "I had steak for dinner.",
@@ -316,7 +316,7 @@
       "tr2": "ステーキの焼き加減はどうなさいますか。"
     },
     {
-      "id": "g-1236-noodle",
+      "id": "g-1236-noodle-normal",
       "word": "noodle",
       "meaning": "めん",
       "ex1": "I want to eat a noodle dish today.",
@@ -325,7 +325,7 @@
       "tr2": "ラーメンは日本で人気のめんのスープで、多くの観光客が大好きです。"
     },
     {
-      "id": "g-1237-snack",
+      "id": "g-1237-snack-normal",
       "word": "snack",
       "meaning": "軽食、おやつ",
       "ex1": "I eat a snack after school.",
@@ -334,7 +334,7 @@
       "tr2": "サッカーの練習が始まる前に、軽食はいりますか。"
     },
     {
-      "id": "g-1238-chocolate",
+      "id": "g-1238-chocolate-normal",
       "word": "chocolate",
       "meaning": "チョコレート",
       "ex1": "I love chocolate cake.",
@@ -343,7 +343,7 @@
       "tr2": "バレンタインデーに、彼女は友達にチョコレートをあげました。"
     },
     {
-      "id": "g-1239-fresh",
+      "id": "g-1239-fresh-normal",
       "word": "fresh",
       "meaning": "新鮮な、できたての",
       "ex1": "These vegetables are fresh.",
@@ -352,7 +352,7 @@
       "tr2": "窓を開けて新鮮な空気を入れましょう。"
     },
     {
-      "id": "g-1240-rest",
+      "id": "g-1240-rest-normal",
       "word": "rest",
       "meaning": "【名】休み、休憩 【動】休む",
       "ex1": "You should take a rest.",
@@ -361,7 +361,7 @@
       "tr2": "レースのあとで疲れたので、私は木の下で1時間休みます。"
     },
     {
-      "id": "g-1241-compare",
+      "id": "g-1241-compare-normal",
       "word": "compare",
       "meaning": "~を比較する、比べる",
       "ex1": "Let's compare these two bags.",
@@ -370,7 +370,7 @@
       "tr2": "このグラフで、各部活動の生徒数を比較することができます。"
     },
     {
-      "id": "g-1242-record",
+      "id": "g-1242-record-normal",
       "word": "record",
       "meaning": "記録",
       "ex1": "She broke the school record.",
@@ -379,7 +379,7 @@
       "tr2": "私は毎日、勉強時間の記録をつけています。"
     },
     {
-      "id": "g-1243-champion",
+      "id": "g-1243-champion-normal",
       "word": "champion",
       "meaning": "優勝者、チャンピオン",
       "ex1": "He is a tennis champion.",
@@ -388,7 +388,7 @@
       "tr2": "私たちのチームは昨年、市の大会で優勝者になりました。"
     },
     {
-      "id": "g-1244-championship",
+      "id": "g-1244-championship-normal",
       "word": "championship",
       "meaning": "選手権",
       "ex1": "We won the championship.",
@@ -397,7 +397,7 @@
       "tr2": "兄は8月の水泳の選手権のために一生懸命練習しています。"
     },
     {
-      "id": "g-1245-choice",
+      "id": "g-1245-choice-normal",
       "word": "choice",
       "meaning": "選択、選択肢",
       "ex1": "This is a good choice.",
@@ -406,7 +406,7 @@
       "tr2": "選択の余地がないので、私たちはバスで帰らなければなりません。"
     },
     {
-      "id": "g-1246-shampoo",
+      "id": "g-1246-shampoo-normal",
       "word": "shampoo",
       "meaning": "シャンプー",
       "ex1": "I use this shampoo every day.",
@@ -415,7 +415,7 @@
       "tr2": "私は京都のホテルにシャンプーを持ってくるのを忘れました。"
     },
     {
-      "id": "g-1247-wheel",
+      "id": "g-1247-wheel-normal",
       "word": "wheel",
       "meaning": "車輪",
       "ex1": "The wheel of my bike is broken.",
@@ -424,7 +424,7 @@
       "tr2": "車いすの女の子が両手で車輪を回しました。"
     },
     {
-      "id": "g-1248-graph",
+      "id": "g-1248-graph-normal",
       "word": "graph",
       "meaning": "グラフ、図表",
       "ex1": "Look at this graph.",
@@ -433,7 +433,7 @@
       "tr2": "そのグラフは、生徒が先月何冊本を読んだかを示しています。"
     },
     {
-      "id": "g-1249-colorful",
+      "id": "g-1249-colorful-normal",
       "word": "colorful",
       "meaning": "色とりどりの、色彩豊かな",
       "ex1": "The garden is very colorful.",
@@ -442,7 +442,7 @@
       "tr2": "水族館に行ったとき、私たちは色とりどりの魚をたくさん見ました。"
     },
     {
-      "id": "g-1250-peaceful",
+      "id": "g-1250-peaceful-normal",
       "word": "peaceful",
       "meaning": "平和な、静かな",
       "ex1": "I want a peaceful world.",
@@ -451,7 +451,7 @@
       "tr2": "そこは静かな川と多くの木がある、平和な町です。"
     },
     {
-      "id": "g-1251-friendly",
+      "id": "g-1251-friendly-normal",
       "word": "friendly",
       "meaning": "好意的な、親しみのある",
       "ex1": "The people here are very friendly.",
@@ -460,7 +460,7 @@
       "tr2": "これは人なつこい犬なので、怖がらなくて大丈夫です。"
     },
     {
-      "id": "g-1252-seem",
+      "id": "g-1252-seem-normal",
       "word": "seem",
       "meaning": "~のように見える、~らしい",
       "ex1": "You seem very happy today.",
@@ -469,7 +469,7 @@
       "tr2": "明かりが消えているので、彼は家にいないようです。"
     },
     {
-      "id": "g-1253-appear",
+      "id": "g-1253-appear-normal",
       "word": "appear",
       "meaning": "現れる",
       "ex1": "A rainbow will appear in the sky.",
@@ -478,7 +478,7 @@
       "tr2": "日が沈むと、星が現れ始めます。"
     },
     {
-      "id": "g-1254-raise",
+      "id": "g-1254-raise-normal",
       "word": "raise",
       "meaning": "~を上げる、~を育てる",
       "ex1": "Raise your hand if you know the answer.",
@@ -487,7 +487,7 @@
       "tr2": "祖父は田舎で牛を育て、米を作るつもりです。"
     },
     {
-      "id": "g-1255-trouble",
+      "id": "g-1255-trouble-normal",
       "word": "trouble",
       "meaning": "困難、心配、悩み",
       "ex1": "I am in trouble now.",
@@ -496,7 +496,7 @@
       "tr2": "何か悩みがあれば、先生に話してください。"
     },
     {
-      "id": "g-1256-mistake",
+      "id": "g-1256-mistake-normal",
       "word": "mistake",
       "meaning": "誤り、間違い",
       "ex1": "I made a mistake on the test.",
@@ -505,7 +505,7 @@
       "tr2": "英語を話すとき、間違いをすることを恐れないでください。"
     },
     {
-      "id": "g-1257-traffic",
+      "id": "g-1257-traffic-normal",
       "word": "traffic",
       "meaning": "交通",
       "ex1": "There is a lot of traffic here.",
@@ -514,7 +514,7 @@
       "tr2": "ひどい交通のせいで、私たちはコンサートに遅れました。"
     },
     {
-      "id": "g-1258-animation",
+      "id": "g-1258-animation-normal",
       "word": "animation",
       "meaning": "アニメーション、動画",
       "ex1": "I like Japanese animation.",
@@ -523,7 +523,7 @@
       "tr2": "世界中の多くの人が日本で作られたアニメーションを楽しんでいます。"
     },
     {
-      "id": "g-1259-animator",
+      "id": "g-1259-animator-normal",
       "word": "animator",
       "meaning": "アニメ作家",
       "ex1": "My uncle is an animator.",
@@ -532,7 +532,7 @@
       "tr2": "私はアニメ作家になって、子どものための映画を作りたいです。"
     },
     {
-      "id": "g-1260-figure",
+      "id": "g-1260-figure-normal",
       "word": "figure",
       "meaning": "図、数字、姿",
       "ex1": "I saw a figure in the dark.",
@@ -541,7 +541,7 @@
       "tr2": "10ページの図を見て、その数字を教えてください。"
     },
     {
-      "id": "g-1261-data",
+      "id": "g-1261-data-normal",
       "word": "data",
       "meaning": "データ、資料",
       "ex1": "We collected data about our town.",
@@ -550,7 +550,7 @@
       "tr2": "そのデータは、多くの人がもっと公園を望んでいることを示しています。"
     },
     {
-      "id": "g-1262-homepage",
+      "id": "g-1262-homepage-normal",
       "word": "homepage",
       "meaning": "ホームページ",
       "ex1": "Please visit our school homepage.",
@@ -559,7 +559,7 @@
       "tr2": "イベントの情報は市のホームページで見つけられます。"
     },
     {
-      "id": "g-1263-online",
+      "id": "g-1263-online-normal",
       "word": "online",
       "meaning": "【形】オンラインの、ネットの 【副】オンラインで、ネットで",
       "ex1": "I had an online class today.",
@@ -568,7 +568,7 @@
       "tr2": "カナダにいる友達と私は、週末によくオンラインで話します。"
     },
     {
-      "id": "g-1264-print",
+      "id": "g-1264-print-normal",
       "word": "print",
       "meaning": "【名】印刷物 【動】~を印刷する",
       "ex1": "Please print this page.",
@@ -577,7 +577,7 @@
       "tr2": "私はその写真を印刷して、クラスのみんなに見せるつもりです。"
     },
     {
-      "id": "g-1265-design",
+      "id": "g-1265-design-normal",
       "word": "design",
       "meaning": "【名】デザイン、設計 【動】デザインする、設計する",
       "ex1": "I like the design of this bag.",
@@ -586,7 +586,7 @@
       "tr2": "姉は若い人のための服をデザインしたいと思っています。"
     },
     {
-      "id": "g-1266-designer",
+      "id": "g-1266-designer-normal",
       "word": "designer",
       "meaning": "デザイナー",
       "ex1": "She is a famous designer.",
@@ -595,7 +595,7 @@
       "tr2": "イタリア出身のデザイナーが私たちの学校の新しい制服を作りました。"
     },
     {
-      "id": "g-1267-painter",
+      "id": "g-1267-painter-normal",
       "word": "painter",
       "meaning": "画家",
       "ex1": "My grandfather was a painter.",
@@ -604,7 +604,7 @@
       "tr2": "その画家は私たちに富士山の絵を見せてくれました。"
     },
     {
-      "id": "g-1268-painting",
+      "id": "g-1268-painting-normal",
       "word": "painting",
       "meaning": "絵",
       "ex1": "This painting is beautiful.",
@@ -613,7 +613,7 @@
       "tr2": "私の趣味は絵をかくことで、よく花をかきます。"
     },
     {
-      "id": "g-1269-artist",
+      "id": "g-1269-artist-normal",
       "word": "artist",
       "meaning": "芸術家",
       "ex1": "He wants to be an artist.",
@@ -622,7 +622,7 @@
       "tr2": "その芸術家はお祭りのために私たちの町の絵をかきました。"
     },
     {
-      "id": "g-1270-artwork",
+      "id": "g-1270-artwork-normal",
       "word": "artwork",
       "meaning": "芸術作品",
       "ex1": "I love her artwork.",
@@ -631,7 +631,7 @@
       "tr2": "生徒たちは自分たちの芸術作品を体育館の壁に飾りました。"
     },
     {
-      "id": "g-1271-postcard",
+      "id": "g-1271-postcard-normal",
       "word": "postcard",
       "meaning": "はがき",
       "ex1": "I sent a postcard to my aunt.",
@@ -640,7 +640,7 @@
       "tr2": "奈良への旅行中に、私はそのお寺のはがきを買いました。"
     },
     {
-      "id": "g-1272-act",
+      "id": "g-1272-act-normal",
       "word": "act",
       "meaning": "【名】行い、行為 【動】行動する、ふるまう",
       "ex1": "We must act now.",
@@ -649,7 +649,7 @@
       "tr2": "見知らぬ人を助けたことは親切な行いで、みんなが彼に感謝しました。"
     },
     {
-      "id": "g-1273-actually",
+      "id": "g-1273-actually-normal",
       "word": "actually",
       "meaning": "実際に、本当は、実は",
       "ex1": "Actually, I don't like carrots.",
@@ -658,7 +658,7 @@
       "tr2": "彼は若く見えますが、実は40歳です。"
     },
     {
-      "id": "g-1274-lamp",
+      "id": "g-1274-lamp-normal",
       "word": "lamp",
       "meaning": "明かり、ランプ",
       "ex1": "Turn on the lamp, please.",
@@ -667,7 +667,7 @@
       "tr2": "私は毎晩、机の上のランプの下で本を読みます。"
     },
     {
-      "id": "g-1275-frog",
+      "id": "g-1275-frog-normal",
       "word": "frog",
       "meaning": "カエル",
       "ex1": "A frog jumped into the pond.",
@@ -676,7 +676,7 @@
       "tr2": "雨のあと、私たちは川の近くでカエルが鳴いているのを聞きました。"
     },
     {
-      "id": "g-1276-snake",
+      "id": "g-1276-snake-normal",
       "word": "snake",
       "meaning": "ヘビ",
       "ex1": "I saw a snake in the grass.",
@@ -685,7 +685,7 @@
       "tr2": "ヘビを怖がる人もいますが、私はかっこいいと思います。"
     },
     {
-      "id": "g-1277-spread",
+      "id": "g-1277-spread-normal",
       "word": "spread",
       "meaning": "~を広げる、広がる",
       "ex1": "Spread the map on the table.",
@@ -694,7 +694,7 @@
       "tr2": "そのニュースは私たちの学校中にすぐに広がりました。"
     },
     {
-      "id": "g-1278-wave",
+      "id": "g-1278-wave-normal",
       "word": "wave",
       "meaning": "【名】波 【動】手を振る",
       "ex1": "The wave was very big.",
@@ -703,7 +703,7 @@
       "tr2": "電車が動き出したら、私たちに手を振ってください。"
     },
     {
-      "id": "g-1279-serve",
+      "id": "g-1279-serve-normal",
       "word": "serve",
       "meaning": "(食事など)~を出す",
       "ex1": "They serve breakfast at seven.",
@@ -712,7 +712,7 @@
       "tr2": "このレストランは地元の市場の新鮮な魚を出す予定です。"
     },
     {
-      "id": "g-1280-service",
+      "id": "g-1280-service-normal",
       "word": "service",
       "meaning": "サービス、奉仕",
       "ex1": "The service here is great.",
@@ -721,7 +721,7 @@
       "tr2": "母は週末に町でボランティアの奉仕活動をしています。"
     },
     {
-      "id": "g-1281-earn",
+      "id": "g-1281-earn-normal",
       "word": "earn",
       "meaning": "(お金)~を稼ぐ",
       "ex1": "I want to earn some money.",
@@ -730,7 +730,7 @@
       "tr2": "彼は旅行のお金を稼ぐために、夏に店で働きました。"
     },
     {
-      "id": "g-1282-shock",
+      "id": "g-1282-shock-normal",
       "word": "shock",
       "meaning": "【名】衝撃、ショック 【動】~に衝撃を与える",
       "ex1": "The news was a big shock.",
@@ -739,7 +739,7 @@
       "tr2": "その怖い話で妹にショックを与えないでください。"
     },
     {
-      "id": "g-1283-joy",
+      "id": "g-1283-joy-normal",
       "word": "joy",
       "meaning": "喜び",
       "ex1": "She cried with joy.",
@@ -748,7 +748,7 @@
       "tr2": "音楽は世界中の人々に喜びをもたらします。"
     },
     {
-      "id": "g-1284-amazing",
+      "id": "g-1284-amazing-normal",
       "word": "amazing",
       "meaning": "びっくりするような",
       "ex1": "The view was amazing.",
@@ -757,7 +757,7 @@
       "tr2": "なんてびっくりするような話でしょう。もう一度読みたいです。"
     },
     {
-      "id": "g-1285-asleep",
+      "id": "g-1285-asleep-normal",
       "word": "asleep",
       "meaning": "眠って",
       "ex1": "The baby is asleep now.",
@@ -766,7 +766,7 @@
       "tr2": "私は電車で眠ってしまい、降りる駅を過ぎてしまいました。"
     },
     {
-      "id": "g-1286-boring",
+      "id": "g-1286-boring-normal",
       "word": "boring",
       "meaning": "退屈な",
       "ex1": "The movie was boring.",
@@ -775,7 +775,7 @@
       "tr2": "私は歴史は退屈だと思っていましたが、先生が私の考えを変えてくれました。"
     },
     {
-      "id": "g-1287-symbol",
+      "id": "g-1287-symbol-normal",
       "word": "symbol",
       "meaning": "象徴、記号",
       "ex1": "The dove is a symbol of peace.",
@@ -784,7 +784,7 @@
       "tr2": "この標識のこの記号は何を意味しますか。"
     },
     {
-      "id": "g-1288-system",
+      "id": "g-1288-system-normal",
       "word": "system",
       "meaning": "組織、制度、体系",
       "ex1": "Our school has a new system.",
@@ -793,7 +793,7 @@
       "tr2": "このバスの仕組みは、お年寄りが楽に買い物に行くのを助けています。"
     },
     {
-      "id": "g-1289-view",
+      "id": "g-1289-view-normal",
       "word": "view",
       "meaning": "眺め、景色、見方",
       "ex1": "The view from here is beautiful.",
@@ -802,7 +802,7 @@
       "tr2": "私はあなたとは違う見方をしていますが、あなたの考えを尊重します。"
     },
     {
-      "id": "g-1290-protect",
+      "id": "g-1290-protect-normal",
       "word": "protect",
       "meaning": "~を保護する、守る",
       "ex1": "We must protect the earth.",
@@ -811,7 +811,7 @@
       "tr2": "木は動物や人を強い日差しから守ってくれます。"
     },
     {
-      "id": "g-1291-connect",
+      "id": "g-1291-connect-normal",
       "word": "connect",
       "meaning": "~をつなぐ",
       "ex1": "I can connect my computer to the Internet.",
@@ -820,7 +820,7 @@
       "tr2": "この橋はその島と町をつなぐ予定です。"
     },
     {
-      "id": "g-1292-energy",
+      "id": "g-1292-energy-normal",
       "word": "energy",
       "meaning": "エネルギー、力",
       "ex1": "Children have a lot of energy.",
@@ -829,7 +829,7 @@
       "tr2": "私たちは環境を守るためにエネルギーを節約すべきです。"
     },
     {
-      "id": "g-1293-earthquake",
+      "id": "g-1293-earthquake-normal",
       "word": "earthquake",
       "meaning": "地震",
       "ex1": "There was a big earthquake last night.",
@@ -838,7 +838,7 @@
       "tr2": "私たちは毎年学校で、地震のときにすることを練習します。"
     },
     {
-      "id": "g-1294-planet",
+      "id": "g-1294-planet-normal",
       "word": "planet",
       "meaning": "惑星",
       "ex1": "Mars is a red planet.",
@@ -847,7 +847,7 @@
       "tr2": "私たちは次の世代のために、この惑星を大切にしなければなりません。"
     },
     {
-      "id": "g-1295-biology",
+      "id": "g-1295-biology-normal",
       "word": "biology",
       "meaning": "生物学",
       "ex1": "I like biology class.",
@@ -856,7 +856,7 @@
       "tr2": "彼女は医者になりたいので、生物学を勉強しています。"
     },
     {
-      "id": "g-1296-plastic",
+      "id": "g-1296-plastic-normal",
       "word": "plastic",
       "meaning": "【名】プラスチック 【形】プラスチック製の、ビニール製の",
       "ex1": "Don't use too much plastic.",
@@ -865,7 +865,7 @@
       "tr2": "私は毎日、ビニール製のボトルに入ったお茶を学校に持っていきます。"
     },
     {
-      "id": "g-1297-trash",
+      "id": "g-1297-trash-normal",
       "word": "trash",
       "meaning": "ごみ、くず",
       "ex1": "Please put the trash in the box.",
@@ -874,7 +874,7 @@
       "tr2": "先週の日曜日、ボランティアの人たちが浜辺のごみを拾いました。"
     },
     {
-      "id": "g-1298-dry",
+      "id": "g-1298-dry-normal",
       "word": "dry",
       "meaning": "【動】~を乾かす 【形】乾いた",
       "ex1": "Please dry your hair.",
@@ -883,7 +883,7 @@
       "tr2": "天気が乾燥していたので、草は茶色になりました。"
     },
     {
-      "id": "g-1299-wet",
+      "id": "g-1299-wet-normal",
       "word": "wet",
       "meaning": "濡れた、しめった",
       "ex1": "My shoes are wet.",
@@ -892,7 +892,7 @@
       "tr2": "雨のあとで地面がまだ濡れていたので、私たちは中にいました。"
     },
     {
-      "id": "g-1300-power",
+      "id": "g-1300-power-normal",
       "word": "power",
       "meaning": "力、能力、権力",
       "ex1": "Wind power is clean energy.",
@@ -901,7 +901,7 @@
       "tr2": "若者には未来を変える力があります。"
     },
     {
-      "id": "g-1301-powerful",
+      "id": "g-1301-powerful-normal",
       "word": "powerful",
       "meaning": "強力な、力のある",
       "ex1": "This is a powerful engine.",
@@ -910,7 +910,7 @@
       "tr2": "彼のスピーチは力強く、多くの人が彼に拍手を送りました。"
     },
     {
-      "id": "g-1302-magic",
+      "id": "g-1302-magic-normal",
       "word": "magic",
       "meaning": "【名】魔法、手品 【形】魔法の、手品の",
       "ex1": "He showed us a magic trick.",
@@ -919,7 +919,7 @@
       "tr2": "その物語の女の子は、友達を助けるために魔法を使います。"
     },
     {
-      "id": "g-1303-shout",
+      "id": "g-1303-shout-normal",
       "word": "shout",
       "meaning": "【名】叫び 【動】大声で叫ぶ",
       "ex1": "Don't shout in the library.",
@@ -928,7 +928,7 @@
       "tr2": "私は運動場から叫び声を聞いて、そこへ走って行きました。"
     },
     {
-      "id": "g-1304-handle",
+      "id": "g-1304-handle-normal",
       "word": "handle",
       "meaning": "~を扱う、処理する",
       "ex1": "Please handle this box with care.",
@@ -937,7 +937,7 @@
       "tr2": "この問題を自分で処理できますか、それとも助けが必要ですか。"
     },
     {
-      "id": "g-1305-knock",
+      "id": "g-1305-knock-normal",
       "word": "knock",
       "meaning": "ノックする",
       "ex1": "Please knock on the door.",
@@ -946,7 +946,7 @@
       "tr2": "私が夕食を作っている間に、だれかがドアをノックするでしょう。"
     },
     {
-      "id": "g-1306-stair",
+      "id": "g-1306-stair-normal",
       "word": "stair",
       "meaning": "階段",
       "ex1": "Take the stair to the second floor.",
@@ -955,7 +955,7 @@
       "tr2": "彼女は一番下の階段に座って、お母さんを待ちました。"
     },
     {
-      "id": "g-1307-upstairs",
+      "id": "g-1307-upstairs-normal",
       "word": "upstairs",
       "meaning": "上の階へ",
       "ex1": "My room is upstairs.",
@@ -964,7 +964,7 @@
       "tr2": "彼はかばんを取りに上の階へ行き、すぐに戻ってきました。"
     },
     {
-      "id": "g-1308-gate",
+      "id": "g-1308-gate-normal",
       "word": "gate",
       "meaning": "門",
       "ex1": "Meet me at the school gate.",
@@ -973,7 +973,7 @@
       "tr2": "ロンドン行きの便は12番ゲートから出ます。"
     },
     {
-      "id": "g-1309-mat",
+      "id": "g-1309-mat-normal",
       "word": "mat",
       "meaning": "マット",
       "ex1": "Wipe your feet on the mat.",
@@ -982,7 +982,7 @@
       "tr2": "私たちは体育館の床にマットを敷いて、ヨガをしました。"
     },
     {
-      "id": "g-1310-housework",
+      "id": "g-1310-housework-normal",
       "word": "housework",
       "meaning": "家事",
       "ex1": "I help with the housework.",
@@ -991,7 +991,7 @@
       "tr2": "週末は父と私で家事を分担します。"
     },
     {
-      "id": "g-1311-gesture",
+      "id": "g-1311-gesture-normal",
       "word": "gesture",
       "meaning": "身振り、しぐさ",
       "ex1": "He made a funny gesture.",
@@ -1000,7 +1000,7 @@
       "tr2": "笑顔は、だれにでも通じるしぐさです。"
     },
     {
-      "id": "g-1312-joke",
+      "id": "g-1312-joke-normal",
       "word": "joke",
       "meaning": "冗談、ジョーク",
       "ex1": "He told us a funny joke.",
@@ -1009,7 +1009,7 @@
       "tr2": "ただの冗談だったので、怒らないでください。"
     },
     {
-      "id": "g-1313-native",
+      "id": "g-1313-native-normal",
       "word": "native",
       "meaning": "出生地の、母国の",
       "ex1": "English is her native language.",
@@ -1018,7 +1018,7 @@
       "tr2": "私は授業で英語を母国語とする人と話したいです。"
     },
     {
-      "id": "g-1314-official",
+      "id": "g-1314-official-normal",
       "word": "official",
       "meaning": "公式の、公の",
       "ex1": "This is the official website.",
@@ -1027,7 +1027,7 @@
       "tr2": "英語は多くの国で公用語です。"
     },
     {
-      "id": "g-1315-strict",
+      "id": "g-1315-strict-normal",
       "word": "strict",
       "meaning": "厳しい、厳格な",
       "ex1": "Our coach is very strict.",
@@ -1036,7 +1036,7 @@
       "tr2": "両親は私が寝る時間について厳しいです。"
     },
     {
-      "id": "g-1316-impress",
+      "id": "g-1316-impress-normal",
       "word": "impress",
       "meaning": "~に感銘を与える",
       "ex1": "Her speech will impress everyone.",
@@ -1045,7 +1045,7 @@
       "tr2": "私は日本料理でホストファミリーに感銘を与えたいです。"
     },
     {
-      "id": "g-1317-improve",
+      "id": "g-1317-improve-normal",
       "word": "improve",
       "meaning": "~を改善する、上達させる",
       "ex1": "I want to improve my English.",
@@ -1054,7 +1054,7 @@
       "tr2": "たくさん本を読めば、作文の力を上達させることができます。"
     },
     {
-      "id": "g-1318-manage",
+      "id": "g-1318-manage-normal",
       "word": "manage",
       "meaning": "~を経営する、管理する",
       "ex1": "My aunt will manage a small hotel.",
@@ -1063,7 +1063,7 @@
       "tr2": "部活動と勉強の時間を管理するのは簡単ではありません。"
     },
     {
-      "id": "g-1319-manager",
+      "id": "g-1319-manager-normal",
       "word": "manager",
       "meaning": "経営者、支配人",
       "ex1": "The manager is very kind.",
@@ -1072,7 +1072,7 @@
       "tr2": "私はその店の経営者に値段をたずねました。"
     },
     {
-      "id": "g-1320-project",
+      "id": "g-1320-project-normal",
       "word": "project",
       "meaning": "計画、企画、事業",
       "ex1": "We started a new project.",
@@ -1081,7 +1081,7 @@
       "tr2": "私たちのクラスには、町の歴史についての企画があります。"
     },
     {
-      "id": "g-1321-research",
+      "id": "g-1321-research-normal",
       "word": "research",
       "meaning": "調査、研究",
       "ex1": "I did research on whales.",
@@ -1090,7 +1090,7 @@
       "tr2": "科学者たちは新しいエネルギー源を見つけるために研究をしています。"
     },
     {
-      "id": "g-1322-researcher",
+      "id": "g-1322-researcher-normal",
       "word": "researcher",
       "meaning": "調査員、研究者",
       "ex1": "She is a famous researcher.",
@@ -1099,7 +1099,7 @@
       "tr2": "私たちの市出身の研究者が、講演で宇宙について話しました。"
     },
     {
-      "id": "g-1323-president",
+      "id": "g-1323-president-normal",
       "word": "president",
       "meaning": "大統領、社長",
       "ex1": "The president visited Japan.",
@@ -1108,7 +1108,7 @@
       "tr2": "父は昨年、小さな会社の社長になりました。"
     },
     {
-      "id": "g-1324-center",
+      "id": "g-1324-center-normal",
       "word": "center",
       "meaning": "中心",
       "ex1": "The library is in the center of the town.",
@@ -1117,7 +1117,7 @@
       "tr2": "私たちは円の中心でゲームをしました。"
     },
     {
-      "id": "g-1325-central",
+      "id": "g-1325-central-normal",
       "word": "central",
       "meaning": "中心の、中央の",
       "ex1": "Our hotel is in central Tokyo.",
@@ -1126,7 +1126,7 @@
       "tr2": "セントラルパークはニューヨークでランナーに人気の場所です。"
     },
     {
-      "id": "g-1326-courage",
+      "id": "g-1326-courage-normal",
       "word": "courage",
       "meaning": "勇気",
       "ex1": "It takes courage to speak in English.",
@@ -1135,7 +1135,7 @@
       "tr2": "彼は友達に謝る勇気を持っていました。"
     },
     {
-      "id": "g-1327-encourage",
+      "id": "g-1327-encourage-normal",
       "word": "encourage",
       "meaning": "~を励ます、勇気づける",
       "ex1": "My teacher will encourage me.",
@@ -1144,7 +1144,7 @@
       "tr2": "友達の優しい言葉が、私をもう一度挑戦するよう勇気づけてくれるでしょう。"
     },
     {
-      "id": "g-1328-toward",
+      "id": "g-1328-toward-normal",
       "word": "toward",
       "meaning": "~のほうへ、~に向かって",
       "ex1": "He ran toward the goal.",
@@ -1153,7 +1153,7 @@
       "tr2": "一人の男の子が満面の笑みで私のほうへ歩いてきました。"
     },
     {
-      "id": "g-1329-count",
+      "id": "g-1329-count-normal",
       "word": "count",
       "meaning": "数える",
       "ex1": "Let's count the chairs.",
@@ -1162,7 +1162,7 @@
       "tr2": "その小さな女の子は英語で1から100まで数えることができます。"
     },
     {
-      "id": "g-1330-land",
+      "id": "g-1330-land-normal",
       "word": "land",
       "meaning": "土地、陸地",
       "ex1": "We saw land from the ship.",
@@ -1171,7 +1171,7 @@
       "tr2": "祖父は広い土地を持っていて、そこで野菜を育てています。"
     },
     {
-      "id": "g-1331-flight",
+      "id": "g-1331-flight-normal",
       "word": "flight",
       "meaning": "飛行、空の旅",
       "ex1": "The flight was very long.",
@@ -1180,7 +1180,7 @@
       "tr2": "シドニー行きの25便は午前10時に出発します。"
     },
     {
-      "id": "g-1332-pilot",
+      "id": "g-1332-pilot-normal",
       "word": "pilot",
       "meaning": "パイロット",
       "ex1": "My dream is to be a pilot.",
@@ -1189,7 +1189,7 @@
       "tr2": "パイロットは飛行機が離陸する前に乗客に話しかけました。"
     },
     {
-      "id": "g-1333-passenger",
+      "id": "g-1333-passenger-normal",
       "word": "passenger",
       "meaning": "乗客、旅客",
       "ex1": "Every passenger had a ticket.",
@@ -1198,7 +1198,7 @@
       "tr2": "バスは満員で、ある乗客がお年寄りの女性に席をゆずりました。"
     },
     {
-      "id": "g-1334-tour",
+      "id": "g-1334-tour-normal",
       "word": "tour",
       "meaning": "旅行",
       "ex1": "We took a tour of the castle.",
@@ -1207,7 +1207,7 @@
       "tr2": "彼らは2週間ヨーロッパを旅行して回りました。"
     },
     {
-      "id": "g-1335-cent",
+      "id": "g-1335-cent-normal",
       "word": "cent",
       "meaning": "(通貨単位)セント",
       "ex1": "One cent is very small.",
@@ -1216,7 +1216,7 @@
       "tr2": "私は道でセント硬貨を見つけて、警察に渡しました。"
     },
     {
-      "id": "g-1336-century",
+      "id": "g-1336-century-normal",
       "word": "century",
       "meaning": "世紀、１００年",
       "ex1": "This temple is a century old.",
@@ -1225,7 +1225,7 @@
       "tr2": "21世紀は2001年に始まりました。"
     },
     {
-      "id": "g-1337-similar",
+      "id": "g-1337-similar-normal",
       "word": "similar",
       "meaning": "似ている、同様の",
       "ex1": "Our bags are similar.",
@@ -1234,7 +1234,7 @@
       "tr2": "兄と私は音楽について似た考えを持っています。"
     },
     {
-      "id": "g-1338-marry",
+      "id": "g-1338-marry-normal",
       "word": "marry",
       "meaning": "結婚する",
       "ex1": "My sister will marry next year.",
@@ -1243,7 +1243,7 @@
       "tr2": "彼らは海辺の小さな教会で結婚することに決めました。"
     },
     {
-      "id": "g-1339-wedding",
+      "id": "g-1339-wedding-normal",
       "word": "wedding",
       "meaning": "結婚式",
       "ex1": "We went to her wedding.",
@@ -1252,7 +1252,7 @@
       "tr2": "いとこは結婚披露宴で美しいドレスを着ました。"
     },
     {
-      "id": "g-1340-whole",
+      "id": "g-1340-whole-normal",
       "word": "whole",
       "meaning": "全体の",
       "ex1": "I ate the whole cake.",
@@ -1261,7 +1261,7 @@
       "tr2": "日曜日にクラス全体で公園を掃除しました。"
     },
     {
-      "id": "g-1341-total",
+      "id": "g-1341-total-normal",
       "word": "total",
       "meaning": "合計、総額",
       "ex1": "The total is ten dollars.",
@@ -1270,7 +1270,7 @@
       "tr2": "私たちの学校の生徒の総数は約400人です。"
     },
     {
-      "id": "g-1342-steal",
+      "id": "g-1342-steal-normal",
       "word": "steal",
       "meaning": "~を盗む",
       "ex1": "Don't steal other people's things.",
@@ -1279,7 +1279,7 @@
       "tr2": "その話では、キツネが農場から卵を盗もうとしました。"
     },
     {
-      "id": "g-1343-attack",
+      "id": "g-1343-attack-normal",
       "word": "attack",
       "meaning": "~を攻撃する、襲う",
       "ex1": "The dog may attack you.",
@@ -1288,7 +1288,7 @@
       "tr2": "私たちのチームは攻撃しようとしましたが、相手チームは強かったです。"
     },
     {
-      "id": "g-1344-destroy",
+      "id": "g-1344-destroy-normal",
       "word": "destroy",
       "meaning": "~を破壊する、壊す",
       "ex1": "Wars destroy many things.",
@@ -1297,7 +1297,7 @@
       "tr2": "大雨で私たちの村の近くの橋が壊れるかもしれません。"
     },
     {
-      "id": "g-1345-waste",
+      "id": "g-1345-waste-normal",
       "word": "waste",
       "meaning": "むだ、浪費、ごみ",
       "ex1": "Don't waste water.",
@@ -1306,7 +1306,7 @@
       "tr2": "小さなことを心配しすぎるのは時間のむだです。"
     },
     {
-      "id": "g-1346-suffer",
+      "id": "g-1346-suffer-normal",
       "word": "suffer",
       "meaning": "(苦痛)を受ける、苦しむ",
       "ex1": "Many people suffer from hunger.",
@@ -1315,7 +1315,7 @@
       "tr2": "人間によって住みかが壊されると、動物は苦しみます。"
     },
     {
-      "id": "g-1347-injure",
+      "id": "g-1347-injure-normal",
       "word": "injure",
       "meaning": "~にけがをさせる、~を傷つける",
       "ex1": "Be careful, or you will injure yourself.",
@@ -1324,7 +1324,7 @@
       "tr2": "来週のサッカーの試合で足にけがをしないようにしてください。"
     },
     {
-      "id": "g-1348-injury",
+      "id": "g-1348-injury-normal",
       "word": "injury",
       "meaning": "けが、負傷",
       "ex1": "She has a bad injury.",
@@ -1333,7 +1333,7 @@
       "tr2": "けがのために、彼はレースに参加できませんでした。"
     },
     {
-      "id": "g-1349-environment",
+      "id": "g-1349-environment-normal",
       "word": "environment",
       "meaning": "環境",
       "ex1": "We must protect the environment.",
@@ -1342,7 +1342,7 @@
       "tr2": "車や工場は環境に悪いことがあります。"
     },
     {
-      "id": "g-1350-dentist",
+      "id": "g-1350-dentist-normal",
       "word": "dentist",
       "meaning": "歯科医",
       "ex1": "I went to the dentist yesterday.",
@@ -1351,7 +1351,7 @@
       "tr2": "歯科医は私に、1日に3回歯をみがくように言いました。"
     },
     {
-      "id": "g-1351-drugstore",
+      "id": "g-1351-drugstore-normal",
       "word": "drugstore",
       "meaning": "ドラッグストア",
       "ex1": "I bought medicine at the drugstore.",
@@ -1360,7 +1360,7 @@
       "tr2": "すみません、この近くにドラッグストアはありますか。"
     },
     {
-      "id": "g-1352-stomach",
+      "id": "g-1352-stomach-normal",
       "word": "stomach",
       "meaning": "おなか、胃",
       "ex1": "My stomach hurts.",
@@ -1369,7 +1369,7 @@
       "tr2": "とてもおなかがすいていて、授業中におなかが大きな音を立てました。"
     },
     {
-      "id": "g-1353-stomachache",
+      "id": "g-1353-stomachache-normal",
       "word": "stomachache",
       "meaning": "腹痛",
       "ex1": "I have a stomachache.",
@@ -1378,7 +1378,7 @@
       "tr2": "彼はアイスクリームを食べすぎて腹痛になりました。"
     },
     {
-      "id": "g-1354-pain",
+      "id": "g-1354-pain-normal",
       "word": "pain",
       "meaning": "痛み、苦痛",
       "ex1": "I feel pain in my leg.",
@@ -1387,7 +1387,7 @@
       "tr2": "医者は私にどこが痛いのかをたずねました。"
     },
     {
-      "id": "g-1355-select",
+      "id": "g-1355-select-normal",
       "word": "select",
       "meaning": "選ぶ、選択する",
       "ex1": "Please select one answer.",
@@ -1396,7 +1396,7 @@
       "tr2": "生徒たちは合唱コンクールの曲を選びます。"
     },
     {
-      "id": "g-1356-gas",
+      "id": "g-1356-gas-normal",
       "word": "gas",
       "meaning": "ガス、気体",
       "ex1": "We use gas for cooking.",
@@ -1405,7 +1405,7 @@
       "tr2": "二酸化炭素は地球を温かくする気体です。"
     },
     {
-      "id": "g-1357-oil",
+      "id": "g-1357-oil-normal",
       "word": "oil",
       "meaning": "石油、油",
       "ex1": "Japan buys oil from other countries.",
@@ -1414,7 +1414,7 @@
       "tr2": "卵を焼く前に、フライパンに油を少し入れてください。"
     },
     {
-      "id": "g-1358-engine",
+      "id": "g-1358-engine-normal",
       "word": "engine",
       "meaning": "エンジン",
       "ex1": "The car has a good engine.",
@@ -1423,7 +1423,7 @@
       "tr2": "エンジンが止まったので、私たちは助けを待たなければなりませんでした。"
     },
     {
-      "id": "g-1359-engineering",
+      "id": "g-1359-engineering-normal",
       "word": "engineering",
       "meaning": "工学",
       "ex1": "My brother studies engineering.",
@@ -1432,7 +1432,7 @@
       "tr2": "彼女は工学を学ぶために大学に入りたいと思っています。"
     },
     {
-      "id": "g-1360-electric",
+      "id": "g-1360-electric-normal",
       "word": "electric",
       "meaning": "電気の",
       "ex1": "We have an electric car.",
@@ -1441,7 +1441,7 @@
       "tr2": "多くの人が通勤に電動自転車を使っています。"
     },
     {
-      "id": "g-1361-electricity",
+      "id": "g-1361-electricity-normal",
       "word": "electricity",
       "meaning": "電気",
       "ex1": "We use a lot of electricity.",
@@ -1450,7 +1450,7 @@
       "tr2": "強い風のせいで電気が止まりました。"
     },
     {
-      "id": "g-1362-sweater",
+      "id": "g-1362-sweater-normal",
       "word": "sweater",
       "meaning": "セーター",
       "ex1": "I wear a sweater in winter.",
@@ -1459,7 +1459,7 @@
       "tr2": "祖母がこの赤いセーターを私のために作ってくれました。"
     },
     {
-      "id": "g-1363-belt",
+      "id": "g-1363-belt-normal",
       "word": "belt",
       "meaning": "ベルト",
       "ex1": "Please fasten your belt.",
@@ -1468,7 +1468,7 @@
       "tr2": "このベルトは私には大きすぎるので、もっと小さいのが必要です。"
     },
     {
-      "id": "g-1364-button",
+      "id": "g-1364-button-normal",
       "word": "button",
       "meaning": "ボタン",
       "ex1": "Push the red button.",
@@ -1477,7 +1477,7 @@
       "tr2": "学校へ行く途中で、コートのボタンが1つ取れました。"
     },
     {
-      "id": "g-1365-overseas",
+      "id": "g-1365-overseas-normal",
       "word": "overseas",
       "meaning": "【形】海外の 【副】海外へ、外国に",
       "ex1": "I want to study overseas.",
@@ -1486,7 +1486,7 @@
       "tr2": "私たちの学校には毎年春に多くの海外の生徒が来ます。"
     },
     {
-      "id": "g-1366-ghost",
+      "id": "g-1366-ghost-normal",
       "word": "ghost",
       "meaning": "幽霊",
       "ex1": "I don't believe in a ghost.",
@@ -1495,7 +1495,7 @@
       "tr2": "私たちは夏のキャンプで幽霊の話を聞きました。"
     },
     {
-      "id": "g-1367-quite",
+      "id": "g-1367-quite-normal",
       "word": "quite",
       "meaning": "まったく、かなり、なかなか",
       "ex1": "It is quite cold today.",
@@ -1504,7 +1504,7 @@
       "tr2": "彼はなかなか上手な歌手で、みんなが彼の歌を好きです。"
     },
     {
-      "id": "g-1368-respect",
+      "id": "g-1368-respect-normal",
       "word": "respect",
       "meaning": "~を尊敬する、尊重する",
       "ex1": "I respect my teacher.",
@@ -1513,7 +1513,7 @@
       "tr2": "外国を旅行するときは、他の文化を尊重すべきです。"
     },
     {
-      "id": "g-1369-discover",
+      "id": "g-1369-discover-normal",
       "word": "discover",
       "meaning": "~を発見する",
       "ex1": "Scientists will discover a new star.",
@@ -1522,7 +1522,7 @@
       "tr2": "町を歩き回るときに、私はすてきなカフェを見つけたいです。"
     },
     {
-      "id": "g-1370-discovery",
+      "id": "g-1370-discovery-normal",
       "word": "discovery",
       "meaning": "発見、発見されたもの",
       "ex1": "This is a great discovery.",
@@ -1531,7 +1531,7 @@
       "tr2": "その古い地図の発見は、生徒たちをわくわくさせました。"
     },
     {
-      "id": "g-1371-global",
+      "id": "g-1371-global-normal",
       "word": "global",
       "meaning": "全世界の、地球規模の",
       "ex1": "Global warming is a big problem.",
@@ -1540,7 +1540,7 @@
       "tr2": "プラスチックごみから地球を救うには、地球規模の行動が必要です。"
     },
     {
-      "id": "g-1372-social",
+      "id": "g-1372-social-normal",
       "word": "social",
       "meaning": "社会の",
       "ex1": "I study social studies at school.",
@@ -1549,7 +1549,7 @@
       "tr2": "多くの若者が、だれにも話せない社会の問題を抱えています。"
     },
     {
-      "id": "g-1373-society",
+      "id": "g-1373-society-normal",
       "word": "society",
       "meaning": "社会、協会、団体",
       "ex1": "We live in a modern society.",
@@ -1558,7 +1558,7 @@
       "tr2": "新しい友達に会うために、私は学校の英語の会に入りました。"
     },
     {
-      "id": "g-1374-freedom",
+      "id": "g-1374-freedom-normal",
       "word": "freedom",
       "meaning": "自由",
       "ex1": "Everyone wants freedom.",
@@ -1567,7 +1567,7 @@
       "tr2": "良い社会では、言論の自由はとても大切です。"
     },
     {
-      "id": "g-1375-importance",
+      "id": "g-1375-importance-normal",
       "word": "importance",
       "meaning": "重要性、大切さ",
       "ex1": "I know the importance of sleep.",
@@ -1576,7 +1576,7 @@
       "tr2": "先生はスピーチの中で友情の大切さについて話しました。"
     },
     {
-      "id": "g-1376-hunger",
+      "id": "g-1376-hunger-normal",
       "word": "hunger",
       "meaning": "飢え、空腹",
       "ex1": "Hunger is a big problem in the world.",
@@ -1585,7 +1585,7 @@
       "tr2": "私たちは飢えに苦しむ子どもたちを助けるためにお金を集めました。"
     },
     {
-      "id": "g-1377-training",
+      "id": "g-1377-training-normal",
       "word": "training",
       "meaning": "訓練、練習",
       "ex1": "I need more training.",
@@ -1594,7 +1594,7 @@
       "tr2": "選手たちは大事な試合の前に毎日厳しい訓練をします。"
     },
     {
-      "id": "g-1378-law",
+      "id": "g-1378-law-normal",
       "word": "law",
       "meaning": "法律、法則",
       "ex1": "We must follow the law.",
@@ -1603,7 +1603,7 @@
       "tr2": "ニュートンはリンゴが落ちるのを見て、重力の法則を見つけました。"
     },
     {
-      "id": "g-1379-lawyer",
+      "id": "g-1379-lawyer-normal",
       "word": "lawyer",
       "meaning": "弁護士、法律家",
       "ex1": "My uncle is a lawyer.",
@@ -1612,7 +1612,7 @@
       "tr2": "彼女は人々を助ける弁護士になるために一生懸命勉強しました。"
     },
     {
-      "id": "g-1380-wild",
+      "id": "g-1380-wild-normal",
       "word": "wild",
       "meaning": "野生の、乱暴な",
       "ex1": "We saw wild animals in Africa.",
@@ -1621,7 +1621,7 @@
       "tr2": "パーティーで男の子たちが乱暴だったので、先生は怒りました。"
     },
     {
-      "id": "g-1381-bark",
+      "id": "g-1381-bark-normal",
       "word": "bark",
       "meaning": "(犬が)吠える",
       "ex1": "The dog began to bark.",
@@ -1630,7 +1630,7 @@
       "tr2": "知らない人が門に来たら、うちの犬は大きな声で吠えます。"
     },
     {
-      "id": "g-1382-bite",
+      "id": "g-1382-bite-normal",
       "word": "bite",
       "meaning": "【名】ひと口 【動】かむ",
       "ex1": "Can I have a bite?",
@@ -1639,7 +1639,7 @@
       "tr2": "あの犬はかむかもしれないので、気をつけてください。"
     },
     {
-      "id": "g-1383-carrot",
+      "id": "g-1383-carrot-normal",
       "word": "carrot",
       "meaning": "人参",
       "ex1": "A rabbit likes a carrot.",
@@ -1648,7 +1648,7 @@
       "tr2": "私はカレーのために人参と玉ねぎを切りました。"
     },
     {
-      "id": "g-1384-onion",
+      "id": "g-1384-onion-normal",
       "word": "onion",
       "meaning": "玉ねぎ",
       "ex1": "Cutting an onion makes me cry.",
@@ -1657,7 +1657,7 @@
       "tr2": "父はスープにたくさんの玉ねぎを入れました。"
     },
     {
-      "id": "g-1385-toast",
+      "id": "g-1385-toast-normal",
       "word": "toast",
       "meaning": "トースト",
       "ex1": "I had toast for breakfast.",
@@ -1666,7 +1666,7 @@
       "tr2": "バターとジャムをつけたトーストはいかがですか。"
     },
     {
-      "id": "g-1386-dessert",
+      "id": "g-1386-dessert-normal",
       "word": "dessert",
       "meaning": "デザート",
       "ex1": "We had ice cream for dessert.",
@@ -1675,7 +1675,7 @@
       "tr2": "デザートには何がいいですか、ケーキですか、それとも果物ですか。"
     },
     {
-      "id": "g-1387-desert",
+      "id": "g-1387-desert-normal",
       "word": "desert",
       "meaning": "【名】砂漠 【形】砂漠の",
       "ex1": "It is hot in the desert.",
@@ -1684,7 +1684,7 @@
       "tr2": "雨がほとんど降らないので、砂漠で育つ植物はほとんどありません。"
     },
     {
-      "id": "g-1388-dolphin",
+      "id": "g-1388-dolphin-normal",
       "word": "dolphin",
       "meaning": "イルカ",
       "ex1": "A dolphin is a smart animal.",
@@ -1693,7 +1693,7 @@
       "tr2": "私たちは日曜日に水族館でイルカのショーを見ました。"
     },
     {
-      "id": "g-1389-whale",
+      "id": "g-1389-whale-normal",
       "word": "whale",
       "meaning": "クジラ",
       "ex1": "A whale is very big.",
@@ -1702,7 +1702,7 @@
       "tr2": "私たちはクジラを見に北海道で船に乗りました。"
     },
     {
-      "id": "g-1390-countryside",
+      "id": "g-1390-countryside-normal",
       "word": "countryside",
       "meaning": "田舎、地方",
       "ex1": "I live in the countryside.",
@@ -1711,7 +1711,7 @@
       "tr2": "昨年の夏、私たちは田舎にある祖父母の家に泊まりました。"
     },
     {
-      "id": "g-1391-empty",
+      "id": "g-1391-empty-normal",
       "word": "empty",
       "meaning": "空っぽの",
       "ex1": "The box is empty.",
@@ -1720,7 +1720,7 @@
       "tr2": "冷蔵庫を開けると、ほとんど空っぽでした。"
     },
     {
-      "id": "g-1392-certainly",
+      "id": "g-1392-certainly-normal",
       "word": "certainly",
       "meaning": "確かに",
       "ex1": "Certainly, I will help you.",
@@ -1729,7 +1729,7 @@
       "tr2": "ペンを借りてもいいですか。もちろん、どうぞ。"
     },
     {
-      "id": "g-1393-perhaps",
+      "id": "g-1393-perhaps-normal",
       "word": "perhaps",
       "meaning": "もしかしたら、たぶん",
       "ex1": "Perhaps it will rain tomorrow.",
@@ -1738,7 +1738,7 @@
       "tr2": "たぶん彼は今忙しいので、あとで電話しましょう。"
     },
     {
-      "id": "g-1394-apply",
+      "id": "g-1394-apply-normal",
       "word": "apply",
       "meaning": "申し込む、~を適用する",
       "ex1": "I want to apply for the speech contest.",
@@ -1747,7 +1747,7 @@
       "tr2": "このルールは他の問題にも適用できます。"
     },
     {
-      "id": "g-1395-accept",
+      "id": "g-1395-accept-normal",
       "word": "accept",
       "meaning": "~を受け入れる、受け取る",
       "ex1": "Please accept my gift.",
@@ -1756,7 +1756,7 @@
       "tr2": "彼女はそのパーティーへの招待を喜んで受け入れました。"
     },
     {
-      "id": "g-1396-bury",
+      "id": "g-1396-bury-normal",
       "word": "bury",
       "meaning": "~を埋める、埋葬する",
       "ex1": "Dogs bury bones in the ground.",
@@ -1765,7 +1765,7 @@
       "tr2": "彼らは庭の木の下に年老いた猫を埋葬するつもりです。"
     },
     {
-      "id": "g-1397-fix",
+      "id": "g-1397-fix-normal",
       "word": "fix",
       "meaning": "~を修理する",
       "ex1": "Can you fix my bike?",
@@ -1774,7 +1774,7 @@
       "tr2": "父はかなづちで壊れたいすを修理しようとしました。"
     },
     {
-      "id": "g-1398-diary",
+      "id": "g-1398-diary-normal",
       "word": "diary",
       "meaning": "日記",
       "ex1": "I write in my diary every night.",
@@ -1783,7 +1783,7 @@
       "tr2": "私はホームステイのことを英語で日記に書きました。"
     },
     {
-      "id": "g-1399-note",
+      "id": "g-1399-note-normal",
       "word": "note",
       "meaning": "メモ",
       "ex1": "I left a note on the table.",
@@ -1792,7 +1792,7 @@
       "tr2": "修学旅行の日付をメモしてください。"
     },
     {
-      "id": "g-1400-prize",
+      "id": "g-1400-prize-normal",
       "word": "prize",
       "meaning": "賞、賞品",
       "ex1": "She won first prize.",
@@ -1801,7 +1801,7 @@
       "tr2": "彼は英語コンテストでのスピーチで賞をもらいました。"
     },
     {
-      "id": "g-1401-novel",
+      "id": "g-1401-novel-normal",
       "word": "novel",
       "meaning": "小説",
       "ex1": "I am reading a long novel now.",
@@ -1810,7 +1810,7 @@
       "tr2": "姉はいつか学校生活についての小説を書きたいと思っています。"
     },
     {
-      "id": "g-1402-photograph",
+      "id": "g-1402-photograph-normal",
       "word": "photograph",
       "meaning": "写真",
       "ex1": "She took a photograph of the beautiful mountain.",
@@ -1819,7 +1819,7 @@
       "tr2": "この古い写真は、少年だったころの祖父を写しています。"
     },
     {
-      "id": "g-1403-presentation",
+      "id": "g-1403-presentation-normal",
       "word": "presentation",
       "meaning": "発表、プレゼンテーション",
       "ex1": "Our presentation starts at ten.",
@@ -1828,7 +1828,7 @@
       "tr2": "プレゼンテーションのあと、先生は私たちにその計画についてたくさん質問しました。"
     },
     {
-      "id": "g-1404-race",
+      "id": "g-1404-race-normal",
       "word": "race",
       "meaning": "競争、人種",
       "ex1": "He won the race yesterday.",
@@ -1837,7 +1837,7 @@
       "tr2": "あらゆる人種や国の人々がその祭りに参加しました。"
     },
     {
-      "id": "g-1405-lifestyle",
+      "id": "g-1405-lifestyle-normal",
       "word": "lifestyle",
       "meaning": "生活様式",
       "ex1": "My grandmother has a healthy lifestyle.",
@@ -1846,7 +1846,7 @@
       "tr2": "大都市に住むと、田舎に住むのとはまったく違う生活様式になります。"
     },
     {
-      "id": "g-1406-normal",
+      "id": "g-1406-normal-normal",
       "word": "normal",
       "meaning": "標準の、正常な",
       "ex1": "It is a normal day at school.",
@@ -1855,7 +1855,7 @@
       "tr2": "熱は正常なので、今日は学校に行けます。"
     },
     {
-      "id": "g-1407-treat",
+      "id": "g-1407-treat-normal",
       "word": "treat",
       "meaning": "~を扱う、~を治療する",
       "ex1": "Please treat old people with kindness.",
@@ -1864,7 +1864,7 @@
       "tr2": "医者はこの薬であなたのせきを治療します。"
     },
     {
-      "id": "g-1408-control",
+      "id": "g-1408-control-normal",
       "word": "control",
       "meaning": "~を支配する、抑制する",
       "ex1": "He cannot control the big dog.",
@@ -1873,7 +1873,7 @@
       "tr2": "市は町の中心部の車の数を抑えようとしています。"
     },
     {
-      "id": "g-1409-judge",
+      "id": "g-1409-judge-normal",
       "word": "judge",
       "meaning": "~を判断する、裁く",
       "ex1": "Don't judge people by their clothes.",
@@ -1882,7 +1882,7 @@
       "tr2": "私たちの先生が明日のスピーチコンテストの審査をします。"
     },
     {
-      "id": "g-1410-anger",
+      "id": "g-1410-anger-normal",
       "word": "anger",
       "meaning": "怒り",
       "ex1": "He shouted in anger.",
@@ -1891,7 +1891,7 @@
       "tr2": "兄がカメラをこわしたとき、彼女は怒りを隠そうとしました。"
     },
     {
-      "id": "g-1411-main",
+      "id": "g-1411-main-normal",
       "word": "main",
       "meaning": "主な、主要な",
       "ex1": "This is the main street of our town.",
@@ -1900,7 +1900,7 @@
       "tr2": "私が選んだ主な理由は、音楽が大好きだからです。"
     },
     {
-      "id": "g-1412-direct",
+      "id": "g-1412-direct-normal",
       "word": "direct",
       "meaning": "まっすぐな、直接の",
       "ex1": "This is a direct flight to Paris.",
@@ -1909,7 +1909,7 @@
       "tr2": "私の町から空港への直通電車はないので、乗りかえなければなりません。"
     },
     {
-      "id": "g-1413-direction",
+      "id": "g-1413-direction-normal",
       "word": "direction",
       "meaning": "方向、方角",
       "ex1": "They walked in the same direction.",
@@ -1918,7 +1918,7 @@
       "tr2": "風向きが変わり、ボートは北へ進み始めました。"
     },
     {
-      "id": "g-1414-ability",
+      "id": "g-1414-ability-normal",
       "word": "ability",
       "meaning": "能力",
       "ex1": "She has the ability to speak three languages.",
@@ -1927,7 +1927,7 @@
       "tr2": "だれもが違う能力を持っているので、私たちは助け合うべきです。"
     },
     {
-      "id": "g-1415-capital",
+      "id": "g-1415-capital-normal",
       "word": "capital",
       "meaning": "首都、大文字",
       "ex1": "Tokyo is the capital of Japan.",
@@ -1936,7 +1936,7 @@
       "tr2": "あなたの名前を大文字で書いてください。"
     },
     {
-      "id": "g-1416-citizen",
+      "id": "g-1416-citizen-normal",
       "word": "citizen",
       "meaning": "市民、国民",
       "ex1": "He became a citizen of Canada.",
@@ -1945,7 +1945,7 @@
       "tr2": "すべての市民が町をきれいに保つ手助けをするべきです。"
     },
     {
-      "id": "g-1417-probably",
+      "id": "g-1417-probably-normal",
       "word": "probably",
       "meaning": "たぶん、おそらく",
       "ex1": "It will probably rain tomorrow.",
@@ -1954,7 +1954,7 @@
       "tr2": "ケンは部活動が終わったあと、おそらくパーティーに来るでしょう。"
     },
     {
-      "id": "g-1418-rather",
+      "id": "g-1418-rather-normal",
       "word": "rather",
       "meaning": "むしろ、いくぶん、かなり",
       "ex1": "It is rather cold today.",
@@ -1963,7 +1963,7 @@
       "tr2": "この雨の中、出かけるくらいならむしろ家にいたいです。"
     },
     {
-      "id": "g-1419-recently",
+      "id": "g-1419-recently-normal",
       "word": "recently",
       "meaning": "最近、近頃",
       "ex1": "I have recently started playing the guitar.",
@@ -1972,7 +1972,7 @@
       "tr2": "最近エミに会いましたか。彼女はとても幸せそうです。"
     },
     {
-      "id": "g-1420-remain",
+      "id": "g-1420-remain-normal",
       "word": "remain",
       "meaning": "残る、~のままである",
       "ex1": "Only three apples remain.",
@@ -1981,7 +1981,7 @@
       "tr2": "バスが止まるまで座ったままでいてください。"
     },
     {
-      "id": "g-1421-remind",
+      "id": "g-1421-remind-normal",
       "word": "remind",
       "meaning": "思い出させる、気づかせる",
       "ex1": "Please remind me about the test.",
@@ -1990,7 +1990,7 @@
       "tr2": "今夜お母さんに電話することを私に思い出させてください。"
     },
     {
-      "id": "g-1422-wrap",
+      "id": "g-1422-wrap-normal",
       "word": "wrap",
       "meaning": "包む",
       "ex1": "Let's wrap the present now.",
@@ -1999,7 +1999,7 @@
       "tr2": "昼食まで新鮮なように、サンドイッチを紙で包んでください。"
     },
     {
-      "id": "g-1423-wallet",
+      "id": "g-1423-wallet-normal",
       "word": "wallet",
       "meaning": "財布",
       "ex1": "I lost my wallet on the train.",
@@ -2008,7 +2008,7 @@
       "tr2": "彼は財布を取り出して、チケット代を払いました。"
     },
     {
-      "id": "g-1424-chain",
+      "id": "g-1424-chain-normal",
       "word": "chain",
       "meaning": "【名】鎖、連鎖",
       "ex1": "The dog is on a chain.",
@@ -2017,7 +2017,7 @@
       "tr2": "自然のすべてのものは食物連鎖の一部です。"
     },
     {
-      "id": "g-1425-amount",
+      "id": "g-1425-amount-normal",
       "word": "amount",
       "meaning": "量、額",
       "ex1": "A large amount of water is used here.",
@@ -2026,7 +2026,7 @@
       "tr2": "私たちが旅行に必要なお金の総額はいくらですか。"
     },
     {
-      "id": "g-1426-heat",
+      "id": "g-1426-heat-normal",
       "word": "heat",
       "meaning": "【名】熱、暑さ 【動】熱する、温める",
       "ex1": "The heat of the sun is strong today.",
@@ -2035,7 +2035,7 @@
       "tr2": "スープを電子レンジで2分間温めてください。"
     },
     {
-      "id": "g-1427-shade",
+      "id": "g-1427-shade-normal",
       "word": "shade",
       "meaning": "日陰",
       "ex1": "Let's rest in the shade.",
@@ -2044,7 +2044,7 @@
       "tr2": "その高い木は、公園で遊ぶ子どもたちに日陰を作ってくれます。"
     },
     {
-      "id": "g-1428-harvest",
+      "id": "g-1428-harvest-normal",
       "word": "harvest",
       "meaning": "【名】収穫 【動】収穫する",
       "ex1": "The rice harvest begins in autumn.",
@@ -2053,7 +2053,7 @@
       "tr2": "私たちは夏休みの間、祖父が野菜を収穫するのを手伝いました。"
     },
     {
-      "id": "g-1429-branch",
+      "id": "g-1429-branch-normal",
       "word": "branch",
       "meaning": "枝、支店",
       "ex1": "A bird sat on a branch.",
@@ -2062,7 +2062,7 @@
       "tr2": "その銀行は私たちの学校の近くに新しい支店を出しました。"
     },
     {
-      "id": "g-1430-cage",
+      "id": "g-1430-cage-normal",
       "word": "cage",
       "meaning": "かご、おり",
       "ex1": "The bird is in a cage.",
@@ -2071,7 +2071,7 @@
       "tr2": "ウサギが逃げるかもしれないので、かごを開けないでください。"
     },
     {
-      "id": "g-1431-bark",
+      "id": "g-1431-bark-normal",
       "word": "bark",
       "meaning": "木の皮",
       "ex1": "The bark of this tree is very rough.",
@@ -2080,7 +2080,7 @@
       "tr2": "冬になると木の皮を食べる動物もいます。"
     },
     {
-      "id": "g-1432-elderly",
+      "id": "g-1432-elderly-normal",
       "word": "elderly",
       "meaning": "年配の、お年寄りの",
       "ex1": "My elderly neighbor is very kind.",
@@ -2089,7 +2089,7 @@
       "tr2": "電車ではお年寄りに席をゆずってください。"
     },
     {
-      "id": "g-1433-attend",
+      "id": "g-1433-attend-normal",
       "word": "attend",
       "meaning": "出席する、通う",
       "ex1": "I attend a junior high school.",
@@ -2098,7 +2098,7 @@
       "tr2": "来週の日曜日、多くの人がスピーチコンテストに出席します。"
     },
     {
-      "id": "g-1434-behave",
+      "id": "g-1434-behave-normal",
       "word": "behave",
       "meaning": "ふるまう、行儀よくする",
       "ex1": "Please behave well in the library.",
@@ -2107,7 +2107,7 @@
       "tr2": "お客さんが家に来ると、子どもたちはとても礼儀正しくふるまいます。"
     },
     {
-      "id": "g-1435-challenge",
+      "id": "g-1435-challenge-normal",
       "word": "challenge",
       "meaning": "【名】挑戦 【動】~に挑む",
       "ex1": "Learning English is a big challenge for me.",
@@ -2116,7 +2116,7 @@
       "tr2": "私は学校のマラソン大会に参加して自分に挑戦したいです。"
     },
     {
-      "id": "g-1436-greeting",
+      "id": "g-1436-greeting-normal",
       "word": "greeting",
       "meaning": "あいさつ",
       "ex1": "A smile is a nice greeting.",
@@ -2125,7 +2125,7 @@
       "tr2": "日本では、人に会うときにおじぎをするのが一般的なあいさつです。"
     },
     {
-      "id": "g-1437-mystery",
+      "id": "g-1437-mystery-normal",
       "word": "mystery",
       "meaning": "謎、神秘",
       "ex1": "The story is a mystery.",
@@ -2134,7 +2134,7 @@
       "tr2": "ピラミッドがどのように造られたかは、今も科学者にとって謎です。"
     },
     {
-      "id": "g-1438-mysterious",
+      "id": "g-1438-mysterious-normal",
       "word": "mysterious",
       "meaning": "神秘的な、不思議な",
       "ex1": "She has a mysterious smile.",
@@ -2143,7 +2143,7 @@
       "tr2": "昨夜、私たちは古い家で不思議な音を聞きました。"
     },
     {
-      "id": "g-1439-fantastic",
+      "id": "g-1439-fantastic-normal",
       "word": "fantastic",
       "meaning": "すばらしい、すてきな",
       "ex1": "The concert was fantastic!",
@@ -2152,7 +2152,7 @@
       "tr2": "ミカ、学校の劇でのあなたはすばらしかったよ。"
     },
     {
-      "id": "g-1440-polite",
+      "id": "g-1440-polite-normal",
       "word": "polite",
       "meaning": "礼儀正しい、ていねいな",
       "ex1": "He is always polite to everyone.",
@@ -2161,7 +2161,7 @@
       "tr2": "助けてもらったときにお礼を言うのは礼儀正しいことです。"
     },
     {
-      "id": "g-1441-positive",
+      "id": "g-1441-positive-normal",
       "word": "positive",
       "meaning": "前向きな、肯定的な",
       "ex1": "Try to be positive about your future.",
@@ -2170,7 +2170,7 @@
       "tr2": "私のホストマザーはいつも前向きで、私を幸せな気持ちにしてくれます。"
     },
     {
-      "id": "g-1442-negative",
+      "id": "g-1442-negative-normal",
       "word": "negative",
       "meaning": "否定的な、消極的な",
       "ex1": "Don't be so negative.",
@@ -2179,7 +2179,7 @@
       "tr2": "彼女の答えは否定的だったので、私たちは別の計画を探しました。"
     },
     {
-      "id": "g-1443-serious",
+      "id": "g-1443-serious-normal",
       "word": "serious",
       "meaning": "まじめな、深刻な",
       "ex1": "This is a serious problem.",
@@ -2188,7 +2188,7 @@
       "tr2": "ケンは自分の夢について話すとき、まじめな顔をしていました。"
     },
     {
-      "id": "g-1444-truth",
+      "id": "g-1444-truth-normal",
       "word": "truth",
       "meaning": "真実",
       "ex1": "Tell me the truth.",
@@ -2197,7 +2197,7 @@
       "tr2": "実は、宿題を持ってくるのを忘れました。"
     },
     {
-      "id": "g-1445-truly",
+      "id": "g-1445-truly-normal",
       "word": "truly",
       "meaning": "本当に",
       "ex1": "I am truly sorry.",
@@ -2206,7 +2206,7 @@
       "tr2": "山頂からの景色は本当に美しかったです。"
     },
     {
-      "id": "g-1446-increase",
+      "id": "g-1446-increase-normal",
       "word": "increase",
       "meaning": "【動】増える、増やす 【名】増加",
       "ex1": "The number of tourists will increase.",
@@ -2215,7 +2215,7 @@
       "tr2": "今年は野菜の値段が大きく上がりました。"
     },
     {
-      "id": "g-1447-decrease",
+      "id": "g-1447-decrease-normal",
       "word": "decrease",
       "meaning": "【動】減る、減らす 【名】減少",
       "ex1": "The number of fish in this river began to decrease.",
@@ -2224,7 +2224,7 @@
       "tr2": "雨の減少は農家に問題を引き起こしました。"
     },
     {
-      "id": "g-1448-influence",
+      "id": "g-1448-influence-normal",
       "word": "influence",
       "meaning": "【名】影響 【動】影響を与える",
       "ex1": "My teacher had a big influence on me.",
@@ -2233,7 +2233,7 @@
       "tr2": "映画は若者の考え方に影響を与えることがあります。"
     },
     {
-      "id": "g-1449-bloom",
+      "id": "g-1449-bloom-normal",
       "word": "bloom",
       "meaning": "【動】花が咲く 【名】開花",
       "ex1": "Cherry trees bloom in April.",
@@ -2242,7 +2242,7 @@
       "tr2": "私たちの庭のバラは今、満開です。"
     },
     {
-      "id": "g-1450-economy",
+      "id": "g-1450-economy-normal",
       "word": "economy",
       "meaning": "経済",
       "ex1": "The economy of Japan is strong.",
@@ -2251,7 +2251,7 @@
       "tr2": "多くの生徒が世界経済のしくみに興味を持っています。"
     },
     {
-      "id": "g-1451-method",
+      "id": "g-1451-method-normal",
       "word": "method",
       "meaning": "方法",
       "ex1": "This is a good method.",
@@ -2260,7 +2260,7 @@
       "tr2": "新しい英単語を覚えるのにどの方法を使っていますか。"
     },
     {
-      "id": "g-1452-population",
+      "id": "g-1452-population-normal",
       "word": "population",
       "meaning": "人口",
       "ex1": "The population of Tokyo is large.",
@@ -2269,7 +2269,7 @@
       "tr2": "私たちの町の人口は毎年減っています。"
     },
     {
-      "id": "g-1453-regular",
+      "id": "g-1453-regular-normal",
       "word": "regular",
       "meaning": "定期的な、いつもの",
       "ex1": "She is a regular customer of this shop.",
@@ -2278,7 +2278,7 @@
       "tr2": "定期的な運動は健康を保つので、私は毎朝走っています。"
     },
     {
-      "id": "g-1454-various",
+      "id": "g-1454-various-normal",
       "word": "various",
       "meaning": "いろいろな、さまざまな",
       "ex1": "We sell various kinds of fruit.",
@@ -2287,7 +2287,7 @@
       "tr2": "さまざまな国からの生徒がこの学校で学んでいます。"
     },
     {
-      "id": "g-1455-base",
+      "id": "g-1455-base-normal",
       "word": "base",
       "meaning": "【名】土台、基地 【動】基づかせる",
       "ex1": "The base of the tower is wide.",
@@ -2296,7 +2296,7 @@
       "tr2": "生徒たちの望みに基づいて計画を立てましょう。"
     },
     {
-      "id": "g-1456-basic",
+      "id": "g-1456-basic-normal",
       "word": "basic",
       "meaning": "基本的な",
       "ex1": "Basic English is easy for me.",
@@ -2305,7 +2305,7 @@
       "tr2": "新しいスポーツをする前に、基本的なルールを学ぶことは大切です。"
     },
     {
-      "id": "g-1457-basically",
+      "id": "g-1457-basically-normal",
       "word": "basically",
       "meaning": "基本的に、根本的には",
       "ex1": "Basically, I agree with you.",
@@ -2314,7 +2314,7 @@
       "tr2": "基本的に、このゲームは人を助けることがテーマで、遊び方も簡単です。"
     },
     {
-      "id": "g-1458-instead",
+      "id": "g-1458-instead-normal",
       "word": "instead",
       "meaning": "その代わりに",
       "ex1": "I had tea instead.",
@@ -2323,7 +2323,7 @@
       "tr2": "疲れすぎて料理できなかったので、代わりに外食しました。"
     },
     {
-      "id": "g-1459-prefer",
+      "id": "g-1459-prefer-normal",
       "word": "prefer",
       "meaning": "~の方を好む",
       "ex1": "I prefer tea to coffee.",
@@ -2332,7 +2332,7 @@
       "tr2": "夏と冬ではどちらが好きですか。"
     },
     {
-      "id": "g-1460-provide",
+      "id": "g-1460-provide-normal",
       "word": "provide",
       "meaning": "提供する、与える",
       "ex1": "The school will provide lunch.",
@@ -2341,7 +2341,7 @@
       "tr2": "滞在中、ホストファミリーが私に暖かい部屋を用意してくれます。"
     },
     {
-      "id": "g-1461-quit",
+      "id": "g-1461-quit-normal",
       "word": "quit",
       "meaning": "やめる",
       "ex1": "He quit the tennis club.",
@@ -2350,7 +2350,7 @@
       "tr2": "ゲームをやめて、今すぐ宿題を始めなさい。"
     },
     {
-      "id": "g-1462-retire",
+      "id": "g-1462-retire-normal",
       "word": "retire",
       "meaning": "引退する、退職する",
       "ex1": "My father will retire next year.",
@@ -2359,7 +2359,7 @@
       "tr2": "その有名な選手は最後の試合のあと引退することを決めました。"
     },
     {
-      "id": "g-1463-create",
+      "id": "g-1463-create-normal",
       "word": "create",
       "meaning": "創造する、作り出す",
       "ex1": "Artists create beautiful things.",
@@ -2368,7 +2368,7 @@
       "tr2": "私たちは科学好きのための新しい部を作りたいです。"
     },
     {
-      "id": "g-1464-creativity",
+      "id": "g-1464-creativity-normal",
       "word": "creativity",
       "meaning": "創造力",
       "ex1": "Children have a lot of creativity.",
@@ -2377,7 +2377,7 @@
       "tr2": "美術の授業は生徒の創造力を伸ばす助けになります。"
     },
     {
-      "id": "g-1465-creature",
+      "id": "g-1465-creature-normal",
       "word": "creature",
       "meaning": "生き物",
       "ex1": "A whale is a huge creature.",
@@ -2386,7 +2386,7 @@
       "tr2": "深い海には不思議な生き物がすんでいます。"
     },
     {
-      "id": "g-1466-image",
+      "id": "g-1466-image-normal",
       "word": "image",
       "meaning": "イメージ、画像、像",
       "ex1": "I have a good image of Canada.",
@@ -2395,7 +2395,7 @@
       "tr2": "画面の画像が小さすぎて、よく見えませんでした。"
     },
     {
-      "id": "g-1467-interest",
+      "id": "g-1467-interest-normal",
       "word": "interest",
       "meaning": "興味、関心",
       "ex1": "I have an interest in music.",
@@ -2404,7 +2404,7 @@
       "tr2": "彼女は滞在中、日本文化にとても関心を示しました。"
     },
     {
-      "id": "g-1468-value",
+      "id": "g-1468-value-normal",
       "word": "value",
       "meaning": "価値",
       "ex1": "Health has great value.",
@@ -2413,7 +2413,7 @@
       "tr2": "先生は私たちに協力することの価値を教えてくれました。"
     },
     {
-      "id": "g-1469-valuable",
+      "id": "g-1469-valuable-normal",
       "word": "valuable",
       "meaning": "貴重な、価値のある",
       "ex1": "This is a valuable book.",
@@ -2422,7 +2422,7 @@
       "tr2": "時間は貴重なので、むだにしてはいけません。"
     },
     {
-      "id": "g-1470-single",
+      "id": "g-1470-single-normal",
       "word": "single",
       "meaning": "一つの、独身の",
       "ex1": "Every single day, I walk my dog.",
@@ -2431,7 +2431,7 @@
       "tr2": "彼女はまだ独身で、仕事をとても楽しんでいます。"
     },
     {
-      "id": "g-1471-double",
+      "id": "g-1471-double-normal",
       "word": "double",
       "meaning": "【形】2倍の 【動】2倍になる",
       "ex1": "I ordered a double burger.",
@@ -2440,7 +2440,7 @@
       "tr2": "来年は訪問者の数が2倍になるでしょう。"
     },
     {
-      "id": "g-1472-expect",
+      "id": "g-1472-expect-normal",
       "word": "expect",
       "meaning": "期待する、予想する",
       "ex1": "I expect a letter from Ann.",
@@ -2449,7 +2449,7 @@
       "tr2": "私たちは、こんなに多くの人が祭りに来るとは予想していませんでした。"
     },
     {
-      "id": "g-1473-trust",
+      "id": "g-1473-trust-normal",
       "word": "trust",
       "meaning": "【動】信頼する 【名】信頼",
       "ex1": "I trust my best friend.",
@@ -2458,7 +2458,7 @@
       "tr2": "チームでは信頼が大切なので、私たちはいつも正直に話します。"
     },
     {
-      "id": "g-1474-realize",
+      "id": "g-1474-realize-normal",
       "word": "realize",
       "meaning": "気づく、よく分かる",
       "ex1": "I realize my mistake now.",
@@ -2467,7 +2467,7 @@
       "tr2": "外国で暮らすと、家族がどれほど優しいかに気づきます。"
     },
     {
-      "id": "g-1475-separate",
+      "id": "g-1475-separate-normal",
       "word": "separate",
       "meaning": "【動】分ける 【形】別々の",
       "ex1": "Please separate the trash.",
@@ -2476,7 +2476,7 @@
       "tr2": "私たちは別々のテーブルに座りましたが、夕食後に話しました。"
     },
     {
-      "id": "g-1476-silence",
+      "id": "g-1476-silence-normal",
       "word": "silence",
       "meaning": "静けさ、沈黙",
       "ex1": "There was silence in the room.",
@@ -2485,7 +2485,7 @@
       "tr2": "先生が物語を読んでいる間、みんな黙っていました。"
     },
     {
-      "id": "g-1477-silent",
+      "id": "g-1477-silent-normal",
       "word": "silent",
       "meaning": "静かな、無言の",
       "ex1": "Please be silent in the library.",
@@ -2494,7 +2494,7 @@
       "tr2": "先生になぜ遅れたのかと聞かれて、その少年は黙っていました。"
     },
     {
-      "id": "g-1478-cancer",
+      "id": "g-1478-cancer-normal",
       "word": "cancer",
       "meaning": "がん",
       "ex1": "Cancer is a serious disease.",
@@ -2503,7 +2503,7 @@
       "tr2": "科学者たちはがんの新しい薬を見つけようと懸命に研究しています。"
     },
     {
-      "id": "g-1479-patient",
+      "id": "g-1479-patient-normal",
       "word": "patient",
       "meaning": "【名】患者 【形】忍耐強い",
       "ex1": "The nurse is kind to every patient.",
@@ -2512,7 +2512,7 @@
       "tr2": "辛抱強く、順番を待ってください。"
     },
     {
-      "id": "g-1480-alive",
+      "id": "g-1480-alive-normal",
       "word": "alive",
       "meaning": "生きている",
       "ex1": "The fish is still alive.",
@@ -2521,7 +2521,7 @@
       "tr2": "その古い木は大嵐のあともまだ生きていますか。"
     },
     {
-      "id": "g-1481-average",
+      "id": "g-1481-average-normal",
       "word": "average",
       "meaning": "【名】平均 【形】平均の",
       "ex1": "My average score is eighty.",
@@ -2530,7 +2530,7 @@
       "tr2": "この部活動の生徒の平均年齢は14歳です。"
     },
     {
-      "id": "g-1482-mobile",
+      "id": "g-1482-mobile-normal",
       "word": "mobile",
       "meaning": "【名】携帯電話 【形】移動式の",
       "ex1": "I left my mobile at home.",
@@ -2539,7 +2539,7 @@
       "tr2": "移動図書館が週に一度、私たちの村に来ます。"
     },
     {
-      "id": "g-1483-cell",
+      "id": "g-1483-cell-normal",
       "word": "cell",
       "meaning": "細胞",
       "ex1": "A cell is very small.",
@@ -2548,7 +2548,7 @@
       "tr2": "すべての生き物は少なくとも1つの細胞でできています。"
     },
     {
-      "id": "g-1484-allow",
+      "id": "g-1484-allow-normal",
       "word": "allow",
       "meaning": "許す、許可する",
       "ex1": "Please allow me to help you.",
@@ -2557,7 +2557,7 @@
       "tr2": "私たちの学校は、授業中に生徒が携帯電話を使うことを許可していません。"
     },
     {
-      "id": "g-1485-discuss",
+      "id": "g-1485-discuss-normal",
       "word": "discuss",
       "meaning": "話し合う",
       "ex1": "Let's discuss the plan.",
@@ -2566,7 +2566,7 @@
       "tr2": "学級会で、家庭で省エネをする方法を話し合います。"
     },
     {
-      "id": "g-1486-chat",
+      "id": "g-1486-chat-normal",
       "word": "chat",
       "meaning": "おしゃべりする",
       "ex1": "We chat every day.",
@@ -2575,7 +2575,7 @@
       "tr2": "私は放課後、公園で友達とおしゃべりするのが好きです。"
     },
     {
-      "id": "g-1487-manner",
+      "id": "g-1487-manner-normal",
       "word": "manner",
       "meaning": "やり方、態度",
       "ex1": "She spoke in a gentle manner.",
@@ -2584,7 +2584,7 @@
       "tr2": "彼は親しみやすい態度で答えたので、みんなリラックスしました。"
     },
     {
-      "id": "g-1488-schedule",
+      "id": "g-1488-schedule-normal",
       "word": "schedule",
       "meaning": "予定、スケジュール",
       "ex1": "I have a busy schedule today.",
@@ -2593,7 +2593,7 @@
       "tr2": "テストがあるので、来週の予定はいっぱいです。"
     },
     {
-      "id": "g-1489-appointment",
+      "id": "g-1489-appointment-normal",
       "word": "appointment",
       "meaning": "約束、予約",
       "ex1": "I have a dentist appointment.",
@@ -2602,7 +2602,7 @@
       "tr2": "私は金曜日の午後に医者の予約を入れました。"
     },
     {
-      "id": "g-1490-ancient",
+      "id": "g-1490-ancient-normal",
       "word": "ancient",
       "meaning": "古代の",
       "ex1": "We visited an ancient temple.",
@@ -2611,7 +2611,7 @@
       "tr2": "古代の人々は星を使って一年の時期を知りました。"
     },
     {
-      "id": "g-1491-modern",
+      "id": "g-1491-modern-normal",
       "word": "modern",
       "meaning": "現代の",
       "ex1": "This is a modern building.",
@@ -2620,7 +2620,7 @@
       "tr2": "現代の技術は私たちの暮らし方を変えました。"
     },
     {
-      "id": "g-1492-latest",
+      "id": "g-1492-latest-normal",
       "word": "latest",
       "meaning": "最新の",
       "ex1": "This is the latest model.",
@@ -2629,7 +2629,7 @@
       "tr2": "学園祭に関する最新のニュースを聞きましたか。"
     },
     {
-      "id": "g-1493-lately",
+      "id": "g-1493-lately-normal",
       "word": "lately",
       "meaning": "最近",
       "ex1": "I have been busy lately.",
@@ -2638,7 +2638,7 @@
       "tr2": "最近、兄は勉強のために早起きしています。"
     },
     {
-      "id": "g-1494-lastly",
+      "id": "g-1494-lastly-normal",
       "word": "lastly",
       "meaning": "最後に",
       "ex1": "Lastly, thank you for listening.",
@@ -2647,7 +2647,7 @@
       "tr2": "まずニンジンを切り、次にゆで、最後にスープに塩を加えました。"
     },
     {
-      "id": "g-1495-precious",
+      "id": "g-1495-precious-normal",
       "word": "precious",
       "meaning": "貴重な、大切な",
       "ex1": "Time is precious.",
@@ -2656,7 +2656,7 @@
       "tr2": "この家族の写真は、私にとっていちばん大切なものです。"
     },
     {
-      "id": "g-1496-achieve",
+      "id": "g-1496-achieve-normal",
       "word": "achieve",
       "meaning": "達成する",
       "ex1": "I want to achieve my goal.",
@@ -2665,7 +2665,7 @@
       "tr2": "毎日がんばれば、夢を達成できます。"
     },
     {
-      "id": "g-1497-offer",
+      "id": "g-1497-offer-normal",
       "word": "offer",
       "meaning": "【動】申し出る、提供する 【名】申し出",
       "ex1": "I will offer you some tea.",
@@ -2674,7 +2674,7 @@
       "tr2": "お申し出はありがたいですが、このかばんは自分で持てます。"
     },
     {
-      "id": "g-1498-repair",
+      "id": "g-1498-repair-normal",
       "word": "repair",
       "meaning": "修理する",
       "ex1": "My father will repair my bike.",
@@ -2683,7 +2683,7 @@
       "tr2": "この壊れた時計を明日までに修理してもらえますか。"
     },
     {
-      "id": "g-1499-escape",
+      "id": "g-1499-escape-normal",
       "word": "escape",
       "meaning": "逃げる",
       "ex1": "The lion tried to escape.",
@@ -2692,7 +2692,7 @@
       "tr2": "私たちは小さな店に入って大雨から逃れることができました。"
     },
     {
-      "id": "g-1500-confuse",
+      "id": "g-1500-confuse-normal",
       "word": "confuse",
       "meaning": "混乱させる",
       "ex1": "Don't confuse me.",
@@ -2701,7 +2701,7 @@
       "tr2": "その2つの単語は似ているので、よく生徒を混乱させます。"
     },
     {
-      "id": "g-1501-satisfy",
+      "id": "g-1501-satisfy-normal",
       "word": "satisfy",
       "meaning": "満足させる",
       "ex1": "Nothing can satisfy him.",
@@ -2710,7 +2710,7 @@
       "tr2": "おいしい昼食は旅行の全員を満足させるでしょう。"
     },
     {
-      "id": "g-1502-amuse",
+      "id": "g-1502-amuse-normal",
       "word": "amuse",
       "meaning": "楽しませる",
       "ex1": "He likes to amuse his friends.",
@@ -2719,7 +2719,7 @@
       "tr2": "マジシャンはパーティーで面白い手品を使って子どもたちを楽しませようとしました。"
     },
     {
-      "id": "g-1503-shape",
+      "id": "g-1503-shape-normal",
       "word": "shape",
       "meaning": "形、体調",
       "ex1": "The cake has the shape of a heart.",
@@ -2728,7 +2728,7 @@
       "tr2": "彼女は週に2回泳いで体調を良く保っています。"
     },
     {
-      "id": "g-1504-square",
+      "id": "g-1504-square-normal",
       "word": "square",
       "meaning": "【名】正方形、広場 【形】正方形の",
       "ex1": "Draw a square on the paper.",
@@ -2737,7 +2737,7 @@
       "tr2": "祭りが始まる前に、私たちは町の広場で会いました。"
     },
     {
-      "id": "g-1505-quick",
+      "id": "g-1505-quick-normal",
       "word": "quick",
       "meaning": "速い、すばやい",
       "ex1": "Be quick, or we will miss the bus.",
@@ -2746,7 +2746,7 @@
       "tr2": "ケンは覚えが早く、1日でその課を終えました。"
     },
     {
-      "id": "g-1506-wise",
+      "id": "g-1506-wise-normal",
       "word": "wise",
       "meaning": "賢い",
       "ex1": "My grandfather is a wise man.",
@@ -2755,7 +2755,7 @@
       "tr2": "先生に助けを求めたのは賢明でしたね。"
     },
     {
-      "id": "g-1507-sharp",
+      "id": "g-1507-sharp-normal",
       "word": "sharp",
       "meaning": "鋭い",
       "ex1": "This knife is very sharp.",
@@ -2764,7 +2764,7 @@
       "tr2": "転んだとき、脚に鋭い痛みが走りました。"
     },
     {
-      "id": "g-1508-complain",
+      "id": "g-1508-complain-normal",
       "word": "complain",
       "meaning": "不平を言う、文句を言う",
       "ex1": "Don't complain so much.",
@@ -2773,7 +2773,7 @@
       "tr2": "客たちは通りからの騒音について文句を言い始めました。"
     },
     {
-      "id": "g-1509-insist",
+      "id": "g-1509-insist-normal",
       "word": "insist",
       "meaning": "主張する、言い張る",
       "ex1": "I insist on helping you.",
@@ -2782,7 +2782,7 @@
       "tr2": "グループ活動では自分の考えばかりを主張しないでください。"
     },
     {
-      "id": "g-1510-force",
+      "id": "g-1510-force-normal",
       "word": "force",
       "meaning": "【名】力 【動】強制する",
       "ex1": "The force of the wind was strong.",
@@ -2791,7 +2791,7 @@
       "tr2": "子どもに嫌いな食べ物を無理に食べさせてはいけません。"
     },
     {
-      "id": "g-1511-shut",
+      "id": "g-1511-shut-normal",
       "word": "shut",
       "meaning": "閉める",
       "ex1": "Please shut the door.",
@@ -2800,7 +2800,7 @@
       "tr2": "その店は9時に閉まるので、急ぐべきです。"
     },
     {
-      "id": "g-1512-fortune",
+      "id": "g-1512-fortune-normal",
       "word": "fortune",
       "meaning": "運、財産",
       "ex1": "She had good fortune.",
@@ -2809,7 +2809,7 @@
       "tr2": "彼はコンピューターを売って大きな財産を築き、その一部を学校に寄付しました。"
     },
     {
-      "id": "g-1513-greedy",
+      "id": "g-1513-greedy-normal",
       "word": "greedy",
       "meaning": "欲張りな",
       "ex1": "The greedy man wanted more gold.",
@@ -2818,7 +2818,7 @@
       "tr2": "欲張らないで、ケーキを弟と分けなさい。"
     },
     {
-      "id": "g-1514-loose",
+      "id": "g-1514-loose-normal",
       "word": "loose",
       "meaning": "ゆるい",
       "ex1": "These shoes are too loose.",
@@ -2827,7 +2827,7 @@
       "tr2": "ぐらぐらする歯のせいで、リンゴを食べるのが難しかったです。"
     },
     {
-      "id": "g-1515-uneasy",
+      "id": "g-1515-uneasy-normal",
       "word": "uneasy",
       "meaning": "不安な、落ち着かない",
       "ex1": "I felt uneasy.",
@@ -2836,7 +2836,7 @@
       "tr2": "彼女は全校生徒の前で話すことが不安でした。"
     },
     {
-      "id": "g-1516-gym",
+      "id": "g-1516-gym-normal",
       "word": "gym",
       "meaning": "体育館、ジム",
       "ex1": "We play basketball in the gym.",
@@ -2845,7 +2845,7 @@
       "tr2": "兄はもっと強くなるために毎週日曜日にジムに通っています。"
     },
     {
-      "id": "g-1517-blackboard",
+      "id": "g-1517-blackboard-normal",
       "word": "blackboard",
       "meaning": "黒板",
       "ex1": "Look at the blackboard.",
@@ -2854,7 +2854,7 @@
       "tr2": "先生は新しい単語を黒板に大きな字で書きました。"
     },
     {
-      "id": "g-1518-quiz",
+      "id": "g-1518-quiz-normal",
       "word": "quiz",
       "meaning": "小テスト、クイズ",
       "ex1": "We have a quiz today.",
@@ -2863,7 +2863,7 @@
       "tr2": "英語の先生は月曜日の朝に私たちに小テストをしました。"
     },
     {
-      "id": "g-1519-score",
+      "id": "g-1519-score-normal",
       "word": "score",
       "meaning": "【名】得点 【動】得点する",
       "ex1": "What was the score?",
@@ -2872,7 +2872,7 @@
       "tr2": "明日のサッカーの試合でゴールを決めたいです。"
     },
     {
-      "id": "g-1520-pupil",
+      "id": "g-1520-pupil-normal",
       "word": "pupil",
       "meaning": "生徒、ひとみ",
       "ex1": "She is a pupil at this school.",
@@ -2881,7 +2881,7 @@
       "tr2": "明日の遠足には、生徒はみんなお弁当を持ってこなければなりません。"
     },
     {
-      "id": "g-1521-fall",
+      "id": "g-1521-fall-normal",
       "word": "fall",
       "meaning": "【動】落ちる、倒れる 【名】秋",
       "ex1": "Leaves fall from the trees in autumn.",
@@ -2890,7 +2890,7 @@
       "tr2": "私たちは毎年秋に、おじとハイキングに行きます。"
     },
     {
-      "id": "g-1522-failure",
+      "id": "g-1522-failure-normal",
       "word": "failure",
       "meaning": "失敗",
       "ex1": "Don't be afraid of failure.",
@@ -2899,7 +2899,7 @@
       "tr2": "失敗するたびに、勉強について大切なことを学びました。"
     },
     {
-      "id": "g-1523-upset",
+      "id": "g-1523-upset-normal",
       "word": "upset",
       "meaning": "【形】動揺した、腹を立てた 【動】動揺させる",
       "ex1": "She looked upset.",
@@ -2908,7 +2908,7 @@
       "tr2": "彼は駅でお気に入りのペンをなくして、動揺していました。"
     },
     {
-      "id": "g-1524-weight",
+      "id": "g-1524-weight-normal",
       "word": "weight",
       "meaning": "重さ、体重",
       "ex1": "What is your weight?",
@@ -2917,7 +2917,7 @@
       "tr2": "このかばんの重さは約5キログラムです。"
     },
     {
-      "id": "g-1525-gram",
+      "id": "g-1525-gram-normal",
       "word": "gram",
       "meaning": "グラム",
       "ex1": "This coin weighs about one gram.",
@@ -2926,7 +2926,7 @@
       "tr2": "グラムはとても小さい単位なので、重いものにはキログラムを使います。"
     },
     {
-      "id": "g-1526-pound",
+      "id": "g-1526-pound-normal",
       "word": "pound",
       "meaning": "【名】ポンド 【動】ドキドキする、強く打つ",
       "ex1": "I bought a pound of apples.",
@@ -2935,7 +2935,7 @@
       "tr2": "舞台に立つと、彼女の心臓はドキドキし始めました。"
     },
     {
-      "id": "g-1527-distance",
+      "id": "g-1527-distance-normal",
       "word": "distance",
       "meaning": "距離",
       "ex1": "The distance is long.",
@@ -2944,7 +2944,7 @@
       "tr2": "私の家から学校までの距離は約2キロメートルです。"
     },
     {
-      "id": "g-1528-speed",
+      "id": "g-1528-speed-normal",
       "word": "speed",
       "meaning": "速度、速さ",
       "ex1": "The train runs at high speed.",
@@ -2953,7 +2953,7 @@
       "tr2": "速度を落としてください。この道路の制限速度は時速40キロです。"
     },
     {
-      "id": "g-1529-mile",
+      "id": "g-1529-mile-normal",
       "word": "mile",
       "meaning": "マイル",
       "ex1": "The station is one mile away.",
@@ -2962,7 +2962,7 @@
       "tr2": "彼は本を返すために図書館まで1マイル歩きました。"
     },
     {
-      "id": "g-1530-effect",
+      "id": "g-1530-effect-normal",
       "word": "effect",
       "meaning": "効果、影響",
       "ex1": "This medicine has a good effect.",
@@ -2971,7 +2971,7 @@
       "tr2": "夜更かしは勉強に悪い影響を与えます。"
     },
     {
-      "id": "g-1531-effective",
+      "id": "g-1531-effective-normal",
       "word": "effective",
       "meaning": "効果的な",
       "ex1": "This is an effective way.",
@@ -2980,7 +2980,7 @@
       "tr2": "音読は新しい英単語を学ぶ効果的な方法です。"
     },
     {
-      "id": "g-1532-sense",
+      "id": "g-1532-sense-normal",
       "word": "sense",
       "meaning": "感覚、意味",
       "ex1": "He has a good sense of humor.",
@@ -2989,7 +2989,7 @@
       "tr2": "この自転車がだいじょうぶなのに新しいのを買うのは意味がありません。"
     },
     {
-      "id": "g-1533-avoid",
+      "id": "g-1533-avoid-normal",
       "word": "avoid",
       "meaning": "避ける",
       "ex1": "Let's avoid the crowded train.",
@@ -2998,7 +2998,7 @@
       "tr2": "寝る前に砂糖をとりすぎるのは避けるべきです。"
     },
     {
-      "id": "g-1534-doubt",
+      "id": "g-1534-doubt-normal",
       "word": "doubt",
       "meaning": "【名】疑い 【動】疑う",
       "ex1": "I doubt it.",
@@ -3007,7 +3007,7 @@
       "tr2": "彼女がスピーチコンテストに勝つことは間違いありません。"
     },
     {
-      "id": "g-1535-regret",
+      "id": "g-1535-regret-normal",
       "word": "regret",
       "meaning": "後悔する",
       "ex1": "I regret my words.",
@@ -3016,7 +3016,7 @@
       "tr2": "今しっかり勉強しないと、あとで後悔しますよ。"
     },
     {
-      "id": "g-1536-harm",
+      "id": "g-1536-harm-normal",
       "word": "harm",
       "meaning": "【名】害 【動】傷つける",
       "ex1": "Too much sun can do harm to your skin.",
@@ -3025,7 +3025,7 @@
       "tr2": "心配しないで、その犬はあなたを傷つけませんよ。"
     },
     {
-      "id": "g-1537-rob",
+      "id": "g-1537-rob-normal",
       "word": "rob",
       "meaning": "強盗をする、奪う",
       "ex1": "The man tried to rob a bank.",
@@ -3034,7 +3034,7 @@
       "tr2": "2人の男が夜に店を襲おうとしましたが、警察が捕まえました。"
     },
     {
-      "id": "g-1538-thief",
+      "id": "g-1538-thief-normal",
       "word": "thief",
       "meaning": "泥棒",
       "ex1": "The thief ran away.",
@@ -3043,7 +3043,7 @@
       "tr2": "地図を見ている間に、泥棒が私のかばんを盗みました。"
     },
     {
-      "id": "g-1539-emergency",
+      "id": "g-1539-emergency-normal",
       "word": "emergency",
       "meaning": "緊急、非常事態",
       "ex1": "Call 119 in an emergency.",
@@ -3052,7 +3052,7 @@
       "tr2": "このドアは非常用なので、開けないでください。"
     },
     {
-      "id": "g-1540-fear",
+      "id": "g-1540-fear-normal",
       "word": "fear",
       "meaning": "【名】恐怖 【動】恐れる",
       "ex1": "She screamed in fear.",
@@ -3061,7 +3061,7 @@
       "tr2": "多くの人が大勢の前で話すことを恐れています。"
     },
     {
-      "id": "g-1541-frightened",
+      "id": "g-1541-frightened-normal",
       "word": "frightened",
       "meaning": "おびえた",
       "ex1": "The child was frightened.",
@@ -3070,7 +3070,7 @@
       "tr2": "暗闇で大きな音を聞いて、私はおびえました。"
     },
     {
-      "id": "g-1542-pity",
+      "id": "g-1542-pity-normal",
       "word": "pity",
       "meaning": "哀れみ、残念なこと",
       "ex1": "What a pity!",
@@ -3079,7 +3079,7 @@
       "tr2": "雨の中に立っているかわいそうな犬を、私は気の毒に思いました。"
     },
     {
-      "id": "g-1543-ashamed",
+      "id": "g-1543-ashamed-normal",
       "word": "ashamed",
       "meaning": "恥ずかしく思って",
       "ex1": "I was ashamed of my words.",
@@ -3088,7 +3088,7 @@
       "tr2": "彼は母親にうそをついて恥ずかしく思いました。"
     },
     {
-      "id": "g-1544-unbelievable",
+      "id": "g-1544-unbelievable-normal",
       "word": "unbelievable",
       "meaning": "信じられない",
       "ex1": "This story is unbelievable.",
@@ -3097,7 +3097,7 @@
       "tr2": "私たちのチームは最後の1分で試合に勝ち、信じられませんでした。"
     },
     {
-      "id": "g-1545-awful",
+      "id": "g-1545-awful-normal",
       "word": "awful",
       "meaning": "ひどい、恐ろしい",
       "ex1": "The weather is awful today.",
@@ -3106,7 +3106,7 @@
       "tr2": "昨夜ひどい夢を見て、よく眠れませんでした。"
     },
     {
-      "id": "g-1546-demand",
+      "id": "g-1546-demand-normal",
       "word": "demand",
       "meaning": "【動】要求する 【名】需要",
       "ex1": "Many people demand a better bus service.",
@@ -3115,7 +3115,7 @@
       "tr2": "今、多くの国で太陽エネルギーの需要が高まっています。"
     },
     {
-      "id": "g-1547-pretend",
+      "id": "g-1547-pretend-normal",
       "word": "pretend",
       "meaning": "ふりをする",
       "ex1": "Let's pretend to be cats.",
@@ -3124,7 +3124,7 @@
       "tr2": "何でも知っているふりをしないで。質問してもいいのですから。"
     },
     {
-      "id": "g-1548-bend",
+      "id": "g-1548-bend-normal",
       "word": "bend",
       "meaning": "曲げる、曲がる",
       "ex1": "Bend your knees.",
@@ -3133,7 +3133,7 @@
       "tr2": "強い風で小さな木が曲がりました。"
     },
     {
-      "id": "g-1549-exist",
+      "id": "g-1549-exist-normal",
       "word": "exist",
       "meaning": "存在する",
       "ex1": "Ghosts do not exist.",
@@ -3142,7 +3142,7 @@
       "tr2": "多くの種類の動物がこの森にだけ存在しています。"
     },
     {
-      "id": "g-1550-contain",
+      "id": "g-1550-contain-normal",
       "word": "contain",
       "meaning": "含む、入れることができる",
       "ex1": "This box can contain ten books.",
@@ -3151,7 +3151,7 @@
       "tr2": "このパンには牛乳が入っていますか。私はアレルギーがあります。"
     },
     {
-      "id": "g-1551-universe",
+      "id": "g-1551-universe-normal",
       "word": "universe",
       "meaning": "宇宙",
       "ex1": "The universe is very big.",
@@ -3160,7 +3160,7 @@
       "tr2": "私はいつか宇宙を研究して新しい星を見つけたいです。"
     },
     {
-      "id": "g-1552-universal",
+      "id": "g-1552-universal-normal",
       "word": "universal",
       "meaning": "普遍的な、世界共通の",
       "ex1": "Music is a universal language.",
@@ -3169,7 +3169,7 @@
       "tr2": "笑顔は世界共通で、どの国の人にも伝わります。"
     },
     {
-      "id": "g-1553-opposite",
+      "id": "g-1553-opposite-normal",
       "word": "opposite",
       "meaning": "【形】反対の 【名】反対のもの",
       "ex1": "He ran in the opposite direction.",
@@ -3178,7 +3178,7 @@
       "tr2": "hotの反対は何ですか。"
     },
     {
-      "id": "g-1554-beyond",
+      "id": "g-1554-beyond-normal",
       "word": "beyond",
       "meaning": "~の向こうに、~を超えて",
       "ex1": "The sea is beyond those hills.",
@@ -3187,7 +3187,7 @@
       "tr2": "彼女の親切さは、言葉では言い表せないほどです。"
     },
     {
-      "id": "g-1555-within",
+      "id": "g-1555-within-normal",
       "word": "within",
       "meaning": "~以内に",
       "ex1": "Please come back within an hour.",
@@ -3196,7 +3196,7 @@
       "tr2": "2日以内にあなたのメールに返事をします。"
     },
     {
-      "id": "g-1556-castle",
+      "id": "g-1556-castle-normal",
       "word": "castle",
       "meaning": "城",
       "ex1": "We visited a castle in Osaka.",
@@ -3205,7 +3205,7 @@
       "tr2": "その古い城は丘の上に建っていて、多くの観光客を引きつけています。"
     },
     {
-      "id": "g-1557-bench",
+      "id": "g-1557-bench-normal",
       "word": "bench",
       "meaning": "ベンチ",
       "ex1": "Let's sit on the bench.",
@@ -3214,7 +3214,7 @@
       "tr2": "年配の男性が公園のベンチで新聞を読んでいました。"
     },
     {
-      "id": "g-1558-parking",
+      "id": "g-1558-parking-normal",
       "word": "parking",
       "meaning": "駐車",
       "ex1": "There is no parking here.",
@@ -3223,7 +3223,7 @@
       "tr2": "その店にはお客さん用の大きな駐車場があります。"
     },
     {
-      "id": "g-1559-complete",
+      "id": "g-1559-complete-normal",
       "word": "complete",
       "meaning": "【形】完全な 【動】完成させる",
       "ex1": "The work is complete.",
@@ -3232,7 +3232,7 @@
       "tr2": "私たちは夏休み前にこの計画を完成させたいと思っています。"
     },
     {
-      "id": "g-1560-prevent",
+      "id": "g-1560-prevent-normal",
       "word": "prevent",
       "meaning": "防ぐ、妨げる",
       "ex1": "Masks can prevent colds.",
@@ -3241,7 +3241,7 @@
       "tr2": "雨にもかかわらず、私たちは運動会を楽しみました。"
     },
     {
-      "id": "g-1561-bother",
+      "id": "g-1561-bother-normal",
       "word": "bother",
       "meaning": "悩ます、わざわざ~する",
       "ex1": "Sorry to bother you.",
@@ -3250,7 +3250,7 @@
       "tr2": "勉強中に通りの騒音が気になり始めました。"
     },
     {
-      "id": "g-1562-divide",
+      "id": "g-1562-divide-normal",
       "word": "divide",
       "meaning": "分ける、割る",
       "ex1": "Divide the cake into four.",
@@ -3259,7 +3259,7 @@
       "tr2": "先生は活動のためにクラスを5つのグループに分けます。"
     },
     {
-      "id": "g-1563-liberty",
+      "id": "g-1563-liberty-normal",
       "word": "liberty",
       "meaning": "自由",
       "ex1": "The statue stands for liberty.",
@@ -3268,7 +3268,7 @@
       "tr2": "昔、多くの国で人々は自由のために戦いました。"
     },
     {
-      "id": "g-1564-appearance",
+      "id": "g-1564-appearance-normal",
       "word": "appearance",
       "meaning": "外見、出現",
       "ex1": "Appearance is not everything.",
@@ -3277,7 +3277,7 @@
       "tr2": "クマが突然現れて、ハイカーたちはみんな驚きました。"
     },
     {
-      "id": "g-1565-lip",
+      "id": "g-1565-lip-normal",
       "word": "lip",
       "meaning": "くちびる",
       "ex1": "I bit my lip.",
@@ -3286,7 +3286,7 @@
       "tr2": "冷たい風でくちびるが乾いて痛くなりました。"
     },
     {
-      "id": "g-1566-mirror",
+      "id": "g-1566-mirror-normal",
       "word": "mirror",
       "meaning": "鏡",
       "ex1": "Look in the mirror.",
@@ -3295,7 +3295,7 @@
       "tr2": "彼女は毎朝、学校へ行く前に鏡で髪を確認します。"
     },
     {
-      "id": "g-1567-suit",
+      "id": "g-1567-suit-normal",
       "word": "suit",
       "meaning": "【名】スーツ 【動】似合う",
       "ex1": "My father wears a suit to work.",
@@ -3304,7 +3304,7 @@
       "tr2": "その赤い帽子はあなたにとても似合うでしょう。"
     },
     {
-      "id": "g-1568-tie",
+      "id": "g-1568-tie-normal",
       "word": "tie",
       "meaning": "【名】ネクタイ 【動】結ぶ",
       "ex1": "He wore a blue tie.",
@@ -3313,7 +3313,7 @@
       "tr2": "走る前に靴ひもを結んでください。"
     },
     {
-      "id": "g-1569-handkerchief",
+      "id": "g-1569-handkerchief-normal",
       "word": "handkerchief",
       "meaning": "ハンカチ",
       "ex1": "I forgot my handkerchief.",
@@ -3322,7 +3322,7 @@
       "tr2": "母はいつも、清潔なハンカチを学校に持っていくように言います。"
     },
     {
-      "id": "g-1570-rhythm",
+      "id": "g-1570-rhythm-normal",
       "word": "rhythm",
       "meaning": "リズム",
       "ex1": "I like the rhythm of this song.",
@@ -3331,7 +3331,7 @@
       "tr2": "ダンサーたちは太鼓のリズムに合わせて動きました。"
     },
     {
-      "id": "g-1571-orchestra",
+      "id": "g-1571-orchestra-normal",
       "word": "orchestra",
       "meaning": "オーケストラ",
       "ex1": "She plays in an orchestra.",
@@ -3340,7 +3340,7 @@
       "tr2": "学校のオーケストラは来月ホールでコンサートを開きます。"
     },
     {
-      "id": "g-1572-concentrate",
+      "id": "g-1572-concentrate-normal",
       "word": "concentrate",
       "meaning": "集中する",
       "ex1": "Please concentrate on your work.",
@@ -3349,7 +3349,7 @@
       "tr2": "部屋がうるさすぎると集中するのは難しいです。"
     },
     {
-      "id": "g-1573-master",
+      "id": "g-1573-master-normal",
       "word": "master",
       "meaning": "【動】習得する 【名】主人、名人",
       "ex1": "I want to master English.",
@@ -3358,7 +3358,7 @@
       "tr2": "このお茶屋さんの主人は私たちにおいしいお茶の入れ方を教えてくれます。"
     },
     {
-      "id": "g-1574-drill",
+      "id": "g-1574-drill-normal",
       "word": "drill",
       "meaning": "【名】反復練習、ドリル 【動】穴をあける",
       "ex1": "We do a math drill every morning.",
@@ -3367,7 +3367,7 @@
       "tr2": "作業員たちは壁に穴をあけるために大きなドリルを使います。"
     },
     {
-      "id": "g-1575-task",
+      "id": "g-1575-task-normal",
       "word": "task",
       "meaning": "仕事、課題",
       "ex1": "This is a difficult task.",
@@ -3376,7 +3376,7 @@
       "tr2": "グループ活動の最初の課題は、テーマを選ぶことです。"
     },
     {
-      "id": "g-1576-alphabet",
+      "id": "g-1576-alphabet-normal",
       "word": "alphabet",
       "meaning": "アルファベット",
       "ex1": "Write the alphabet from A to Z.",
@@ -3385,7 +3385,7 @@
       "tr2": "英語のアルファベットは26文字あります。"
     },
     {
-      "id": "g-1577-education",
+      "id": "g-1577-education-normal",
       "word": "education",
       "meaning": "教育",
       "ex1": "Education is important.",
@@ -3394,7 +3394,7 @@
       "tr2": "多くの国がすべての子どもに良い教育を与えようとしています。"
     },
     {
-      "id": "g-1578-experiment",
+      "id": "g-1578-experiment-normal",
       "word": "experiment",
       "meaning": "実験",
       "ex1": "We did a fun experiment today.",
@@ -3403,7 +3403,7 @@
       "tr2": "その実験は、植物が日光の下でより速く育つことを示しました。"
     },
     {
-      "id": "g-1579-situation",
+      "id": "g-1579-situation-normal",
       "word": "situation",
       "meaning": "状況",
       "ex1": "The situation is getting better.",
@@ -3412,7 +3412,7 @@
       "tr2": "困難な状況では、落ち着いていることが大切です。"
     },
     {
-      "id": "g-1580-state",
+      "id": "g-1580-state-normal",
       "word": "state",
       "meaning": "【名】状態、州 【動】述べる",
       "ex1": "The room was in a bad state.",
@@ -3421,7 +3421,7 @@
       "tr2": "カリフォルニアはアメリカの西海岸にある州です。"
     },
     {
-      "id": "g-1581-position",
+      "id": "g-1581-position-normal",
       "word": "position",
       "meaning": "位置、立場",
       "ex1": "What is your position on the team?",
@@ -3430,7 +3430,7 @@
       "tr2": "もし私があなたの立場なら、先生に話します。"
     },
     {
-      "id": "g-1582-pattern",
+      "id": "g-1582-pattern-normal",
       "word": "pattern",
       "meaning": "模様、型",
       "ex1": "I like this pattern.",
@@ -3439,7 +3439,7 @@
       "tr2": "彼女のドレスには小さな花の模様があります。"
     },
     {
-      "id": "g-1583-rate",
+      "id": "g-1583-rate-normal",
       "word": "rate",
       "meaning": "割合、速度",
       "ex1": "The birth rate in Japan is low.",
@@ -3448,7 +3448,7 @@
       "tr2": "その市は自転車を使う人の割合が高いです。"
     },
     {
-      "id": "g-1584-feature",
+      "id": "g-1584-feature-normal",
       "word": "feature",
       "meaning": "特徴",
       "ex1": "A long neck is a feature of giraffes.",
@@ -3457,7 +3457,7 @@
       "tr2": "この電話には、夜に写真を撮るのに役立つ新しい機能があります。"
     },
     {
-      "id": "g-1585-cross",
+      "id": "g-1585-cross-normal",
       "word": "cross",
       "meaning": "【動】渡る、横切る 【名】十字",
       "ex1": "Cross the street carefully.",
@@ -3466,7 +3466,7 @@
       "tr2": "箱の赤い十字は、中に薬が入っていることを意味します。"
     },
     {
-      "id": "g-1586-beg",
+      "id": "g-1586-beg-normal",
       "word": "beg",
       "meaning": "頼み込む、せがむ",
       "ex1": "I beg you.",
@@ -3475,7 +3475,7 @@
       "tr2": "犬はテーブルのそばに座って、食べ物をねだっているようでした。"
     },
     {
-      "id": "g-1587-alarm",
+      "id": "g-1587-alarm-normal",
       "word": "alarm",
       "meaning": "目覚まし、警報",
       "ex1": "My alarm rang at six.",
@@ -3484,7 +3484,7 @@
       "tr2": "火災警報が夜中にホテルのみんなを起こしました。"
     },
     {
-      "id": "g-1588-calendar",
+      "id": "g-1588-calendar-normal",
       "word": "calendar",
       "meaning": "カレンダー",
       "ex1": "Look at the calendar.",
@@ -3493,7 +3493,7 @@
       "tr2": "私は修学旅行の日付をカレンダーに書きました。"
     },
     {
-      "id": "g-1589-sheet",
+      "id": "g-1589-sheet-normal",
       "word": "sheet",
       "meaning": "紙の一枚、シーツ",
       "ex1": "Give me a sheet of paper.",
@@ -3502,7 +3502,7 @@
       "tr2": "お客さんが来る前にベッドのシーツを替えてください。"
     },
     {
-      "id": "g-1590-blanket",
+      "id": "g-1590-blanket-normal",
       "word": "blanket",
       "meaning": "毛布",
       "ex1": "I need a blanket.",
@@ -3511,7 +3511,7 @@
       "tr2": "夜は寒かったので、ホストマザーが暖かい毛布を持ってきてくれました。"
     },
     {
-      "id": "g-1591-furniture",
+      "id": "g-1591-furniture-normal",
       "word": "furniture",
       "meaning": "家具",
       "ex1": "We bought new furniture.",
@@ -3520,7 +3520,7 @@
       "tr2": "テーブルといすが私の部屋にある唯一の家具です。"
     },
     {
-      "id": "g-1592-pond",
+      "id": "g-1592-pond-normal",
       "word": "pond",
       "meaning": "池",
       "ex1": "There is a pond in the park.",
@@ -3529,7 +3529,7 @@
       "tr2": "数匹のカエルが学校の裏の小さな池で泳いでいました。"
     },
     {
-      "id": "g-1593-port",
+      "id": "g-1593-port-normal",
       "word": "port",
       "meaning": "港",
       "ex1": "The ship arrived at the port.",
@@ -3538,7 +3538,7 @@
       "tr2": "神戸は有名な港町で、毎年多くの観光客が訪れます。"
     },
     {
-      "id": "g-1594-flow",
+      "id": "g-1594-flow-normal",
       "word": "flow",
       "meaning": "流れる",
       "ex1": "Rivers flow to the sea.",
@@ -3547,7 +3547,7 @@
       "tr2": "水が空のプールに流れ込み始めました。"
     },
     {
-      "id": "g-1595-coast",
+      "id": "g-1595-coast-normal",
       "word": "coast",
       "meaning": "海岸",
       "ex1": "We walked along the coast.",
@@ -3556,7 +3556,7 @@
       "tr2": "その島の東海岸には小さな漁村がたくさんあります。"
     },
     {
-      "id": "g-1596-ocean",
+      "id": "g-1596-ocean-normal",
       "word": "ocean",
       "meaning": "海、大洋",
       "ex1": "The ocean is very deep.",
@@ -3565,7 +3565,7 @@
       "tr2": "私の夢は船で太平洋を横断することです。"
     },
     {
-      "id": "g-1597-coral",
+      "id": "g-1597-coral-normal",
       "word": "coral",
       "meaning": "サンゴ",
       "ex1": "Coral is beautiful.",
@@ -3574,7 +3574,7 @@
       "tr2": "沖縄のサンゴのまわりには、色とりどりの魚がたくさん住んでいます。"
     },
     {
-      "id": "g-1598-sink",
+      "id": "g-1598-sink-normal",
       "word": "sink",
       "meaning": "【動】沈む 【名】流し台",
       "ex1": "The boat began to sink.",
@@ -3583,7 +3583,7 @@
       "tr2": "夕食後、流しで食器を洗ってください。"
     },
     {
-      "id": "g-1599-surround",
+      "id": "g-1599-surround-normal",
       "word": "surround",
       "meaning": "囲む",
       "ex1": "Mountains surround our town.",
@@ -3592,7 +3592,7 @@
       "tr2": "高い木々が寺を囲んでいるので、静かで落ち着いています。"
     },
     {
-      "id": "g-1600-mix",
+      "id": "g-1600-mix-normal",
       "word": "mix",
       "meaning": "混ぜる",
       "ex1": "Mix the eggs and milk.",
@@ -3601,7 +3601,7 @@
       "tr2": "赤と青を混ぜると紫になります。"
     },
     {
-      "id": "g-1601-addition",
+      "id": "g-1601-addition-normal",
       "word": "addition",
       "meaning": "追加、足し算",
       "ex1": "In addition, I joined the art club.",
@@ -3610,7 +3610,7 @@
       "tr2": "今日の数学の授業で足し算と引き算を習いました。"
     },
     {
-      "id": "g-1602-award",
+      "id": "g-1602-award-normal",
       "word": "award",
       "meaning": "【名】賞【動】授与する",
       "ex1": "She won an award at the speech contest.",
@@ -3619,7 +3619,7 @@
       "tr2": "学校は今年、一番の生徒に賞を授与します。"
     },
     {
-      "id": "g-1603-government",
+      "id": "g-1603-government-normal",
       "word": "government",
       "meaning": "政府",
       "ex1": "The government built a new bridge in our town.",
@@ -3628,7 +3628,7 @@
       "tr2": "多くの人が、政府に環境を守ってほしいと思っています。"
     },
     {
-      "id": "g-1604-heritage",
+      "id": "g-1604-heritage-normal",
       "word": "heritage",
       "meaning": "遺産、受け継がれたもの",
       "ex1": "Kyoto has a rich cultural heritage.",
@@ -3637,7 +3637,7 @@
       "tr2": "私たちは次の世代のために、受け継がれた遺産を守り続けるべきです。"
     },
     {
-      "id": "g-1605-rush",
+      "id": "g-1605-rush-normal",
       "word": "rush",
       "meaning": "【動】急ぐ【名】あわただしさ",
       "ex1": "Don't rush, Ken. We have plenty of time.",
@@ -3646,7 +3646,7 @@
       "tr2": "朝の駅は人でごった返していました。"
     },
     {
-      "id": "g-1606-shortcut",
+      "id": "g-1606-shortcut-normal",
       "word": "shortcut",
       "meaning": "近道",
       "ex1": "Let's take a shortcut to the school.",
@@ -3655,7 +3655,7 @@
       "tr2": "公園を通る近道を見つけたので、早く家に着きました。"
     },
     {
-      "id": "g-1607-technology",
+      "id": "g-1607-technology-normal",
       "word": "technology",
       "meaning": "科学技術、技術",
       "ex1": "Technology is changing our lives quickly.",
@@ -3664,7 +3664,7 @@
       "tr2": "新しい技術のおかげで、外国の人たちと話すことができます。"
     },
     {
-      "id": "g-1608-device",
+      "id": "g-1608-device-normal",
       "word": "device",
       "meaning": "装置、機器",
       "ex1": "This device can clean the air in a room.",
@@ -3673,7 +3673,7 @@
       "tr2": "父は天気を教えてくれる小さな機器を買いました。"
     },
     {
-      "id": "g-1609-digital",
+      "id": "g-1609-digital-normal",
       "word": "digital",
       "meaning": "デジタルの",
       "ex1": "I got a digital camera for my birthday.",
@@ -3682,7 +3682,7 @@
       "tr2": "私たちの学校では英語の授業でデジタル教科書を使います。"
     },
     {
-      "id": "g-1610-following",
+      "id": "g-1610-following-normal",
       "word": "following",
       "meaning": "【形】次の、以下の【名】以下のもの",
       "ex1": "Please read the following sentences.",
@@ -3691,7 +3691,7 @@
       "tr2": "私たちは金曜日に大阪を出て、その翌日に奈良を訪れました。"
     },
     {
-      "id": "g-1611-reserve",
+      "id": "g-1611-reserve-normal",
       "word": "reserve",
       "meaning": "【動】予約する、取っておく【名】保護区",
       "ex1": "I want to reserve a table for four people.",
@@ -3700,7 +3700,7 @@
       "tr2": "電車で祖母のために席を取っておいてください。"
     },
     {
-      "id": "g-1612-stranger",
+      "id": "g-1612-stranger-normal",
       "word": "stranger",
       "meaning": "見知らぬ人",
       "ex1": "Don't talk to a stranger on the street.",
@@ -3709,7 +3709,7 @@
       "tr2": "見知らぬ人が図書館への道を探すのを手伝ってくれました。"
     },
     {
-      "id": "g-1613-guide",
+      "id": "g-1613-guide-normal",
       "word": "guide",
       "meaning": "【名】案内人、案内書【動】案内する",
       "ex1": "Our guide showed us around the old castle.",
@@ -3718,7 +3718,7 @@
       "tr2": "一番近い駅まで案内していただけますか。"
     },
     {
-      "id": "g-1614-journey",
+      "id": "g-1614-journey-normal",
       "word": "journey",
       "meaning": "旅、旅行",
       "ex1": "I wish you a happy journey!",
@@ -3727,7 +3727,7 @@
       "tr2": "東京から北海道までの旅は約10時間かかりました。"
     },
     {
-      "id": "g-1615-balloon",
+      "id": "g-1615-balloon-normal",
       "word": "balloon",
       "meaning": "風船、気球",
       "ex1": "The child was holding a red balloon.",
@@ -3736,7 +3736,7 @@
       "tr2": "私たちはパーティーのために部屋を風船で飾りました。"
     },
     {
-      "id": "g-1616-ceremony",
+      "id": "g-1616-ceremony-normal",
       "word": "ceremony",
       "meaning": "式、儀式",
       "ex1": "The graduation ceremony starts at ten.",
@@ -3745,7 +3745,7 @@
       "tr2": "兄は学校の入学式でスーツを着ました。"
     },
     {
-      "id": "g-1617-exhibition",
+      "id": "g-1617-exhibition-normal",
       "word": "exhibition",
       "meaning": "展覧会、展示",
       "ex1": "We went to an art exhibition last Sunday.",
@@ -3754,7 +3754,7 @@
       "tr2": "古い写真の展示が市役所で開かれます。"
     },
     {
-      "id": "g-1618-fiction",
+      "id": "g-1618-fiction-normal",
       "word": "fiction",
       "meaning": "小説、作り話",
       "ex1": "I like reading science fiction.",
@@ -3763,7 +3763,7 @@
       "tr2": "この話は本当ですか、それともただの作り話ですか。"
     },
     {
-      "id": "g-1619-film",
+      "id": "g-1619-film-normal",
       "word": "film",
       "meaning": "【名】映画、フィルム【動】撮影する",
       "ex1": "We watched a funny film at my friend's house.",
@@ -3772,7 +3772,7 @@
       "tr2": "カメラに入れたフィルムが古すぎて、写真が暗くなりました。"
     },
     {
-      "id": "g-1620-screen",
+      "id": "g-1620-screen-normal",
       "word": "screen",
       "meaning": "【名】画面【動】上映する、選別する",
       "ex1": "Look at the screen, everyone.",
@@ -3781,7 +3781,7 @@
       "tr2": "落としたときに携帯電話の画面が割れました。"
     },
     {
-      "id": "g-1621-contact",
+      "id": "g-1621-contact-normal",
       "word": "contact",
       "meaning": "【名】連絡、接触【動】連絡する",
       "ex1": "Please keep in contact with me by e-mail.",
@@ -3790,7 +3790,7 @@
       "tr2": "質問があれば、いつでも私に連絡してください。"
     },
     {
-      "id": "g-1622-usual",
+      "id": "g-1622-usual-normal",
       "word": "usual",
       "meaning": "いつもの、普通の",
       "ex1": "He got up earlier than usual.",
@@ -3799,7 +3799,7 @@
       "tr2": "今朝はいつもの朝食、ごはんとみそ汁を食べました。"
     },
     {
-      "id": "g-1623-sincerely",
+      "id": "g-1623-sincerely-normal",
       "word": "sincerely",
       "meaning": "心を込めて、敬具",
       "ex1": "I ended my letter with Sincerely, Yuki.",
@@ -3808,7 +3808,7 @@
       "tr2": "親切なお力添えに心から感謝します。"
     },
     {
-      "id": "g-1624-damage",
+      "id": "g-1624-damage-normal",
       "word": "damage",
       "meaning": "【名】損害、被害【動】傷つける",
       "ex1": "The storm caused great damage to the farm.",
@@ -3817,7 +3817,7 @@
       "tr2": "日光を浴びすぎると肌を傷めるので、帽子を使いましょう。"
     },
     {
-      "id": "g-1625-crime",
+      "id": "g-1625-crime-normal",
       "word": "crime",
       "meaning": "犯罪",
       "ex1": "Crime has become less common in our town.",
@@ -3826,7 +3826,7 @@
       "tr2": "警察は犯罪を防ぎ、私たちを守るために一生懸命働いています。"
     },
     {
-      "id": "g-1626-would",
+      "id": "g-1626-would-normal",
       "word": "would",
       "meaning": "〜だろう、〜するつもりだった(willの過去形)",
       "ex1": "I said I would call him tonight.",
@@ -3835,7 +3835,7 @@
       "tr2": "お茶はいかがですか、それともジュースのほうがいいですか。"
     },
     {
-      "id": "g-1627-soldier",
+      "id": "g-1627-soldier-normal",
       "word": "soldier",
       "meaning": "兵士",
       "ex1": "The soldier stood by the gate all day.",
@@ -3844,7 +3844,7 @@
       "tr2": "私の祖父は何年も前に兵士でした。"
     },
     {
-      "id": "g-1628-disaster",
+      "id": "g-1628-disaster-normal",
       "word": "disaster",
       "meaning": "災害",
       "ex1": "A big earthquake is a natural disaster.",
@@ -3853,7 +3853,7 @@
       "tr2": "私たちの学校では年に2回、災害の訓練をします。"
     },
     {
-      "id": "g-1629-flood",
+      "id": "g-1629-flood-normal",
       "word": "flood",
       "meaning": "【名】洪水【動】あふれる",
       "ex1": "The flood covered many houses near the river.",
@@ -3862,7 +3862,7 @@
       "tr2": "大雨の後、町は洪水に襲われました。"
     },
     {
-      "id": "g-1630-storm",
+      "id": "g-1630-storm-normal",
       "word": "storm",
       "meaning": "【名】嵐【動】荒れ狂う",
       "ex1": "A big storm is coming tomorrow.",
@@ -3871,7 +3871,7 @@
       "tr2": "嵐のために飛行機は欠航になりました。"
     },
     {
-      "id": "g-1631-pressure",
+      "id": "g-1631-pressure-normal",
       "word": "pressure",
       "meaning": "圧力、プレッシャー",
       "ex1": "Water pressure is high at the bottom of the sea.",
@@ -3880,7 +3880,7 @@
       "tr2": "大事な試合の前にプレッシャーを感じましたが、チームが助けてくれました。"
     },
     {
-      "id": "g-1632-impact",
+      "id": "g-1632-impact-normal",
       "word": "impact",
       "meaning": "影響、衝撃",
       "ex1": "The movie had a big impact on me.",
@@ -3889,7 +3889,7 @@
       "tr2": "プラスチックごみは海の生き物に悪い影響を与えます。"
     },
     {
-      "id": "g-1633-flat",
+      "id": "g-1633-flat-normal",
       "word": "flat",
       "meaning": "【形】平らな、空気が抜けた【名】アパート",
       "ex1": "The land around the lake is flat.",
@@ -3898,7 +3898,7 @@
       "tr2": "自転車のタイヤがパンクしたので、今日は歩いて学校へ行きました。"
     },
     {
-      "id": "g-1634-proper",
+      "id": "g-1634-proper-normal",
       "word": "proper",
       "meaning": "適切な、正しい",
       "ex1": "Use the proper word in each sentence.",
@@ -3907,7 +3907,7 @@
       "tr2": "山で長く歩くには適切なくつが必要です。"
     },
     {
-      "id": "g-1635-ugly",
+      "id": "g-1635-ugly-normal",
       "word": "ugly",
       "meaning": "醜い、みにくい",
       "ex1": "The story is about an ugly duckling.",
@@ -3916,7 +3916,7 @@
       "tr2": "その古い建物は見た目はみにくいですが、中は素敵でした。"
     },
     {
-      "id": "g-1636-classical",
+      "id": "g-1636-classical-normal",
       "word": "classical",
       "meaning": "クラシックの、古典的な",
       "ex1": "My sister likes classical music.",
@@ -3925,7 +3925,7 @@
       "tr2": "私たちは昨夜、市民ホールでクラシックのコンサートを楽しみました。"
     },
     {
-      "id": "g-1637-beat",
+      "id": "g-1637-beat-normal",
       "word": "beat",
       "meaning": "【動】打つ、負かす【名】拍子",
       "ex1": "Our team can beat the best team.",
@@ -3934,7 +3934,7 @@
       "tr2": "太鼓の拍子が心で感じられます。"
     },
     {
-      "id": "g-1638-roll",
+      "id": "g-1638-roll-normal",
       "word": "roll",
       "meaning": "【動】転がる、巻く【名】ロール、ひと巻き",
       "ex1": "The ball began to roll down the hill.",
@@ -3943,7 +3943,7 @@
       "tr2": "紙を巻いて箱に入れてください。"
     },
     {
-      "id": "g-1639-include",
+      "id": "g-1639-include-normal",
       "word": "include",
       "meaning": "含む",
       "ex1": "The price will include tax.",
@@ -3952,7 +3952,7 @@
       "tr2": "そのツアーには昼食と博物館の見学が含まれますか。"
     },
     {
-      "id": "g-1640-dining",
+      "id": "g-1640-dining-normal",
       "word": "dining",
       "meaning": "食事の、食事用の",
       "ex1": "We bought a new dining table last week.",
@@ -3961,7 +3961,7 @@
       "tr2": "私たちの家では台所の隣にダイニングルームがあります。"
     },
     {
-      "id": "g-1641-ingredient",
+      "id": "g-1641-ingredient-normal",
       "word": "ingredient",
       "meaning": "材料、成分",
       "ex1": "Eggs are the main ingredient of this cake.",
@@ -3970,7 +3970,7 @@
       "tr2": "料理する前に、それぞれの材料が何か教えてください。"
     },
     {
-      "id": "g-1642-sausage",
+      "id": "g-1642-sausage-normal",
       "word": "sausage",
       "meaning": "ソーセージ",
       "ex1": "I had a sausage and some salad for lunch.",
@@ -3979,7 +3979,7 @@
       "tr2": "兄はキャンプでソーセージを網で焼きました。"
     },
     {
-      "id": "g-1643-soybean",
+      "id": "g-1643-soybean-normal",
       "word": "soybean",
       "meaning": "大豆",
       "ex1": "Tofu is made from soybean.",
@@ -3988,7 +3988,7 @@
       "tr2": "大豆は日本で人気のある食べ物で、みそに使われます。"
     },
     {
-      "id": "g-1644-sour",
+      "id": "g-1644-sour-normal",
       "word": "sour",
       "meaning": "すっぱい",
       "ex1": "This lemon is too sour for me.",
@@ -3997,7 +3997,7 @@
       "tr2": "牛乳は一日中出しっぱなしだったので、すっぱくなりました。"
     },
     {
-      "id": "g-1645-bitter",
+      "id": "g-1645-bitter-normal",
       "word": "bitter",
       "meaning": "苦い",
       "ex1": "This coffee tastes bitter.",
@@ -4006,7 +4006,7 @@
       "tr2": "子どものころ、私は苦い野菜が好きではありませんでした。"
     },
     {
-      "id": "g-1646-trade",
+      "id": "g-1646-trade-normal",
       "word": "trade",
       "meaning": "【名】貿易、取引【動】取引する",
       "ex1": "Japan has trade with many countries.",
@@ -4015,7 +4015,7 @@
       "tr2": "その2国間の貿易は年々増えてきました。"
     },
     {
-      "id": "g-1647-rent",
+      "id": "g-1647-rent-normal",
       "word": "rent",
       "meaning": "【動】賃借りする【名】家賃",
       "ex1": "We rent a small house near the station.",
@@ -4024,7 +4024,7 @@
       "tr2": "この部屋の家賃は毎月いくらですか。"
     },
     {
-      "id": "g-1648-display",
+      "id": "g-1648-display-normal",
       "word": "display",
       "meaning": "【動】展示する【名】展示",
       "ex1": "The shop will display new bags in the window.",
@@ -4033,7 +4033,7 @@
       "tr2": "ホールには生徒の作品の展示があります。"
     },
     {
-      "id": "g-1649-mall",
+      "id": "g-1649-mall-normal",
       "word": "mall",
       "meaning": "ショッピングモール",
       "ex1": "We went to the mall to buy new shoes.",
@@ -4042,7 +4042,7 @@
       "tr2": "3時にモールの前で会って、それから食事をしましょう。"
     },
     {
-      "id": "g-1650-strike",
+      "id": "g-1650-strike-normal",
       "word": "strike",
       "meaning": "【動】打つ、ストライキをする【名】ストライキ",
       "ex1": "The clock will strike twelve soon.",
@@ -4051,7 +4051,7 @@
       "tr2": "労働者たちはより良い賃金を求めてストライキをしました。"
     },
     {
-      "id": "g-1651-reflect",
+      "id": "g-1651-reflect-normal",
       "word": "reflect",
       "meaning": "【動】反射する、よく考える",
       "ex1": "The lake can reflect the mountains.",
@@ -4060,7 +4060,7 @@
       "tr2": "寝る前に今日したことをよく考えてください。"
     },
     {
-      "id": "g-1652-hesitate",
+      "id": "g-1652-hesitate-normal",
       "word": "hesitate",
       "meaning": "ためらう",
       "ex1": "Don't hesitate to ask me questions.",
@@ -4069,7 +4069,7 @@
       "tr2": "私は恥ずかしがり屋なので、授業で英語を話すのをためらいます。"
     },
     {
-      "id": "g-1653-architect",
+      "id": "g-1653-architect-normal",
       "word": "architect",
       "meaning": "建築家",
       "ex1": "My uncle is an architect.",
@@ -4078,7 +4078,7 @@
       "tr2": "その建築家は大きな庭のある学校を設計しました。"
     },
     {
-      "id": "g-1654-barber",
+      "id": "g-1654-barber-normal",
       "word": "barber",
       "meaning": "理容師、床屋",
       "ex1": "The barber cut my hair very short.",
@@ -4087,7 +4087,7 @@
       "tr2": "祖父は毎月床屋に行きます。"
     },
     {
-      "id": "g-1655-clerk",
+      "id": "g-1655-clerk-normal",
       "word": "clerk",
       "meaning": "店員、事務員",
       "ex1": "The clerk showed me a blue shirt.",
@@ -4096,7 +4096,7 @@
       "tr2": "私は店の店員に、鉛筆はどこかたずねました。"
     },
     {
-      "id": "g-1656-librarian",
+      "id": "g-1656-librarian-normal",
       "word": "librarian",
       "meaning": "図書館員",
       "ex1": "The librarian helped me find a book.",
@@ -4105,7 +4105,7 @@
       "tr2": "私たちの学校の図書館員は、1年生に物語を読んでくれます。"
     },
     {
-      "id": "g-1657-athlete",
+      "id": "g-1657-athlete-normal",
       "word": "athlete",
       "meaning": "運動選手",
       "ex1": "He is a famous athlete from Japan.",
@@ -4114,7 +4114,7 @@
       "tr2": "運動選手は強くいるために、よく食べてよく眠らなければなりません。"
     },
     {
-      "id": "g-1658-waiter",
+      "id": "g-1658-waiter-normal",
       "word": "waiter",
       "meaning": "ウエイター、給仕",
       "ex1": "The waiter brought us some water.",
@@ -4123,7 +4123,7 @@
       "tr2": "すみません、ウエイターさん。メニューをいただけますか。"
     },
     {
-      "id": "g-1659-release",
+      "id": "g-1659-release-normal",
       "word": "release",
       "meaning": "【動】解放する、発売する【名】発売",
       "ex1": "The singer will release a new song next month.",
@@ -4132,7 +4132,7 @@
       "tr2": "彼らはその鳥を森に放してやることにしました。"
     },
     {
-      "id": "g-1660-quality",
+      "id": "g-1660-quality-normal",
       "word": "quality",
       "meaning": "質、品質",
       "ex1": "This shop sells good quality bags.",
@@ -4141,7 +4141,7 @@
       "tr2": "勉強するときは量より質のほうが大切です。"
     },
     {
-      "id": "g-1661-seed",
+      "id": "g-1661-seed-normal",
       "word": "seed",
       "meaning": "種",
       "ex1": "I planted a seed in the garden.",
@@ -4150,7 +4150,7 @@
       "tr2": "小さな種は時がたてば大きな木に育ちます。"
     },
     {
-      "id": "g-1662-source",
+      "id": "g-1662-source-normal",
       "word": "source",
       "meaning": "源、情報源",
       "ex1": "The sun is the source of light and heat.",
@@ -4159,7 +4159,7 @@
       "tr2": "このニュースの情報源は何ですか。"
     },
     {
-      "id": "g-1663-fellow",
+      "id": "g-1663-fellow-normal",
       "word": "fellow",
       "meaning": "仲間、同僚",
       "ex1": "He is a fellow member of the soccer team.",
@@ -4168,7 +4168,7 @@
       "tr2": "クラスメートの仲間たちが私たちの公園掃除を手伝ってくれました。"
     },
     {
-      "id": "g-1664-male",
+      "id": "g-1664-male-normal",
       "word": "male",
       "meaning": "【形】男性の、雄の【名】男性",
       "ex1": "This male lion has a long mane.",
@@ -4177,7 +4177,7 @@
       "tr2": "この用紙の男性か女性にチェックをしてください。"
     },
     {
-      "id": "g-1665-female",
+      "id": "g-1665-female-normal",
       "word": "female",
       "meaning": "【形】女性の、雌の【名】女性",
       "ex1": "The female bird sat on the nest.",
@@ -4186,7 +4186,7 @@
       "tr2": "私たちの新しい先生はカナダ出身の女性の先生です。"
     },
     {
-      "id": "g-1666-kid",
+      "id": "g-1666-kid-normal",
       "word": "kid",
       "meaning": "【名】子ども【動】からかう",
       "ex1": "The kid ran to the park with his dog.",
@@ -4195,7 +4195,7 @@
       "tr2": "妹はまだ子どもなので、早く寝ます。"
     },
     {
-      "id": "g-1667-ancestor",
+      "id": "g-1667-ancestor-normal",
       "word": "ancestor",
       "meaning": "祖先",
       "ex1": "Our ancestor came to this town long ago.",
@@ -4204,7 +4204,7 @@
       "tr2": "私たちは毎年夏に祖先のお墓参りをします。"
     },
     {
-      "id": "g-1668-generation",
+      "id": "g-1668-generation-normal",
       "word": "generation",
       "meaning": "世代",
       "ex1": "My grandmother and I are from different generation.",
@@ -4213,7 +4213,7 @@
       "tr2": "それぞれの世代には世の中についての独自の考え方があります。"
     },
     {
-      "id": "g-1669-talent",
+      "id": "g-1669-talent-normal",
       "word": "talent",
       "meaning": "才能",
       "ex1": "She has a talent for music.",
@@ -4222,7 +4222,7 @@
       "tr2": "その番組は才能のある若者に歌う機会を与えました。"
     },
     {
-      "id": "g-1670-beauty",
+      "id": "g-1670-beauty-normal",
       "word": "beauty",
       "meaning": "美しさ、美人",
       "ex1": "I was moved by the beauty of the sunset.",
@@ -4231,7 +4231,7 @@
       "tr2": "この古い町の美しさは多くの観光客を引きつけます。"
     },
     {
-      "id": "g-1671-advantage",
+      "id": "g-1671-advantage-normal",
       "word": "advantage",
       "meaning": "利点、有利な点",
       "ex1": "Speaking English is an advantage when you travel.",
@@ -4240,7 +4240,7 @@
       "tr2": "この自転車の利点の一つは、とても軽いことです。"
     },
     {
-      "id": "g-1672-difficulty",
+      "id": "g-1672-difficulty-normal",
       "word": "difficulty",
       "meaning": "困難、難しさ",
       "ex1": "I had difficulty in understanding the story.",
@@ -4249,7 +4249,7 @@
       "tr2": "彼らはあらゆる困難を乗り越えてその計画を終えました。"
     },
     {
-      "id": "g-1673-independence",
+      "id": "g-1673-independence-normal",
       "word": "independence",
       "meaning": "独立",
       "ex1": "The country got independence in 1960.",
@@ -4258,7 +4258,7 @@
       "tr2": "多くの若者は親からの独立を望んでいます。"
     },
     {
-      "id": "g-1674-knowledge",
+      "id": "g-1674-knowledge-normal",
       "word": "knowledge",
       "meaning": "知識",
       "ex1": "Reading gives us a lot of knowledge.",
@@ -4267,7 +4267,7 @@
       "tr2": "彼は鳥についての知識が豊富なので、彼に聞いてみてください。"
     },
     {
-      "id": "g-1675-solution",
+      "id": "g-1675-solution-normal",
       "word": "solution",
       "meaning": "解決策、答え",
       "ex1": "We need a solution to this problem.",
@@ -4276,7 +4276,7 @@
       "tr2": "10ページの数学の問題の答えが分かりますか。"
     },
     {
-      "id": "g-1676-lay",
+      "id": "g-1676-lay-normal",
       "word": "lay",
       "meaning": "【動】置く、産む【名】位置",
       "ex1": "Please lay the book on the desk.",
@@ -4285,7 +4285,7 @@
       "tr2": "そのめんどりは毎朝卵を産みます。"
     },
     {
-      "id": "g-1677-brick",
+      "id": "g-1677-brick-normal",
       "word": "brick",
       "meaning": "れんが",
       "ex1": "The old house is made of brick.",
@@ -4294,7 +4294,7 @@
       "tr2": "私たちは駅の近くで赤れんがの壁を見ました。"
     },
     {
-      "id": "g-1678-gold",
+      "id": "g-1678-gold-normal",
       "word": "gold",
       "meaning": "【名】金【形】金の",
       "ex1": "This ring is made of gold.",
@@ -4303,7 +4303,7 @@
       "tr2": "彼女は水泳のレースで金メダルを取りました。"
     },
     {
-      "id": "g-1679-golden",
+      "id": "g-1679-golden-normal",
       "word": "golden",
       "meaning": "金色の、黄金の",
       "ex1": "Autumn leaves turn golden in November.",
@@ -4312,7 +4312,7 @@
       "tr2": "私たちは夏のキャンプで友達と素晴らしい時間を過ごしました。"
     },
     {
-      "id": "g-1680-silver",
+      "id": "g-1680-silver-normal",
       "word": "silver",
       "meaning": "銀、銀色の",
       "ex1": "He gave me a silver watch.",
@@ -4321,7 +4321,7 @@
       "tr2": "そのランナーは学校の運動会で銀メダルを取りました。"
     },
     {
-      "id": "g-1681-metal",
+      "id": "g-1681-metal-normal",
       "word": "metal",
       "meaning": "金属",
       "ex1": "Metal is hard and strong.",
@@ -4330,7 +4330,7 @@
       "tr2": "缶は金属でできているので、リサイクルするべきです。"
     },
     {
-      "id": "g-1682-iron",
+      "id": "g-1682-iron-normal",
       "word": "iron",
       "meaning": "【名】鉄、アイロン【動】アイロンをかける",
       "ex1": "Iron is used to build bridges.",
@@ -4339,7 +4339,7 @@
       "tr2": "母はアイロンで私のシャツをのばします。"
     },
     {
-      "id": "g-1683-fuel",
+      "id": "g-1683-fuel-normal",
       "word": "fuel",
       "meaning": "燃料",
       "ex1": "The car needs more fuel.",
@@ -4348,7 +4348,7 @@
       "tr2": "地球を守るために燃料を節約するべきです。"
     },
     {
-      "id": "g-1684-anymore",
+      "id": "g-1684-anymore-normal",
       "word": "anymore",
       "meaning": "もはや、今はもう",
       "ex1": "I do not live in Osaka anymore.",
@@ -4357,7 +4357,7 @@
       "tr2": "お母さん、もうおなかがすいていないから、食べるのをやめます。"
     },
     {
-      "id": "g-1685-exactly",
+      "id": "g-1685-exactly-normal",
       "word": "exactly",
       "meaning": "正確に、まさに",
       "ex1": "That is exactly what I wanted to say.",
@@ -4366,7 +4366,7 @@
       "tr2": "電車は10時ちょうどに来たので、私たちは時間に間に合いました。"
     },
     {
-      "id": "g-1686-immediately",
+      "id": "g-1686-immediately-normal",
       "word": "immediately",
       "meaning": "すぐに",
       "ex1": "Please answer immediately.",
@@ -4375,7 +4375,7 @@
       "tr2": "試合が終わるとすぐに母に電話しました。"
     },
     {
-      "id": "g-1687-indeed",
+      "id": "g-1687-indeed-normal",
       "word": "indeed",
       "meaning": "本当に、実際に",
       "ex1": "It was indeed a great trip.",
@@ -4384,7 +4384,7 @@
       "tr2": "彼は本当に親切な男の子で、みんなが彼を好きです。"
     },
     {
-      "id": "g-1688-therefore",
+      "id": "g-1688-therefore-normal",
       "word": "therefore",
       "meaning": "それゆえ、だから",
       "ex1": "I was tired, and therefore I went to bed early.",
@@ -4393,7 +4393,7 @@
       "tr2": "一日中雨が降ったので、私たちは家にいました。"
     },
     {
-      "id": "g-1689-deal",
+      "id": "g-1689-deal-normal",
       "word": "deal",
       "meaning": "【名】取引、量【動】扱う、配る",
       "ex1": "It is a good deal, so let me buy it.",
@@ -4402,7 +4402,7 @@
       "tr2": "私たちは明日の会議でその問題に対処します。"
     },
     {
-      "id": "g-1690-secret",
+      "id": "g-1690-secret-normal",
       "word": "secret",
       "meaning": "【名】秘密【形】秘密の",
       "ex1": "Can you keep a secret?",
@@ -4411,7 +4411,7 @@
       "tr2": "このケーキの秘密は、生地に入れた少しのはちみつです。"
     },
     {
-      "id": "g-1691-chess",
+      "id": "g-1691-chess-normal",
       "word": "chess",
       "meaning": "チェス",
       "ex1": "My grandfather taught me how to play chess.",
@@ -4420,7 +4420,7 @@
       "tr2": "私たちは放課後、部室でチェスをします。"
     },
     {
-      "id": "g-1692-snowboard",
+      "id": "g-1692-snowboard-normal",
       "word": "snowboard",
       "meaning": "スノーボード",
       "ex1": "I want to try snowboard this winter.",
@@ -4429,7 +4429,7 @@
       "tr2": "このスノーボードはあなたのものですか、それともお兄さんのものですか。"
     },
     {
-      "id": "g-1693-insect",
+      "id": "g-1693-insect-normal",
       "word": "insect",
       "meaning": "昆虫、虫",
       "ex1": "A butterfly is a beautiful insect.",
@@ -4438,7 +4438,7 @@
       "tr2": "弟は夏に見つけた昆虫をすべて集めます。"
     },
     {
-      "id": "g-1694-truck",
+      "id": "g-1694-truck-normal",
       "word": "truck",
       "meaning": "トラック",
       "ex1": "A big truck stopped in front of the shop.",
@@ -4447,7 +4447,7 @@
       "tr2": "そのトラックは新鮮な野菜を市場に運んできました。"
     },
     {
-      "id": "g-1695-might",
+      "id": "g-1695-might-normal",
       "word": "might",
       "meaning": "〜かもしれない(mayの過去形)",
       "ex1": "It might rain this afternoon.",
@@ -4456,7 +4456,7 @@
       "tr2": "彼は遅れるかもしれないので、彼抜きで始めましょう。"
     },
     {
-      "id": "g-1696-dr",
+      "id": "g-1696-dr-normal",
       "word": "Dr.",
       "meaning": "〜博士、〜先生(Doctorの略)",
       "ex1": "Dr. Brown is a kind teacher.",
@@ -4465,7 +4465,7 @@
       "tr2": "私は3時にスミス先生の予約があります。"
     },
     {
-      "id": "g-1697-france",
+      "id": "g-1697-france-normal",
       "word": "France",
       "meaning": "フランス",
       "ex1": "My friend wants to visit France next year.",
@@ -4474,7 +4474,7 @@
       "tr2": "フランスは料理や芸術、エッフェル塔で有名です。"
     },
     {
-      "id": "g-1698-germany",
+      "id": "g-1698-germany-normal",
       "word": "Germany",
       "meaning": "ドイツ",
       "ex1": "Germany is in Europe.",
@@ -4483,7 +4483,7 @@
       "tr2": "私たちの交換留学生はドイツ出身で、英語が上手です。"
     },
     {
-      "id": "g-1699-italy",
+      "id": "g-1699-italy-normal",
       "word": "Italy",
       "meaning": "イタリア",
       "ex1": "I want to eat pizza in Italy.",
@@ -4492,7 +4492,7 @@
       "tr2": "イタリアは地図ではブーツのような形をした細長い国です。"
     },
     {
-      "id": "g-1700-europe",
+      "id": "g-1700-europe-normal",
       "word": "Europe",
       "meaning": "ヨーロッパ",
       "ex1": "My aunt traveled around Europe last summer.",
