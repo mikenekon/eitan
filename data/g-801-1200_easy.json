@@ -1,0 +1,3604 @@
+{
+  "words": [
+    {
+      "id": "g-801-pass",
+      "word": "pass",
+      "meaning": "【名】入場許可証、パス 【動】通る、(時が)たつ、~を手渡す、(~に)合格する",
+      "ex1": "The bus passes my house.",
+      "tr1": "そのバスは私の家の前を通ります。",
+      "ex2": "I want to pass the test.",
+      "tr2": "私はテストに合格したいです。"
+    },
+    {
+      "id": "g-802-bank",
+      "word": "bank",
+      "meaning": "銀行、土手",
+      "ex1": "My mother works at a bank near the station.",
+      "tr1": "母は駅の近くの銀行で働いています。",
+      "ex2": "I sit on the bank of the river.",
+      "tr2": "私は川の土手にすわります。"
+    },
+    {
+      "id": "g-803-bicycle",
+      "word": "bicycle",
+      "meaning": "自転車",
+      "ex1": "I go to school by bicycle.",
+      "tr1": "私は自転車で学校に行きます。",
+      "ex2": "My father has a new bicycle.",
+      "tr2": "父は新しい自転車を持っています。"
+    },
+    {
+      "id": "g-804-radio",
+      "word": "radio",
+      "meaning": "ラジオ",
+      "ex1": "My grandfather listens to the radio every morning.",
+      "tr1": "祖父は毎朝ラジオを聞きます。",
+      "ex2": "Turn off the radio, please.",
+      "tr2": "ラジオを消してください。"
+    },
+    {
+      "id": "g-805-department-store",
+      "word": "department store",
+      "meaning": "デパート、百貨店",
+      "ex1": "I buy a present at the department store.",
+      "tr1": "私はデパートでプレゼントを買います。",
+      "ex2": "The department store is in front of the station.",
+      "tr2": "デパートは駅の前にあります。"
+    },
+    {
+      "id": "g-806-convenience-store",
+      "word": "convenience store",
+      "meaning": "コンビニエンスストア",
+      "ex1": "There is a convenience store near my house.",
+      "tr1": "私の家の近くにコンビニエンスストアがあります。",
+      "ex2": "I buy water at the convenience store.",
+      "tr2": "私はコンビニエンスストアで水を買います。"
+    },
+    {
+      "id": "g-807-convenient",
+      "word": "convenient",
+      "meaning": "便利な、好都合な",
+      "ex1": "This bus is very convenient.",
+      "tr1": "このバスはとても便利です。",
+      "ex2": "Is Saturday convenient for you?",
+      "tr2": "土曜日はご都合がよろしいですか。"
+    },
+    {
+      "id": "g-808-jacket",
+      "word": "jacket",
+      "meaning": "上着、ジャケット",
+      "ex1": "It is cold, so wear a jacket.",
+      "tr1": "寒いので、上着を着てください。",
+      "ex2": "I have a blue jacket.",
+      "tr2": "私は青い上着を持っています。"
+    },
+    {
+      "id": "g-809-noise",
+      "word": "noise",
+      "meaning": "物音、騒音",
+      "ex1": "I hear a strange noise in the kitchen.",
+      "tr1": "私は台所で変な物音が聞こえます。",
+      "ex2": "Please don't make noise here.",
+      "tr2": "ここでは騒音を立てないでください。"
+    },
+    {
+      "id": "g-810-noisy",
+      "word": "noisy",
+      "meaning": "騒がしい、うるさい",
+      "ex1": "This room is too noisy.",
+      "tr1": "この部屋はうるさすぎます。",
+      "ex2": "Our classroom is very noisy today.",
+      "tr2": "今日、私たちの教室はとても騒がしいです。"
+    },
+    {
+      "id": "g-811-outside",
+      "word": "outside",
+      "meaning": "【名】外側 【形】外側の 【副】外側に 【前】~の外側に",
+      "ex1": "Let's play outside.",
+      "tr1": "外で遊びましょう。",
+      "ex2": "The dog is outside the house.",
+      "tr2": "犬は家の外にいます。"
+    },
+    {
+      "id": "g-812-inside",
+      "word": "inside",
+      "meaning": "【名】内側 【形】内側の 【副】内側に 【前】~の内側に",
+      "ex1": "The cat is inside the box.",
+      "tr1": "ねこは箱の中にいます。",
+      "ex2": "Let's stay inside today.",
+      "tr2": "今日は中にいましょう。"
+    },
+    {
+      "id": "g-813-either",
+      "word": "either",
+      "meaning": "~もまた(...ない)",
+      "ex1": "I don't like fish, either.",
+      "tr1": "私も魚が好きではありません。",
+      "ex2": "My brother doesn't like fish, either.",
+      "tr2": "弟も魚が好きではありません。"
+    },
+    {
+      "id": "g-814-surprise",
+      "word": "surprise",
+      "meaning": "【名】驚き 【動】~を驚かす、びっくりさせる",
+      "ex1": "It is a big surprise.",
+      "tr1": "それは大きな驚きです。",
+      "ex2": "The news surprises me.",
+      "tr2": "そのニュースは私を驚かせます。"
+    },
+    {
+      "id": "g-815-peace",
+      "word": "peace",
+      "meaning": "平和",
+      "ex1": "We all want peace in the world.",
+      "tr1": "私たちはみな世界の平和を望んでいます。",
+      "ex2": "Peace is important.",
+      "tr2": "平和は大切です。"
+    },
+    {
+      "id": "g-816-police",
+      "word": "police",
+      "meaning": "警察",
+      "ex1": "Call the police right now!",
+      "tr1": "今すぐ警察を呼んでください。",
+      "ex2": "A police officer is at the station.",
+      "tr2": "警察官が駅にいます。"
+    },
+    {
+      "id": "g-817-experience",
+      "word": "experience",
+      "meaning": "【名】経験、体験 【動】~を経験する",
+      "ex1": "I want a new experience.",
+      "tr1": "私は新しい経験をしたいです。",
+      "ex2": "You can experience Japanese food here.",
+      "tr2": "ここで日本の食べ物を体験できます。"
+    },
+    {
+      "id": "g-818-part",
+      "word": "part",
+      "meaning": "部分、一部",
+      "ex1": "This is the best part of the movie.",
+      "tr1": "ここがその映画の一番よい部分です。",
+      "ex2": "I want to take part in the contest.",
+      "tr2": "私はコンテストに参加したいです。"
+    },
+    {
+      "id": "g-819-area",
+      "word": "area",
+      "meaning": "地域、地方、面積",
+      "ex1": "Many people visit this area.",
+      "tr1": "多くの人がこの地域を訪れます。",
+      "ex2": "This area is famous for apples.",
+      "tr2": "この地方はりんごで有名です。"
+    },
+    {
+      "id": "g-820-field",
+      "word": "field",
+      "meaning": "畑、野原",
+      "ex1": "The boys are playing soccer on the field.",
+      "tr1": "男の子たちは野原でサッカーをしています。",
+      "ex2": "My grandfather has a field.",
+      "tr2": "祖父は畑を持っています。"
+    },
+    {
+      "id": "g-821-space",
+      "word": "space",
+      "meaning": "空間、スペース、宇宙",
+      "ex1": "There is no space for a desk.",
+      "tr1": "机を置く空間がありません。",
+      "ex2": "I want to go to space.",
+      "tr2": "私は宇宙に行きたいです。"
+    },
+    {
+      "id": "g-822-fact",
+      "word": "fact",
+      "meaning": "事実、現実",
+      "ex1": "That is a fact.",
+      "tr1": "それは事実です。",
+      "ex2": "In fact, I like math.",
+      "tr2": "実は、私は数学が好きです。"
+    },
+    {
+      "id": "g-823-absent",
+      "word": "absent",
+      "meaning": "欠席して、不在の",
+      "ex1": "Ken is absent today.",
+      "tr1": "ケンは今日欠席です。",
+      "ex2": "Who is absent today?",
+      "tr2": "今日はだれが欠席ですか。"
+    },
+    {
+      "id": "g-824-enough",
+      "word": "enough",
+      "meaning": "【形】十分な 【副】十分に",
+      "ex1": "We have enough time.",
+      "tr1": "私たちには十分な時間があります。",
+      "ex2": "This room is big enough.",
+      "tr2": "この部屋は十分に広いです。"
+    },
+    {
+      "id": "g-825-such",
+      "word": "such",
+      "meaning": "そのような",
+      "ex1": "It is such a fun day.",
+      "tr1": "それはとても楽しい一日です。",
+      "ex2": "Don't say such things.",
+      "tr2": "そのようなことを言わないでください。"
+    },
+    {
+      "id": "g-826-even",
+      "word": "even",
+      "meaning": "~でさえ、さらに",
+      "ex1": "Even children can use this app.",
+      "tr1": "子どもでさえこのアプリを使えます。",
+      "ex2": "Even my father likes this song.",
+      "tr2": "父でさえこの歌が好きです。"
+    },
+    {
+      "id": "g-827-myself",
+      "word": "myself",
+      "meaning": "私自身",
+      "ex1": "I make lunch myself.",
+      "tr1": "私は昼食を自分で作ります。",
+      "ex2": "Let me introduce myself.",
+      "tr2": "自己紹介させてください。"
+    },
+    {
+      "id": "g-828-yourself",
+      "word": "yourself",
+      "meaning": "あなた自身",
+      "ex1": "Please help yourself to some cake.",
+      "tr1": "どうぞケーキを自由に召し上がってください。",
+      "ex2": "Be yourself.",
+      "tr2": "自分らしくいてください。"
+    },
+    {
+      "id": "g-829-herself",
+      "word": "herself",
+      "meaning": "彼女自身",
+      "ex1": "She makes lunch for herself.",
+      "tr1": "彼女は自分のために昼食を作ります。",
+      "ex2": "Emi cooks by herself.",
+      "tr2": "エミは一人で料理します。"
+    },
+    {
+      "id": "g-830-himself",
+      "word": "himself",
+      "meaning": "彼自身",
+      "ex1": "He says to himself, \"I can do it.\"",
+      "tr1": "彼は「できる」と自分に言い聞かせます。",
+      "ex2": "My brother cleans his room by himself.",
+      "tr2": "兄は自分で部屋をそうじします。"
+    },
+    {
+      "id": "g-831-itself",
+      "word": "itself",
+      "meaning": "それ自身",
+      "ex1": "The cat washes itself.",
+      "tr1": "ねこは自分の体を洗います。",
+      "ex2": "The door opens by itself.",
+      "tr2": "ドアはひとりでに開きます。"
+    },
+    {
+      "id": "g-832-ourselves",
+      "word": "ourselves",
+      "meaning": "私たち自身",
+      "ex1": "We enjoy ourselves at the party.",
+      "tr1": "私たちはパーティーで楽しみます。",
+      "ex2": "We clean the classroom by ourselves.",
+      "tr2": "私たちは自分たちで教室をそうじします。"
+    },
+    {
+      "id": "g-833-yourselves",
+      "word": "yourselves",
+      "meaning": "あなたたち自身",
+      "ex1": "Please enjoy yourselves, everyone.",
+      "tr1": "みなさん、どうぞ楽しんでください。",
+      "ex2": "Do you cook by yourselves?",
+      "tr2": "あなたたちは自分たちで料理しますか。"
+    },
+    {
+      "id": "g-834-themselves",
+      "word": "themselves",
+      "meaning": "彼ら自身",
+      "ex1": "They enjoy themselves at the beach.",
+      "tr1": "彼らは海辺で楽しみます。",
+      "ex2": "They make lunch by themselves.",
+      "tr2": "彼らは自分たちで昼食を作ります。"
+    },
+    {
+      "id": "g-835-clear",
+      "word": "clear",
+      "meaning": "はっきりした、明らかな、澄んだ、晴れた",
+      "ex1": "The water is very clear.",
+      "tr1": "その水はとても澄んでいます。",
+      "ex2": "The sky is clear today.",
+      "tr2": "今日は空が晴れています。"
+    },
+    {
+      "id": "g-836-clearly",
+      "word": "clearly",
+      "meaning": "はっきりと、明らかに",
+      "ex1": "Please speak clearly.",
+      "tr1": "はっきりと話してください。",
+      "ex2": "I can see the mountain clearly.",
+      "tr2": "私はその山をはっきりと見ることができます。"
+    },
+    {
+      "id": "g-837-real",
+      "word": "real",
+      "meaning": "本当の、現実の",
+      "ex1": "This is a real diamond.",
+      "tr1": "これは本物のダイヤモンドです。",
+      "ex2": "Is this a real cat?",
+      "tr2": "これは本物のねこですか。"
+    },
+    {
+      "id": "g-838-reality",
+      "word": "reality",
+      "meaning": "現実",
+      "ex1": "Dream and reality are different.",
+      "tr1": "夢と現実はちがいます。",
+      "ex2": "In reality, English takes time.",
+      "tr2": "現実には、英語には時間がかかります。"
+    },
+    {
+      "id": "g-839-village",
+      "word": "village",
+      "meaning": "村",
+      "ex1": "My grandmother lives in a small village.",
+      "tr1": "祖母は小さな村に住んでいます。",
+      "ex2": "The village is very beautiful.",
+      "tr2": "その村はとても美しいです。"
+    },
+    {
+      "id": "g-840-wake",
+      "word": "wake",
+      "meaning": "目が覚める、~を起こす",
+      "ex1": "I wake up at six every day.",
+      "tr1": "私は毎日6時に目が覚めます。",
+      "ex2": "Please wake me up at seven.",
+      "tr2": "7時に私を起こしてください。"
+    },
+    {
+      "id": "g-841-less",
+      "word": "less",
+      "meaning": "【形】より少ない 【副】より少なく",
+      "ex1": "Please use less water.",
+      "tr1": "水をもっと少なく使ってください。",
+      "ex2": "I want less sugar.",
+      "tr2": "私は砂糖を少なめにしてほしいです。"
+    },
+    {
+      "id": "g-842-least",
+      "word": "least",
+      "meaning": "【形】最も少ない 【副】最も少なく",
+      "ex1": "I study English at least one hour every day.",
+      "tr1": "私は毎日少なくとも1時間英語を勉強します。",
+      "ex2": "At least, say hello.",
+      "tr2": "少なくとも、あいさつはしてください。"
+    },
+    {
+      "id": "g-843-cheap",
+      "word": "cheap",
+      "meaning": "安い",
+      "ex1": "This T-shirt is very cheap.",
+      "tr1": "このTシャツはとても安いです。",
+      "ex2": "This bag is cheap.",
+      "tr2": "このかばんは安いです。"
+    },
+    {
+      "id": "g-844-price",
+      "word": "price",
+      "meaning": "価格、値段",
+      "ex1": "What is the price of this bag?",
+      "tr1": "このかばんの値段はいくらですか。",
+      "ex2": "The price is low.",
+      "tr2": "値段は安いです。"
+    },
+    {
+      "id": "g-845-everywhere",
+      "word": "everywhere",
+      "meaning": "どこでも、いたるところで",
+      "ex1": "I look everywhere for my key.",
+      "tr1": "私はかぎをどこもかしこも探します。",
+      "ex2": "There are flowers everywhere.",
+      "tr2": "いたるところに花があります。"
+    },
+    {
+      "id": "g-846-anywhere",
+      "word": "anywhere",
+      "meaning": "どこかに、どこにも、どこへでも",
+      "ex1": "I can't find my glasses anywhere.",
+      "tr1": "私はめがねがどこにも見つかりません。",
+      "ex2": "Do you want to go anywhere today?",
+      "tr2": "今日、どこかに行きたいですか。"
+    },
+    {
+      "id": "g-847-somewhere",
+      "word": "somewhere",
+      "meaning": "どこかに",
+      "ex1": "Let's go somewhere warm.",
+      "tr1": "どこかあたたかいところに行きましょう。",
+      "ex2": "I want to go somewhere.",
+      "tr2": "私はどこかに行きたいです。"
+    },
+    {
+      "id": "g-848-someday",
+      "word": "someday",
+      "meaning": "いつか、そのうち",
+      "ex1": "I want to visit London someday.",
+      "tr1": "私はいつかロンドンを訪れたいです。",
+      "ex2": "I want to be a doctor someday.",
+      "tr2": "私はいつか医者になりたいです。"
+    },
+    {
+      "id": "g-849-forever",
+      "word": "forever",
+      "meaning": "永久に、永遠に",
+      "ex1": "Let's be friends forever.",
+      "tr1": "ずっと友達でいましょう。",
+      "ex2": "I want to live here forever.",
+      "tr2": "私は永遠にここに住みたいです。"
+    },
+    {
+      "id": "g-850-difference",
+      "word": "difference",
+      "meaning": "違い、差",
+      "ex1": "There is a big difference between them.",
+      "tr1": "それらの間には大きな違いがあります。",
+      "ex2": "I see the difference between the two.",
+      "tr2": "私はその2つの違いがわかります。"
+    },
+    {
+      "id": "g-851-pride",
+      "word": "pride",
+      "meaning": "誇り、自尊心",
+      "ex1": "She takes pride in her work.",
+      "tr1": "彼女は自分の仕事に誇りを持っています。",
+      "ex2": "I have pride in my school.",
+      "tr2": "私は自分の学校に誇りを持っています。"
+    },
+    {
+      "id": "g-852-proud",
+      "word": "proud",
+      "meaning": "誇りに思う",
+      "ex1": "I am proud of you.",
+      "tr1": "私はあなたを誇りに思います。",
+      "ex2": "My mother is proud of me.",
+      "tr2": "母は私を誇りに思っています。"
+    },
+    {
+      "id": "g-853-smell",
+      "word": "smell",
+      "meaning": "【名】におい 【動】においがする、~のにおいをかぐ",
+      "ex1": "I like the smell of fresh bread.",
+      "tr1": "私は焼きたてのパンのにおいが好きです。",
+      "ex2": "This flower smells good.",
+      "tr2": "この花はいいにおいがします。"
+    },
+    {
+      "id": "g-854-happen",
+      "word": "happen",
+      "meaning": "起こる",
+      "ex1": "What will happen next?",
+      "tr1": "次に何が起こるでしょうか。",
+      "ex2": "What happens next?",
+      "tr2": "次に何が起こりますか。"
+    },
+    {
+      "id": "g-855-explain",
+      "word": "explain",
+      "meaning": "(~を)説明する",
+      "ex1": "Can you explain this word to me?",
+      "tr1": "この単語を私に説明してくれますか。",
+      "ex2": "Please explain it to me.",
+      "tr2": "それを私に説明してください。"
+    },
+    {
+      "id": "g-856-receive",
+      "word": "receive",
+      "meaning": "~を受け取る、受け取る",
+      "ex1": "I want to receive your e-mail soon.",
+      "tr1": "私はあなたのメールをすぐに受け取りたいです。",
+      "ex2": "I receive many e-mails every day.",
+      "tr2": "私は毎日たくさんのメールを受け取ります。"
+    },
+    {
+      "id": "g-857-return",
+      "word": "return",
+      "meaning": "【名】帰ること 【動】帰る、戻る、~を返す",
+      "ex1": "I return the book tomorrow.",
+      "tr1": "私は明日その本を返します。",
+      "ex2": "My father returns home at seven.",
+      "tr2": "父は7時に家に帰ります。"
+    },
+    {
+      "id": "g-858-lend",
+      "word": "lend",
+      "meaning": "(~を)貸す",
+      "ex1": "Can you lend me your pen?",
+      "tr1": "ペンを貸してくれますか。",
+      "ex2": "I can lend you my pen.",
+      "tr2": "私のペンを貸してあげられます。"
+    },
+    {
+      "id": "g-859-let",
+      "word": "let",
+      "meaning": "(人)に~させる",
+      "ex1": "Let me help you.",
+      "tr1": "お手伝いさせてください。",
+      "ex2": "Let me see.",
+      "tr2": "ちょっと見せて。"
+    },
+    {
+      "id": "g-860-sign",
+      "word": "sign",
+      "meaning": "【名】標識、看板、合図、身振り 【動】(~に)署名する",
+      "ex1": "There is a stop sign here.",
+      "tr1": "ここに一時停止の標識があります。",
+      "ex2": "Please sign your name here.",
+      "tr2": "ここに名前を署名してください。"
+    },
+    {
+      "id": "g-861-report",
+      "word": "report",
+      "meaning": "【名】報告、報告書 【動】(~を)報告する、知らせる",
+      "ex1": "I write a report about dogs.",
+      "tr1": "私は犬についての報告書を書きます。",
+      "ex2": "Please report to the teacher.",
+      "tr2": "先生に報告してください。"
+    },
+    {
+      "id": "g-862-menu",
+      "word": "menu",
+      "meaning": "メニュー、献立表",
+      "ex1": "May I see the menu, please?",
+      "tr1": "メニューを見せていただけますか。",
+      "ex2": "This restaurant has a big menu.",
+      "tr2": "このレストランには大きなメニューがあります。"
+    },
+    {
+      "id": "g-863-nervous",
+      "word": "nervous",
+      "meaning": "神経質な、緊張して、心配して",
+      "ex1": "I feel nervous before the test.",
+      "tr1": "私はテストの前に緊張します。",
+      "ex2": "Don't be nervous.",
+      "tr2": "緊張しないでください。"
+    },
+    {
+      "id": "g-864-lonely",
+      "word": "lonely",
+      "meaning": "さみしい、孤独な",
+      "ex1": "He feels lonely.",
+      "tr1": "彼はさみしく感じています。",
+      "ex2": "My grandmother feels lonely.",
+      "tr2": "祖母はさみしく感じています。"
+    },
+    {
+      "id": "g-865-alone",
+      "word": "alone",
+      "meaning": "【形】ただ1人で 【副】1人で、単独で",
+      "ex1": "She lives alone in Tokyo.",
+      "tr1": "彼女は東京で一人で暮らしています。",
+      "ex2": "Don't go out alone at night.",
+      "tr2": "夜に一人で出かけてはいけません。"
+    },
+    {
+      "id": "g-866-cover",
+      "word": "cover",
+      "meaning": "【名】本の表紙 【動】~をおおう、~にふたをする",
+      "ex1": "The cover of this book is beautiful.",
+      "tr1": "この本の表紙は美しいです。",
+      "ex2": "Cover the pot, please.",
+      "tr2": "鍋にふたをしてください。"
+    },
+    {
+      "id": "g-867-fill",
+      "word": "fill",
+      "meaning": "~を満たす、いっぱいにする",
+      "ex1": "Please fill the cup with water.",
+      "tr1": "コップを水でいっぱいにしてください。",
+      "ex2": "Fill the glass with milk.",
+      "tr2": "グラスを牛乳でいっぱいにしてください。"
+    },
+    {
+      "id": "g-868-cause",
+      "word": "cause",
+      "meaning": "【名】原因、理由 【動】~の原因となる、~を引き起こす",
+      "ex1": "Rain is the cause.",
+      "tr1": "雨が原因です。",
+      "ex2": "Rain can cause problems.",
+      "tr2": "雨は問題を引き起こすことがあります。"
+    },
+    {
+      "id": "g-869-hurt",
+      "word": "hurt",
+      "meaning": "~を傷つける、痛む",
+      "ex1": "My leg hurts.",
+      "tr1": "私の足が痛いです。",
+      "ex2": "Don't hurt your friends.",
+      "tr2": "友達を傷つけてはいけません。"
+    },
+    {
+      "id": "g-870-born",
+      "word": "born",
+      "meaning": "(be born)で生まれる",
+      "ex1": "Where were you born?",
+      "tr1": "あなたはどこで生まれましたか。",
+      "ex2": "I was born in Kawasaki.",
+      "tr2": "私は川崎で生まれました。"
+    },
+    {
+      "id": "g-871-disappointed",
+      "word": "disappointed",
+      "meaning": "がっかりした、失望した",
+      "ex1": "I am disappointed.",
+      "tr1": "私はがっかりしています。",
+      "ex2": "Mom looks disappointed.",
+      "tr2": "お母さんはがっかりした様子です。"
+    },
+    {
+      "id": "g-872-accident",
+      "word": "accident",
+      "meaning": "事故、偶然の出来事",
+      "ex1": "There is an accident near my school.",
+      "tr1": "私の学校の近くで事故があります。",
+      "ex2": "I'm sorry. It is an accident.",
+      "tr2": "ごめんなさい。それは偶然です。"
+    },
+    {
+      "id": "g-873-plant",
+      "word": "plant",
+      "meaning": "【名】植物、工場 【動】~を植える",
+      "ex1": "I water the plant every day.",
+      "tr1": "私は毎日その植物に水をやります。",
+      "ex2": "Let's plant a tree.",
+      "tr2": "木を植えましょう。"
+    },
+    {
+      "id": "g-874-wood",
+      "word": "wood",
+      "meaning": "木材、森",
+      "ex1": "This desk is wood.",
+      "tr1": "この机は木製です。",
+      "ex2": "I like to walk in the wood.",
+      "tr2": "私は森の中を歩くのが好きです。"
+    },
+    {
+      "id": "g-875-wooden",
+      "word": "wooden",
+      "meaning": "木製の",
+      "ex1": "This is a wooden box.",
+      "tr1": "これは木製の箱です。",
+      "ex2": "I have a wooden desk.",
+      "tr2": "私は木製の机を持っています。"
+    },
+    {
+      "id": "g-876-web",
+      "word": "web",
+      "meaning": "ウェブ、蜘蛛の巣",
+      "ex1": "A spider makes a web.",
+      "tr1": "クモが巣を作ります。",
+      "ex2": "I look for information on the web.",
+      "tr2": "私はウェブで情報を探します。"
+    },
+    {
+      "id": "g-877-site",
+      "word": "site",
+      "meaning": "用地、場所、サイト",
+      "ex1": "Please check our school site.",
+      "tr1": "私たちの学校のサイトを見てください。",
+      "ex2": "I visit the site every day.",
+      "tr2": "私は毎日そのサイトを見ます。"
+    },
+    {
+      "id": "g-878-step",
+      "word": "step",
+      "meaning": "歩み、一歩、階段",
+      "ex1": "Take one step at a time.",
+      "tr1": "一度に一歩ずつ進みましょう。",
+      "ex2": "This is my first step.",
+      "tr2": "これは私の第一歩です。"
+    },
+    {
+      "id": "g-879-have",
+      "word": "have",
+      "meaning": "持っている",
+      "ex1": "I have two brothers.",
+      "tr1": "私には兄弟が2人います。",
+      "ex2": "Let's have lunch together.",
+      "tr2": "いっしょに昼食を食べましょう。"
+    },
+    {
+      "id": "g-880-been",
+      "word": "been",
+      "meaning": "beの過去分詞",
+      "ex1": "I have been to Hokkaido.",
+      "tr1": "私は北海道に行ったことがあります。",
+      "ex2": "Have you been to Tokyo?",
+      "tr2": "あなたは東京に行ったことがありますか。"
+    },
+    {
+      "id": "g-881-since",
+      "word": "since",
+      "meaning": "【接】~してからずっと 【前】~以来",
+      "ex1": "Since it is cold, I wear a coat.",
+      "tr1": "寒いので、私はコートを着ます。",
+      "ex2": "Since it is rainy, we stay home.",
+      "tr2": "雨なので、私たちは家にいます。"
+    },
+    {
+      "id": "g-882-ever",
+      "word": "ever",
+      "meaning": "今までに、これまでに、かつて",
+      "ex1": "Do you ever eat natto?",
+      "tr1": "あなたはときどき納豆を食べますか。",
+      "ex2": "Do you ever read comics?",
+      "tr2": "あなたはときどき漫画を読みますか。"
+    },
+    {
+      "id": "g-883-twice",
+      "word": "twice",
+      "meaning": "2度、2回",
+      "ex1": "I go to the park twice a week.",
+      "tr1": "私は週に2回公園に行きます。",
+      "ex2": "I eat pizza twice a month.",
+      "tr2": "私は月に2回ピザを食べます。"
+    },
+    {
+      "id": "g-884-already",
+      "word": "already",
+      "meaning": "すでに、もう",
+      "ex1": "I am already at school.",
+      "tr1": "私はもう学校にいます。",
+      "ex2": "He is already here.",
+      "tr2": "彼はもうここにいます。"
+    },
+    {
+      "id": "g-885-yet",
+      "word": "yet",
+      "meaning": "まだ、もう",
+      "ex1": "Is lunch ready yet?",
+      "tr1": "昼食はもうできましたか。",
+      "ex2": "Is he here yet?",
+      "tr2": "彼はもうここにいますか。"
+    },
+    {
+      "id": "g-886-done",
+      "word": "done",
+      "meaning": "doの過去分詞",
+      "ex1": "My homework is done.",
+      "tr1": "私の宿題は終わっています。",
+      "ex2": "The work is done.",
+      "tr2": "仕事が終わりました。"
+    },
+    {
+      "id": "g-887-able",
+      "word": "able",
+      "meaning": "することができる",
+      "ex1": "She is able to swim.",
+      "tr1": "彼女は泳ぐことができます。",
+      "ex2": "Are you able to come on Sunday?",
+      "tr2": "日曜日に来ることはできますか。"
+    },
+    {
+      "id": "g-888-human",
+      "word": "human",
+      "meaning": "【名】人、人間 【形】人間の、人間的な",
+      "ex1": "A robot is not a human.",
+      "tr1": "ロボットは人間ではありません。",
+      "ex2": "Humans need water.",
+      "tr2": "人間は水が必要です。"
+    },
+    {
+      "id": "g-889-dead",
+      "word": "dead",
+      "meaning": "死んだ、死んでいる、枯れた",
+      "ex1": "The flowers are dead.",
+      "tr1": "その花は枯れています。",
+      "ex2": "The battery is dead.",
+      "tr2": "電池が切れています。"
+    },
+    {
+      "id": "g-890-death",
+      "word": "death",
+      "meaning": "死",
+      "ex1": "I am sad about his death.",
+      "tr1": "私は彼の死が悲しいです。",
+      "ex2": "Death is sad.",
+      "tr2": "死は悲しいものです。"
+    },
+    {
+      "id": "g-891-promise",
+      "word": "promise",
+      "meaning": "【名】約束 【動】(~を)約束する",
+      "ex1": "I make a promise to my mother.",
+      "tr1": "私は母と約束をします。",
+      "ex2": "I promise to help you.",
+      "tr2": "あなたを手伝うと約束します。"
+    },
+    {
+      "id": "g-892-continue",
+      "word": "continue",
+      "meaning": "~を続ける、続く",
+      "ex1": "Let's continue the game.",
+      "tr1": "試合を続けましょう。",
+      "ex2": "The rain continues all day.",
+      "tr2": "雨は一日中続きます。"
+    },
+    {
+      "id": "g-893-save",
+      "word": "save",
+      "meaning": "救う、蓄える",
+      "ex1": "The doctor wants to save the dog.",
+      "tr1": "医者はその犬を救いたいと思っています。",
+      "ex2": "I want to save money.",
+      "tr2": "私はお金をためたいです。"
+    },
+    {
+      "id": "g-894-surprised",
+      "word": "surprised",
+      "meaning": "驚いた、びっくりした",
+      "ex1": "I am surprised at the news.",
+      "tr1": "私はそのニュースに驚いています。",
+      "ex2": "Everyone is surprised.",
+      "tr2": "みんなが驚いています。"
+    },
+    {
+      "id": "g-895-surprising",
+      "word": "surprising",
+      "meaning": "驚くべき、意外な",
+      "ex1": "That is surprising news.",
+      "tr1": "それは驚くべきニュースです。",
+      "ex2": "It is surprising.",
+      "tr2": "それは驚くべきことです。"
+    },
+    {
+      "id": "g-896-dangerous",
+      "word": "dangerous",
+      "meaning": "危険な、危ない",
+      "ex1": "This river is dangerous.",
+      "tr1": "この川は危険です。",
+      "ex2": "It is dangerous to swim here.",
+      "tr2": "ここで泳ぐのは危険です。"
+    },
+    {
+      "id": "g-897-safe",
+      "word": "safe",
+      "meaning": "【名】金庫 【形】安全な、安心な",
+      "ex1": "Is this water safe to drink?",
+      "tr1": "この水は飲んでも安全ですか。",
+      "ex2": "Keep your money in the safe.",
+      "tr2": "お金を金庫に入れておいてください。"
+    },
+    {
+      "id": "g-898-possible",
+      "word": "possible",
+      "meaning": "可能な、ありうる",
+      "ex1": "Is it possible to go there by bus?",
+      "tr1": "そこへバスで行くことは可能ですか。",
+      "ex2": "Please come as soon as possible.",
+      "tr2": "できるだけ早く来てください。"
+    },
+    {
+      "id": "g-899-impossible",
+      "word": "impossible",
+      "meaning": "不可能な、ありえない",
+      "ex1": "It is impossible to finish this today.",
+      "tr1": "今日これを終わらせるのは不可能です。",
+      "ex2": "Nothing is impossible.",
+      "tr2": "不可能なことは何もありません。"
+    },
+    {
+      "id": "g-900-necessary",
+      "word": "necessary",
+      "meaning": "必要な、なくてはならない",
+      "ex1": "Water is necessary for life.",
+      "tr1": "水は生命に必要です。",
+      "ex2": "Is it necessary to go?",
+      "tr2": "行くことは必要ですか。"
+    },
+    {
+      "id": "g-901-effort",
+      "word": "effort",
+      "meaning": "努力",
+      "ex1": "I make an effort every day.",
+      "tr1": "私は毎日努力します。",
+      "ex2": "Effort is important.",
+      "tr2": "努力は大切です。"
+    },
+    {
+      "id": "g-902-boat",
+      "word": "boat",
+      "meaning": "ボート、小型の船",
+      "ex1": "We cross the lake by boat.",
+      "tr1": "私たちはボートで湖を渡ります。",
+      "ex2": "I see a small boat on the river.",
+      "tr2": "私は川に小さなボートを見ます。"
+    },
+    {
+      "id": "g-903-ship",
+      "word": "ship",
+      "meaning": "大型の船",
+      "ex1": "The ship leaves at noon.",
+      "tr1": "その船は正午に出ます。",
+      "ex2": "I want to take a ship to the island.",
+      "tr2": "私は船で島へ行きたいです。"
+    },
+    {
+      "id": "g-904-afraid",
+      "word": "afraid",
+      "meaning": "恐れて、こわがって、心配して",
+      "ex1": "Don't be afraid of making mistakes.",
+      "tr1": "まちがいをおそれてはいけません。",
+      "ex2": "I'm afraid I can't go.",
+      "tr2": "残念ながら行けないと思います。"
+    },
+    {
+      "id": "g-905-feeling",
+      "word": "feeling",
+      "meaning": "感情、気持ち、感覚",
+      "ex1": "I have a strange feeling.",
+      "tr1": "私は変な感じがします。",
+      "ex2": "Tell me your feeling.",
+      "tr2": "あなたの気持ちを教えてください。"
+    },
+    {
+      "id": "g-906-living",
+      "word": "living",
+      "meaning": "【名】生活、暮らし 【形】生きている",
+      "ex1": "My uncle makes a living as a farmer.",
+      "tr1": "おじは農家として生計を立てています。",
+      "ex2": "Is your grandfather living?",
+      "tr2": "あなたのおじいさんは生きていますか。"
+    },
+    {
+      "id": "g-907-beginning",
+      "word": "beginning",
+      "meaning": "初め、始まり",
+      "ex1": "It is the beginning of the year.",
+      "tr1": "それは年の始まりです。",
+      "ex2": "I like the beginning of this story.",
+      "tr2": "私はこの話の始まりが好きです。"
+    },
+    {
+      "id": "g-908-goal",
+      "word": "goal",
+      "meaning": "ゴール、目標",
+      "ex1": "My goal is to win the game.",
+      "tr1": "私の目標は試合に勝つことです。",
+      "ex2": "He makes a goal.",
+      "tr2": "彼はゴールを決めます。"
+    },
+    {
+      "id": "g-909-type",
+      "word": "type",
+      "meaning": "型、タイプ、種類",
+      "ex1": "What type of music do you like?",
+      "tr1": "あなたはどんな種類の音楽が好きですか。",
+      "ex2": "Please type your name here.",
+      "tr2": "ここに名前を入力してください。"
+    },
+    {
+      "id": "g-910-health",
+      "word": "health",
+      "meaning": "健康",
+      "ex1": "Health is more important than money.",
+      "tr1": "健康はお金より大切です。",
+      "ex2": "Breakfast is good for your health.",
+      "tr2": "朝食はあなたの健康に良いです。"
+    },
+    {
+      "id": "g-911-healthy",
+      "word": "healthy",
+      "meaning": "健康な、健康に良い",
+      "ex1": "I eat healthy food every day.",
+      "tr1": "私は毎日健康に良い食べ物を食べます。",
+      "ex2": "My grandfather is very healthy.",
+      "tr2": "祖父はとても健康です。"
+    },
+    {
+      "id": "g-912-reason",
+      "word": "reason",
+      "meaning": "理由、理性",
+      "ex1": "Tell me the reason why you are late.",
+      "tr1": "遅れた理由を教えてください。",
+      "ex2": "I have a good reason.",
+      "tr2": "私にはちゃんとした理由があります。"
+    },
+    {
+      "id": "g-913-machine",
+      "word": "machine",
+      "meaning": "機械",
+      "ex1": "This machine makes ice cream.",
+      "tr1": "この機械はアイスクリームを作ります。",
+      "ex2": "I have a new machine.",
+      "tr2": "私は新しい機械を持っています。"
+    },
+    {
+      "id": "g-914-tradition",
+      "word": "tradition",
+      "meaning": "伝統",
+      "ex1": "This festival is a tradition in our town.",
+      "tr1": "このお祭りは私たちの町の伝統です。",
+      "ex2": "We eat soba on New Year's Eve. It is a tradition.",
+      "tr2": "私たちは大みそかにそばを食べます。それは伝統です。"
+    },
+    {
+      "id": "g-915-traditional",
+      "word": "traditional",
+      "meaning": "伝統的な、伝統の",
+      "ex1": "I wear traditional clothes.",
+      "tr1": "私は伝統的な服を着ます。",
+      "ex2": "Sushi is a traditional Japanese food.",
+      "tr2": "すしは伝統的な日本の食べ物です。"
+    },
+    {
+      "id": "g-916-helpful",
+      "word": "helpful",
+      "meaning": "助けになる、役に立つ",
+      "ex1": "Your advice is very helpful.",
+      "tr1": "あなたのアドバイスはとても役に立ちます。",
+      "ex2": "This dictionary is helpful.",
+      "tr2": "この辞書は役に立ちます。"
+    },
+    {
+      "id": "g-917-burn",
+      "word": "burn",
+      "meaning": "燃える、焼ける、~を燃やす",
+      "ex1": "Paper burns.",
+      "tr1": "紙は燃えます。",
+      "ex2": "Don't burn your hand.",
+      "tr2": "手をやけどしないでください。"
+    },
+    {
+      "id": "g-918-lie",
+      "word": "lie",
+      "meaning": "【名】うそ 【動】横になる、横たわる、うそをつく",
+      "ex1": "I lie down for a while.",
+      "tr1": "私はしばらく横になります。",
+      "ex2": "Don't tell a lie.",
+      "tr2": "うそをついてはいけません。"
+    },
+    {
+      "id": "g-919-solve",
+      "word": "solve",
+      "meaning": "~を解く、解決する",
+      "ex1": "I can't solve this problem.",
+      "tr1": "私はこの問題が解けません。",
+      "ex2": "I can solve this problem.",
+      "tr2": "私はこの問題を解くことができます。"
+    },
+    {
+      "id": "g-920-agree",
+      "word": "agree",
+      "meaning": "同意する、賛成する",
+      "ex1": "I agree with you.",
+      "tr1": "私はあなたに賛成です。",
+      "ex2": "My friends agree with me.",
+      "tr2": "友達は私に賛成しています。"
+    },
+    {
+      "id": "g-921-disagree",
+      "word": "disagree",
+      "meaning": "意見が合わない、同意しない",
+      "ex1": "I disagree with your idea.",
+      "tr1": "私はあなたの考えには賛成できません。",
+      "ex2": "My brother and I sometimes disagree.",
+      "tr2": "兄と私はときどき意見が合いません。"
+    },
+    {
+      "id": "g-922-recycle",
+      "word": "recycle",
+      "meaning": "再生利用する、リサイクルする",
+      "ex1": "We recycle cans and bottles.",
+      "tr1": "私たちは缶やびんをリサイクルします。",
+      "ex2": "We recycle old paper.",
+      "tr2": "私たちは古い紙をリサイクルします。"
+    },
+    {
+      "id": "g-923-lady",
+      "word": "lady",
+      "meaning": "婦人、女の人",
+      "ex1": "That lady is my English teacher.",
+      "tr1": "あの女の人は私の英語の先生です。",
+      "ex2": "The lady is kind.",
+      "tr2": "その女の人は親切です。"
+    },
+    {
+      "id": "g-924-road",
+      "word": "road",
+      "meaning": "道路、道",
+      "ex1": "Be careful on this road.",
+      "tr1": "この道では気をつけてください。",
+      "ex2": "This road is very long.",
+      "tr2": "この道はとても長いです。"
+    },
+    {
+      "id": "g-925-nation",
+      "word": "nation",
+      "meaning": "国、国家",
+      "ex1": "Japan is an island nation.",
+      "tr1": "日本は島国です。",
+      "ex2": "Many nations play soccer.",
+      "tr2": "多くの国がサッカーをします。"
+    },
+    {
+      "id": "g-926-national",
+      "word": "national",
+      "meaning": "国家の、国民の",
+      "ex1": "This is a national park.",
+      "tr1": "ここは国立公園です。",
+      "ex2": "I go to a national park.",
+      "tr2": "私は国立公園に行きます。"
+    },
+    {
+      "id": "g-927-international",
+      "word": "international",
+      "meaning": "国際的な、国家間の",
+      "ex1": "I want to work for an international company.",
+      "tr1": "私は国際的な会社で働きたいです。",
+      "ex2": "This is an international school.",
+      "tr2": "ここは国際的な学校です。"
+    },
+    {
+      "id": "g-928-final",
+      "word": "final",
+      "meaning": "最終の、最後の",
+      "ex1": "This is the final question.",
+      "tr1": "これが最後の問題です。",
+      "ex2": "The final game is on Sunday.",
+      "tr2": "決勝戦は日曜日です。"
+    },
+    {
+      "id": "g-929-finally",
+      "word": "finally",
+      "meaning": "ついに、ようやく、最後に",
+      "ex1": "Finally, we arrive at the hotel.",
+      "tr1": "ついに、私たちはホテルに着きます。",
+      "ex2": "I finally finish my homework.",
+      "tr2": "私はようやく宿題を終えます。"
+    },
+    {
+      "id": "g-930-who",
+      "word": "who",
+      "meaning": "関係代名詞",
+      "ex1": "The girl who is singing is my sister.",
+      "tr1": "歌っている女の子は私の姉です。",
+      "ex2": "I know a boy who plays the piano.",
+      "tr2": "私はピアノをひく男の子を知っています。"
+    },
+    {
+      "id": "g-931-which",
+      "word": "which",
+      "meaning": "関係代名詞",
+      "ex1": "This is the book which I like.",
+      "tr1": "これは私が好きな本です。",
+      "ex2": "Kyoto has temples which are famous.",
+      "tr2": "京都には有名な寺があります。"
+    },
+    {
+      "id": "g-932-gather",
+      "word": "gather",
+      "meaning": "~を集める、集まる",
+      "ex1": "Please gather around the table.",
+      "tr1": "テーブルのまわりに集まってください。",
+      "ex2": "Many students gather in the gym.",
+      "tr2": "多くの生徒が体育館に集まります。"
+    },
+    {
+      "id": "g-933-lead",
+      "word": "lead",
+      "meaning": "~を導く、案内する、通じる、つながる",
+      "ex1": "This road leads to the beach.",
+      "tr1": "この道は海岸に通じています。",
+      "ex2": "The guide leads us to the mountain.",
+      "tr2": "ガイドが私たちを山まで案内します。"
+    },
+    {
+      "id": "g-934-shake",
+      "word": "shake",
+      "meaning": "~を振る、ゆさぶる、ゆれる",
+      "ex1": "Let's shake hands.",
+      "tr1": "握手をしましょう。",
+      "ex2": "Shake the bottle.",
+      "tr2": "びんを振ってください。"
+    },
+    {
+      "id": "g-935-shoot",
+      "word": "shoot",
+      "meaning": "~を撃つ",
+      "ex1": "The player shoots the ball.",
+      "tr1": "その選手はボールをシュートします。",
+      "ex2": "I shoot a basketball.",
+      "tr2": "私はバスケットボールをシュートします。"
+    },
+    {
+      "id": "g-936-support",
+      "word": "support",
+      "meaning": "【名】支持、支援、支え 【動】~を支持する、支援する",
+      "ex1": "Thank you for your support.",
+      "tr1": "ご支援ありがとうございます。",
+      "ex2": "My parents support me.",
+      "tr2": "両親は私を支えてくれます。"
+    },
+    {
+      "id": "g-937-exam",
+      "word": "exam",
+      "meaning": "試験",
+      "ex1": "I have an exam tomorrow.",
+      "tr1": "私は明日試験があります。",
+      "ex2": "I study hard for the exam.",
+      "tr2": "私は試験のために一生懸命勉強します。"
+    },
+    {
+      "id": "g-938-course",
+      "word": "course",
+      "meaning": "進路、コース",
+      "ex1": "Of course, you can use my pen.",
+      "tr1": "もちろん、私のペンを使っていいですよ。",
+      "ex2": "Of course, I can help you.",
+      "tr2": "もちろん、あなたを手伝えます。"
+    },
+    {
+      "id": "g-939-college",
+      "word": "college",
+      "meaning": "大学",
+      "ex1": "My sister goes to college in Osaka.",
+      "tr1": "姉は大阪の大学に通っています。",
+      "ex2": "I want to go to college.",
+      "tr2": "私は大学に行きたいです。"
+    },
+    {
+      "id": "g-940-elementary",
+      "word": "elementary",
+      "meaning": "初歩の、初等の",
+      "ex1": "My brother is an elementary school student.",
+      "tr1": "弟は小学生です。",
+      "ex2": "My sister is an elementary school student.",
+      "tr2": "妹は小学生です。"
+    },
+    {
+      "id": "g-941-seat",
+      "word": "seat",
+      "meaning": "席、座席",
+      "ex1": "Please take a seat.",
+      "tr1": "どうぞ席についてください。",
+      "ex2": "I give my seat to an old man.",
+      "tr2": "私はお年寄りの男性に席をゆずります。"
+    },
+    {
+      "id": "g-942-that",
+      "word": "that",
+      "meaning": "関係代名詞",
+      "ex1": "This is the bag that I like.",
+      "tr1": "これは私が好きなかばんです。",
+      "ex2": "I think that English is fun.",
+      "tr2": "英語は楽しいと私は思います。"
+    },
+    {
+      "id": "g-943-whom",
+      "word": "whom",
+      "meaning": "だれを",
+      "ex1": "He is the teacher whom I like.",
+      "tr1": "彼は私が好きな先生です。",
+      "ex2": "The girl whom I know is from France.",
+      "tr2": "私が知っている女の子はフランス出身です。"
+    },
+    {
+      "id": "g-944-share",
+      "word": "share",
+      "meaning": "~を分け合う、共有する",
+      "ex1": "I share a room with my brother.",
+      "tr1": "私は弟と部屋を共有しています。",
+      "ex2": "Let's share the pizza.",
+      "tr2": "そのピザを分け合いましょう。"
+    },
+    {
+      "id": "g-945-drop",
+      "word": "drop",
+      "meaning": "落ちる、~を落とす",
+      "ex1": "Don't drop the glass.",
+      "tr1": "グラスを落とさないでください。",
+      "ex2": "The temperature drops at night.",
+      "tr2": "夜は気温が下がります。"
+    },
+    {
+      "id": "g-946-musical",
+      "word": "musical",
+      "meaning": "【名】ミュージカル 【形】音楽の",
+      "ex1": "I see a musical in Tokyo.",
+      "tr1": "私は東京でミュージカルを見ます。",
+      "ex2": "My sister plays a musical instrument.",
+      "tr2": "姉は楽器を演奏します。"
+    },
+    {
+      "id": "g-947-musician",
+      "word": "musician",
+      "meaning": "音楽家",
+      "ex1": "My uncle is a famous musician.",
+      "tr1": "私のおじは有名な音楽家です。",
+      "ex2": "He is a good musician.",
+      "tr2": "彼は上手な音楽家です。"
+    },
+    {
+      "id": "g-948-natural",
+      "word": "natural",
+      "meaning": "自然の、当然の",
+      "ex1": "This is a natural lake.",
+      "tr1": "これは自然の湖です。",
+      "ex2": "It is natural to be nervous.",
+      "tr2": "緊張するのは当然です。"
+    },
+    {
+      "id": "g-949-nature",
+      "word": "nature",
+      "meaning": "自然、自然界、性質",
+      "ex1": "I love nature.",
+      "tr1": "私は自然が大好きです。",
+      "ex2": "I enjoy nature on weekends.",
+      "tr2": "私は週末に自然を楽しみます。"
+    },
+    {
+      "id": "g-950-order",
+      "word": "order",
+      "meaning": "【名】命令、注文 【動】~を命令する、~を注文する",
+      "ex1": "May I order now?",
+      "tr1": "今、注文してもいいですか。",
+      "ex2": "Put the cards in order.",
+      "tr2": "カードを順番に並べてください。"
+    },
+    {
+      "id": "g-951-produce",
+      "word": "produce",
+      "meaning": "【名】産物 【動】~を生産する",
+      "ex1": "Farms produce many kinds of food.",
+      "tr1": "農場はたくさんの種類の食べ物を生産します。",
+      "ex2": "This farm produces rice.",
+      "tr2": "この農場は米を生産します。"
+    },
+    {
+      "id": "g-952-product",
+      "word": "product",
+      "meaning": "製品、生産物",
+      "ex1": "This is a new product from Japan.",
+      "tr1": "これは日本の新しい製品です。",
+      "ex2": "This is a good product.",
+      "tr2": "これはよい製品です。"
+    },
+    {
+      "id": "g-953-matter",
+      "word": "matter",
+      "meaning": "【名】問題、事柄 【動】重要である、問題である",
+      "ex1": "What is the matter with you?",
+      "tr1": "どうかしたのですか。",
+      "ex2": "It doesn't matter.",
+      "tr2": "問題ではありません。"
+    },
+    {
+      "id": "g-954-wonder",
+      "word": "wonder",
+      "meaning": "【名】驚き、不思議 【動】~かしらと思う、不思議に思う",
+      "ex1": "I wonder where she is.",
+      "tr1": "彼女はどこにいるのかしら。",
+      "ex2": "I wonder what time it is.",
+      "tr2": "今何時かしら。"
+    },
+    {
+      "id": "g-955-line",
+      "word": "line",
+      "meaning": "線、路線、列",
+      "ex1": "Draw a line under the word.",
+      "tr1": "その単語の下に線を引いてください。",
+      "ex2": "Which line goes to Ueno?",
+      "tr2": "どの路線が上野に行きますか。"
+    },
+    {
+      "id": "g-956-age",
+      "word": "age",
+      "meaning": "年齢、年代",
+      "ex1": "What is your age?",
+      "tr1": "あなたの年齢はいくつですか。",
+      "ex2": "My age is thirteen.",
+      "tr2": "私の年齢は13歳です。"
+    },
+    {
+      "id": "g-957-island",
+      "word": "island",
+      "meaning": "島",
+      "ex1": "We visit a small island.",
+      "tr1": "私たちは小さな島を訪れます。",
+      "ex2": "Okinawa is an island.",
+      "tr2": "沖縄は島です。"
+    },
+    {
+      "id": "g-958-picnic",
+      "word": "picnic",
+      "meaning": "ピクニック、遠足",
+      "ex1": "Let's go on a picnic.",
+      "tr1": "ピクニックに行きましょう。",
+      "ex2": "We have a picnic in the park.",
+      "tr2": "私たちは公園でピクニックをします。"
+    },
+    {
+      "id": "g-959-lunchtime",
+      "word": "lunchtime",
+      "meaning": "昼食時間",
+      "ex1": "It is almost lunchtime.",
+      "tr1": "もうすぐ昼食時間です。",
+      "ex2": "At lunchtime, we eat in the classroom.",
+      "tr2": "昼食時間には、教室で食べます。"
+    },
+    {
+      "id": "g-960-communicate",
+      "word": "communicate",
+      "meaning": "伝達する、伝え合う",
+      "ex1": "We communicate by e-mail.",
+      "tr1": "私たちはメールで連絡を取り合います。",
+      "ex2": "English helps us communicate.",
+      "tr2": "英語は私たちが意思を伝え合うのに役立ちます。"
+    },
+    {
+      "id": "g-961-communication",
+      "word": "communication",
+      "meaning": "コミュニケーション、意思伝達",
+      "ex1": "Communication is important.",
+      "tr1": "コミュニケーションは大切です。",
+      "ex2": "Good communication is important.",
+      "tr2": "よいコミュニケーションは大切です。"
+    },
+    {
+      "id": "g-962-air",
+      "word": "air",
+      "meaning": "空気、空中、空",
+      "ex1": "I like the cool air in the morning.",
+      "tr1": "私は朝の涼しい空気が好きです。",
+      "ex2": "The air is clean here.",
+      "tr2": "ここは空気がきれいです。"
+    },
+    {
+      "id": "g-963-airport",
+      "word": "airport",
+      "meaning": "空港",
+      "ex1": "We arrive at the airport early.",
+      "tr1": "私たちは早めに空港に着きます。",
+      "ex2": "Is there a bus to the airport?",
+      "tr2": "空港へのバスはありますか。"
+    },
+    {
+      "id": "g-964-airplane",
+      "word": "airplane",
+      "meaning": "飛行機",
+      "ex1": "I want to ride an airplane.",
+      "tr1": "私は飛行機に乗りたいです。",
+      "ex2": "The airplane leaves at ten.",
+      "tr2": "飛行機は10時に出発します。"
+    },
+    {
+      "id": "g-965-though",
+      "word": "though",
+      "meaning": "~だけれども",
+      "ex1": "I enjoy the trip though it rains.",
+      "tr1": "雨が降るけれども、私は旅行を楽しみます。",
+      "ex2": "Though he is tired, he practices soccer.",
+      "tr2": "彼は疲れているけれども、サッカーを練習します。"
+    },
+    {
+      "id": "g-966-although",
+      "word": "although",
+      "meaning": "~だけれども",
+      "ex1": "Although I am tired, I help her.",
+      "tr1": "私は疲れているけれども、彼女を手伝います。",
+      "ex2": "I go to school although I have a cold.",
+      "tr2": "私はかぜをひいているけれども、学校に行きます。"
+    },
+    {
+      "id": "g-967-rise",
+      "word": "rise",
+      "meaning": "【名】上昇、増加 【動】上がる、昇る、起きる",
+      "ex1": "The sun will rise soon.",
+      "tr1": "まもなく太陽が昇ります。",
+      "ex2": "The price rises next month.",
+      "tr2": "価格は来月上がります。"
+    },
+    {
+      "id": "g-968-set",
+      "word": "set",
+      "meaning": "【名】一組 【動】~を置く、セットする、沈む",
+      "ex1": "Set the alarm clock for six.",
+      "tr1": "目覚まし時計を6時にセットしてください。",
+      "ex2": "I have a set of colored pencils.",
+      "tr2": "私は色えんぴつを一組持っています。"
+    },
+    {
+      "id": "g-969-belong",
+      "word": "belong",
+      "meaning": "~のものである、~に所属している",
+      "ex1": "I belong to the brass band.",
+      "tr1": "私は吹奏楽部に所属しています。",
+      "ex2": "Does this bag belong to you?",
+      "tr2": "このかばんはあなたのものですか。"
+    },
+    {
+      "id": "g-970-above",
+      "word": "above",
+      "meaning": "【接】上に 【前】~の上に",
+      "ex1": "The moon is above the mountain.",
+      "tr1": "月は山の上にあります。",
+      "ex2": "Read the sentence above.",
+      "tr2": "上の文を読んでください。"
+    },
+    {
+      "id": "g-971-below",
+      "word": "below",
+      "meaning": "【接】下に 【前】~の下に",
+      "ex1": "Write your name below the line.",
+      "tr1": "線の下に名前を書いてください。",
+      "ex2": "The temperature is below zero.",
+      "tr2": "気温は氷点下です。"
+    },
+    {
+      "id": "g-972-across",
+      "word": "across",
+      "meaning": "~を横切って、~の向こう側に",
+      "ex1": "He swims across the river.",
+      "tr1": "彼は川を泳いで渡ります。",
+      "ex2": "The bank is across the street.",
+      "tr2": "銀行は通りの向こう側にあります。"
+    },
+    {
+      "id": "g-973-beside",
+      "word": "beside",
+      "meaning": "~のそばに",
+      "ex1": "Sit beside me.",
+      "tr1": "私のそばに座ってください。",
+      "ex2": "My house is beside a small park.",
+      "tr2": "私の家は小さな公園のそばにあります。"
+    },
+    {
+      "id": "g-974-against",
+      "word": "against",
+      "meaning": "~に反対して、~に対抗して",
+      "ex1": "Our team plays against a strong team.",
+      "tr1": "私たちのチームは強いチームと対戦します。",
+      "ex2": "Many people are against the plan.",
+      "tr2": "多くの人がその計画に反対しています。"
+    },
+    {
+      "id": "g-975-per",
+      "word": "per",
+      "meaning": "~につき",
+      "ex1": "I read two books per month.",
+      "tr1": "私は1か月につき2冊の本を読みます。",
+      "ex2": "The train runs 100 kilometers per hour.",
+      "tr2": "その電車は時速100キロで走ります。"
+    },
+    {
+      "id": "g-976-percent",
+      "word": "percent",
+      "meaning": "パーセント",
+      "ex1": "Ninety percent of us have a smartphone.",
+      "tr1": "私たちの90パーセントがスマートフォンを持っています。",
+      "ex2": "Ten percent of the students walk to school.",
+      "tr2": "生徒の10パーセントが歩いて通学します。"
+    },
+    {
+      "id": "g-977-million",
+      "word": "million",
+      "meaning": "【名】100万 【形】100万の",
+      "ex1": "One million people visit this temple every year.",
+      "tr1": "毎年100万人がこの寺を訪れます。",
+      "ex2": "Tokyo has about fourteen million people.",
+      "tr2": "東京には約1400万人の人々が住んでいます。"
+    },
+    {
+      "id": "g-978-middle",
+      "word": "middle",
+      "meaning": "【名】真ん中 【形】真ん中の",
+      "ex1": "Sit in the middle of the bench.",
+      "tr1": "ベンチの真ん中に座ってください。",
+      "ex2": "I wake up in the middle of the night.",
+      "tr2": "私は真夜中に目が覚めます。"
+    },
+    {
+      "id": "g-979-bit",
+      "word": "bit",
+      "meaning": "少し、少量",
+      "ex1": "I am a bit tired.",
+      "tr1": "私は少し疲れています。",
+      "ex2": "Speak a bit more slowly, please.",
+      "tr2": "もう少しゆっくり話してください。"
+    },
+    {
+      "id": "g-980-push",
+      "word": "push",
+      "meaning": "押す",
+      "ex1": "Push the door, please.",
+      "tr1": "ドアを押してください。",
+      "ex2": "Don't push people on the train.",
+      "tr2": "電車で人を押してはいけません。"
+    },
+    {
+      "id": "g-981-pull",
+      "word": "pull",
+      "meaning": "引く、引っ張る",
+      "ex1": "Pull the rope hard.",
+      "tr1": "ロープを強く引いてください。",
+      "ex2": "The dog pulls the boy.",
+      "tr2": "犬は男の子を引っ張ります。"
+    },
+    {
+      "id": "g-982-enter",
+      "word": "enter",
+      "meaning": "~に入る、~に入学する",
+      "ex1": "Please enter the room.",
+      "tr1": "部屋に入ってください。",
+      "ex2": "My sister enters high school next April.",
+      "tr2": "姉は来年の4月に高校に入学します。"
+    },
+    {
+      "id": "g-983-entrance",
+      "word": "entrance",
+      "meaning": "入口、入学",
+      "ex1": "Meet me at the entrance.",
+      "tr1": "入口で会いましょう。",
+      "ex2": "My brother studies for the entrance exam.",
+      "tr2": "兄は入学試験のために勉強します。"
+    },
+    {
+      "id": "g-984-business",
+      "word": "business",
+      "meaning": "商売、仕事",
+      "ex1": "My father runs a small business.",
+      "tr1": "父は小さな商売を営んでいます。",
+      "ex2": "My uncle has a small business.",
+      "tr2": "おじは小さな商売をしています。"
+    },
+    {
+      "id": "g-985-company",
+      "word": "company",
+      "meaning": "会社、仲間",
+      "ex1": "My father works for a big company.",
+      "tr1": "父は大きな会社で働いています。",
+      "ex2": "Thank you for your company.",
+      "tr2": "ごいっしょしてくれてありがとう。"
+    },
+    {
+      "id": "g-986-passport",
+      "word": "passport",
+      "meaning": "パスポート、旅券",
+      "ex1": "Show your passport, please.",
+      "tr1": "パスポートを見せてください。",
+      "ex2": "Don't forget your passport.",
+      "tr2": "パスポートを忘れないでください。"
+    },
+    {
+      "id": "g-987-tourist",
+      "word": "tourist",
+      "meaning": "観光客、旅行者",
+      "ex1": "The tourist asks me for help.",
+      "tr1": "その観光客は私に助けを求めます。",
+      "ex2": "A tourist asks me the way.",
+      "tr2": "観光客が私に道をたずねます。"
+    },
+    {
+      "id": "g-988-visitor",
+      "word": "visitor",
+      "meaning": "訪問者、来客",
+      "ex1": "We have a visitor today.",
+      "tr1": "今日は来客があります。",
+      "ex2": "The visitor takes many pictures.",
+      "tr2": "その訪問者はたくさん写真をとります。"
+    },
+    {
+      "id": "g-989-exchange",
+      "word": "exchange",
+      "meaning": "【名】交換 【動】~を交換する",
+      "ex1": "Let's exchange e-mail addresses.",
+      "tr1": "メールアドレスを交換しましょう。",
+      "ex2": "I exchange this shirt for a bigger one.",
+      "tr2": "私はこのシャツをもっと大きいものと交換します。"
+    },
+    {
+      "id": "g-990-host",
+      "word": "host",
+      "meaning": "【名】主人 【動】主催する、開催する",
+      "ex1": "My host family is very kind.",
+      "tr1": "私のホストファミリーはとても親切です。",
+      "ex2": "My host father is kind.",
+      "tr2": "ホストファザーは親切です。"
+    },
+    {
+      "id": "g-991-homestay",
+      "word": "homestay",
+      "meaning": "ホームステイ",
+      "ex1": "I want to try a homestay.",
+      "tr1": "私はホームステイを経験してみたいです。",
+      "ex2": "I like my homestay family.",
+      "tr2": "私はホームステイ先の家族が好きです。"
+    },
+    {
+      "id": "g-992-hometown",
+      "word": "hometown",
+      "meaning": "故郷",
+      "ex1": "I love my hometown.",
+      "tr1": "私は故郷が大好きです。",
+      "ex2": "My hometown is famous for apples.",
+      "tr2": "私の故郷はりんごで有名です。"
+    },
+    {
+      "id": "g-993-prepare",
+      "word": "prepare",
+      "meaning": "~の準備をする、準備する",
+      "ex1": "We prepare for the speech contest.",
+      "tr1": "私たちはスピーチコンテストの準備をします。",
+      "ex2": "My mother prepares lunch every morning.",
+      "tr2": "母は毎朝昼食を準備します。"
+    },
+    {
+      "id": "g-994-express",
+      "word": "express",
+      "meaning": "【動】~を表現する 【形】急行の",
+      "ex1": "It is hard to express my feelings in English.",
+      "tr1": "自分の気持ちを英語で表現するのは難しいです。",
+      "ex2": "Take the express train.",
+      "tr2": "急行電車に乗ってください。"
+    },
+    {
+      "id": "g-995-expression",
+      "word": "expression",
+      "meaning": "表現、表情",
+      "ex1": "What does this expression mean?",
+      "tr1": "この表現はどういう意味ですか。",
+      "ex2": "I see a happy expression on her face.",
+      "tr2": "私は彼女の顔にうれしそうな表情を見ます。"
+    },
+    {
+      "id": "g-996-conversation",
+      "word": "conversation",
+      "meaning": "会話",
+      "ex1": "We have a long conversation.",
+      "tr1": "私たちは長い会話をします。",
+      "ex2": "I practice English conversation every night.",
+      "tr2": "私は毎晩英会話を練習します。"
+    },
+    {
+      "id": "g-997-discussion",
+      "word": "discussion",
+      "meaning": "議論、討議",
+      "ex1": "We have a good discussion.",
+      "tr1": "私たちはよい議論をします。",
+      "ex2": "We have a long discussion in class.",
+      "tr2": "私たちは授業で長い話し合いをします。"
+    },
+    {
+      "id": "g-998-interview",
+      "word": "interview",
+      "meaning": "【名】インタビュー、面接 【動】~にインタビューする",
+      "ex1": "I watch an interview with a musician.",
+      "tr1": "私は音楽家へのインタビューを見ます。",
+      "ex2": "We interview people in our town.",
+      "tr2": "私たちは町の人々にインタビューします。"
+    },
+    {
+      "id": "g-999-meaning",
+      "word": "meaning",
+      "meaning": "意味",
+      "ex1": "What is the meaning of this word?",
+      "tr1": "この単語の意味は何ですか。",
+      "ex2": "I look up the meaning in a dictionary.",
+      "tr2": "私は辞書で意味を調べます。"
+    },
+    {
+      "id": "g-1000-opinion",
+      "word": "opinion",
+      "meaning": "意見、考え",
+      "ex1": "In my opinion, this plan is good.",
+      "tr1": "私の意見では、この計画はよいです。",
+      "ex2": "What is your opinion?",
+      "tr2": "あなたの意見は何ですか。"
+    },
+    {
+      "id": "g-1001-voice",
+      "word": "voice",
+      "meaning": "声",
+      "ex1": "She has a beautiful voice.",
+      "tr1": "彼女は美しい声をしています。",
+      "ex2": "Please speak in a loud voice.",
+      "tr2": "大きな声で話してください。"
+    },
+    {
+      "id": "g-1002-purpose",
+      "word": "purpose",
+      "meaning": "目的、意図",
+      "ex1": "What is the purpose of your visit?",
+      "tr1": "あなたの訪問の目的は何ですか。",
+      "ex2": "What is the purpose of this club?",
+      "tr2": "このクラブの目的は何ですか。"
+    },
+    {
+      "id": "g-1003-result",
+      "word": "result",
+      "meaning": "結果、成績",
+      "ex1": "The result of the test is good.",
+      "tr1": "テストの結果はよいです。",
+      "ex2": "I want a good result.",
+      "tr2": "私はよい結果がほしいです。"
+    },
+    {
+      "id": "g-1004-case",
+      "word": "case",
+      "meaning": "場合、事例、ケース、箱",
+      "ex1": "Please put the pen in the case.",
+      "tr1": "ペンをケースに入れてください。",
+      "ex2": "In that case, let's go.",
+      "tr2": "その場合は、行きましょう。"
+    },
+    {
+      "id": "g-1005-past",
+      "word": "past",
+      "meaning": "【名】過去 【形】過去の 【前】~を過ぎて",
+      "ex1": "I learn about the past in history class.",
+      "tr1": "私は歴史の授業で過去について学びます。",
+      "ex2": "The bus runs past our school.",
+      "tr2": "バスは私たちの学校の前を通り過ぎます。"
+    },
+    {
+      "id": "g-1006-fight",
+      "word": "fight",
+      "meaning": "【名】戦い 【動】戦う",
+      "ex1": "The two boys fight.",
+      "tr1": "その2人の男の子はけんかをしています。",
+      "ex2": "Don't fight with your brother.",
+      "tr2": "弟(兄)とけんかしないでください。"
+    },
+    {
+      "id": "g-1007-war",
+      "word": "war",
+      "meaning": "戦争",
+      "ex1": "My grandfather talks about the war.",
+      "tr1": "祖父は戦争について話します。",
+      "ex2": "War is sad.",
+      "tr2": "戦争は悲しいものです。"
+    },
+    {
+      "id": "g-1008-arm",
+      "word": "arm",
+      "meaning": "腕",
+      "ex1": "My arm hurts.",
+      "tr1": "私は腕が痛いです。",
+      "ex2": "She has a big bag under her arm.",
+      "tr2": "彼女は腕の下に大きなかばんを抱えています。"
+    },
+    {
+      "id": "g-1009-neck",
+      "word": "neck",
+      "meaning": "首",
+      "ex1": "A giraffe has a long neck.",
+      "tr1": "キリンは長い首をしています。",
+      "ex2": "I wear a scarf around my neck.",
+      "tr2": "私は首にマフラーを巻きます。"
+    },
+    {
+      "id": "g-1010-shoulder",
+      "word": "shoulder",
+      "meaning": "肩",
+      "ex1": "My shoulder hurts.",
+      "tr1": "私は肩が痛いです。",
+      "ex2": "She puts her hand on my shoulder.",
+      "tr2": "彼女は私の肩に手を置きます。"
+    },
+    {
+      "id": "g-1011-finger",
+      "word": "finger",
+      "meaning": "指",
+      "ex1": "I have ten fingers.",
+      "tr1": "私には10本の指があります。",
+      "ex2": "He has a gold ring on his finger.",
+      "tr2": "彼は指に金の指輪をしています。"
+    },
+    {
+      "id": "g-1012-headache",
+      "word": "headache",
+      "meaning": "頭痛",
+      "ex1": "I have a headache.",
+      "tr1": "私は頭痛がします。",
+      "ex2": "Do you have a headache?",
+      "tr2": "頭痛がしますか。"
+    },
+    {
+      "id": "g-1013-memory",
+      "word": "memory",
+      "meaning": "記憶、思い出",
+      "ex1": "This photo is a happy memory.",
+      "tr1": "この写真は楽しい思い出です。",
+      "ex2": "My grandmother has a good memory.",
+      "tr2": "祖母は記憶力がいいです。"
+    },
+    {
+      "id": "g-1014-tear",
+      "word": "tear",
+      "meaning": "【名】涙 【動】~を裂く",
+      "ex1": "A tear runs down her face.",
+      "tr1": "涙が彼女の顔を流れます。",
+      "ex2": "Don't tear the paper.",
+      "tr2": "紙を破かないでください。"
+    },
+    {
+      "id": "g-1015-attention",
+      "word": "attention",
+      "meaning": "注意、注目",
+      "ex1": "Please pay attention to the teacher.",
+      "tr1": "先生に注意を向けてください。",
+      "ex2": "Pay attention to me.",
+      "tr2": "私に注目してください。"
+    },
+    {
+      "id": "g-1016-wind",
+      "word": "wind",
+      "meaning": "風",
+      "ex1": "The wind is strong today.",
+      "tr1": "今日は風が強いです。",
+      "ex2": "A cold wind blows today.",
+      "tr2": "今日は冷たい風が吹いています。"
+    },
+    {
+      "id": "g-1017-windy",
+      "word": "windy",
+      "meaning": "風の強い、風の吹く",
+      "ex1": "It is windy today.",
+      "tr1": "今日は風が強いです。",
+      "ex2": "It is too windy to play tennis.",
+      "tr2": "風が強すぎてテニスができません。"
+    },
+    {
+      "id": "g-1018-low",
+      "word": "low",
+      "meaning": "【形】低い、安い 【副】低く",
+      "ex1": "The table is too low.",
+      "tr1": "そのテーブルは低すぎます。",
+      "ex2": "This shop sells bags at low prices.",
+      "tr2": "この店は安い値段でかばんを売っています。"
+    },
+    {
+      "id": "g-1019-bowl",
+      "word": "bowl",
+      "meaning": "はち、わん、ボウル",
+      "ex1": "I eat a bowl of rice.",
+      "tr1": "私はご飯を1杯食べます。",
+      "ex2": "Put some fruit in the bowl.",
+      "tr2": "ボウルに果物を入れてください。"
+    },
+    {
+      "id": "g-1020-peach",
+      "word": "peach",
+      "meaning": "桃",
+      "ex1": "This peach is very sweet.",
+      "tr1": "この桃はとても甘いです。",
+      "ex2": "I like peaches.",
+      "tr2": "私は桃が好きです。"
+    },
+    {
+      "id": "g-1021-pie",
+      "word": "pie",
+      "meaning": "パイ",
+      "ex1": "My mother makes an apple pie.",
+      "tr1": "母はアップルパイを作ります。",
+      "ex2": "Do you want a piece of pie?",
+      "tr2": "パイを1切れほしいですか。"
+    },
+    {
+      "id": "g-1022-sweet",
+      "word": "sweet",
+      "meaning": "甘い",
+      "ex1": "This cake is very sweet.",
+      "tr1": "このケーキはとても甘いです。",
+      "ex2": "I like sweet food.",
+      "tr2": "私は甘い食べ物が好きです。"
+    },
+    {
+      "id": "g-1023-salt",
+      "word": "salt",
+      "meaning": "塩",
+      "ex1": "Please pass the salt.",
+      "tr1": "塩を取ってください。",
+      "ex2": "Don't use too much salt.",
+      "tr2": "塩を使いすぎないでください。"
+    },
+    {
+      "id": "g-1024-wine",
+      "word": "wine",
+      "meaning": "ワイン",
+      "ex1": "My father likes red wine.",
+      "tr1": "父は赤ワインが好きです。",
+      "ex2": "Many people in France drink wine.",
+      "tr2": "フランスでは多くの人がワインを飲みます。"
+    },
+    {
+      "id": "g-1025-butter",
+      "word": "butter",
+      "meaning": "バター",
+      "ex1": "I put butter on my bread.",
+      "tr1": "私はパンにバターをぬります。",
+      "ex2": "We need milk and butter.",
+      "tr2": "私たちは牛乳とバターが必要です。"
+    },
+    {
+      "id": "g-1026-candy",
+      "word": "candy",
+      "meaning": "キャンディー",
+      "ex1": "She gives me some candy.",
+      "tr1": "彼女は私にキャンディーをくれます。",
+      "ex2": "Too much candy is bad.",
+      "tr2": "キャンディーの食べすぎはよくありません。"
+    },
+    {
+      "id": "g-1027-sugar",
+      "word": "sugar",
+      "meaning": "砂糖",
+      "ex1": "Do you want sugar in your tea?",
+      "tr1": "紅茶に砂糖を入れますか。",
+      "ex2": "This cookie has too much sugar.",
+      "tr2": "このクッキーは砂糖が多すぎます。"
+    },
+    {
+      "id": "g-1028-wide",
+      "word": "wide",
+      "meaning": "幅が広い",
+      "ex1": "The river is very wide.",
+      "tr1": "その川はとても幅が広いです。",
+      "ex2": "This street is wide.",
+      "tr2": "この通りは幅が広いです。"
+    },
+    {
+      "id": "g-1029-nobody",
+      "word": "nobody",
+      "meaning": "だれも~ない",
+      "ex1": "Nobody knows the answer.",
+      "tr1": "だれも答えを知りません。",
+      "ex2": "Nobody is in the room.",
+      "tr2": "部屋にはだれもいません。"
+    },
+    {
+      "id": "g-1030-none",
+      "word": "none",
+      "meaning": "~の何も...でない",
+      "ex1": "None of my friends are here.",
+      "tr1": "友達はだれもここにいません。",
+      "ex2": "I want milk, but there is none.",
+      "tr2": "牛乳がほしいのですが、何もありません。"
+    },
+    {
+      "id": "g-1031-hey",
+      "word": "hey",
+      "meaning": "やあ、ちょっと",
+      "ex1": "Hey, wait for me!",
+      "tr1": "ちょっと、待ってよ。",
+      "ex2": "Hey, Ken, look at that bird!",
+      "tr2": "ねえ、ケン、あの鳥を見て。"
+    },
+    {
+      "id": "g-1032-drum",
+      "word": "drum",
+      "meaning": "ドラム、太鼓",
+      "ex1": "My brother plays the drum.",
+      "tr1": "兄はドラムをたたきます。",
+      "ex2": "I like the sound of the drum.",
+      "tr2": "私は太鼓の音が好きです。"
+    },
+    {
+      "id": "g-1033-band",
+      "word": "band",
+      "meaning": "楽団、バンド、ひも、帯",
+      "ex1": "I am in the school band.",
+      "tr1": "私は学校のバンドに入っています。",
+      "ex2": "She ties her hair with a red band.",
+      "tr2": "彼女は赤いひもで髪を結びます。"
+    },
+    {
+      "id": "g-1034-theater",
+      "word": "theater",
+      "meaning": "劇場、映画館",
+      "ex1": "Let's go to the theater.",
+      "tr1": "劇場に行きましょう。",
+      "ex2": "We see a movie at the theater.",
+      "tr2": "私たちは映画館で映画を見ます。"
+    },
+    {
+      "id": "g-1035-stage",
+      "word": "stage",
+      "meaning": "舞台、ステージ",
+      "ex1": "He stands on the stage.",
+      "tr1": "彼は舞台の上に立ちます。",
+      "ex2": "The students sing on the stage.",
+      "tr2": "生徒たちは舞台で歌います。"
+    },
+    {
+      "id": "g-1036-perform",
+      "word": "perform",
+      "meaning": "(~を)上演する、~を行う",
+      "ex1": "They perform tomorrow.",
+      "tr1": "彼らは明日、上演します。",
+      "ex2": "Our class performs a play.",
+      "tr2": "私たちのクラスは劇を上演します。"
+    },
+    {
+      "id": "g-1037-performer",
+      "word": "performer",
+      "meaning": "上演者",
+      "ex1": "He is a great performer.",
+      "tr1": "彼はすばらしい演者です。",
+      "ex2": "The performer makes children laugh.",
+      "tr2": "その演者は子どもたちを笑わせます。"
+    },
+    {
+      "id": "g-1038-performance",
+      "word": "performance",
+      "meaning": "上演、演奏、実行",
+      "ex1": "The performance is wonderful.",
+      "tr1": "その上演はすばらしいです。",
+      "ex2": "I like the performance.",
+      "tr2": "私はその演奏が好きです。"
+    },
+    {
+      "id": "g-1039-instrument",
+      "word": "instrument",
+      "meaning": "器具、楽器",
+      "ex1": "What instrument do you play?",
+      "tr1": "あなたは何の楽器を演奏しますか。",
+      "ex2": "The piano is my favorite instrument.",
+      "tr2": "ピアノは私のお気に入りの楽器です。"
+    },
+    {
+      "id": "g-1040-match",
+      "word": "match",
+      "meaning": "試合、マッチ",
+      "ex1": "Our team has a match today.",
+      "tr1": "私たちのチームは今日試合があります。",
+      "ex2": "Do you have a match?",
+      "tr2": "マッチを持っていますか。"
+    },
+    {
+      "id": "g-1041-professional",
+      "word": "professional",
+      "meaning": "【名】プロ 【形】プロの、専門職の",
+      "ex1": "He is a professional baseball player.",
+      "tr1": "彼はプロの野球選手です。",
+      "ex2": "She wants to be a professional singer.",
+      "tr2": "彼女はプロの歌手になりたいと思っています。"
+    },
+    {
+      "id": "g-1042-medicine",
+      "word": "medicine",
+      "meaning": "薬、医学",
+      "ex1": "Take this medicine after meals.",
+      "tr1": "この薬は食後に飲んでください。",
+      "ex2": "I want to study medicine.",
+      "tr2": "私は医学を学びたいです。"
+    },
+    {
+      "id": "g-1043-medical",
+      "word": "medical",
+      "meaning": "医学の、医療の",
+      "ex1": "She works at a medical center.",
+      "tr1": "彼女は医療センターで働いています。",
+      "ex2": "She works at a medical center.",
+      "tr2": "彼女は医療センターで働いています。"
+    },
+    {
+      "id": "g-1044-simple",
+      "word": "simple",
+      "meaning": "簡単な、単純な",
+      "ex1": "This question is simple.",
+      "tr1": "この問題は簡単です。",
+      "ex2": "The rule is simple.",
+      "tr2": "そのルールは簡単です。"
+    },
+    {
+      "id": "g-1045-tiger",
+      "word": "tiger",
+      "meaning": "トラ",
+      "ex1": "The tiger is a big cat.",
+      "tr1": "トラは大きなネコ科の動物です。",
+      "ex2": "I see a tiger at the zoo.",
+      "tr2": "私は動物園でトラを見ます。"
+    },
+    {
+      "id": "g-1046-horse",
+      "word": "horse",
+      "meaning": "馬",
+      "ex1": "I ride a horse.",
+      "tr1": "私は馬に乗ります。",
+      "ex2": "The horse runs in the field.",
+      "tr2": "馬は野原を走ります。"
+    },
+    {
+      "id": "g-1047-crane",
+      "word": "crane",
+      "meaning": "鶴",
+      "ex1": "A crane is flying in the sky.",
+      "tr1": "鶴が空を飛んでいます。",
+      "ex2": "I make a paper crane.",
+      "tr2": "私は折り鶴を作ります。"
+    },
+    {
+      "id": "g-1048-vet",
+      "word": "vet",
+      "meaning": "獣医",
+      "ex1": "I want to be a vet.",
+      "tr1": "私は獣医になりたいです。",
+      "ex2": "I take my dog to the vet.",
+      "tr2": "私は犬を獣医のところへ連れて行きます。"
+    },
+    {
+      "id": "g-1049-author",
+      "word": "author",
+      "meaning": "著者、作家",
+      "ex1": "Who is the author of this book?",
+      "tr1": "この本の著者はだれですか。",
+      "ex2": "The author lives in England.",
+      "tr2": "その作者はイギリスに住んでいます。"
+    },
+    {
+      "id": "g-1050-character",
+      "word": "character",
+      "meaning": "登場人物、性格、人格",
+      "ex1": "She is the main character in the story.",
+      "tr1": "彼女は物語の主人公(主要な登場人物)です。",
+      "ex2": "My brother has a kind character.",
+      "tr2": "兄は優しい性格です。"
+    },
+    {
+      "id": "g-1051-action",
+      "word": "action",
+      "meaning": "行動、行為",
+      "ex1": "His action surprises everyone.",
+      "tr1": "彼の行動はみんなを驚かせます。",
+      "ex2": "Let's take action.",
+      "tr2": "行動を起こしましょう。"
+    },
+    {
+      "id": "g-1052-active",
+      "word": "active",
+      "meaning": "活動的な、活発な",
+      "ex1": "She is an active girl.",
+      "tr1": "彼女は活発な女の子です。",
+      "ex2": "My grandfather is active.",
+      "tr2": "祖父は活動的です。"
+    },
+    {
+      "id": "g-1053-brave",
+      "word": "brave",
+      "meaning": "勇敢な、勇気を持った",
+      "ex1": "The firefighter is brave.",
+      "tr1": "その消防士は勇敢です。",
+      "ex2": "You are very brave.",
+      "tr2": "あなたはとても勇敢です。"
+    },
+    {
+      "id": "g-1054-east",
+      "word": "east",
+      "meaning": "【名】東 【形】東の",
+      "ex1": "The sun rises in the east.",
+      "tr1": "太陽は東からのぼります。",
+      "ex2": "The wind blows from the east today.",
+      "tr2": "今日は東から風が吹いています。"
+    },
+    {
+      "id": "g-1055-west",
+      "word": "west",
+      "meaning": "【名】西 【形】西の",
+      "ex1": "The sun goes down in the west.",
+      "tr1": "太陽は西にしずみます。",
+      "ex2": "Hiroshima is in the west of Japan.",
+      "tr2": "広島は日本の西部にあります。"
+    },
+    {
+      "id": "g-1056-south",
+      "word": "south",
+      "meaning": "【名】南 【形】南の",
+      "ex1": "Birds fly south in winter.",
+      "tr1": "鳥は冬になると南へ飛んで行きます。",
+      "ex2": "Okinawa is in the south of Japan.",
+      "tr2": "沖縄は日本の南にあります。"
+    },
+    {
+      "id": "g-1057-north",
+      "word": "north",
+      "meaning": "【名】北 【形】北の",
+      "ex1": "Hokkaido is in the north of Japan.",
+      "tr1": "北海道は日本の北にあります。",
+      "ex2": "Look to the north.",
+      "tr2": "北のほうを見てください。"
+    },
+    {
+      "id": "g-1058-jump",
+      "word": "jump",
+      "meaning": "跳ぶ、飛び上がる",
+      "ex1": "Can you jump over the box?",
+      "tr1": "その箱を跳び越えられますか。",
+      "ex2": "Children jump for joy.",
+      "tr2": "子どもたちは跳び上がって喜びます。"
+    },
+    {
+      "id": "g-1059-disappear",
+      "word": "disappear",
+      "meaning": "消える、見えなくなる、消滅する",
+      "ex1": "The rainbow disappears.",
+      "tr1": "虹が消えます。",
+      "ex2": "The sun disappears in the evening.",
+      "tr2": "太陽は夕方に見えなくなります。"
+    },
+    {
+      "id": "g-1060-pleasure",
+      "word": "pleasure",
+      "meaning": "よろこび、楽しみ",
+      "ex1": "It is a pleasure to meet you.",
+      "tr1": "お会いできてうれしいです。",
+      "ex2": "Reading gives me pleasure.",
+      "tr2": "読書は私に楽しみを与えてくれます。"
+    },
+    {
+      "id": "g-1061-treasure",
+      "word": "treasure",
+      "meaning": "【名】宝物 【動】~を大切にする",
+      "ex1": "They find a treasure in the cave.",
+      "tr1": "彼らは洞窟で宝物を見つけます。",
+      "ex2": "I treasure this letter.",
+      "tr2": "私はこの手紙を大切にします。"
+    },
+    {
+      "id": "g-1062-adventure",
+      "word": "adventure",
+      "meaning": "冒険",
+      "ex1": "We go on an adventure.",
+      "tr1": "私たちは冒険に出かけます。",
+      "ex2": "This trip is an adventure.",
+      "tr2": "この旅は冒険です。"
+    },
+    {
+      "id": "g-1063-clever",
+      "word": "clever",
+      "meaning": "利口な、賢い",
+      "ex1": "She is a clever girl.",
+      "tr1": "彼女は賢い女の子です。",
+      "ex2": "My dog is clever.",
+      "tr2": "私の犬は賢いです。"
+    },
+    {
+      "id": "g-1064-lovely",
+      "word": "lovely",
+      "meaning": "美しい、かわいらしい",
+      "ex1": "What a lovely day!",
+      "tr1": "なんてすてきな日でしょう。",
+      "ex2": "She has a lovely dog.",
+      "tr2": "彼女はかわいい犬を飼っています。"
+    },
+    {
+      "id": "g-1065-common",
+      "word": "common",
+      "meaning": "共通の、ふつうの",
+      "ex1": "Smith is a common name.",
+      "tr1": "スミスはよくある名前です。",
+      "ex2": "Tanaka is a common name.",
+      "tr2": "田中はよくある名前です。"
+    },
+    {
+      "id": "g-1066-round",
+      "word": "round",
+      "meaning": "【形】丸い 【副】まわりに 【前】~のまわりに",
+      "ex1": "The table is round.",
+      "tr1": "そのテーブルは丸いです。",
+      "ex2": "The ball is round.",
+      "tr2": "そのボールは丸いです。"
+    },
+    {
+      "id": "g-1067-eastern",
+      "word": "eastern",
+      "meaning": "東の",
+      "ex1": "She lives in the eastern part of the city.",
+      "tr1": "彼女は市の東部に住んでいます。",
+      "ex2": "I live in eastern Japan.",
+      "tr2": "私は東日本に住んでいます。"
+    },
+    {
+      "id": "g-1068-western",
+      "word": "western",
+      "meaning": "西の",
+      "ex1": "The western sky is red.",
+      "tr1": "西の空は赤いです。",
+      "ex2": "I like western music.",
+      "tr2": "私は西洋の音楽が好きです。"
+    },
+    {
+      "id": "g-1069-southern",
+      "word": "southern",
+      "meaning": "南の",
+      "ex1": "Kyushu is in southern Japan.",
+      "tr1": "九州は日本の南部にあります。",
+      "ex2": "I live in southern Japan.",
+      "tr2": "私は南日本に住んでいます。"
+    },
+    {
+      "id": "g-1070-northern",
+      "word": "northern",
+      "meaning": "北の",
+      "ex1": "Northern Europe is very cold in winter.",
+      "tr1": "北ヨーロッパは冬にとても寒いです。",
+      "ex2": "Northern Japan is cold.",
+      "tr2": "北日本は寒いです。"
+    },
+    {
+      "id": "g-1071-relax",
+      "word": "relax",
+      "meaning": "くつろぐ、リラックスする",
+      "ex1": "Let's relax at home.",
+      "tr1": "家でくつろぎましょう。",
+      "ex2": "I relax in the bath.",
+      "tr2": "私はおふろでくつろぎます。"
+    },
+    {
+      "id": "g-1072-wish",
+      "word": "wish",
+      "meaning": "【名】願い、望み 【動】望む、願う",
+      "ex1": "Make a wish.",
+      "tr1": "願い事をしてごらん。",
+      "ex2": "I wish for peace.",
+      "tr2": "私は平和を願います。"
+    },
+    {
+      "id": "g-1073-custom",
+      "word": "custom",
+      "meaning": "習慣、風習",
+      "ex1": "Bowing is a Japanese custom.",
+      "tr1": "おじぎをするのは日本の習慣です。",
+      "ex2": "This is a custom in Japan.",
+      "tr2": "これは日本の習慣です。"
+    },
+    {
+      "id": "g-1074-habit",
+      "word": "habit",
+      "meaning": "習慣、癖",
+      "ex1": "Reading is a good habit.",
+      "tr1": "読書はよい習慣です。",
+      "ex2": "I have a good habit.",
+      "tr2": "私にはよい習慣があります。"
+    },
+    {
+      "id": "g-1075-spot",
+      "word": "spot",
+      "meaning": "場所、地点、しみ",
+      "ex1": "This is a nice spot for lunch.",
+      "tr1": "ここは昼食にぴったりの場所です。",
+      "ex2": "There is a spot on my shirt.",
+      "tr2": "私のシャツにしみがあります。"
+    },
+    {
+      "id": "g-1076-statue",
+      "word": "statue",
+      "meaning": "像、彫像",
+      "ex1": "There is a statue in the park.",
+      "tr1": "公園に像があります。",
+      "ex2": "The dog statue is famous.",
+      "tr2": "その犬の像は有名です。"
+    },
+    {
+      "id": "g-1077-roof",
+      "word": "roof",
+      "meaning": "屋根、屋上",
+      "ex1": "The roof is red.",
+      "tr1": "その屋根は赤いです。",
+      "ex2": "A cat is on the roof.",
+      "tr2": "ネコが屋根の上にいます。"
+    },
+    {
+      "id": "g-1078-hole",
+      "word": "hole",
+      "meaning": "穴",
+      "ex1": "There is a hole in my sock.",
+      "tr1": "私の靴下に穴があいています。",
+      "ex2": "There is a hole in the box.",
+      "tr2": "箱に穴があいています。"
+    },
+    {
+      "id": "g-1079-trick",
+      "word": "trick",
+      "meaning": "手品、トリック、たくらみ",
+      "ex1": "He shows us a card trick.",
+      "tr1": "彼は私たちにカード手品を見せます。",
+      "ex2": "I know a magic trick.",
+      "tr2": "私は手品を1つ知っています。"
+    },
+    {
+      "id": "g-1080-personal",
+      "word": "personal",
+      "meaning": "個人の、個人的な",
+      "ex1": "This is a personal question.",
+      "tr1": "これは個人的な質問です。",
+      "ex2": "This is my personal bag.",
+      "tr2": "これは私の個人のかばんです。"
+    },
+    {
+      "id": "g-1081-daily",
+      "word": "daily",
+      "meaning": "【形】毎日の、日常の 【副】毎日",
+      "ex1": "Walking is part of my daily life.",
+      "tr1": "歩くことは私の日常生活の一部です。",
+      "ex2": "My father reads the newspaper daily.",
+      "tr2": "父は毎日新聞を読みます。"
+    },
+    {
+      "id": "g-1082-ahead",
+      "word": "ahead",
+      "meaning": "前方に、先に",
+      "ex1": "Go straight ahead.",
+      "tr1": "まっすぐ前に進んでください。",
+      "ex2": "The station is ahead.",
+      "tr2": "駅は前方にあります。"
+    },
+    {
+      "id": "g-1083-especially",
+      "word": "especially",
+      "meaning": "特に",
+      "ex1": "I like fruit, especially peaches.",
+      "tr1": "私は果物、特に桃が好きです。",
+      "ex2": "It is cold, especially in winter.",
+      "tr2": "特に冬は寒いです。"
+    },
+    {
+      "id": "g-1084-develop",
+      "word": "develop",
+      "meaning": "~を発展させる、発達する、~を開発する",
+      "ex1": "Scientists develop new machines.",
+      "tr1": "科学者は新しい機械を開発します。",
+      "ex2": "Reading helps you develop your English.",
+      "tr2": "読書は英語力を伸ばすのに役立ちます。"
+    },
+    {
+      "id": "g-1085-astronaut",
+      "word": "astronaut",
+      "meaning": "宇宙飛行士",
+      "ex1": "I want to be an astronaut.",
+      "tr1": "私は宇宙飛行士になりたいです。",
+      "ex2": "An astronaut lives in space.",
+      "tr2": "宇宙飛行士は宇宙で暮らします。"
+    },
+    {
+      "id": "g-1086-owner",
+      "word": "owner",
+      "meaning": "持ち主、所有者",
+      "ex1": "Who is the owner of this shop?",
+      "tr1": "この店の持ち主はだれですか。",
+      "ex2": "The owner of the dog is kind.",
+      "tr2": "その犬の飼い主は親切です。"
+    },
+    {
+      "id": "g-1087-laugh",
+      "word": "laugh",
+      "meaning": "笑う",
+      "ex1": "Don't laugh at me.",
+      "tr1": "私のことを笑わないでください。",
+      "ex2": "His story makes me laugh.",
+      "tr2": "彼の話は私を笑わせます。"
+    },
+    {
+      "id": "g-1088-laughter",
+      "word": "laughter",
+      "meaning": "笑い、笑い声",
+      "ex1": "I hear laughter in the room.",
+      "tr1": "私は部屋から笑い声が聞こえます。",
+      "ex2": "The room is full of laughter.",
+      "tr2": "部屋は笑い声でいっぱいです。"
+    },
+    {
+      "id": "g-1089-list",
+      "word": "list",
+      "meaning": "一覧表、リスト、名簿",
+      "ex1": "Make a list of things to buy.",
+      "tr1": "買うものの一覧表を作ってください。",
+      "ex2": "My name is on the list.",
+      "tr2": "私の名前は名簿にあります。"
+    },
+    {
+      "id": "g-1090-skill",
+      "word": "skill",
+      "meaning": "技術、技能、技量",
+      "ex1": "Cooking is a useful skill.",
+      "tr1": "料理は役に立つ技術です。",
+      "ex2": "He has good skill in tennis.",
+      "tr2": "彼はテニスの技術が高いです。"
+    },
+    {
+      "id": "g-1091-period",
+      "word": "period",
+      "meaning": "期間、時代",
+      "ex1": "The class period is fifty minutes.",
+      "tr1": "授業の1コマは50分です。",
+      "ex2": "This class period is fifty minutes.",
+      "tr2": "この授業の1コマは50分です。"
+    },
+    {
+      "id": "g-1092-major",
+      "word": "major",
+      "meaning": "主要な、重要な",
+      "ex1": "This is a major problem.",
+      "tr1": "これは大きな問題です。",
+      "ex2": "Tokyo is a major city.",
+      "tr2": "東京は主要な都市です。"
+    },
+    {
+      "id": "g-1093-crowd",
+      "word": "crowd",
+      "meaning": "群衆、ひとごみ",
+      "ex1": "A crowd is at the station.",
+      "tr1": "駅に群衆がいます。",
+      "ex2": "There is a big crowd here.",
+      "tr2": "ここにはひとごみがあります。"
+    },
+    {
+      "id": "g-1094-crowded",
+      "word": "crowded",
+      "meaning": "混みあった",
+      "ex1": "The train is crowded.",
+      "tr1": "電車は混んでいます。",
+      "ex2": "This shop is crowded on weekends.",
+      "tr2": "この店は週末は混んでいます。"
+    },
+    {
+      "id": "g-1095-thick",
+      "word": "thick",
+      "meaning": "厚い、太い",
+      "ex1": "This book is very thick.",
+      "tr1": "この本はとても厚いです。",
+      "ex2": "The wall is thick.",
+      "tr2": "その壁は厚いです。"
+    },
+    {
+      "id": "g-1096-thin",
+      "word": "thin",
+      "meaning": "薄い、やせた",
+      "ex1": "The paper is thin.",
+      "tr1": "その紙は薄いです。",
+      "ex2": "He is tall and thin.",
+      "tr2": "彼は背が高くてやせています。"
+    },
+    {
+      "id": "g-1097-depend",
+      "word": "depend",
+      "meaning": "~に頼る、~次第である、~による",
+      "ex1": "You can depend on me.",
+      "tr1": "私を頼ってくれていいですよ。",
+      "ex2": "Children depend on their parents.",
+      "tr2": "子どもは親に頼っています。"
+    },
+    {
+      "id": "g-1098-ring",
+      "word": "ring",
+      "meaning": "【名】輪、指輪 【動】鳴る、鳴らす",
+      "ex1": "She wears a gold ring.",
+      "tr1": "彼女は金の指輪をしています。",
+      "ex2": "The phone rings.",
+      "tr2": "電話が鳴ります。"
+    },
+    {
+      "id": "g-1099-advice",
+      "word": "advice",
+      "meaning": "忠告、助言、アドバイス",
+      "ex1": "Thank you for your advice.",
+      "tr1": "アドバイスをありがとうございます。",
+      "ex2": "My teacher gives me good advice.",
+      "tr2": "先生は私によい助言をくれます。"
+    },
+    {
+      "id": "g-1100-advise",
+      "word": "advise",
+      "meaning": "忠告する、助言する",
+      "ex1": "I advise you to go to bed early.",
+      "tr1": "私はあなたに早く寝るよう助言します。",
+      "ex2": "The doctor advises me to rest.",
+      "tr2": "医者は私に休むよう助言します。"
+    },
+    {
+      "id": "g-1101-board",
+      "word": "board",
+      "meaning": "板、黒板、掲示板",
+      "ex1": "Write your name on the board.",
+      "tr1": "黒板に名前を書いてください。",
+      "ex2": "The notice is on the board.",
+      "tr2": "お知らせは掲示板にあります。"
+    },
+    {
+      "id": "g-1102-aboard",
+      "word": "aboard",
+      "meaning": "【副】~に乗って 【前】~に乗って",
+      "ex1": "Everyone is aboard now.",
+      "tr1": "みんな、もう乗り込みました。",
+      "ex2": "All the people go aboard the ship.",
+      "tr2": "乗客全員が船に乗り込みます。"
+    },
+    {
+      "id": "g-1103-condition",
+      "word": "condition",
+      "meaning": "状態、体調",
+      "ex1": "He is in good condition.",
+      "tr1": "彼は体調がよいです。",
+      "ex2": "My condition is bad today.",
+      "tr2": "今日は体調が悪いです。"
+    },
+    {
+      "id": "g-1104-sight",
+      "word": "sight",
+      "meaning": "視力、視界、光景",
+      "ex1": "My sight is getting worse.",
+      "tr1": "私の視力は悪くなってきています。",
+      "ex2": "The sight of Mt. Fuji is beautiful.",
+      "tr2": "富士山の光景は美しいです。"
+    },
+    {
+      "id": "g-1105-fever",
+      "word": "fever",
+      "meaning": "熱",
+      "ex1": "I have a fever.",
+      "tr1": "私は熱があります。",
+      "ex2": "She has a high fever.",
+      "tr2": "彼女は高い熱があります。"
+    },
+    {
+      "id": "g-1106-ill",
+      "word": "ill",
+      "meaning": "病気の",
+      "ex1": "He is ill in bed.",
+      "tr1": "彼は病気で寝ています。",
+      "ex2": "My mother is ill today.",
+      "tr2": "今日、母は病気です。"
+    },
+    {
+      "id": "g-1107-illness",
+      "word": "illness",
+      "meaning": "病気",
+      "ex1": "He is absent because of illness.",
+      "tr1": "彼は病気のため欠席です。",
+      "ex2": "Washing hands is good against illness.",
+      "tr2": "手洗いは病気を防ぐのによいです。"
+    },
+    {
+      "id": "g-1108-forest",
+      "word": "forest",
+      "meaning": "森、森林",
+      "ex1": "We walk in the forest.",
+      "tr1": "私たちは森の中を歩きます。",
+      "ex2": "Many animals live in the forest.",
+      "tr2": "多くの動物が森に住んでいます。"
+    },
+    {
+      "id": "g-1109-grass",
+      "word": "grass",
+      "meaning": "草、芝生",
+      "ex1": "The cow eats grass.",
+      "tr1": "牛は草を食べます。",
+      "ex2": "We sit on the grass.",
+      "tr2": "私たちは芝生にすわります。"
+    },
+    {
+      "id": "g-1110-succeed",
+      "word": "succeed",
+      "meaning": "成功する",
+      "ex1": "I will succeed someday.",
+      "tr1": "私はいつか成功します。",
+      "ex2": "You can succeed in your dream.",
+      "tr2": "あなたは夢を成功させることができます。"
+    },
+    {
+      "id": "g-1111-success",
+      "word": "success",
+      "meaning": "成功",
+      "ex1": "The party is a success.",
+      "tr1": "そのパーティーは成功です。",
+      "ex2": "Hard work is the key to success.",
+      "tr2": "努力は成功のかぎです。"
+    },
+    {
+      "id": "g-1112-successful",
+      "word": "successful",
+      "meaning": "成功した",
+      "ex1": "She is a successful singer.",
+      "tr1": "彼女は成功した歌手です。",
+      "ex2": "The festival is successful.",
+      "tr2": "その祭りは成功しています。"
+    },
+    {
+      "id": "g-1113-captain",
+      "word": "captain",
+      "meaning": "キャプテン、主将",
+      "ex1": "He is the captain of our team.",
+      "tr1": "彼は私たちのチームのキャプテンです。",
+      "ex2": "I am the captain of the soccer team.",
+      "tr2": "私はサッカーチームのキャプテンです。"
+    },
+    {
+      "id": "g-1114-teammate",
+      "word": "teammate",
+      "meaning": "チームメイト",
+      "ex1": "She is my teammate.",
+      "tr1": "彼女は私のチームメイトです。",
+      "ex2": "My teammate passes the ball to me.",
+      "tr2": "チームメイトが私にボールをパスします。"
+    },
+    {
+      "id": "g-1115-teamwork",
+      "word": "teamwork",
+      "meaning": "チームワーク、共同作業",
+      "ex1": "Teamwork is important.",
+      "tr1": "チームワークは大切です。",
+      "ex2": "Good teamwork helps us win.",
+      "tr2": "よいチームワークは私たちが勝つ助けになります。"
+    },
+    {
+      "id": "g-1116-bell",
+      "word": "bell",
+      "meaning": "ベル、鈴、鐘",
+      "ex1": "Listen to the bell.",
+      "tr1": "ベルの音を聞いてください。",
+      "ex2": "The bell rings.",
+      "tr2": "ベルが鳴ります。"
+    },
+    {
+      "id": "g-1117-glove",
+      "word": "glove",
+      "meaning": "手袋、グローブ",
+      "ex1": "I have a new glove.",
+      "tr1": "私は新しいグローブを持っています。",
+      "ex2": "I need a glove for baseball.",
+      "tr2": "私は野球のためにグローブが必要です。"
+    },
+    {
+      "id": "g-1118-track",
+      "word": "track",
+      "meaning": "通った跡、小道、線路",
+      "ex1": "We follow the track up the mountain.",
+      "tr1": "私たちは山へ続く小道をたどります。",
+      "ex2": "We run around the track.",
+      "tr2": "私たちはトラックのまわりを走ります。"
+    },
+    {
+      "id": "g-1119-bottom",
+      "word": "bottom",
+      "meaning": "底、最下部",
+      "ex1": "Look at the bottom of the page.",
+      "tr1": "ページの一番下を見てください。",
+      "ex2": "I can see fish at the bottom of the sea.",
+      "tr2": "私は海の底に魚が見えます。"
+    },
+    {
+      "id": "g-1120-sentence",
+      "word": "sentence",
+      "meaning": "文",
+      "ex1": "Write a sentence in English.",
+      "tr1": "英語で文を1つ書いてください。",
+      "ex2": "Read this sentence aloud.",
+      "tr2": "この文を音読してください。"
+    },
+    {
+      "id": "g-1121-shy",
+      "word": "shy",
+      "meaning": "内気な、恥ずかしがりの",
+      "ex1": "My sister is shy.",
+      "tr1": "妹は内気です。",
+      "ex2": "I am shy.",
+      "tr2": "私は内気です。"
+    },
+    {
+      "id": "g-1122-fat",
+      "word": "fat",
+      "meaning": "【名】脂肪 【形】太った",
+      "ex1": "This meat has a lot of fat.",
+      "tr1": "この肉には脂肪がたくさんあります。",
+      "ex2": "The fat cat sleeps on the sofa.",
+      "tr2": "太ったネコはソファで眠っています。"
+    },
+    {
+      "id": "g-1123-celebrate",
+      "word": "celebrate",
+      "meaning": "祝う",
+      "ex1": "Let's celebrate your birthday.",
+      "tr1": "あなたの誕生日をお祝いしましょう。",
+      "ex2": "Many families celebrate the New Year.",
+      "tr2": "多くの家族が新年を祝います。"
+    },
+    {
+      "id": "g-1124-suggest",
+      "word": "suggest",
+      "meaning": "~を提案する、~をほのめかす",
+      "ex1": "I suggest we go by bus.",
+      "tr1": "バスで行くことを提案します。",
+      "ex2": "Can you suggest a good book?",
+      "tr2": "よい本を提案してくれませんか。"
+    },
+    {
+      "id": "g-1125-suggestion",
+      "word": "suggestion",
+      "meaning": "提案",
+      "ex1": "That is a good suggestion.",
+      "tr1": "それはよい提案です。",
+      "ex2": "Do you have a suggestion?",
+      "tr2": "何か提案はありますか。"
+    },
+    {
+      "id": "g-1126-sale",
+      "word": "sale",
+      "meaning": "販売、安売り",
+      "ex1": "The shop has a sale today.",
+      "tr1": "その店は今日セールをしています。",
+      "ex2": "This coat is on sale.",
+      "tr2": "このコートは安売り中です。"
+    },
+    {
+      "id": "g-1127-cost",
+      "word": "cost",
+      "meaning": "【名】価格、費用 【動】費用などがかかる",
+      "ex1": "The cost is ten dollars.",
+      "tr1": "費用は10ドルです。",
+      "ex2": "This bag costs ten dollars.",
+      "tr2": "このかばんは10ドルです。"
+    },
+    {
+      "id": "g-1128-coin",
+      "word": "coin",
+      "meaning": "硬貨、コイン",
+      "ex1": "I find a coin on the street.",
+      "tr1": "私は道で硬貨を見つけます。",
+      "ex2": "I put a coin in the machine.",
+      "tr2": "私は機械に硬貨を入れます。"
+    },
+    {
+      "id": "g-1129-vase",
+      "word": "vase",
+      "meaning": "花瓶",
+      "ex1": "She puts flowers in a vase.",
+      "tr1": "彼女は花を花瓶に生けます。",
+      "ex2": "The vase is on the table.",
+      "tr2": "花瓶はテーブルの上にあります。"
+    },
+    {
+      "id": "g-1130-sofa",
+      "word": "sofa",
+      "meaning": "ソファ",
+      "ex1": "He is sleeping on the sofa.",
+      "tr1": "彼はソファで寝ています。",
+      "ex2": "We have a new sofa.",
+      "tr2": "私たちは新しいソファを持っています。"
+    },
+    {
+      "id": "g-1131-shower",
+      "word": "shower",
+      "meaning": "シャワー、にわか雨",
+      "ex1": "I take a shower every morning.",
+      "tr1": "私は毎朝シャワーを浴びます。",
+      "ex2": "I take a shower after school.",
+      "tr2": "私は放課後にシャワーを浴びます。"
+    },
+    {
+      "id": "g-1132-cloth",
+      "word": "cloth",
+      "meaning": "布",
+      "ex1": "Wipe the table with a cloth.",
+      "tr1": "布でテーブルをふいてください。",
+      "ex2": "This cloth is soft.",
+      "tr2": "この布は柔らかいです。"
+    },
+    {
+      "id": "g-1133-towel",
+      "word": "towel",
+      "meaning": "タオル",
+      "ex1": "Here is a clean towel.",
+      "tr1": "きれいなタオルをどうぞ。",
+      "ex2": "I dry my hair with a towel.",
+      "tr2": "私はタオルで髪をふきます。"
+    },
+    {
+      "id": "g-1134-excellent",
+      "word": "excellent",
+      "meaning": "優れた、優秀な",
+      "ex1": "Your speech is excellent.",
+      "tr1": "あなたのスピーチはすばらしいです。",
+      "ex2": "She gets excellent grades.",
+      "tr2": "彼女は優秀な成績をとります。"
+    },
+    {
+      "id": "g-1135-comfortable",
+      "word": "comfortable",
+      "meaning": "快適な、気持ちの良い",
+      "ex1": "This chair is comfortable.",
+      "tr1": "このいすは座り心地がいいです。",
+      "ex2": "This sofa is comfortable.",
+      "tr2": "このソファは座り心地がいいです。"
+    },
+    {
+      "id": "g-1136-blow",
+      "word": "blow",
+      "meaning": "(風が)吹く",
+      "ex1": "Please blow out the candles.",
+      "tr1": "ろうそくを吹き消してください。",
+      "ex2": "A strong wind blows.",
+      "tr2": "強い風が吹きます。"
+    },
+    {
+      "id": "g-1137-hate",
+      "word": "hate",
+      "meaning": "~を嫌う、憎む",
+      "ex1": "I hate getting up early.",
+      "tr1": "私は早起きが大嫌いです。",
+      "ex2": "I hate to say goodbye.",
+      "tr2": "私はさよならを言うのが嫌いです。"
+    },
+    {
+      "id": "g-1138-cartoon",
+      "word": "cartoon",
+      "meaning": "漫画",
+      "ex1": "He draws a cartoon.",
+      "tr1": "彼は漫画をかきます。",
+      "ex2": "Many people enjoy cartoons.",
+      "tr2": "多くの人が漫画を楽しんでいます。"
+    },
+    {
+      "id": "g-1139-factory",
+      "word": "factory",
+      "meaning": "工場",
+      "ex1": "My father works at a factory.",
+      "tr1": "父は工場で働いています。",
+      "ex2": "We visit a car factory.",
+      "tr2": "私たちは自動車工場を訪れます。"
+    },
+    {
+      "id": "g-1140-staff",
+      "word": "staff",
+      "meaning": "職員、社員",
+      "ex1": "The hotel staff helps us.",
+      "tr1": "ホテルの従業員が私たちを助けてくれます。",
+      "ex2": "The hotel staff is kind.",
+      "tr2": "ホテルの従業員は親切です。"
+    },
+    {
+      "id": "g-1141-neighbor",
+      "word": "neighbor",
+      "meaning": "隣人、近所の人",
+      "ex1": "My neighbor is kind.",
+      "tr1": "私の隣人は親切です。",
+      "ex2": "Our neighbor gives us vegetables.",
+      "tr2": "隣の人は私たちに野菜をくれます。"
+    },
+    {
+      "id": "g-1142-honest",
+      "word": "honest",
+      "meaning": "正直な、誠実な",
+      "ex1": "He is an honest boy.",
+      "tr1": "彼は正直な男の子です。",
+      "ex2": "To be honest, I don't know.",
+      "tr2": "正直に言うと、私は知りません。"
+    },
+    {
+      "id": "g-1143-lazy",
+      "word": "lazy",
+      "meaning": "怠けている、怠惰な",
+      "ex1": "My dog is lazy.",
+      "tr1": "私の犬は怠け者です。",
+      "ex2": "Don't be lazy.",
+      "tr2": "怠けないでください。"
+    },
+    {
+      "id": "g-1144-public",
+      "word": "public",
+      "meaning": "公の、公共の",
+      "ex1": "This is a public park.",
+      "tr1": "ここは公共の公園です。",
+      "ex2": "Don't use your phone in public places.",
+      "tr2": "公共の場所では携帯電話を使わないでください。"
+    },
+    {
+      "id": "g-1145-private",
+      "word": "private",
+      "meaning": "個人の、私的な",
+      "ex1": "This is a private room.",
+      "tr1": "これは個室です。",
+      "ex2": "Please don't ask private questions.",
+      "tr2": "私的な質問はしないでください。"
+    },
+    {
+      "id": "g-1146-several",
+      "word": "several",
+      "meaning": "いくつかの、数人の",
+      "ex1": "Several students are late.",
+      "tr1": "数人の生徒が遅れています。",
+      "ex2": "I have several friends.",
+      "tr2": "私には数人の友達がいます。"
+    },
+    {
+      "id": "g-1147-plenty",
+      "word": "plenty",
+      "meaning": "たくさん、十分",
+      "ex1": "We have plenty of time.",
+      "tr1": "私たちには十分な時間があります。",
+      "ex2": "There is plenty of food.",
+      "tr2": "たくさん食べ物があります。"
+    },
+    {
+      "id": "g-1148-anyway",
+      "word": "anyway",
+      "meaning": "とにかく、いずれにしても",
+      "ex1": "Thank you anyway.",
+      "tr1": "とにかくありがとう。",
+      "ex2": "It rains, but we go anyway.",
+      "tr2": "雨ですが、とにかく私たちは行きます。"
+    },
+    {
+      "id": "g-1149-consider",
+      "word": "consider",
+      "meaning": "よく考える",
+      "ex1": "Please consider my idea.",
+      "tr1": "私の考えをよく考えてください。",
+      "ex2": "I consider your idea.",
+      "tr2": "私はあなたの考えをよく考えます。"
+    },
+    {
+      "id": "g-1150-describe",
+      "word": "describe",
+      "meaning": "~を描写する、~の特徴を述べる",
+      "ex1": "Can you describe your dog?",
+      "tr1": "あなたの犬の特徴を説明してくれますか。",
+      "ex2": "Please describe your hometown.",
+      "tr2": "あなたの故郷について説明してください。"
+    },
+    {
+      "id": "g-1151-invent",
+      "word": "invent",
+      "meaning": "~を発明する",
+      "ex1": "He wants to invent a new robot.",
+      "tr1": "彼は新しいロボットを発明したいと思っています。",
+      "ex2": "I want to invent a robot.",
+      "tr2": "私はロボットを発明したいです。"
+    },
+    {
+      "id": "g-1152-role",
+      "word": "role",
+      "meaning": "役割、役",
+      "ex1": "He has a big role in our team.",
+      "tr1": "彼は私たちのチームで大きな役割を果たしています。",
+      "ex2": "Teachers have an important role.",
+      "tr2": "先生は重要な役割を持っています。"
+    },
+    {
+      "id": "g-1153-hero",
+      "word": "hero",
+      "meaning": "英雄、ヒーロー",
+      "ex1": "He is my hero.",
+      "tr1": "彼は私のヒーローです。",
+      "ex2": "He is a hero.",
+      "tr2": "彼はヒーローです。"
+    },
+    {
+      "id": "g-1154-speaker",
+      "word": "speaker",
+      "meaning": "演説者、話し手",
+      "ex1": "He is a good speaker.",
+      "tr1": "彼は話し上手です。",
+      "ex2": "The speaker talks about our town.",
+      "tr2": "その講演者は私たちの町について話します。"
+    },
+    {
+      "id": "g-1155-audience",
+      "word": "audience",
+      "meaning": "聴衆、観客",
+      "ex1": "The audience claps.",
+      "tr1": "観客は拍手をします。",
+      "ex2": "The audience laughs.",
+      "tr2": "観客は笑います。"
+    },
+    {
+      "id": "g-1156-attitude",
+      "word": "attitude",
+      "meaning": "態度、心構え",
+      "ex1": "She has a positive attitude.",
+      "tr1": "彼女は前向きな態度をしています。",
+      "ex2": "A good attitude is important.",
+      "tr2": "よい態度は大切です。"
+    },
+    {
+      "id": "g-1157-thought",
+      "word": "thought",
+      "meaning": "考え、思考",
+      "ex1": "That is a good thought.",
+      "tr1": "それはいい考えですね。",
+      "ex2": "The thought of the exam makes me nervous.",
+      "tr2": "試験のことを考えると、私は緊張します。"
+    },
+    {
+      "id": "g-1158-friendship",
+      "word": "friendship",
+      "meaning": "友情",
+      "ex1": "Our friendship is important.",
+      "tr1": "私たちの友情は大切です。",
+      "ex2": "Sports build friendship.",
+      "tr2": "スポーツは友情を築きます。"
+    },
+    {
+      "id": "g-1159-happiness",
+      "word": "happiness",
+      "meaning": "幸福",
+      "ex1": "Money cannot buy happiness.",
+      "tr1": "お金で幸福は買えません。",
+      "ex2": "I feel happiness.",
+      "tr2": "私は幸せを感じます。"
+    },
+    {
+      "id": "g-1160-midnight",
+      "word": "midnight",
+      "meaning": "真夜中、夜中の12時",
+      "ex1": "It is almost midnight.",
+      "tr1": "もうすぐ真夜中です。",
+      "ex2": "We stay up until midnight.",
+      "tr2": "私たちは真夜中まで起きています。"
+    },
+    {
+      "id": "g-1161-firework",
+      "word": "firework",
+      "meaning": "花火",
+      "ex1": "I see a big firework.",
+      "tr1": "私は大きな花火を見ます。",
+      "ex2": "We watch fireworks every summer.",
+      "tr2": "私たちは毎年夏に花火を見ます。"
+    },
+    {
+      "id": "g-1162-argue",
+      "word": "argue",
+      "meaning": "議論する、口論する",
+      "ex1": "Don't argue with your brother.",
+      "tr1": "弟(兄)と口論しないでください。",
+      "ex2": "They argue, but they are good friends.",
+      "tr2": "彼らは口論しますが、仲のよい友達です。"
+    },
+    {
+      "id": "g-1163-lock",
+      "word": "lock",
+      "meaning": "【名】錠 【動】~にかぎをかける",
+      "ex1": "This lock is very old.",
+      "tr1": "この錠はとても古いです。",
+      "ex2": "Lock the door, please.",
+      "tr2": "ドアにかぎをかけてください。"
+    },
+    {
+      "id": "g-1164-apartment",
+      "word": "apartment",
+      "meaning": "マンション",
+      "ex1": "I live in an apartment.",
+      "tr1": "私はマンションに住んでいます。",
+      "ex2": "Our apartment is on the fifth floor.",
+      "tr2": "私たちのマンションは5階にあります。"
+    },
+    {
+      "id": "g-1165-elevator",
+      "word": "elevator",
+      "meaning": "エレベーター",
+      "ex1": "Let's take the elevator.",
+      "tr1": "エレベーターに乗りましょう。",
+      "ex2": "Let's use the elevator.",
+      "tr2": "エレベーターを使いましょう。"
+    },
+    {
+      "id": "g-1166-continent",
+      "word": "continent",
+      "meaning": "大陸",
+      "ex1": "Asia is a big continent.",
+      "tr1": "アジアは大きな大陸です。",
+      "ex2": "Africa is a big continent.",
+      "tr2": "アフリカは大きな大陸です。"
+    },
+    {
+      "id": "g-1167-pollution",
+      "word": "pollution",
+      "meaning": "汚染",
+      "ex1": "Air pollution is a big problem.",
+      "tr1": "大気汚染は大きな問題です。",
+      "ex2": "Pollution is bad.",
+      "tr2": "汚染はよくありません。"
+    },
+    {
+      "id": "g-1168-chemical",
+      "word": "chemical",
+      "meaning": "【名】化学製品 【形】化学の",
+      "ex1": "This factory uses a chemical.",
+      "tr1": "この工場は化学製品を使っています。",
+      "ex2": "We do a chemical experiment.",
+      "tr2": "私たちは化学の実験をします。"
+    },
+    {
+      "id": "g-1169-temperature",
+      "word": "temperature",
+      "meaning": "温度、気温、体温",
+      "ex1": "What is the temperature today?",
+      "tr1": "今日の気温は何度ですか。",
+      "ex2": "Take your temperature.",
+      "tr2": "体温をはかってください。"
+    },
+    {
+      "id": "g-1170-degree",
+      "word": "degree",
+      "meaning": "度、程度、学位",
+      "ex1": "He has a degree in art.",
+      "tr1": "彼は芸術の学位を持っています。",
+      "ex2": "The temperature goes up one degree.",
+      "tr2": "気温が1度上がります。"
+    },
+    {
+      "id": "g-1171-centimeter",
+      "word": "centimeter",
+      "meaning": "センチメートル",
+      "ex1": "A centimeter is very short.",
+      "tr1": "1センチメートルはとても短いです。",
+      "ex2": "I grow one centimeter.",
+      "tr2": "私は身長が1センチメートルのびます。"
+    },
+    {
+      "id": "g-1172-court",
+      "word": "court",
+      "meaning": "コート、中庭、法廷",
+      "ex1": "They are on the tennis court.",
+      "tr1": "彼らはテニスコートにいます。",
+      "ex2": "The tennis court is big.",
+      "tr2": "そのテニスコートは大きいです。"
+    },
+    {
+      "id": "g-1173-hill",
+      "word": "hill",
+      "meaning": "丘、小山",
+      "ex1": "We walk up the hill.",
+      "tr1": "私たちは丘を歩いてのぼります。",
+      "ex2": "There is a temple on the hill.",
+      "tr2": "丘の上にお寺があります。"
+    },
+    {
+      "id": "g-1174-horror",
+      "word": "horror",
+      "meaning": "恐怖、恐ろしいもの",
+      "ex1": "I watch a horror movie.",
+      "tr1": "私はホラー映画を見ます。",
+      "ex2": "I like horror movies.",
+      "tr2": "私はホラー映画が好きです。"
+    },
+    {
+      "id": "g-1175-pocket",
+      "word": "pocket",
+      "meaning": "ポケット",
+      "ex1": "I put my phone in my pocket.",
+      "tr1": "私は携帯電話をポケットに入れました。",
+      "ex2": "My pocket has a hole.",
+      "tr2": "私のポケットには穴があいています。"
+    },
+    {
+      "id": "g-1176-poem",
+      "word": "poem",
+      "meaning": "詩",
+      "ex1": "She writes a poem.",
+      "tr1": "彼女は詩を書きます。",
+      "ex2": "Our teacher reads a poem.",
+      "tr2": "先生が詩を読みます。"
+    },
+    {
+      "id": "g-1177-rose",
+      "word": "rose",
+      "meaning": "バラ",
+      "ex1": "I give her a red rose.",
+      "tr1": "私は彼女に赤いバラをあげます。",
+      "ex2": "This rose smells good.",
+      "tr2": "このバラはいいにおいがします。"
+    },
+    {
+      "id": "g-1178-stone",
+      "word": "stone",
+      "meaning": "石",
+      "ex1": "He throws a stone into the river.",
+      "tr1": "彼は川に石を投げ入れます。",
+      "ex2": "The bridge is made of stone.",
+      "tr2": "その橋は石でできています。"
+    },
+    {
+      "id": "g-1179-subway",
+      "word": "subway",
+      "meaning": "地下鉄",
+      "ex1": "I go to school by subway.",
+      "tr1": "私は地下鉄で学校に行きます。",
+      "ex2": "The subway is fast.",
+      "tr2": "地下鉄は速いです。"
+    },
+    {
+      "id": "g-1180-tool",
+      "word": "tool",
+      "meaning": "道具",
+      "ex1": "A hammer is a tool.",
+      "tr1": "ハンマーは道具です。",
+      "ex2": "The Internet is a useful tool.",
+      "tr2": "インターネットは役に立つ道具です。"
+    },
+    {
+      "id": "g-1181-blood",
+      "word": "blood",
+      "meaning": "血、血液、家柄",
+      "ex1": "The doctor takes my blood.",
+      "tr1": "医者は私の血液を採ります。",
+      "ex2": "Your heart sends blood around your body.",
+      "tr2": "心臓は血液を体中に送ります。"
+    },
+    {
+      "id": "g-1182-bone",
+      "word": "bone",
+      "meaning": "骨",
+      "ex1": "The dog finds a bone.",
+      "tr1": "犬は骨を見つけます。",
+      "ex2": "Milk is good for your bones.",
+      "tr2": "牛乳はあなたの骨によいです。"
+    },
+    {
+      "id": "g-1183-brain",
+      "word": "brain",
+      "meaning": "脳、頭脳",
+      "ex1": "The brain is very important.",
+      "tr1": "脳はとても大切です。",
+      "ex2": "Sleep is good for your brain.",
+      "tr2": "睡眠は脳によいです。"
+    },
+    {
+      "id": "g-1184-article",
+      "word": "article",
+      "meaning": "記事",
+      "ex1": "I read an article about pandas.",
+      "tr1": "私はパンダについての記事を読みます。",
+      "ex2": "She reads an article in the newspaper.",
+      "tr2": "彼女は新聞で記事を読みます。"
+    },
+    {
+      "id": "g-1185-circle",
+      "word": "circle",
+      "meaning": "円、仲間、範囲",
+      "ex1": "Draw a circle on the paper.",
+      "tr1": "紙に円をかいてください。",
+      "ex2": "We sit in a circle.",
+      "tr2": "私たちは輪になってすわります。"
+    },
+    {
+      "id": "g-1186-confident",
+      "word": "confident",
+      "meaning": "確信して、自信をもって",
+      "ex1": "She looks confident today.",
+      "tr1": "彼女は今日は自信があるように見えます。",
+      "ex2": "I am confident.",
+      "tr2": "私は自信があります。"
+    },
+    {
+      "id": "g-1187-fair",
+      "word": "fair",
+      "meaning": "公平な",
+      "ex1": "That is not fair.",
+      "tr1": "それは公平ではありません。",
+      "ex2": "A good captain is fair.",
+      "tr2": "よいキャプテンは公平です。"
+    },
+    {
+      "id": "g-1188-hide",
+      "word": "hide",
+      "meaning": "隠れる、~を隠す",
+      "ex1": "The cat likes to hide under the bed.",
+      "tr1": "そのネコはベッドの下に隠れるのが好きです。",
+      "ex2": "Don't hide your feelings.",
+      "tr2": "自分の気持ちを隠さないでください。"
+    },
+    {
+      "id": "g-1189-reply",
+      "word": "reply",
+      "meaning": "【名】返事、返答 【動】返事をする",
+      "ex1": "I get a reply from him.",
+      "tr1": "私は彼から返事をもらいます。",
+      "ex2": "I reply to your e-mail tomorrow.",
+      "tr2": "明日、あなたのメールに返事をします。"
+    },
+    {
+      "id": "g-1190-envelope",
+      "word": "envelope",
+      "meaning": "封筒",
+      "ex1": "She puts the letter in an envelope.",
+      "tr1": "彼女は手紙を封筒に入れます。",
+      "ex2": "Write your address on the envelope.",
+      "tr2": "封筒に住所を書いてください。"
+    },
+    {
+      "id": "g-1191-form",
+      "word": "form",
+      "meaning": "【名】形、形式 【動】~を形作る",
+      "ex1": "Please fill out this form.",
+      "tr1": "この用紙に記入してください。",
+      "ex2": "Students form a line.",
+      "tr2": "生徒たちは列を作ります。"
+    },
+    {
+      "id": "g-1192-customer",
+      "word": "customer",
+      "meaning": "客、得意先",
+      "ex1": "The customer asks for a cup of tea.",
+      "tr1": "客は紅茶を1杯頼みます。",
+      "ex2": "The shop is kind to every customer.",
+      "tr2": "その店はどの客にも親切です。"
+    },
+    {
+      "id": "g-1193-reporter",
+      "word": "reporter",
+      "meaning": "記者、レポーター",
+      "ex1": "She is a TV reporter.",
+      "tr1": "彼女はテレビの記者です。",
+      "ex2": "A reporter asks the player a question.",
+      "tr2": "記者がその選手に質問します。"
+    },
+    {
+      "id": "g-1194-partner",
+      "word": "partner",
+      "meaning": "相手、パートナー",
+      "ex1": "My partner is Ken.",
+      "tr1": "私のパートナーはケンです。",
+      "ex2": "I practice with my partner.",
+      "tr2": "私はパートナーと練習します。"
+    },
+    {
+      "id": "g-1195-couple",
+      "word": "couple",
+      "meaning": "一対、一組",
+      "ex1": "That couple is walking a dog.",
+      "tr1": "あの夫婦は犬を散歩させています。",
+      "ex2": "Wait a couple of minutes.",
+      "tr2": "2、3分待ってください。"
+    },
+    {
+      "id": "g-1196-prince",
+      "word": "prince",
+      "meaning": "王子",
+      "ex1": "The prince lives in a castle.",
+      "tr1": "王子はお城に住んでいます。",
+      "ex2": "The prince is kind.",
+      "tr2": "その王子は優しいです。"
+    },
+    {
+      "id": "g-1197-princess",
+      "word": "princess",
+      "meaning": "王女",
+      "ex1": "The princess is very kind.",
+      "tr1": "王女はとても優しい人です。",
+      "ex2": "I want to be a princess.",
+      "tr2": "私は王女になりたいです。"
+    },
+    {
+      "id": "g-1198-gray",
+      "word": "gray",
+      "meaning": "【名】灰色 【形】灰色の",
+      "ex1": "He has gray hair.",
+      "tr1": "彼は白髪まじりの灰色の髪をしています。",
+      "ex2": "The gray cat looks at us.",
+      "tr2": "灰色のネコが私たちを見ます。"
+    },
+    {
+      "id": "g-1199-certain",
+      "word": "certain",
+      "meaning": "確信して、確かな",
+      "ex1": "I am certain he will come.",
+      "tr1": "彼は必ず来ると私は確信しています。",
+      "ex2": "Are you certain?",
+      "tr2": "確かですか。"
+    },
+    {
+      "id": "g-1200-false",
+      "word": "false",
+      "meaning": "間違った",
+      "ex1": "This answer is false.",
+      "tr1": "この答えは間違っています。",
+      "ex2": "True or false?",
+      "tr2": "正しいですか、間違いですか。"
+    }
+  ]
+}
